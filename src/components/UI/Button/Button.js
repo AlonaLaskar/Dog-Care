@@ -1,7 +1,8 @@
 import StyledButton from './StyledButton';
+import React from 'react';
 
-const Button = () => {
-  return <StyledButton>Roee</StyledButton>;
-};
+function Button (){
+  return <StyledButton></StyledButton>;
+}
 
 export default Button;
