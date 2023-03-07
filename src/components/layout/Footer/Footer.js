@@ -10,9 +10,9 @@ const Footer = () => {
       label: 'דף הבית'
     },
     {
-      href: '/',
+      href: '/login',
       icon: square,
-      label: 'אודות'
+      label: 'התחברות'
     },
     {
       href: '/',

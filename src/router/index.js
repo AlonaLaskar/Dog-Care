@@ -1,7 +1,7 @@
 import Home from 'pages/Home';
 import AboutUs from 'pages/AboutUs';
 import Login from 'pages/Login';
-import NavigetorBar from '../components/layout/NavigetorBar';
+import NavigetorBar from 'components/layout/NavigetorBar';
 
 const routes = [
   {
@@ -13,7 +13,7 @@ const routes = [
     component: AboutUs
   },
   {
-    path: 'login',
+    path: '/login',
     component: Login
   },
   {

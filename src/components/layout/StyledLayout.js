@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 const StyledLayout = styled.div`
-  ion-router-outlet {
-    padding-top: ${({ theme }) => theme.layout.headerHeight+20}px;
+  ion-router-outlet,
+  ion-page {
+    padding: 20px;
+    padding-top: ${({ theme }) => theme.layout.headerHeight}px;
   }
 `;
 
