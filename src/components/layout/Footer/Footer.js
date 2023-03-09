@@ -1,37 +1,42 @@
 import StyledFooter from './StyledFooter';
-import { IonIcon, IonLabel, IonTabBar, IonTabButton } from '@ionic/react';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonFooter } from '@ionic/react';
+import { person, settings, add, square, home } from 'ionicons/icons';
 
 const Footer = () => {
   const links = [
     {
-      href: '/',
-      icon: triangle,
+      icon: home,
       label: 'דף הבית'
     },
     {
-      href: '/login',
       icon: square,
       label: 'התחברות'
     },
     {
-      href: '/',
-      icon: ellipse,
-      label: 'צור קשר'
+      icon: add,
+      label: 'הרשמה'
+    },
+    {
+      icon: person,
+      label: 'פרופיל'
+    },
+    {
+      icon: settings,
+      label: 'הגדרות'
     }
   ];
 
   return (
-    <StyledFooter>
-      <IonTabBar slot="bottom">
+    <IonFooter>
+      <IonTabBar>
         {links.map((link, index) => (
-          <IonTabButton tab={`tab${index + 1}`} href={link.href} key={index}>
+          <IonTabButton tab={`tab${index + 1}`} href={`/tabs/tab${index + 1}`} key={index}>
             <IonIcon aria-hidden="true" icon={link.icon} />
             <IonLabel>{link.label}</IonLabel>
           </IonTabButton>
         ))}
       </IonTabBar>
-    </StyledFooter>
+    </IonFooter>
   );
 };
 

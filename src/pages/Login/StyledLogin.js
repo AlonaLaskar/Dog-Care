@@ -1,14 +1,17 @@
 import styled from 'styled-components';
+import { IonContent } from '@ionic/react';
 
-const StyledLogin = styled.div`
+const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-justify-content-center' })`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin: 20px;
+  width: auto;
 
   h1 {
-    color: ${({ theme }) => theme.colors.pageTitle};
+    color: ${({ theme }) => theme.colors?.pageTitle};
     margin: 0;
     padding: 0 0 20px;
   }
@@ -18,7 +21,7 @@ const StyledLogin = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 440px;
+    height: 100%;
     gap: 20px;
 
     .form-group {
@@ -28,14 +31,13 @@ const StyledLogin = styled.div`
       justify-content: center;
       align-items: center;
       width: 100%;
-      gap: 10px;
 
       label {
-        color: ${({ theme }) => theme.colors.forms.labelColor};
+        color: ${({ theme }) => theme.colors.forms?.labelColor};
       }
 
       .error {
-        color: ${({ theme }) => theme.colors.forms.errorColor};
+        color: ${({ theme }) => theme.colors.forms?.errorColor};
       }
     }
 
@@ -44,51 +46,43 @@ const StyledLogin = styled.div`
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      width: 100%;
 
       .primary-button {
-        background-color: ${({ theme }) => theme.colors.forms.primaryButtonColor};
-        color: ${({ theme }) => theme.colors.forms.primaryButtonTextColor};
+        background-color: ${({ theme }) => theme.colors.forms?.primaryButtonColor};
+        color: ${({ theme }) => theme.colors.forms?.primaryButtonTextColor};
       }
 
       .secondary-button {
-        background-color: ${({ theme }) => theme.colors.forms.secondaryButtonColor};
-        color: ${({ theme }) => theme.colors.forms.secondaryButtonTextColor};
+        background-color: ${({ theme }) => theme.colors.forms?.secondaryButtonColor};
+        color: ${({ theme }) => theme.colors.forms?.secondaryButtonTextColor};
         text-decoration: underline;
       }
     }
 
     .form-social,
     .form-social .form-buttons {
+      gap: 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 5px;
       width: 100%;
 
       h3 {
-        color: ${({ theme }) => theme.colors.forms.labelColor};
+        color: ${({ theme }) => theme.colors.forms?.labelColor};
         font-weight: 400;
       }
 
       .social-button {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        border-radius: none;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1rem;
 
         &#google {
-          border-radius: 0;
           background-color: #4285f4;
           color: white;
         }
 
         &#facebook {
-          border-radius: 0;
           background-color: #3b5998;
           color: white;
         }

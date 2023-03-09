@@ -1,18 +1,13 @@
 import styled from 'styled-components';
+import { IonHeader } from '@ionic/react';
 
-const StyledHeader = styled.div`
+const StyledHeader = styled(IonHeader)`
   display: flex;
   justify-content: space-around;
   align-items: center;
 
   font-weight: bold;
   font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-
-  background-color: ${({ theme }) => theme.colors.backgroudLayout};
-  height: ${({ theme }) => theme.layout.headerHeight}px;
-
-  box-shadow: 0 2px 5px 0 ${({ theme }) => theme.colors.primary}12, 0 2px 10px 0 rgb(0 0 0 / 12%);
 `;
 
 export default StyledHeader;

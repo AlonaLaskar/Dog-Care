@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import StyledLogin from './StyledLogin';
+import { useHistory } from 'react-router-dom';
 
-import { IonIcon, IonPage } from '@ionic/react';
+import { IonIcon, IonButton } from '@ionic/react';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 
 const Login = () => {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(null);
 
@@ -23,55 +25,62 @@ const Login = () => {
   };
 
   const registerHandler = () => {
+    history.push('/tabs/tab3');
+
     console.log('Register');
   };
 
   return (
-    <IonPage>
-      <StyledLogin>
+    <StyledLogin>
+      <div className="form">
         <h1>התחברות</h1>
-        <div className="form">
-          <div className="form-group">
-            <label htmlFor="email">אימייל</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onBlur={validateHandler}
-            />
-            {emailError && <div className="error">{emailError}</div>}
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">סיסמא</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            {passwordError && <div className="error">{passwordError}</div>}
-          </div>
-          <div className="form-buttons">
-            <button onClick={loginHandler} className="primary-button">
-              התחברות
-            </button>
-            <button onClick={registerHandler} className="secondary-button">
-              הרשמה
-            </button>
-          </div>
 
-          <div className="form-social">
-            <h3>או באמצעות</h3>
-            <div className="form-buttons">
-              <button id="google" className="social-button">
-                <IonIcon aria-hidden="true" icon={logoGoogle} />
-                התחברות עם גוגל
-              </button>
-              <button id="facebook" className="social-button">
-                <IonIcon aria-hidden="true" icon={logoFacebook} />
-                התחברות עם פייסבוק
-              </button>
-            </div>
+        <div className="form-group">
+          <label htmlFor="email">אימייל</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="אנא הזן אימייל"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onBlur={validateHandler}
+          />
+          {emailError && <div className="error">{emailError}</div>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">סיסמא</label>
+          <input
+            type="password"
+            placeholder="אנא הזן סיסמא"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {passwordError && <div className="error">{passwordError}</div>}
+        </div>
+        <div className="form-buttons">
+          <IonButton expand="block" onClick={loginHandler}>
+            התחברות
+          </IonButton>
+          <IonButton expand="block" fill="clear" onClick={registerHandler}>
+            הרשמה
+          </IonButton>
+        </div>
+
+        <div className="form-social">
+          <h3>או באמצעות</h3>
+          <div className="form-buttons">
+            <IonButton expand="fill" color="none" id="google" className="social-button">
+              <IonIcon slot="start" icon={logoGoogle} />
+              התחברות עם גוגל
+            </IonButton>
+            <IonButton expand="fill" color="none" id="facebook" className="social-button">
+              <IonIcon slot="start" icon={logoFacebook} />
+              התחברות עם פייסבוק
+            </IonButton>
           </div>
         </div>
-      </StyledLogin>
-    </IonPage>
+      </div>
+    </StyledLogin>
   );
 };
 

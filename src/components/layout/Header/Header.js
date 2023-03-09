@@ -1,11 +1,13 @@
-import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonTitle, IonToolbar } from '@ionic/react';
 import StyledHeader from './StyledHeader';
 import config from 'config';
 
 const Header = () => {
   return (
     <StyledHeader>
-      <span>{config.siteName}</span>
+      <IonToolbar>
+        <IonTitle>{config.siteName}</IonTitle>
+      </IonToolbar>
     </StyledHeader>
   );
 };

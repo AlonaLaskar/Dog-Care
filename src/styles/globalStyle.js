@@ -2,14 +2,12 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
+
   html, body {
     direction: rtl;
   }
 
   body {
-    margin: 0;
-    padding: 0;
-
     background-color: ${({ theme }) => theme.colors.backgroudSite};
     * {
         font-family: 'Quicksand', 'Heebo', sans-serif;
@@ -35,13 +33,13 @@ const GlobalStyle = createGlobalStyle`
     input {
         width: 100%;
         height: 40px;
-        border: 1px solid ${({ theme }) => theme.colors.forms.borderColor};
+        border: 1px solid ${({ theme }) => theme.colors.forms?.borderColor};
         border-radius: 5px;
         padding: 15px;
         outline: none;
 
         &:focus {
-          border: 1px solid ${({ theme }) => theme.colors.forms.borderColorFocus};
+          border: 1px solid ${({ theme }) => theme.colors.forms?.borderColorFocus};
         }
     }
   }

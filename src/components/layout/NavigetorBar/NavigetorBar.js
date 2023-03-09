@@ -9,19 +9,16 @@ function NavigationBar() {
         <IonList>
           <IonListHeader>
             <StyledButton className="navbar-item" fill="clear">
-              כל הקטגוריות
+              דף הבית
             </StyledButton>
             <StyledButton fill="clear" className="navbar-item">
               פרופיל
             </StyledButton>
             <StyledButton fill="clear" className="navbar-item">
-              הצעות עבודה
+              פייד
             </StyledButton>
             <StyledButton fill="clear" className="navbar-item">
               הודעות
-            </StyledButton>
-            <StyledButton fill="clear" className="navbar-item">
-              פייד
             </StyledButton>
             <StyledButton fill="solid" className="navbar-item">
               הגדרות

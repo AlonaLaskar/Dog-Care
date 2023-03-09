@@ -21,10 +21,11 @@ const ${folder} = () => {
 export default ${folder};
 `;
 
-const STYLED = (folder) => `
+const STYLED = (folder, isPage = false) => `
 import styled from 'styled-components';
+${isPage && "import { IonContent } from '@ionic/react';"}
 
-const Styled${folder} = styled.div\`\`;
+const Styled${folder} = styled${isPage ? "(IonPage).attrs({className: 'ion-padding'})" : '.div'}\`\`;
 
 export default Styled${folder};
 `;
@@ -36,7 +37,7 @@ const writeFile = ({ file, data }) => {
   });
 };
 
-const createComponent = (component, path) => {
+const createComponent = (component, path, isPage) => {
   fs.mkdir(path, (error) => {
     if (!error) {
       writeFile({
@@ -51,7 +52,7 @@ const createComponent = (component, path) => {
 
       writeFile({
         file: `${path}/Styled${component}.js`,
-        data: STYLED(component)
+        data: STYLED(component, isPage)
       });
     } else console.log({ error });
   });
@@ -70,7 +71,8 @@ const cli = () => {
       const typeName = type === '1' ? 'layout' : type === '2' ? 'UI' : '../pages';
       const path = `./src/components/${typeName}/${component}`;
       fs.access(path, fs.constants.F_OK, (ok) => {
-        if (ok) createComponent(component, path);
+        const isPage = type === '3';
+        if (ok) createComponent(component, path, isPage);
         else console.log(`${component} exists`);
       });
     });

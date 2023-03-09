@@ -1,20 +1,18 @@
 import styled from 'styled-components';
+import { IonFooter } from '@ionic/react';
 
-const StyledFooter = styled.div`
+const StyledFooter = styled(IonFooter)`
   height: ${({ theme }) => theme.layout.headerHeight}px;
-  background-color: ${({ theme }) => theme.colors.backgroudLayout};
   color: ${({ theme }) => theme.colors.primary};
 
   font-size: 1.5rem;
 
-  background-color: ${({ theme }) => theme.colors.backgroudLayout};
-  * {
-    background-color: ${({ theme }) => theme.colors.backgroudLayout};
-    color: ${({ theme }) => theme.colors.primary};
+  .tab-has-icon {
+    /* color: ${({ theme }) => theme.colors.primary}; */
+  }
 
-    .tab-selected * {
-      color: ${({ theme }) => theme.colors.activeLink};
-    }
+  .tab-selected {
+    /* color: ${({ theme }) => theme.colors.activeLink}; */
   }
 `;
 

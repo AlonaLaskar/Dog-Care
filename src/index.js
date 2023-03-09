@@ -1,30 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Layout from 'components/layout';
-import { setupIonicReact } from '@ionic/react';
-import 'styles/fonts.css';
+import { createRoot } from 'react-dom/client';
 
-/* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+import App from './App';
 
-/* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
-import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+const root = createRoot(document.getElementById('root'));
 
-/* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
-import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
-import '@ionic/react/css/text-transformation.css';
-import '@ionic/react/css/flex-utils.css';
-import '@ionic/react/css/display.css';
-
-setupIonicReact();
-
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
-defineCustomElements(window);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<Layout />);
+root.render(<App />);
