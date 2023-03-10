@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { IonContent } from '@ionic/react';
 
-const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
+const StyledCreatPost = styled(IonContent).attrs({ className: 'ion-padding' })`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+
   h1 {
     color: ${({ theme }) => theme.colors?.pageTitle};
     margin: 0;
@@ -20,45 +21,43 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
     transition: all 0.3s ease-in-out;
     font-family: 'Heebo';
   }
-  ion-label#ion-input-6-lbl {
-    flex-basis: auto;
-    line-height: 16px;
-    transition: all 0.3s ease-in-out;
-    font-family: 'Heebo';
-    margin: 25px;
-  }
-  .item-has-focus,
-  .item-has-value {
-    ion-label#ion-input-10-lbl {
-      transform: scale(1);
-      font-size: 12px;
-    }
-  }
+
   .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     .form-group {
       display: flex;
       position: relative;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 10px;
-      .ion-item {
-        font-family: 'Heebo';
-        .item-native {
-          background-color: black;
-        }
-      }
+      /* margin: 1px; */
+      border: 2px;
+      padding: 10px; /* This adds 10px of padding inside the border, giving some space between the border and the text */
+      font-size: 16px; /* This sets the font size to 16px */
+    }
+    .native-textarea.sc-ion-textarea-md {
+      border: 1px solid rgb(227, 213, 202);
+      border-radius: 5px;
+      outline: none;
+      height: 5cm;
+      line-height: 16px;
+        transition: all 0.3s ease-in-out;
+       font-family: 'Heebo';
     }
     .form-buttons {
       display: flex;
       align-items: center;
       gap: 20px;
       width: 100%;
+      justify-content: center;
+      align-items: center;
+      
+
       .primary-button {
         background-color: ${({ theme }) => theme.colors.forms?.primaryButtonColor};
         color: ${({ theme }) => theme.colors.forms?.primaryButtonTextColor};
@@ -67,4 +66,4 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
   }
 `;
 
-export default StyledRegister;
+export default StyledCreatPost;

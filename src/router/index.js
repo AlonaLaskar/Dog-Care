@@ -1,9 +1,8 @@
 import Home from 'pages/Home';
-import AboutUs from 'pages/AboutUs';
 import Login from 'pages/Login';
-import NavigetorBar from 'components/layout/NavigetorBar';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
+import CreatPost from 'pages/CreatPost';
 
 const routes = [
   {
@@ -22,6 +21,12 @@ const routes = [
     path: '/tabs/tab4',
     Component: Profile
   }
+  ,
+  {
+    path: '/tabs/tab5',
+    Component: CreatPost
+  }
+
 ];
 
 export default routes;

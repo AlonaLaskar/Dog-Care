@@ -1,6 +1,6 @@
 import StyledRegister from './StyledRegister';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory  } from 'react-router-dom';
 import { IonItem, IonLabel, IonInput, IonNote } from '@ionic/react';
 
 const Register = () => {
@@ -15,7 +15,7 @@ const Register = () => {
   const [city, setCity] = useState('');
   const [address, setAddress] = useState('');
   const [serviceProvider, setServiceProvider] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState('');                 
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null); // New state for storing image
 
@@ -44,74 +44,72 @@ const Register = () => {
     <StyledRegister>
       <div className="form">
         <h1>Register</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}> 
+
           <div className="form-group">
             <IonItem counter={true}>
               <IonLabel position="floating">כתובת מייל</IonLabel>
-              <IonInput type="email" ngModel email></IonInput>
-              <IonNote slot="helper">אנא הזן איימל תקין</IonNote>
+              <IonInput type="email" value={email} onChange={(e) => setEmail(e.target.value)}></IonInput>
+          
               <IonNote slot="error">איימל לא תקין</IonNote>
             </IonItem>
-          </div>
-          <div className="form-group">
-            <input type="text" placeholder="אימייל" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
+         
+          <IonItem counter={true}>
+            <IonLabel position="floating">סיסמא</IonLabel>
+            <IonInput type="password" value={password} onChange={(e) => setPassword(e.target.value)}></IonInput> 
+            <IonNote slot="error">סיסמא לא תקינה</IonNote>
+          </IonItem>
+          <IonItem counter={true}>
+            <IonLabel position="floating">אימות סיסמא</IonLabel>
+            <IonInput type="password"  value={password2} onChange={(e) => setPassword2(e.target.value)}></IonInput>
+            <IonNote slot="error">סיסמא לא תקינה</IonNote>
+          </IonItem>
+          <IonItem counter={true}>  
+            <IonLabel position="floating">שם פרטי</IonLabel>
+            <IonInput type="text" value={name} onChange={(e) => setName(e.target.value)}></IonInput>
+            <IonNote slot="error">שם פרטי לא תקין</IonNote>
+          </IonItem>
+          <IonItem counter={true}>
+            <IonLabel position="floating">שם משפחה</IonLabel>
+            <IonInput type="text" value={surname} onChange={(e) => setSurname(e.target.value)}></IonInput>
+            <IonNote slot="error">שם משפחה לא תקין</IonNote>
+          </IonItem>
+          <IonItem counter={true}>
+            <IonLabel position="floating">מין</IonLabel>
+            <IonInput type="text" value={gender} onChange={(e) => setGender(e.target.value)}></IonInput>
+            <IonNote slot="error">מין לא תקין</IonNote> 
+          </IonItem>
+          <IonItem counter={true}>
+            <IonLabel position="floating">תאריך לידה</IonLabel>
+            <IonInput type="date" value={datOfBirth} onChange={(e) => setDatOfBirth(e.target.value)}></IonInput>
+            <IonNote slot="error">תאריך לידה לא תקין</IonNote>
+          </IonItem>
+          <IonItem counter={true}>
+            <IonLabel position="floating">טלפון</IonLabel>
+            <IonInput type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}></IonInput>
+            <IonNote slot="error">טלפון לא תקין</IonNote>
+          </IonItem>
+          <IonItem counter={true}>  
+            <IonLabel position="floating">עיר</IonLabel>
+            <IonInput type="text"  value={city} onChange={(e) => setCity(e.target.value)}></IonInput>
+            <IonNote slot="error">עיר לא תקינה</IonNote>
+          </IonItem>
 
-          <div className="form-group">
-            <input type="password" placeholder="סיסמא" value={password} onChange={(e) => setPassword(e.target.value)} />
-          </div>
+          <IonItem counter={true}>  
+            <IonLabel position="floating">כתובת</IonLabel>
+            <IonInput type="text" value={address} onChange={(e) => setAddress(e.target.value)}></IonInput>
+            <IonNote slot="error">כתובת לא תקינה</IonNote>
+          </IonItem>
 
-          <div className="form-group">
-            <input
-              type="password"
-              placeholder="אימות סיסמא"
-              value={password2}
-              onChange={(e) => setPassword2(e.target.value)}
-            />
-          </div>
+          <IonItem counter={true}>  
+            <IonLabel position="floating">איזור מתן שירות</IonLabel>
+            <IonInput  value={serviceProvider} onChange={(e) => setServiceProvider(e.target.value)}></IonInput>
+            <IonNote slot="error">כתובת לא תקינה</IonNote>
+         
+          </IonItem>
 
-          <div className="form-group">
-            <input type="text" placeholder="שם פרטי" value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
 
-          <div className="form-group">
-            <input type="text" placeholder="שם משפחה" value={surname} onChange={(e) => setSurname(e.target.value)} />
           </div>
-
-          <div className="form-group">
-            <input type="text" placeholder="מין" value={gender} onChange={(e) => setGender(e.target.value)} />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="תאריך לידה"
-              value={datOfBirth}
-              onChange={(e) => setDatOfBirth(e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <input type="text" placeholder="פלאפון" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          </div>
-
-          <div className="form-group">
-            <input type="text" placeholder="עיר" value={city} onChange={(e) => setCity(e.target.value)} />
-          </div>
-
-          <div className="form-group">
-            <input type="text" placeholder="כתובת" value={address} onChange={(e) => setAddress(e.target.value)} />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="איזור שירות"
-              value={serviceProvider}
-              onChange={(e) => setServiceProvider(e.target.value)}
-            />
-          </div>
-
           <div className="form-group">
             <input
               placeholder="תמונה"

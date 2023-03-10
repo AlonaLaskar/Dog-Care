@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import StyledLogin from './StyledLogin';
 import { useHistory } from 'react-router-dom';
-
 import { IonIcon, IonButton } from '@ionic/react';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
+import { auth,googleProvider,facebookProvider } from '../../firebase';
+import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
   const history = useHistory();
@@ -26,8 +27,19 @@ const Login = () => {
 
   const registerHandler = () => {
     history.push('/tabs/tab3');
-
     console.log('Register');
+  };
+  const loginWhithGoogleHandler = async () => {
+    const result=await signInWithPopup(auth,googleProvider); 
+
+
+    console.log(result);
+  };
+  const loginWhithFacebookHandler =async () => {
+    const result=await signInWithPopup(auth,facebookProvider);
+    console.log(result);
+    
+    console.log('Login with Facebook');
   };
 
   return (
@@ -69,12 +81,12 @@ const Login = () => {
         <div className="form-social">
           <h3>או באמצעות</h3>
           <div className="form-buttons">
-            <IonButton expand="fill" color="none" id="google" className="social-button">
-              <IonIcon slot="start" icon={logoGoogle} />
+            <IonButton expand="fill" color="none" id="google" className="social-button" onClick={loginWhithGoogleHandler}>
+              <IonIcon slot="start" icon={logoGoogle}  />
               התחברות עם גוגל
             </IonButton>
-            <IonButton expand="fill" color="none" id="facebook" className="social-button">
-              <IonIcon slot="start" icon={logoFacebook} />
+            <IonButton expand="fill" color="none" id="facebook" className="social-button" onClick={loginWhithFacebookHandler}>
+              <IonIcon slot="start" icon={logoFacebook}  />
               התחברות עם פייסבוק
             </IonButton>
           </div>
