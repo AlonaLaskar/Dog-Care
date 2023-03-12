@@ -1,6 +1,6 @@
 import StyledFooter from './StyledFooter';
 import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonFooter } from '@ionic/react';
-import { person, add, square, home,create } from 'ionicons/icons';
+import { person, add, square, home,create,timer} from 'ionicons/icons';
 
 const Footer = () => {
   const links = [
@@ -24,7 +24,10 @@ const Footer = () => {
     {
     icon: create,
     label: 'יצירת פוסט'
-   
+  },
+  {
+    icon: timer,
+    label: 'טיימר'
   }
     
   ];

@@ -26,7 +26,7 @@ const SocialNetworkProfile = ({ photo, name, age, personalInfo }) => {
 
 SocialNetworkProfile.propTypes = {
   photo: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.number.isRequired,
   age: PropTypes.number.isRequired,
   personalInfo: PropTypes.string.isRequired,
 };

@@ -3,6 +3,7 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
 import CreatPost from 'pages/CreatPost';
+import AttendaceClock from 'pages/AttendaceClock';
 
 const routes = [
   {
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/tabs/tab5',
     Component: CreatPost
+  },
+  {
+    path: '/tabs/tab6',
+    Component: AttendaceClock
   }
 
 ];

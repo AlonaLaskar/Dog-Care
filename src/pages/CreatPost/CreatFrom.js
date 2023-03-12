@@ -1,16 +1,16 @@
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
+
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { IonTextarea } from '@ionic/react';
 
 
 export const CreatFrom = () => {
-
-
   const [error, setError] = useState(null);
   const history = useHistory();
   const schema = yup.object().shape({

@@ -12,7 +12,7 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
     margin: 0;
     padding: 0 0 20px;
   }
-  input.native-input.sc-ion-input-ios {
+  /* input.native-input.sc-ion-input-ios {
     font-family: 'Heebo';
   }
   ion-label#ion-input-10-lbl {
@@ -33,13 +33,14 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
       transform: scale(1);
       font-size: 12px;
     }
-  }
+  } */
   .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
     .form-group {
       display: flex;
       position: relative;
