@@ -1,18 +1,16 @@
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
 
-import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { IonTextarea } from '@ionic/react';
 
 
 export const CreatFrom = () => {
   const [error, setError] = useState(null);
-  const history = useHistory();
+
   const schema = yup.object().shape({
     title: yup.string().nullable().required('כותרת הינה שדה חובה'),
     description: yup.string().nullable().required('תיאור הינו שדה חובה'),
@@ -31,15 +29,18 @@ export const CreatFrom = () => {
 
 
   const onSubmit = async (data) => {
+ 
+
     try {
-      const docRef = await addDoc(collection(db, 'posts'), {
+      const docRef = await addDoc(collection(db,'posts'), {
         title: data.title,
         description: data.description,
         image: data.image,
         price: data.price
       });
+    
+      
       console.log('Document written with ID: ', docRef.id);
-      history.push('/posts');
     } catch (e) {
       console.error('Error adding document: ', e);
       setError(e.message);

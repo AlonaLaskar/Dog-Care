@@ -3,6 +3,10 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { IonItem, IonLabel, IonInput, IonNote} from '@ionic/react';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { useState } from 'react';
+
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -13,11 +17,13 @@ const schema = yup.object().shape({
   phone: yup.string().required('אנא הכנס מספר טלפון'),
   address: yup.string().required('הזן רחוב ומספר בית'),
   city: yup.string().required('שדה חובה'),
-  birthDate: yup.string().required('שדה חובה')
+  birthDate: yup.string()
 
 });
 
 const Register = () => {
+  const [error, setError] = useState(null);
+
   const {
     register,
     handleSubmit,
@@ -26,9 +32,27 @@ const Register = () => {
     resolver: yupResolver(schema)
   });
 
-  const submitForm = (data) => {
+  const submitForm = async (data) => {
+  try{
+    const docRef = await addDoc(collection(db,'users'), {
+      email: data.email,
+      password: data.password,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      address: data.address,
+      city: data.city,
+      birthDate: data.birthDate
+    });
     console.log(data);
-  };
+    
+    console.log('Document written with ID: ', docRef.id);
+  } catch (e) {
+    console.error('Error adding document: ', e);
+    setError(e.message);
+  
+  }
+};
 
   return (
     <StyledRegister>
@@ -41,48 +65,48 @@ const Register = () => {
             <IonItem counter={true}>
               <IonLabel position="floating">כתובת אימייל</IonLabel>
               <IonInput type="email" {...register('email')} />
-              {errors.email && <IonNote slot="error">{errors.email.message}</IonNote>}
             </IonItem>
+              {errors.email && <IonNote slot="error">{errors.email.message}</IonNote>}
           </div>
 
           <div className="form-group">
             <IonItem counter={true}>
               <IonLabel position="floating">סיסמא</IonLabel>
               <IonInput type="password" {...register('password')} />
-              {errors.password && <IonNote slot="error">{errors.password.message}</IonNote>}
             </IonItem>
+              {errors.password && <IonNote slot="error">{errors.password.message}</IonNote>}
           </div>
 
             <div className="form-group">
               <IonItem counter={true}>
                 <IonLabel position="floating">אימות סיסמא</IonLabel>
                 <IonInput type="password" {...register('password2')} />
-                {errors.password2 && <IonNote slot="error">{errors.password2.message}</IonNote>}
               </IonItem>
+                {errors.password2 && <IonNote slot="error">{errors.password2.message}</IonNote>}
             </div>
 
             <div className="form-group">
               <IonItem counter={true}>
                 <IonLabel position="floating">שם פרטי</IonLabel>
                 <IonInput type="text" {...register('firstName')} />
-                {errors.firstName && <IonNote slot="error">{errors.firstName.message}</IonNote>}
               </IonItem>
+                {errors.firstName && <IonNote slot="error">{errors.firstName.message}</IonNote>}
             </div>
 
             <div className="form-group">
               <IonItem counter={true}>
                 <IonLabel position="floating">שם משפחה</IonLabel>
                 <IonInput type="text" {...register('lastName')} />
-                {errors.lastName && <IonNote slot="error">{errors.lastName.message}</IonNote>}
               </IonItem>
+                {errors.lastName && <IonNote slot="error">{errors.lastName.message}</IonNote>}
             </div>
 
             <div className="form-group">
               <IonItem counter={true}>
                 <IonLabel position="floating">טלפון</IonLabel>
                 <IonInput type='tel'  {...register('phone')} />
-                {errors.phone && <IonNote slot="error">{errors.phone.message}</IonNote>}
               </IonItem>
+                {errors.phone && <IonNote slot="error">{errors.phone.message}</IonNote>}
             </div>
 
             <div className="form-group">

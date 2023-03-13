@@ -40,7 +40,7 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
     justify-content: center;
     align-items: center;
     gap: 20px;
-    
+
     .form-group {
       display: flex;
       position: relative;
