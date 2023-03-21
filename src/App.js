@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { setupIonicReact, IonApp } from '@ionic/react';
 import Layout from 'components/layout';
 
@@ -19,12 +19,14 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import 'styles/fonts.css';
 import 'styles/variables.css';
+
 setupIonicReact({});
 
 export default function App() {
+
   return (
     <IonApp>
-      <Layout />
+      <Layout  />
     </IonApp>
   );
 }

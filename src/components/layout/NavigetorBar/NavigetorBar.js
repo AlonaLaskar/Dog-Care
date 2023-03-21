@@ -1,32 +1,47 @@
-import React from 'react';
-import { IonListHeader, IonList } from '@ionic/react';
-import StyledNavigetorBar from './StyledNavigetorBar';
-import { StyledButton } from '../../UI/Button/StyledButton';
+import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle } from '@ionic/react';
+import { Link } from 'react-router-dom';
+import { auth } from '../../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
+
 function NavigationBar() {
+  const [user] = useAuthState(auth);
+  const history = useHistory();
+
+  const logoutHandler = async () => {
+    await signOut(auth);
+    history.push('/login');
+
+  };
+
   return (
-    <StyledNavigetorBar>
-      <IonListHeader className="navbar-header">
-        <IonList>
-          <IonListHeader>
-            <StyledButton className="navbar-item" fill="clear">
-              דף הבית
-            </StyledButton>
-            <StyledButton fill="clear" className="navbar-item">
-              פרופיל
-            </StyledButton>
-            <StyledButton fill="clear" className="navbar-item">
-              פייד
-            </StyledButton>
-            <StyledButton fill="clear" className="navbar-item">
-              הודעות
-            </StyledButton>
-            <StyledButton fill="solid" className="navbar-item">
-              הגדרות
-            </StyledButton>
-          </IonListHeader>
-        </IonList>
-      </IonListHeader>
-    </StyledNavigetorBar>
+    <IonHeader>
+      <IonToolbar>
+        <IonButtons slot="start">
+          <IonTitle>Dog Sitter</IonTitle>
+          {user ? (
+            <>
+            <IonButton onClick={logoutHandler}>Logout</IonButton>
+            <p>{` שלום: ${user.displayName}||:${user.uid}`}</p></>
+          ) : (
+            <>
+              <Link to="/login">
+                <IonButton>Login</IonButton>
+              </Link>
+              <Link to="/register">
+                <IonButton>Register</IonButton>
+              </Link>
+          <Link to="/">
+            <IonButton>Home</IonButton>
+          </Link>
+            </>
+          )}
+        </IonButtons>
+        <IonButtons slot="end">
+        </IonButtons>
+      </IonToolbar>
+    </IonHeader>
   );
 }
 

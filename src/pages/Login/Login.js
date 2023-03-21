@@ -1,99 +1,118 @@
-import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { IonButton, IonIcon } from '@ionic/react';
+import { personCircle } from 'ionicons/icons';
+import { logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
+import { useLogin } from 'hook/authUser';
+import { auth, googleProvider, facebookProvider } from '../../firebase';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import StyledLogin from './StyledLogin';
-import { useHistory } from 'react-router-dom';
-import { IonIcon, IonButton } from '@ionic/react';
-import { logoFacebook, logoGoogle } from 'ionicons/icons';
-import { auth,googleProvider,facebookProvider } from '../../firebase';
-import { signInWithPopup } from 'firebase/auth';
+import { useState } from 'react';
+import { emailValidate, passwordValidate } from 'hook/form-validate';
+import { userAuthContext } from '../auth/authContext';
+import { IonLoading } from '@ionic/react';
+import { Redirect } from 'react-router-dom';
+import { useIonToast } from '@ionic/react';
 
-const Login = () => {
-  const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState(null);
+  function Login() {
+  const { login, isLoading ,error} = useLogin();
+  const { loggedIn } = userAuthContext();
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
 
-  const validateHandler = () => {
-    setEmailError(email === '' ? 'חובה להזין כתובת מייל' : null);
-    setPasswordError(password === '' ? 'חובה להזין סיסמא' : null);
-  };
-
-  const loginHandler = () => {
-    setEmailError(email === '' ? 'חובה להזין כתובת מייל' : null);
-    setPasswordError(password === '' ? 'חובה להזין סיסמא' : null);
-    if (!emailError && !passwordError) console.log('Login');
-  };
-
-  const registerHandler = () => {
-    history.push('/tabs/tab3');
-    console.log('Register');
-  };
-  const loginWhithGoogleHandler = async () => {
-    const result=await signInWithPopup(auth,googleProvider); 
-
-
-    console.log(result);
-  };
-  const loginWhithFacebookHandler =async () => {
-    const result=await signInWithPopup(auth,facebookProvider);
-    console.log(result);
+  const handleLogin = async (data) => {
+     login({
+      email: data.email,
+      password: data.password
+      
+    });
     
-    console.log('Login with Facebook');
+  };
+  
+  const loginWhithGoogleHandler = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.log(error);
+    }
+  
   };
 
+  const loginWhithFacebookHandler = async () => {
+    try {
+      await signInWithPopup(auth, facebookProvider);
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.log(error);
+    }
+  };
+
+  if (loggedIn) {
+    return <Redirect to="/my/home" />;
+  }
   return (
     <StyledLogin>
       <div className="form">
         <h1>התחברות</h1>
 
-        <div className="form-group">
-          <label htmlFor="email">אימייל</label>
-          <input
-            id="email"
-            type="email"
-            placeholder="אנא הזן אימייל"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onBlur={validateHandler}
-          />
-          {emailError && <div className="error">{emailError}</div>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">סיסמא</label>
-          <input
-            type="password"
-            placeholder="אנא הזן סיסמא"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {passwordError && <div className="error">{passwordError}</div>}
-        </div>
-        <div className="form-buttons">
-          <IonButton expand="block" onClick={loginHandler}>
-            התחברות
-          </IonButton>
-          <IonButton expand="block" fill="clear" onClick={registerHandler}>
-            הרשמה
-          </IonButton>
-        </div>
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <div className="form-group">
+            <label htmlFor="email">אימייל</label>
+            <input id="email" type="email" placeholder="אנא הזן אימייל" {...register('email', emailValidate)} />
+            {errors.email && <div className="error">{errors.email.message}</div>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">סיסמא</label>
+            <input type="password" placeholder="אנא הזן סיסמא" {...register('password', passwordValidate)} />
+            {errors.password && <div className="error">{errors.password.message}</div>}
+          </div>
+          <div className="form-buttons">
+            <IonButton type="submit" expand="block" fill="solid">
+              <IonIcon slot="start" icon={personCircle}></IonIcon>
+              התחברות
+            </IonButton>
+            <IonLoading isOpen={isLoading} message={'טוען...'} />
+
+            <IonButton routerLink="/register" expand="block" fill="clear">
+              <IonIcon slot="start" icon={personAdd} />
+              הרשמה
+            </IonButton>
+          </div>
+          {errorMessage && <div className="errorUser">{'אנא הזן ערכים נכונים'}</div>}
+        </form>
 
         <div className="form-social">
           <h3>או באמצעות</h3>
           <div className="form-buttons">
-            <IonButton expand="fill" color="none" id="google" className="social-button" onClick={loginWhithGoogleHandler}>
-              <IonIcon slot="start" icon={logoGoogle}  />
+            <IonButton
+              expand="fill"
+              color="none"
+              id="google"
+              className="social-button"
+              onClick={loginWhithGoogleHandler}
+            >
+              <IonIcon slot="start" icon={logoGoogle} />
               התחברות עם גוגל
             </IonButton>
-            <IonButton expand="fill" color="none" id="facebook" className="social-button" onClick={loginWhithFacebookHandler}>
-              <IonIcon slot="start" icon={logoFacebook}  />
-              התחברות עם פייסבוק
+            <IonButton
+              expand="fill"
+              color="none"
+              id="facebook"
+              className="social-button"
+              onClick={loginWhithFacebookHandler}
+            >
+              <IonIcon slot="start" icon={logoFacebook} /> התחברות עם פייסבוק
             </IonButton>
           </div>
         </div>
       </div>
     </StyledLogin>
   );
-};
-
+}
 export default Login;
+

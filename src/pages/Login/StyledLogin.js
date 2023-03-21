@@ -39,6 +39,10 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
       .error {
         color: ${({ theme }) => theme.colors.forms?.errorColor};
       }
+      
+    }
+    .errorUser {
+      color: ${({ theme }) => theme.colors.forms?.errorColor};
     }
 
     .form-buttons {
@@ -75,7 +79,7 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
       }
 
       .social-button {
-        width: 100%;
+        width: 240px;
 
         &#google {
           background-color: #4285f4;
