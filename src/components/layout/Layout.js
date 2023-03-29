@@ -1,4 +1,3 @@
-
 import Footer from './Footer';
 import StyledLayout from './StyledLayout';
 import routes from 'router';
@@ -9,7 +8,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import GlobalStyle from 'styles/globalStyle';
-import { AuthContext,useAuthInit } from 'pages/auth/authContext';
+import { AuthContext, _useAuthInit } from 'pages/auth/authContext';
 import { IonReactRouter } from '@ionic/react-router';
 import { AppTabs } from '../layout/AppTabs';
 import { useEffect, useState } from 'react';
@@ -20,29 +19,23 @@ import NotFoundPage from './NavigetorBar/NotFoundPage';
 import { bool } from 'prop-types';
 
 const Layout = () => {
-  const {loading,auth} = useAuthInit();
+  const [auth, setAuth] = useState({ loading: true });
 
-  if(loading){
+  useEffect(() => {
+    _useAuthInit(setAuth);
+  }, []);
+
+  if (auth?.loading) {
     return <IonLoading isOpen />;
   }
-  console.log('loggedIn layout:', auth);
+
   return (
     <AuthContext.Provider value={auth}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <IonReactRouter>
           <Switch>
-            <Route exact path="/login" component={Login} />
-  
-            <Route exact path="/register" component={Register} />
-
-            <Route path="/my">
-              <AppTabs />
-            </Route>
-            <Redirect exact path="/my" to="/my/home" />
-            <Route>
-              <NotFoundPage />
-            </Route>
+            <AppTabs />
           </Switch>
         </IonReactRouter>
       </ThemeProvider>
@@ -50,35 +43,7 @@ const Layout = () => {
   );
 };
 export default Layout;
+
 Layout.propTypes = {
   user: bool
 };
-
-// const Layout = () => {
-//   return (
-//     <ThemeProvider theme={theme}>
-//       <GlobalStyle />
-//       <IonReactRouter>
-//         <IonRouterOutlet>
-
-//           <Redirect exact path='/tabs' to='/tabs/tab1' />
-//           {routes.map((route) => (
-//             <Route key={route.path} path={route.path} exact>
-//               <IonPage>
-//                 <Header />
-//                 <route.Component />
-//                 <Footer />
-//               </IonPage>
-//             </Route>
-//           ))}
-//           <Route exact path='/tabs'>
-//             <Redirect to='/tabs/tab1' />
-//           </Route>
-//           <Route exact path='/'>
-//             <Redirect to='/tabs/tab1' />
-//           </Route>
-//         </IonRouterOutlet>
-//       </IonReactRouter>
-//     </ThemeProvider>
-//   );
-// };

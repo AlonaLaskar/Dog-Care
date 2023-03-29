@@ -50,7 +50,7 @@ export const CreatFrom = () => {
   return (
     <div className="form">
       <h1>Create Post</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form >
         <div className="form-group">
           <input type="text" placeholder="כותרת" {...register('title')} />
           <p>{errors.title?.message }</p>

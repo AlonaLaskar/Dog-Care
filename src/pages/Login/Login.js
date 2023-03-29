@@ -4,14 +4,14 @@ import { personCircle } from 'ionicons/icons';
 import { logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
 import { useLogin } from 'hook/authUser';
 import { auth, googleProvider, facebookProvider } from '../../firebase';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import {  signInWithPopup } from 'firebase/auth';
 import StyledLogin from './StyledLogin';
 import { useState } from 'react';
 import { emailValidate, passwordValidate } from 'hook/form-validate';
 import { userAuthContext } from '../auth/authContext';
 import { IonLoading } from '@ionic/react';
 import { Redirect } from 'react-router-dom';
-import { useIonToast } from '@ionic/react';
+
 
   function Login() {
   const { login, isLoading ,error} = useLogin();
@@ -59,23 +59,26 @@ import { useIonToast } from '@ionic/react';
     <StyledLogin>
       <div className="form">
         <h1>התחברות</h1>
-
         <form onSubmit={handleSubmit(handleLogin)}>
+
           <div className="form-group">
             <label htmlFor="email">אימייל</label>
             <input id="email" type="email" placeholder="אנא הזן אימייל" {...register('email', emailValidate)} />
             {errors.email && <div className="error">{errors.email.message}</div>}
           </div>
+
           <div className="form-group">
             <label htmlFor="password">סיסמא</label>
             <input type="password" placeholder="אנא הזן סיסמא" {...register('password', passwordValidate)} />
             {errors.password && <div className="error">{errors.password.message}</div>}
           </div>
+
           <div className="form-buttons">
             <IonButton type="submit" expand="block" fill="solid">
               <IonIcon slot="start" icon={personCircle}></IonIcon>
               התחברות
             </IonButton>
+
             <IonLoading isOpen={isLoading} message={'טוען...'} />
 
             <IonButton routerLink="/register" expand="block" fill="clear">
@@ -86,31 +89,14 @@ import { useIonToast } from '@ionic/react';
           {errorMessage && <div className="errorUser">{'אנא הזן ערכים נכונים'}</div>}
         </form>
 
-        <div className="form-social">
           <h3>או באמצעות</h3>
-          <div className="form-buttons">
-            <IonButton
-              expand="fill"
-              color="none"
-              id="google"
-              className="social-button"
-              onClick={loginWhithGoogleHandler}
-            >
-              <IonIcon slot="start" icon={logoGoogle} />
-              התחברות עם גוגל
-            </IonButton>
-            <IonButton
-              expand="fill"
-              color="none"
-              id="facebook"
-              className="social-button"
-              onClick={loginWhithFacebookHandler}
-            >
+          <div className="social">
+            <IonButton expand="fill"color="none"id="google"className="social-button"onClick={loginWhithGoogleHandler} >
+              <IonIcon slot="start" icon={logoGoogle}/> התחברות עם גוגל</IonButton>  <IonButton expand="fill" color="none"id="facebook" className="social-button" onClick={loginWhithFacebookHandler}>
               <IonIcon slot="start" icon={logoFacebook} /> התחברות עם פייסבוק
             </IonButton>
           </div>
         </div>
-      </div>
     </StyledLogin>
   );
 }

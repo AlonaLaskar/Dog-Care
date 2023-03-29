@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+import { useRef } from 'react';
 import { IonButton, IonLabel, IonItem } from '@ionic/react';
 import StyledAttendaceClock from './StyledAttendaceClock';
 

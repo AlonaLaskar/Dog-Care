@@ -19,6 +19,7 @@ function DisplayingPost(){
     }, []);
 
     return(
+        
         <div>
             {posts.map(post => (
                 <div key={post.id}>

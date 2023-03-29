@@ -1,0 +1,21 @@
+
+.ion-card{
+    max-width: 500px;
+    max-height: auto;
+    margin: 0 auto;
+    padding: 10px;
+}
+    .ion-card-header{
+        background-color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        padding: 0 16px;
+        margin: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .button{
+    margin-right: 85%;
+
+    }
