@@ -4,12 +4,13 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { IonItem, IonLabel, IonInput, IonNote, IonLoading } from '@ionic/react';
 import { IonButton, IonIcon, IonSpinner } from '@ionic/react';
-import {personAdd} from 'ionicons/icons'; 
+import { personAdd } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
 import { useRegister } from 'hook/authUser';
-import { userAuthContext } from '../auth/authContext'; 
+import { userAuthContext } from '../../auth';
 import { Redirect } from 'react-router-dom';
-
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 
 const schema = yup.object().shape({
   email: yup.string().email().required('הכנס כתובת מייל תקינה'),
@@ -24,9 +25,8 @@ const schema = yup.object().shape({
   birthDate: yup.string()
 });
 
-
-export default function Register () {
-  const { loggedIn } = userAuthContext();
+export default function Register() {
+  const { loggedIn } = useContext(AuthContext);
   const { register: signup, isLoading } = useRegister();
   console.log('isLoading at register', isLoading);
 
@@ -38,7 +38,7 @@ export default function Register () {
     resolver: yupResolver(schema)
   });
 
-   const submitForm = async (data) => {
+  const submitForm = async (data) => {
     signup({
       email: data.email,
       password: data.password,
@@ -116,7 +116,6 @@ export default function Register () {
             {errors.address && <IonNote slot="error">{errors.address.message}</IonNote>}
           </div>
 
-  
           <div className="form-group">
             <IonItem counter={true}>
               <IonLabel position="floating">עיר</IonLabel>
@@ -134,11 +133,13 @@ export default function Register () {
           </div>
           <div className="form-group">
             <IonButton type="submit" expand="block">
-              <IonIcon slot="start" icon={personAdd}/>
+              <IonIcon slot="start" icon={personAdd} />
               הרשם
             </IonButton>
             <IonLoading isOpen={isLoading} message={'טוען...'} />
-            <p>רשומים כבר לאתר?<Link to='/login'>לעמוד התחברות</Link></p>
+            <p>
+              רשומים כבר לאתר?<Link to="/login">לעמוד התחברות</Link>
+            </p>
           </div>
         </form>
       </div>

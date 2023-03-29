@@ -10,7 +10,7 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
   margin: 20px;
   width: auto;
 
-  h1 {
+  .form-title {
     color: ${({ theme }) => theme.colors?.pageTitle};
     margin: 0;
     padding: 0 0 20px;
@@ -24,23 +24,6 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
     height: 100%;
     gap: 20px;
 
-    .form-group {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-
-      label {
-        color: ${({ theme }) => theme.colors.forms?.labelColor};
-      }
-
-      .error {
-        color: ${({ theme }) => theme.colors.forms?.errorColor};
-      }
-      
-    }
     .errorUser {
       color: ${({ theme }) => theme.colors.forms?.errorColor};
     }
@@ -54,53 +37,46 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
       width: 0;
       gap: 10px;
       margin-top: 10px;
-
-     }
-
-      .primary-button {
-        background-color: ${({ theme }) => theme.colors.forms?.primaryButtonColor};
-        color: ${({ theme }) => theme.colors.forms?.primaryButtonTextColor};
-      }
-
-      .secondary-button {
-        background-color: ${({ theme }) => theme.colors.forms?.secondaryButtonColor};
-        color: ${({ theme }) => theme.colors.forms?.secondaryButtonTextColor};
-        text-decoration: underline;
-      }
     }
 
-    
-    .social {
+    .primary-button {
+      background-color: ${({ theme }) => theme.colors.forms?.primaryButtonColor};
+      color: ${({ theme }) => theme.colors.forms?.primaryButtonTextColor};
+    }
 
-      
-      
-      h3 {
-        color: ${({ theme }) => theme.colors.forms?.labelColor};
-        font-weight: 400;
-      }
-      .social-button {
+    .secondary-button {
+      background-color: ${({ theme }) => theme.colors.forms?.secondaryButtonColor};
+      color: ${({ theme }) => theme.colors.forms?.secondaryButtonTextColor};
+      text-decoration: underline;
+    }
+  }
+
+  .social {
+    .social-title {
+      color: ${({ theme }) => theme.colors.forms?.labelColor};
+      font-weight: 400;
+    }
+    .social-button {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;  
+      align-items: center;
       gap: 5px;
       margin-right: 0%;
-      
 
-        &#google {
-          background-color: #4285f4;
-          color: white;
-          width: 240px;
+      &#google {
+        background-color: #4285f4;
+        color: white;
+        width: 240px;
+      }
 
-        }
-
-        &#facebook {
-          background-color: #3b5998;
-          color: white;
-          width: 240px;
-        }
+      &#facebook {
+        background-color: #3b5998;
+        color: white;
+        width: 240px;
       }
     }
+  }
 `;
 
 export default StyledLogin;

@@ -1,5 +1,5 @@
 import StyledProfile from './StyledProfile';
-import { AuthContext } from 'pages/auth/authContext';
+import AuthContext from 'providers/AuthContext';
 import { useContext } from 'react';
 
 import SocialNetworkProfile from './ProfileCard';

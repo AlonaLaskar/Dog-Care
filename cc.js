@@ -23,9 +23,9 @@ export default ${folder};
 
 const STYLED = (folder, isPage = false) => `
 import styled from 'styled-components';
-${isPage && "import { IonContent } from '@ionic/react';"}
+${isPage ? "import { IonContent } from '@ionic/react';" : ''}
 
-const Styled${folder} = styled${isPage ? "(IonPage).attrs({className: 'ion-padding'})" : '.div'}\`\`;
+const Styled${folder} = styled${isPage ? "(IonContent).attrs({className: 'ion-padding'})" : '.div'}\`\`;
 
 export default Styled${folder};
 `;

@@ -2,20 +2,18 @@ import Footer from './Footer';
 import StyledLayout from './StyledLayout';
 import routes from 'router';
 import { IonLoading, IonPage, IonRouterOutlet } from '@ionic/react';
+import AuthContext from 'providers/AuthContext';
 
 import { Route, Redirect } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import GlobalStyle from 'styles/globalStyle';
-import { AuthContext, _useAuthInit } from 'pages/auth/authContext';
+import { _useAuthInit } from 'auth';
 import { IonReactRouter } from '@ionic/react-router';
 import { AppTabs } from '../layout/AppTabs';
 import { useEffect, useState } from 'react';
-import Login from 'pages/Login';
-import Register from 'pages/Register';
 import { Switch } from 'react-router-dom';
-import NotFoundPage from './NavigetorBar/NotFoundPage';
 import { bool } from 'prop-types';
 
 const Layout = () => {
@@ -30,16 +28,16 @@ const Layout = () => {
   }
 
   return (
-    <AuthContext.Provider value={auth}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <IonReactRouter>
+    <IonReactRouter>
+      <AuthContext.Provider value={auth}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <Switch>
             <AppTabs />
           </Switch>
-        </IonReactRouter>
-      </ThemeProvider>
-    </AuthContext.Provider>
+        </ThemeProvider>
+      </AuthContext.Provider>
+    </IonReactRouter>
   );
 };
 export default Layout;
