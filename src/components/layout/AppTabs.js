@@ -1,4 +1,5 @@
 import { Route, Redirect } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
@@ -15,6 +16,7 @@ import AttendaceClock from 'pages/AttendaceClock';
 import Comments from 'pages/Comments';
 import Dashboard from 'components/Dashboard';
 import Post from 'pages/post/postIndex';
+import NotFound from 'pages/NotFound';
 
 export const AppTabs = () => {
   return (
@@ -38,6 +40,9 @@ export const AppTabs = () => {
           {/* Redirects */}
           <Redirect exact path="/" to="/my/home" />
           <Redirect exact path="/my" to="/my/home" />
+
+          {/* Errors handling */}
+          <Route component={NotFound} status={404} />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
@@ -69,4 +74,8 @@ export const AppTabs = () => {
       </IonTabs>
     </ThemeProvider>
   );
+};
+
+AppTabs.propTypes = {
+  authStatus: propTypes.bool
 };

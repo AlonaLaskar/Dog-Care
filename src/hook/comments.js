@@ -1,5 +1,5 @@
 import { uuidv4 } from '@firebase/util';
-import useToast from '../config/useToast';
+import useToast from './useToast';
 import { collection, deleteDoc, doc, orderBy, query, setDoc, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ export function useAddComment({ postID, uid }) {
   const [present] = useToast();
 
   async function addComment(text) {
-    if (text==='') return;
+    if (text === '') return;
     setLoading(true);
     const id = uuidv4();
     const date = Date.now();

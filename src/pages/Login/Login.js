@@ -1,104 +1,134 @@
+//! Packages
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { IonButton, IonIcon } from '@ionic/react';
-import { personCircle } from 'ionicons/icons';
-import { logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
-import { useLogin } from 'hook/authUser';
-import { auth, googleProvider, facebookProvider } from '../../firebase';
-import {  signInWithPopup } from 'firebase/auth';
-import StyledLogin from './StyledLogin';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+//! Firebase
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, db, googleProvider, facebookProvider } from 'firebase.js';
+
+//! Ionic components
+import { IonLoading, IonButton, IonIcon } from '@ionic/react';
+import { personCircle, logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
+
+//! Custom hooks
+import useToast from 'hook/useToast';
 import { emailValidate, passwordValidate } from 'hook/form-validate';
-import { userAuthContext } from '../auth/authContext';
-import { IonLoading } from '@ionic/react';
-import { Redirect } from 'react-router-dom';
 
+//! Providers
+import AuthContext from 'providers/AuthContext';
+import StyledLogin from './StyledLogin';
+import Input from 'components/UI/Input';
 
-  function Login() {
-  const { login, isLoading ,error} = useLogin();
-  const { loggedIn } = userAuthContext();
-  const [errorMessage, setErrorMessage] = useState('');
+function Login() {
+  //! Init states
+  const [isLoading, setIsLoading] = useState(false);
+  const { loggedIn } = useContext(AuthContext);
+  const present = useToast();
+  const history = useHistory();
 
+  //! Init forms
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    ...formStates
   } = useForm();
 
+  //! Check if user is logged in
+  // if (loggedIn) return pushToHome();
+  const pushToHome = () => history.push({ pathname: '/my/home' });
+
+  //! Handle login with email and password
   const handleLogin = async (data) => {
-     login({
-      email: data.email,
-      password: data.password
-      
-    });
-    
-  };
-  
-  const loginWhithGoogleHandler = async () => {
+    setIsLoading(true);
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithEmailAndPassword(auth, data?.email, data?.password);
+      present('Logged in successfully', true);
+      pushToHome();
     } catch (error) {
-      setErrorMessage(error.message);
-      console.log(error);
+      present(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
-  
+
+    setIsLoading(false);
   };
 
-  const loginWhithFacebookHandler = async () => {
+  //! Handle login with google account or facebook account
+  const loginWithHandler = async (provider) => {
     try {
-      await signInWithPopup(auth, facebookProvider);
+      await signInWithPopup(auth, provider);
+      present('Logged in successfully', true);
+      pushToHome();
     } catch (error) {
-      setErrorMessage(error.message);
-      console.log(error);
+      present(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
   };
 
-  if (loggedIn) {
-    return <Redirect to="/my/home" />;
-  }
   return (
     <StyledLogin>
       <div className="form">
-        <h1>התחברות</h1>
+        <h1 className="form-title">Log In</h1>
         <form onSubmit={handleSubmit(handleLogin)}>
+          <Input
+            id="email"
+            title="Email"
+            placeholder="Type your email..."
+            validateHandler={emailValidate}
+            register={register}
+            errors={errors}
+          />
 
-          <div className="form-group">
-            <label htmlFor="email">אימייל</label>
-            <input id="email" type="email" placeholder="אנא הזן אימייל" {...register('email', emailValidate)} />
-            {errors.email && <div className="error">{errors.email.message}</div>}
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="password">סיסמא</label>
-            <input type="password" placeholder="אנא הזן סיסמא" {...register('password', passwordValidate)} />
-            {errors.password && <div className="error">{errors.password.message}</div>}
-          </div>
+          <Input
+            id="password"
+            title="Password"
+            placeholder="Type your password..."
+            validateHandler={passwordValidate}
+            register={register}
+            errors={errors}
+          />
 
           <div className="form-buttons">
             <IonButton type="submit" expand="block" fill="solid">
-              <IonIcon slot="start" icon={personCircle}></IonIcon>
+              <IonIcon slot="start" icon={personCircle} />
               התחברות
             </IonButton>
-
-            <IonLoading isOpen={isLoading} message={'טוען...'} />
 
             <IonButton routerLink="/register" expand="block" fill="clear">
               <IonIcon slot="start" icon={personAdd} />
               הרשמה
             </IonButton>
           </div>
-          {errorMessage && <div className="errorUser">{'אנא הזן ערכים נכונים'}</div>}
         </form>
 
-          <h3>או באמצעות</h3>
-          <div className="social">
-            <IonButton expand="fill"color="none"id="google"className="social-button"onClick={loginWhithGoogleHandler} >
-              <IonIcon slot="start" icon={logoGoogle}/> התחברות עם גוגל</IonButton>  <IonButton expand="fill" color="none"id="facebook" className="social-button" onClick={loginWhithFacebookHandler}>
-              <IonIcon slot="start" icon={logoFacebook} /> התחברות עם פייסבוק
-            </IonButton>
-          </div>
+        <h3 className="social-title">- or with -</h3>
+        <div className="social">
+          <IonButton
+            expand="fill"
+            color="none"
+            id="google"
+            className="social-button"
+            onClick={() => loginWithHandler(googleProvider)}
+          >
+            <IonIcon slot="start" icon={logoGoogle} />
+            <span>Login With Google</span>
+          </IonButton>
+          <IonButton
+            expand="fill"
+            color="none"
+            id="facebook"
+            className="social-button"
+            onClick={() => loginWithHandler(facebookProvider)}
+          >
+            <IonIcon slot="start" icon={logoFacebook} />
+            <span>Login With Facebook</span>
+          </IonButton>
         </div>
+      </div>
+
+      <IonLoading isOpen={isLoading} message={'loading...'} />
     </StyledLogin>
   );
 }
 export default Login;
-
