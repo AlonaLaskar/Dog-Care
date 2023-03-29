@@ -34,7 +34,7 @@ const StyledFeed = styled(IonContent).attrs({ className: 'ion-padding' })`
     align-items: center;
     justify-content: space-between;
   }
-  .button {
+  > .button {
     margin-right: 85%;
   }
 `;
