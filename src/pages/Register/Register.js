@@ -103,7 +103,7 @@ export default function Register() {
   return (
     <StyledRegister>
       <div className="form">
-        <h1 className="form-title">עמוד הרשמה</h1>
+        <h1 className="form-title">Registration Form</h1>
 
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
