@@ -28,39 +28,41 @@ export default function Actions({ post }) {
   };
 
   return (
-    <IonButtons
-      slot="start"
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        border: '1px solid rgb(227, 213, 202)',
-        borderRadius: '10px'
-      }}
-    >
-      <IonButton color="primary" onClick={handleCommentClick} isLoading={commentsLoading} isRound>
-        <IonIcon slot="start" icon={chatbubble} /> Comment
-      </IonButton>
-      {showComments && <CommentList post={post} />}
-
-      {comments?.length}
-
-      <IonButton color="secondary" onClick={toggleLike} isLoading={likeLoading || userLoading} isRound>
-        <IonIcon slot="start" icon={isLiked ? heartDislike : heart} />
-        Like
-      </IonButton>
-      {likes?.length}
-
-      {!userLoading && user.id === uid && (
-        <IonButton color="danger" onClick={deletePost} isLoading={deleteLoading} isRound>
-          <IonIcon slot="start" icon={trash} />
-          Delete
+    <>
+      <IonButtons
+        slot="start"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          backgroundColor: 'white',
+          border: '1px solid rgb(227, 213, 202)',
+          borderRadius: '10px'
+        }}
+      >
+        <IonButton color="primary" onClick={handleCommentClick} isLoading={commentsLoading} isRound>
+          <IonIcon slot="start" icon={chatbubble} /> Comment
         </IonButton>
-      )}
-      {}
-    </IonButtons>
+
+        {comments?.length}
+
+        <IonButton color="secondary" onClick={toggleLike} isLoading={likeLoading || userLoading} isRound>
+          <IonIcon slot="start" icon={isLiked ? heartDislike : heart} />
+          Like
+        </IonButton>
+        {likes?.length}
+
+        {!userLoading && user.id === uid && (
+          <IonButton color="danger" onClick={deletePost} isLoading={deleteLoading} isRound>
+            <IonIcon slot="start" icon={trash} />
+            Delete
+          </IonButton>
+        )}
+        {}
+      </IonButtons>
+      {showComments && <CommentList post={post} />}
+    </>
   );
 }
 
