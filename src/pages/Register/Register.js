@@ -1,35 +1,55 @@
-import StyledRegister from './StyledRegister';
-import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { IonItem, IonLabel, IonInput, IonNote, IonLoading } from '@ionic/react';
-import { IonButton, IonIcon, IonSpinner } from '@ionic/react';
-import { personAdd } from 'ionicons/icons';
+//! Packages
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useRegister } from 'hook/authUser';
-import { userAuthContext } from '../../auth';
-import { Redirect } from 'react-router-dom';
-import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
 
+//! Firebase
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
+import { auth, db } from 'firebase.js';
+
+//! Form packages
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+//! Custom hooks
+import useToast from 'hook/useToast';
+import { isEmailExists } from 'hook/isEmailExists';
+
+//! Ionic components
+import { IonLoading, IonButton, IonIcon } from '@ionic/react';
+import { personAdd } from 'ionicons/icons';
+
+//! Providers
+import AuthContext from 'providers/AuthContext';
+import FormContext from 'providers/FormContext';
+
+//! Components
+import Input from 'components/UI/Input';
+import StyledRegister from './StyledRegister';
+
+//! Yup schema for validation
 const schema = yup.object().shape({
   email: yup.string().email().required('הכנס כתובת מייל תקינה'),
   password: yup.string(),
   //.min(6).max(15).lowercase ().uppercase().required('הסיסמא חייבת להכיל לפחות 6 תווים וחייב שימוש באות גדולה וקטנה'),
-  password2: yup.string().oneOf([yup.ref('password'), null], 'הסיסמאות לא תואמות'),
+  verifyPassword: yup.string().oneOf([yup.ref('password'), null], 'הסיסמאות לא תואמות'),
   firstName: yup.string().required('שדה חובה'),
   lastName: yup.string().required('שדה חובה'),
   phone: yup.string().required('אנא הכנס מספר טלפון'),
   address: yup.string().required('הזן רחוב ומספר בית'),
-  city: yup.string().required('שדה חובה'),
   birthDate: yup.string()
 });
 
 export default function Register() {
+  //! Init states
+  const [isLoading, setIsLoading] = useState(false);
   const { loggedIn } = useContext(AuthContext);
-  const { register: signup, isLoading } = useRegister();
-  console.log('isLoading at register', isLoading);
+  const present = useToast();
+  const history = useHistory();
 
+  //! Init forms
   const {
     register,
     handleSubmit,
@@ -38,111 +58,79 @@ export default function Register() {
     resolver: yupResolver(schema)
   });
 
-  const submitForm = async (data) => {
-    signup({
-      email: data.email,
-      password: data.password,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      phone: data.phone,
-      address: data.address,
-      city: data.city,
-      birthDate: data.birthDate
-    });
+  //! Check if user is logged in
+  const pushToHome = () => history.push({ pathname: '/my/home' });
+  if (loggedIn) return pushToHome();
+
+  //! Handle register with credentials and profile data
+  const handleRegister = async ({ email, password, ...rest }) => {
+    console.log('handleRegister');
+
+    setIsLoading(true);
+
+    try {
+      //! Check if email is already exists
+      const emailExists = await isEmailExists(email);
+      if (emailExists) {
+        present('The email is already in use', false);
+        setIsLoading(false);
+        return;
+      }
+
+      //! Create user with email and password
+      const { user } = (await createUserWithEmailAndPassword(auth, email, password)) || {};
+      const { uid: id } = user || {};
+
+      //! Set user data in firestore
+      await setDoc(doc(db, 'users', id), {
+        id,
+        username: email.split('@')[0],
+        email,
+        avatar: '',
+        date: Date.now(),
+        ...rest
+      });
+
+      present('Registration successfully', true);
+      pushToHome();
+    } catch (error) {
+      present(`Registration failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
+    }
+
+    setIsLoading(false);
   };
-  if (loggedIn) {
-    return <Redirect to="/my/home" />;
-  }
 
   return (
     <StyledRegister>
       <div className="form">
-        <h1>עמוד הרשמה</h1>
+        <h1 className="form-title">עמוד הרשמה</h1>
 
-        <form onSubmit={handleSubmit(submitForm)}>
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">כתובת אימייל</IonLabel>
-              <IonInput type="email" {...register('email')} />
-            </IonItem>
-            {errors.email && <IonNote slot="error">{errors.email.message}</IonNote>}
-          </div>
+        <FormContext.Provider value={{ errors, register }}>
+          <form onSubmit={handleSubmit(handleRegister)}>
+            <Input id="email" title="כתובת מייל" placeholder="הכנס כתובת מייל" position="floating" />
+            <Input id="password" title="סיסמא" placeholder="הכנס סיסמא" position="floating" />
+            <Input id="verifyPassword" type="password" title="Verify password" position="floating" />
+            <Input id="firstName" title="שם פרטי" placeholder="הכנס שם פרטי" position="floating" />
+            <Input id="lastName" title="שם משפחה" placeholder="הכנס שם משפחה" position="floating" />
+            <Input id="phone" title="טלפון" placeholder="הכנס מספר טלפון" position="floating" />
+            <Input id="address" title="כתובת" placeholder="הכנס כתובת" position="floating" />
+            <Input id="birthDate" type="date" title="תאריך לידה" placeholder="הכנס תאריך לידה" position="floating" />
 
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">סיסמא</IonLabel>
-              <IonInput type="password" {...register('password')} />
-            </IonItem>
-            {errors.password && <IonNote slot="error">{errors.password.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">אימות סיסמא</IonLabel>
-              <IonInput type="password" {...register('password2')} />
-            </IonItem>
-            {errors.password2 && <IonNote slot="error">{errors.password2.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">שם פרטי</IonLabel>
-              <IonInput type="text" {...register('firstName')} />
-            </IonItem>
-            {errors.firstName && <IonNote slot="error">{errors.firstName.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">שם משפחה</IonLabel>
-              <IonInput type="text" {...register('lastName')} />
-            </IonItem>
-            {errors.lastName && <IonNote slot="error">{errors.lastName.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">טלפון</IonLabel>
-              <IonInput type="tel" {...register('phone')} />
-            </IonItem>
-            {errors.phone && <IonNote slot="error">{errors.phone.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">כתובת</IonLabel>
-              <IonInput type="text" {...register('address')} />
-            </IonItem>
-            {errors.address && <IonNote slot="error">{errors.address.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="floating">עיר</IonLabel>
-              <IonInput type="text" {...register('city')} />
-            </IonItem>
-            {errors.city && <IonNote slot="error">{errors.city.message}</IonNote>}
-          </div>
-
-          <div className="form-group">
-            <IonItem counter={true}>
-              <IonLabel position="fixed">תאריך לידה</IonLabel>
-              <IonInput type="date" {...register('birthDate')} />
-              {errors.birthDate && <IonNote slot="error">{errors.birthDate.message}</IonNote>}
-            </IonItem>
-          </div>
-          <div className="form-group">
-            <IonButton type="submit" expand="block">
-              <IonIcon slot="start" icon={personAdd} />
-              הרשם
-            </IonButton>
-            <IonLoading isOpen={isLoading} message={'טוען...'} />
-            <p>
-              רשומים כבר לאתר?<Link to="/login">לעמוד התחברות</Link>
-            </p>
-          </div>
-        </form>
+            <div className="form-group">
+              <IonButton type="submit" expand="block">
+                <IonIcon slot="start" icon={personAdd} />
+                <span>Register</span>
+              </IonButton>
+              <p>
+                <span>Got an account? </span>
+                <Link to="/login">Login</Link>
+              </p>
+            </div>
+          </form>
+        </FormContext.Provider>
       </div>
+
+      <IonLoading isOpen={isLoading} message={'Loading...'} />
     </StyledRegister>
   );
 }
