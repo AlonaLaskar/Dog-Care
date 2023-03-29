@@ -17,7 +17,7 @@ export function useUsers() {
 export function useUpdateAvatar(uid) {
   const [isLoading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
-  const [present] = useToast();
+  const present = useToast();
 
   async function updateAvatar() {
     if (!file) {

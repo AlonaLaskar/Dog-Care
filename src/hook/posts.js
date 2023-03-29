@@ -19,7 +19,7 @@ import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firesto
 
 export function useAddPost() {
   const [isLoading, setLoading] = useState(false);
-  const [present] = useToast();
+  const present = useToast();
 
   async function addPost(post) {
     setLoading(true);
@@ -58,7 +58,7 @@ export function useToggleLike({ id, isLiked, uid }) {
 
 export function useDeletePost(id) {
   const [isLoading, setLoading] = useState(false);
-  const [present] = useToast();
+  const present = useToast();
 
   async function deletePost() {
     console.log('delete post');

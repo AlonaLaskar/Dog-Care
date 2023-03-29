@@ -7,7 +7,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 export function useAddComment({ postID, uid }) {
   const [isLoading, setLoading] = useState(false);
-  const [present] = useToast();
+  const present = useToast();
 
   async function addComment(text) {
     if (text === '') return;
@@ -33,7 +33,7 @@ export function useComments(postID) {
 
 export function useDeleteComment(id) {
   const [isLoading, setLoading] = useState(false);
-  const [present] = useToast();
+  const present = useToast();
 
   async function deleteComment() {
     const res = window.confirm('תרצו למחוק את התגובה?');

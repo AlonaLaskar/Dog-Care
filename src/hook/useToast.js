@@ -1,7 +1,7 @@
 import { useIonToast } from '@ionic/react';
 
 const useToast = () => {
-  const [present] = useIonToast();
+  const present = useIonToast();
 
   const presentToast = (message, success) => {
     present({
