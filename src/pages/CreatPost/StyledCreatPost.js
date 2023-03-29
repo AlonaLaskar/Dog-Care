@@ -8,6 +8,7 @@ const StyledCreatPost = styled(IonContent).attrs({ className: 'ion-padding' })`
   align-items: center;
   height: 100%;
 
+
   h1 {
     color: ${({ theme }) => theme.colors?.pageTitle};
     margin: 0;
@@ -28,6 +29,8 @@ const StyledCreatPost = styled(IonContent).attrs({ className: 'ion-padding' })`
     justify-content: center;
     align-items: center;
     gap: 20px;
+    border: 1px solid rgb(227, 213, 202);
+   border-radius: 5px;
 
     .form-group {
       display: flex;

@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
-import { IonButton, IonInput, IonLabel, IonItem, IonNote } from '@ionic/react';
+import { useState } from 'react';
+import { useRef } from 'react';
+import { IonButton, IonLabel, IonItem } from '@ionic/react';
 import StyledAttendaceClock from './StyledAttendaceClock';
 
 function Timer() {

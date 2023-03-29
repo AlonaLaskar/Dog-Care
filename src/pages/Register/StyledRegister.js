@@ -48,12 +48,15 @@ const StyledRegister = styled(IonContent).attrs({ className: 'ion-padding' })`
       justify-content: center;
       align-items: center;
       margin: 10px;
-      .ion-item {
+      .error{
+        color: ${({ theme }) => theme.colors.forms?.errorColor};
+      }
+      /* .ion-item {
         font-family: 'Heebo';
         .item-native {
           background-color: black;
         }
-      }
+      } */
     }
     .form-buttons {
       display: flex;

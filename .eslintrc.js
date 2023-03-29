@@ -14,8 +14,8 @@ module.exports = {
     'no-unused-vars': 1,
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': ['off'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    quotes: ['warn', 'single'],
+    semi: 'off'
   },
   overrides: [
     {

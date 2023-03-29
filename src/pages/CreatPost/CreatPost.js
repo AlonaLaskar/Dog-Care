@@ -1,10 +1,12 @@
 import StyledCreatPost from './StyledCreatPost';
-import { CreatFrom } from './CreatFrom';
+import Dashboard from '../../components/Dashboard';
+
 import React from 'react';
 const CreatPost = () => {
+  
   return (
     <StyledCreatPost>
-    <CreatFrom/>
+    <Dashboard/>
     </StyledCreatPost>
   );
 };

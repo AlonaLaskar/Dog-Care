@@ -39,13 +39,23 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
       .error {
         color: ${({ theme }) => theme.colors.forms?.errorColor};
       }
+      
+    }
+    .errorUser {
+      color: ${({ theme }) => theme.colors.forms?.errorColor};
     }
 
     .form-buttons {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-right: 50%;
+      width: 0;
+      gap: 10px;
+      margin-top: 10px;
+
+     }
 
       .primary-button {
         background-color: ${({ theme }) => theme.colors.forms?.primaryButtonColor};
@@ -59,36 +69,38 @@ const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-just
       }
     }
 
-    .form-social,
-    .form-social .form-buttons {
-      gap: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      width: 100%;
+    
+    .social {
 
+      
+      
       h3 {
         color: ${({ theme }) => theme.colors.forms?.labelColor};
         font-weight: 400;
       }
-
       .social-button {
-        width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;  
+      gap: 5px;
+      margin-right: 0%;
+      
 
         &#google {
           background-color: #4285f4;
           color: white;
+          width: 240px;
+
         }
 
         &#facebook {
           background-color: #3b5998;
           color: white;
+          width: 240px;
         }
       }
     }
-  }
 `;
 
 export default StyledLogin;

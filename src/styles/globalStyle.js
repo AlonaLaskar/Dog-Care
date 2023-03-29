@@ -1,8 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+const isLoginRoute = window.location.pathname.startsWith('/login');
 
 const GlobalStyle = createGlobalStyle`
 
-
+  ion-tab-bar{
+    display: ${isLoginRoute && 'none'};
+  }
+  
   html, body {
     direction: rtl;
   }
