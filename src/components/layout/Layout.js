@@ -1,10 +1,5 @@
-import Footer from './Footer';
-import StyledLayout from './StyledLayout';
-import routes from 'router';
-import { IonLoading, IonPage, IonRouterOutlet } from '@ionic/react';
+import { IonLoading } from '@ionic/react';
 import AuthContext from 'providers/AuthContext';
-
-import { Route, Redirect } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';

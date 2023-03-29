@@ -1,5 +1,5 @@
-import { useUser } from '../../hook/users';
-import Avatar from '../../pages/Profile/Avatar';
+import { useUser } from '../../../../hook/users';
+import Avatar from '../../../../pages/Profile/Avatar';
 import { formatDistanceToNow } from 'date-fns';
 import { IonText, IonHeader } from '@ionic/react';
 import PropTypes from 'prop-types';
@@ -11,11 +11,7 @@ export default function HeaderPost({ post }) {
   if (isLoading) return 'נטען...';
   return (
     <div className="post-header">
-      <IonHeader
-        style={{
-          
-        }}
-      >
+      <IonHeader style={{}}>
         <Avatar user={user} />
         <IonText
           style={{
@@ -25,7 +21,6 @@ export default function HeaderPost({ post }) {
           }}
         >
           {formatDistanceToNow(date) + ' ago'}
-          
         </IonText>
       </IonHeader>
     </div>

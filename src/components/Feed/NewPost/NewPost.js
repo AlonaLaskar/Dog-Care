@@ -1,14 +1,12 @@
-import PostsLists from '../../pages/post/PostsLists';
-
-import React from 'react';
-import { IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonTextarea } from '@ionic/react';
-import './dash.css';
+//! Packages
+import { IonButton, IonCard, IonCardHeader, IonTextarea } from '@ionic/react';
 import { useForm } from 'react-hook-form';
-import { useAuth } from '../../hook/authUser';
-import { useAddPost, usePosts } from '../../hook/posts';
-import { PropTypes } from 'prop-types';
 
-export function NewPost() {
+//! Custom Hooks
+import { useAuth } from 'hook/authUser';
+import { useAddPost } from 'hook/posts';
+
+const NewPost = () => {
   const { register, handleSubmit, reset } = useForm();
   const { addPost, isLoading: addingPost } = useAddPost() || {};
   const { user, isLoading: authLoading } = useAuth();
@@ -42,21 +40,6 @@ export function NewPost() {
       </form>
     </IonCard>
   );
-}
-
-export default function Dashboard() {
-  const { posts, isLoading } = usePosts();
-  if (isLoading) return 'Loading...';
-
-  return (
-    <>
-      <NewPost />
-      <PostsLists posts={posts} />
-    </>
-  );
-}
-NewPost.propTypes = {
-  posts: PropTypes.array,
-  isLoading: PropTypes.bool,
-  user: PropTypes.string
 };
+
+export default NewPost;

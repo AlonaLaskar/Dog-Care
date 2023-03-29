@@ -14,8 +14,7 @@ import Register from 'pages/Register';
 import Profile from 'pages/Profile';
 import AttendaceClock from 'pages/AttendaceClock';
 import Comments from 'pages/Comments';
-import Dashboard from 'components/Dashboard';
-import Post from 'pages/post/postIndex';
+import Post from 'pages/Feed';
 import NotFound from 'pages/NotFound';
 
 export const AppTabs = () => {
@@ -34,7 +33,6 @@ export const AppTabs = () => {
           <Route path="/my/profile" component={Profile} />
           <Route path="/my/post" component={Post} />
           <Route path="/my/attendaceclock" component={AttendaceClock} />
-          <Route path="/my/bashboard" component={Dashboard} />
           <Route path="/my/comments/:id" component={Comments} />
 
           {/* Redirects */}
