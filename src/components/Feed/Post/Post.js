@@ -1,11 +1,15 @@
-import Action from './ActionsPost';
-import Header from './HeaderPost';
+//! Ionic components
 import { IonCard, IonCardContent, IonText } from '@ionic/react';
 
+//! Components
+import Action from './ActionsPost';
+import Header from './HeaderPost';
 import StyledPost from './StyledPost';
+//!prop-types
 import PropTypes from 'prop-types';
 
 export default function Post({ post }) {
+
   return (
     <StyledPost>
       <IonCard

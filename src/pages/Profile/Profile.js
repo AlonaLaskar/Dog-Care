@@ -1,11 +1,14 @@
+import UserProfile from 'components/Profile/UserProfile';
 import StyledProfile from './StyledProfile';
-import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
+
 
 const Profile = () => {
-  const { userId, loading } = useContext(AuthContext) || {};
 
-  return <StyledProfile>{loading ? <div>loading...</div> : <h2> {userId}</h2>}</StyledProfile>;
+  return (
+  <StyledProfile>
+    <UserProfile/>
+  </StyledProfile>
+  );
 };
 
 export default Profile;

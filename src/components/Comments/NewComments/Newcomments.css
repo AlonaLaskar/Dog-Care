@@ -1,0 +1,40 @@
+.contaner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    gap: 3%;
+  }
+  
+  .header-comment {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    background-color: #faff;
+
+
+
+  }
+  
+
+  .comment-textarea {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    resize: none;
+  }
+  
+  .comment-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+
+

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import Background from '../assets/Background.png'
 const isLoginRoute = window.location.pathname.startsWith('/login');
 
 const GlobalStyle = createGlobalStyle`
@@ -12,10 +13,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.backgroudSite};
-    * {
-        font-family: 'Quicksand', 'Heebo', sans-serif;
-    }
+
+    background-image: url(${Background});
 
     
     button {

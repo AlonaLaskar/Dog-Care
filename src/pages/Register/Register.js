@@ -46,7 +46,7 @@ export default function Register() {
   //! Init states
   const [isLoading, setIsLoading] = useState(false);
   const { loggedIn } = useContext(AuthContext);
-  const present = useToast();
+  const presentToast = useToast();
   const history = useHistory();
 
   //! Init forms
@@ -72,7 +72,7 @@ export default function Register() {
       //! Check if email is already exists
       const emailExists = await isEmailExists(email);
       if (emailExists) {
-        present('The email is already in use', false);
+        presentToast('The email is already in use', false);
         setIsLoading(false);
         return;
       }
@@ -86,15 +86,14 @@ export default function Register() {
         id,
         username: email.split('@')[0],
         email,
-        avatar: '',
+        avatar: ' ',
         date: Date.now(),
         ...rest
       });
-
-      present('Registration successfully', true);
+      presentToast('Registration successfully', true);
       pushToHome();
     } catch (error) {
-      present(`Registration failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
+      presentToast(`Registration failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
 
     setIsLoading(false);

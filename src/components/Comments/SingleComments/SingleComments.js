@@ -1,17 +1,32 @@
+//!React-pacakges
 import React from 'react';
-import { useAuth } from 'hook/authUser';
+import { useContext } from 'react';
+import { formatDistanceToNow } from 'date-fns';
+import PropTypes from 'prop-types';
+//!Context
+import AuthContext from 'providers/AuthContext';
+//! Ionic components
+import { trash } from 'ionicons/icons';
+import {
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonCardTitle,
+  IonButton,
+  IonIcon,
+  IonTextarea,
+  IonText,
+  IonLabel
+} from '@ionic/react';
+//! Hooks-components
 import { useUser } from 'hook/users';
 import { useDeleteComment } from 'hook/comments';
-import { IonGrid, IonRow, IonCol, IonCardTitle, IonCardContent, IonButton, IonIcon, IonTextarea, IonText, IonLabel } from '@ionic/react';
-import Avatar from 'pages/Profile/Avatar';
-import { formatDistanceToNow } from 'date-fns';
-import { trash } from 'ionicons/icons';
-import PropTypes from 'prop-types';
-
+import Avatar from '../../Profile/Avatar';
 export default function SingleComment({ comment }) {
   const { text, uid, date, id } = comment;
   const { user, isLoading: userLoading } = useUser(uid);
-  const { user: authUser, isLoading: authLoading } = useAuth();
+  const { userId, loading } = useContext(AuthContext) || {};
+
   const { deleteComment, isLoading: deleteLoading } = useDeleteComment(id);
 
   if (userLoading) return 'Loading...';
@@ -28,7 +43,7 @@ export default function SingleComment({ comment }) {
           <IonLabel>
             <IonTextarea value={text} readonly />
           </IonLabel>
-          {!authLoading && authUser.id === uid && (
+          {!loading && userId === uid && (
             <IonButton onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger">
               <IonIcon slot="start" icon={trash} />
               delete
@@ -41,5 +56,5 @@ export default function SingleComment({ comment }) {
 }
 
 SingleComment.propTypes = {
-  comment: PropTypes.object.isRequired,
+  comment: PropTypes.object.isRequired
 };

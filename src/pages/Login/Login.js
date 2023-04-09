@@ -28,8 +28,8 @@ function Login() {
   //! Init states
   const [isLoading, setIsLoading] = useState(false);
   const { loggedIn } = useContext(AuthContext);
-  const present = useToast();
   const history = useHistory();
+  const presentToast = useToast();
 
   //! Init forms
   const {
@@ -47,10 +47,10 @@ function Login() {
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, data?.email, data?.password);
-      present('Logged in successfully', true);
+      presentToast('Logged in successfully', true);
       pushToHome();
     } catch (error) {
-      present(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
+      presentToast(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
 
     setIsLoading(false);
@@ -60,10 +60,10 @@ function Login() {
   const loginWithHandler = async (provider) => {
     try {
       await signInWithPopup(auth, provider);
-      present('Logged in successfully', true);
+      presentToast('Logged in successfully', true);
       pushToHome();
     } catch (error) {
-      present(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
+      presentToast(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
   };
 

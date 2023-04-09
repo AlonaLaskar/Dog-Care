@@ -12,7 +12,7 @@ const postIndex = () => {
 
   return (
     <StyledFeed>
-      <h1>feed</h1>
+
       <NewPost />
       <PostsLists posts={posts} />
     </StyledFeed>

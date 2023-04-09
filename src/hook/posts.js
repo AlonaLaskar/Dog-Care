@@ -19,7 +19,7 @@ import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firesto
 
 export function useAddPost() {
   const [isLoading, setLoading] = useState(false);
-  const present = useToast();
+  const presentToast = useToast();
 
   async function addPost(post) {
     setLoading(true);
@@ -31,10 +31,10 @@ export function useAddPost() {
         date: Date.now(),
         likes: []
       });
-      present('The post was created successfully', true);
+      presentToast('The post was created successfully', true);
       setLoading(false);
     } catch (error) {
-      present('Failed to create post', false);
+      presentToast('Failed to create post', false);
       console.error(error);
     }
   }
@@ -58,7 +58,7 @@ export function useToggleLike({ id, isLiked, uid }) {
 
 export function useDeletePost(id) {
   const [isLoading, setLoading] = useState(false);
-  const present = useToast();
+  const presentToast = useToast();
 
   async function deletePost() {
     console.log('delete post');
@@ -71,7 +71,7 @@ export function useDeletePost(id) {
       const q = query(collection(db, 'comments'), where('postId', '==', id));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
-      present('The post was deleted successfully', true);
+      presentToast('The post was deleted successfully', true);
       setLoading(false);
     }
   }

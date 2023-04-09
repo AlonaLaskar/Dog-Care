@@ -6,17 +6,20 @@ import { useToggleLike, useDeletePost } from 'hook/posts';
 import { useComments } from 'hook/comments';
 import { trash, heart, chatbubble, heartDislike } from 'ionicons/icons';
 import { useState } from 'react';
-import CommentList from 'pages/Comments/CommentList';
+import CommentList from 'components/Comments/CommentsList/CommentList';
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 
 export default function Actions({ post }) {
+  if (!post) return null;
   const { id, likes, uid } = post;
-  const { user, isLoading: userLoading } = useAuth();
+  const { userId, loading } = useContext(AuthContext) || {};
 
-  const isLiked = likes.includes(user?.id);
+  const isLiked = likes.includes(userId);
   const config = {
     id,
     isLiked,
-    uid: user?.id
+    uid: userId
   };
 
   const { toggleLike, isLoading: likeLoading } = useToggleLike(config);
@@ -47,13 +50,13 @@ export default function Actions({ post }) {
 
         {comments?.length}
 
-        <IonButton color="secondary" onClick={toggleLike} isLoading={likeLoading || userLoading} isRound>
+        <IonButton color="secondary" onClick={toggleLike} isLoading={likeLoading || loading} isRound>
           <IonIcon slot="start" icon={isLiked ? heartDislike : heart} />
           Like
         </IonButton>
         {likes?.length}
 
-        {!userLoading && user.id === uid && (
+        {!loading && userId === uid && (
           <IonButton color="danger" onClick={deletePost} isLoading={deleteLoading} isRound>
             <IonIcon slot="start" icon={trash} />
             Delete

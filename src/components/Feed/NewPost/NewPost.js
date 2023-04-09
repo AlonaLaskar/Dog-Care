@@ -1,39 +1,29 @@
-//! Packages
 import { IonButton, IonCard, IonCardHeader, IonTextarea } from '@ionic/react';
 import { useForm } from 'react-hook-form';
-
-//! Custom Hooks
-import { useAuth } from 'hook/authUser';
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 import { useAddPost } from 'hook/posts';
+import './NewPost.css'
 
 const NewPost = () => {
   const { register, handleSubmit, reset } = useForm();
   const { addPost, isLoading: addingPost } = useAddPost() || {};
-  const { user, isLoading: authLoading } = useAuth();
-
+  const { userId, loading } = useContext(AuthContext) || {};
+  
   function handleAddPost(data) {
     addPost({
-      uid: user.id,
+      uid: userId,
       text: data.text
     });
     reset();
   }
+
   return (
-    <IonCard
-      style={{
-        flexDirection: 'column',
-        maxWidth: '600px',
-        margin: '2%',
-        padding: '10px',
-        backgroundColor: 'gray.50',
-        border: '1px solid rgb(227, 213, 202)',
-        borderRadius: '10px'
-      }}
-    >
+    <IonCard className="new-post-card">
       <form onSubmit={handleSubmit(handleAddPost)}>
         <IonCardHeader>
-          <IonTextarea placeholder="צור פוסט חדש..." rows={5} cols={20} {...register('text', { required: true })} />
-          <IonButton className="buttom" type="submit" textLoading="פוסט נוצר" isLoading={authLoading || addingPost}>
+          <IonTextarea className="new-post-textarea" placeholder="צור פוסט חדש..." rows={5} cols={20} {...register('text', { required: true })} />
+          <IonButton className="new-post-button" type="submit" textLoading="פוסט נוצר" isLoading={loading || addingPost}>
             פרסם
           </IonButton>
         </IonCardHeader>

@@ -1,27 +1,27 @@
-
-import react from 'react';
-import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
-import { useAuth } from '../../hook/authUser';
-import { useUpdateAvatar } from '../../hook/users';
-import { useState } from 'react';
+//!Context
+import { useContext } from 'react';
+import AuthContext from 'providers/AuthContext';
+//!Ionic Components
 import { IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonList, IonItem, IonLabel, IonInput } from '@ionic/react';
+
+import PropTypes from 'prop-types';
+
+import { useUpdateAvatar } from 'hook/users';
 
 
 export default function EditProfile({isOpen, onClose}) {
-    const { user, isLoading: authLoading } = useAuth();
-    const {
+    const { userId, loading } = useContext(AuthContext) || {};    const {
       setFile,
       updateAvatar,
       isLoading: fileLoading,
       fileURL,
-    } = useUpdateAvatar(user?.id);
+    } = useUpdateAvatar(userId);
   
     function handleChange(e) {
       setFile(e.target.files[0]);
     }
   
-    if (authLoading) return 'Loading...';
+    if (loading) return 'Loading...';
     return (
         <IonModal isOpen={isOpen} onDidDismiss={onClose}>
         <IonHeader>

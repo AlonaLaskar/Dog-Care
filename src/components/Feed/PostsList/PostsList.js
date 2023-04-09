@@ -1,7 +1,9 @@
-import Post from 'components/Feed/Post';
+//! Ionic components
 import { IonCard, IonText } from '@ionic/react';
+//!prop-types
 import PropTypes from 'prop-types';
-import NewComment from 'pages/Comments/NewComment';
+//! Components
+import Post from 'components/Feed/Post';
 
 export default function PostsLists({ posts }) {
   return (
