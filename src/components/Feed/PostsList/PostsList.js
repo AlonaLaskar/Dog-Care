@@ -4,47 +4,23 @@ import { IonCard, IonText } from '@ionic/react';
 import PropTypes from 'prop-types';
 //! Components
 import Post from 'components/Feed/Post';
+//! Styled components
+import StyledPostList from './StyledPostList';
 
-export default function PostsLists({ posts }) {
+
+export default function PostsList({ posts }) {
+  const hasPosts = posts && posts.length > 0;
+
   return (
-    <IonCard
-      className="post"
-      style={{
-        maxWidth: '600px',
-        margin: '2%',
-        padding: '10px',
-        backgroundColor: 'gray.50',
-        border: '1px solid rgb(227, 213, 202)',
-        borderRadius: '10px'
-      }}
-    >
-      <IonText
-        style={{
-          fontSize: '12px',
-          color: 'gray.500',
-          fontWeight: 'bold',
-          margin: '0 5px'
-        }}
-      >
-        כל מה שחם!
-      </IonText>
-
-      {posts?.length === 0 ? (
-        <IonText
-          style={{
-            fontSize: '12px',
-            color: 'gray.500',
-            fontWeight: 'bold'
-          }}
-        >
-          !משעמם פה אין פוסטים!
-        </IonText>
-      ) : (
-        posts?.map((post) => <Post key={post.id} post={post} />)
+    <StyledPostList>
+      <IonText className="title">What is everyone saying?</IonText>
+      {hasPosts ? posts.map((post) => <Post key={post.id} post={post} />) : (
+        <IonText className="no-posts">Boring here! Write a post...</IonText>
       )}
-    </IonCard>
+    </StyledPostList>
   );
 }
-PostsLists.propTypes = {
-  posts: PropTypes.any
+
+PostsList.propTypes = {
+  posts: PropTypes.array.isRequired,
 };

@@ -1,15 +1,23 @@
-import { IonButton, IonCard, IonCardHeader, IonTextarea } from '@ionic/react';
+//!React package
 import { useForm } from 'react-hook-form';
-import AuthContext from 'providers/AuthContext';
 import { useContext } from 'react';
+//!Ionic package
+import { IonAvatar, IonButton, IonTextarea, IonIcon } from '@ionic/react';
+import { newspaperOutline,cameraOutline,videocam } from 'ionicons/icons';
+//!hook package
 import { useAddPost } from 'hook/posts';
-import './NewPost.css'
+import { useUser } from 'hook/users';
+//!style package
+import StyledNewPost from './StyledNewPost';
+//!context package
+import AuthContext from 'providers/AuthContext';
 
 const NewPost = () => {
   const { register, handleSubmit, reset } = useForm();
   const { addPost, isLoading: addingPost } = useAddPost() || {};
   const { userId, loading } = useContext(AuthContext) || {};
-  
+  const { user } = useUser(userId) || {};
+
   function handleAddPost(data) {
     addPost({
       uid: userId,
@@ -19,16 +27,35 @@ const NewPost = () => {
   }
 
   return (
-    <IonCard className="new-post-card">
+    <StyledNewPost>
       <form onSubmit={handleSubmit(handleAddPost)}>
-        <IonCardHeader>
-          <IonTextarea className="new-post-textarea" placeholder="צור פוסט חדש..." rows={5} cols={20} {...register('text', { required: true })} />
-          <IonButton className="new-post-button" type="submit" textLoading="פוסט נוצר" isLoading={loading || addingPost}>
-            פרסם
-          </IonButton>
-        </IonCardHeader>
+        <IonAvatar>
+          <img src={user?.avatar} />
+        </IonAvatar>
+        <IonTextarea
+          placeholder="...Say something"
+          rows={5}
+          cols={20}
+          autoGrow={true}
+          {...register('text', { required: true })}
+        />
+
+        <IonButton type="submit" textLoading="Creating Post" isLoading={loading || addingPost}>
+          <IonIcon icon={newspaperOutline} slot="end" />
+          Post
+        </IonButton>
+        <IonButton type="submit">
+          <IonIcon icon={cameraOutline} slot="end" />
+          Photo
+        </IonButton>
+       
+       <IonButton type="submit" >
+          <IonIcon icon={videocam} slot="end" />
+          Video
+        </IonButton>
       </form>
-    </IonCard>
+        
+    </StyledNewPost>
   );
 };
 

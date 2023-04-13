@@ -12,6 +12,7 @@ export default function HeaderPost({ post }) {
   const { uid, date } = post;
 
   const { user, isLoading } = useUser(uid);
+  console.log()
 
   if (isLoading) return 'נטען...';
   return (

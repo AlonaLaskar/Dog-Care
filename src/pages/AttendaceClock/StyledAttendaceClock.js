@@ -1,8 +1,8 @@
 
 import styled from 'styled-components';
-import { IonContent } from '@ionic/react';
+import { IonPage } from '@ionic/react';
 
-const StyledAttendaceClock = styled(IonContent).attrs({className: 'ion-padding'})`
+const StyledAttendaceClock = styled(IonPage).attrs({className: 'ion-padding'})`
 
 display: flex;
   flex-direction: column;

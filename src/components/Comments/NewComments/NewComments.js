@@ -13,7 +13,6 @@ import { useAddComment } from '../../../hook/comments';
 
 import Avatar from '../../Profile/Avatar';
 //! Styles
-import './Newcomments.css';
 
 export default function NewComments({ post }) {
   const { id: postID } = post;

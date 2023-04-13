@@ -1,7 +1,12 @@
 {
   "name": "Dog-sitter",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "server": {
+        "url": "http://localhost:",
+        "cleartext": true
+      }
+    }
   },
   "type": "react"
 }

@@ -1,7 +1,7 @@
 
 //!Ionic components
 
-import { IonItem, IonList, IonListHeader, IonIcon } from '@ionic/react';
+import { IonItem, IonList, IonIcon } from '@ionic/react';
 import { chatbubble } from 'ionicons/icons';
 //! React-Packages
 import PropTypes from 'prop-types';
@@ -10,7 +10,9 @@ import PropTypes from 'prop-types';
 import NewComment from '../NewComments';
 import SingleComments from '../SingleComments';
 import { useComments } from 'hook/comments';
-import './CommentList.css';
+
+//!style
+import StylesCommentsList from './StylesCommentsList';
 
 export default function CommentList({ post }) {
   const { id } = post;
