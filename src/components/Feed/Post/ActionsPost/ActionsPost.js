@@ -5,16 +5,16 @@ import { useContext } from 'react';
 import PropTypes from 'prop-types';
 //!Ionic-pacakges
 import { IonIcon, IonButton, IonButtons } from '@ionic/react';
-import { trash, heart, chatbubble, heartDislike } from 'ionicons/icons';
+import { trashOutline, heartOutline, chatboxOutline, heartDislike } from 'ionicons/icons';
 //!Hooks
 import { useToggleLike, useDeletePost } from 'hook/posts';
-import { useAuth } from 'hook/authUser';
 import { useComments } from 'hook/comments';
 //!Components
 import CommentList from 'components/Comments/CommentsList/CommentList';
 import AuthContext from 'providers/AuthContext';
 
 import StyledActionPost from './StyledActionPost';
+
 export default function Actions({ post }) {
   if (!post) return null;
   const { id, likes, uid } = post;
@@ -36,23 +36,24 @@ export default function Actions({ post }) {
   };
   return (
     <StyledActionPost>
-      <IonButtons slot="start">
-        <IonButton color="primary" onClick={handleCommentClick} isLoading={commentsLoading} isRound>
-          <IonIcon slot="start" icon={chatbubble} /> Comment {comments?.length}
+        <IonButton color="primary" fill="clear" onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
+          <IonIcon slot="end" icon={ chatboxOutline }  />
+           Replay {comments?.length}
         </IonButton>
 
-        <IonButton color="secondary" onClick={toggleLike} isLoading={likeLoading || loading} isRound>
-          <IonIcon slot="start" icon={isLiked ? heartDislike : heart} />
+      
+        <IonButton color="secondary"   fill="clear" onClick={toggleLike} isLoading={likeLoading || loading} isRound >
+          <IonIcon  slot="end" icon={isLiked ? heartDislike : heartOutline}  />
           Like {likes?.length}
         </IonButton>
 
         {!loading && userId === uid && (
-          <IonButton color="danger" onClick={deletePost} isLoading={deleteLoading} isRound>
-            <IonIcon slot="start" icon={trash} />
-            Delete
+          <IonButton color="danger"  fill="clear" onClick={deletePost} isLoading={deleteLoading}  isRound>
+            <IonIcon slot="end" icon={ trashOutline }    />
+             Delete
           </IonButton>
         )}
-      </IonButtons>
+   
 
       {showComments && <CommentList post={post} />}
     </StyledActionPost>

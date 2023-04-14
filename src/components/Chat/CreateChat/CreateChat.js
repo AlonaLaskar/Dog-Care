@@ -5,16 +5,22 @@ import { Chat, Channel, ChannelHeader, MessageList, MessageInput, Window } from 
 
  async function CreateChat () {
   const AuthUser = auth.currentUser;
- 
-  const { user, isLoading: userLoading } = useUser(AuthUser.uid) || {};
- const userToken = AuthUser.accessToken;
+ console.log("AuthUser",AuthUser);
 
+ //I want it to import the user data from the registry in the useUser method but it returns UNDEFINED
+ 
+  // const { user } = useUser(AuthUserUid) || {};
+  // console.log("user",user);
+
+ const userToken = AuthUser.accessToken;
  const client = StreamChat.getInstance(process.env.REACT_APP_STREAM_API_KEY);
+
+
 await client.connectUser(
   {
-    id: user.is,
-    name: user.email,
-    image: user.avatar,
+    id: AuthUser.uid,
+    name: AuthUser.email,
+    image: AuthUser.photoURL,
   },
   userToken
 );

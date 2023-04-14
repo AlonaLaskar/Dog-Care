@@ -13,7 +13,6 @@ export default function PostsList({ posts }) {
 
   return (
     <StyledPostList>
-      <IonText className="title">What is everyone saying?</IonText>
       {hasPosts ? posts.map((post) => <Post key={post.id} post={post} />) : (
         <IonText className="no-posts">Boring here! Write a post...</IonText>
       )}

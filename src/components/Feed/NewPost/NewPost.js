@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 //!Ionic package
 import { IonAvatar, IonButton, IonTextarea, IonIcon } from '@ionic/react';
-import { newspaperOutline,cameraOutline,videocam } from 'ionicons/icons';
+import { newspaperOutline,cameraOutline,videocamOutline } from 'ionicons/icons';
 //!hook package
 import { useAddPost } from 'hook/posts';
 import { useUser } from 'hook/users';
@@ -40,18 +40,20 @@ const NewPost = () => {
           {...register('text', { required: true })}
         />
 
-        <IonButton type="submit" textLoading="Creating Post" isLoading={loading || addingPost}>
-          <IonIcon icon={newspaperOutline} slot="end" />
-          Post
+        <IonButton type="button" color='dark'  fill="clear" textLoading="Creating Post" isLoading={loading || addingPost}>
+          <IonIcon icon={videocamOutline} slot="end" color='dark' />
+          <span>VIDEO</span>
         </IonButton>
-        <IonButton type="submit">
-          <IonIcon icon={cameraOutline} slot="end" />
-          Photo
+        <IonButton type="button"  fill="clear" color='dark'>
+          <IonIcon icon={cameraOutline}  slot="end" color='dark' />
+          <span> Photo</span>
+         
         </IonButton>
        
-       <IonButton type="submit" >
-          <IonIcon icon={videocam} slot="end" />
-          Video
+       <IonButton type="submit"  fill="clear" color='dark'>
+          <IonIcon icon={newspaperOutline} slot="end" color='dark'  />
+          <span>Post</span>
+
         </IonButton>
       </form>
         

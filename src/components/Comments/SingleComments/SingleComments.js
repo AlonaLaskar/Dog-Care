@@ -2,7 +2,17 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { formatDistanceToNow } from 'date-fns';
 import { trash } from 'ionicons/icons';
-import { IonGrid, IonRow, IonCol, IonCardTitle, IonButton, IonIcon, IonTextarea, IonText, IonLabel } from '@ionic/react';
+import {
+  IonCardTitle,
+  IonButton,
+  IonIcon,
+  IonTextarea,
+  IonText,
+  IonLabel,
+  IonCard,
+  IonCardHeader,
+  IonCardContent
+} from '@ionic/react';
 
 import AuthContext from 'providers/AuthContext';
 import { useUser } from 'hook/users';
@@ -27,33 +37,31 @@ function SingleComment({ comment }) {
 
   return (
     <StyledSingleComments>
-      <IonGrid>
-        <IonRow>
-          <IonCol size="auto">
-            <Avatar user={user} />
-          </IonCol>
-          <IonCol>
-            <IonCardTitle>{user.displayName}</IonCardTitle>
-            <IonText>{formatDistanceToNow(date)} ago </IonText>
-            <IonLabel>
-              <IonTextarea value={text} readonly />
-            </IonLabel>
-            {isCurrentUser && (
-              <IonButton onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger">
-                <IonIcon slot="start" icon={trash} />
-                delete
-              </IonButton>
-              
-            )}
-          </IonCol>
-        </IonRow>
-      </IonGrid>
+      <IonCard>
+        <IonCardHeader>
+          <Avatar user={user} />
+          <IonCardTitle>{user.displayName}</IonCardTitle>
+          <IonText>{formatDistanceToNow(date)} ago </IonText>
+        </IonCardHeader>
+        <IonCardContent>
+          <IonLabel>
+            <IonTextarea value={text} readonly />
+          </IonLabel>
+
+          {isCurrentUser && (
+            <IonButton onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger">
+              <IonIcon slot="start" icon={trash} />
+              delete
+            </IonButton>
+          )}
+        </IonCardContent>
+      </IonCard>
     </StyledSingleComments>
   );
 }
 
 SingleComment.propTypes = {
-  comment: PropTypes.object.isRequired,
+  comment: PropTypes.object.isRequired
 };
 
 export default SingleComment;

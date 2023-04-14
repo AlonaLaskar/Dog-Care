@@ -21,16 +21,17 @@ export default function CommentList({ post }) {
   if (isLoading) return 'Loading...';
 
   return (
+    <StylesCommentsList>
     <IonList>
       {/* !if there are no comments, show this */}
       {comments.map((comment) => (
-        <IonItem key={comment.id} className="comment-list-item">
+        <IonItem key={comment.id} >
           <SingleComments comment={comment} />
-          <IonIcon slot="end" icon={chatbubble} />
         </IonItem>
       ))}
       <NewComment post={post} />
     </IonList>
+    </StylesCommentsList>
   );
 }
 

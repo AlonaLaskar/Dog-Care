@@ -6,7 +6,9 @@ import { formatDistanceToNow } from 'date-fns';
 import PropTypes from 'prop-types';
 //! Components
 import { useUser } from '../../../../hook/users';
-import Avatar from '../../../Profile/Avatar'
+import Avatar from '../../../Profile/Avatar';
+//! Styled Components
+import StyledHeaderPost from './StyledHeaderPost';
 
 export default function HeaderPost({ post }) {
   const { uid, date } = post;
@@ -14,22 +16,16 @@ export default function HeaderPost({ post }) {
   const { user, isLoading } = useUser(uid);
   console.log()
 
-  if (isLoading) return 'נטען...';
+  if (isLoading) return 'Loading...';
   return (
-    <div className="post-header">
+    <StyledHeaderPost>
       <IonHeader>
         <Avatar user={user} />
-        <IonText
-          style={{
-            fontSize: '12px',
-            color: 'gray.500',
-            fontWeight: 'bold'
-          }}
-        >
+        <IonText>
           {formatDistanceToNow(date) + ' ago'}
         </IonText>
       </IonHeader>
-    </div>
+  </StyledHeaderPost>
   );
 }
 HeaderPost.propTypes = {

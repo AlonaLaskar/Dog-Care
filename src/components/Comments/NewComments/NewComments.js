@@ -10,15 +10,18 @@ import { auth } from '../../../firebase';
 import AuthContext from 'providers/AuthContext';
 //! Hooks-components
 import { useAddComment } from '../../../hook/comments';
+import { useUser } from '../../../hook/users';
 
 import Avatar from '../../Profile/Avatar';
 //! Styles
+import StyledNewcomments from './StyledNewcomments';
 
 export default function NewComments({ post }) {
+
   const { id: postID } = post;
   const { userId, loading } = useContext(AuthContext) || {};
   const { register, handleSubmit, reset } = useForm();
-  const user = auth.currentUser;
+  const {user}=useUser(userId)||{};
 
   const { addComment, isLoading: commentLoading } = useAddComment({
     postID,
@@ -33,34 +36,20 @@ export default function NewComments({ post }) {
   if (loading) return 'Loading...';
 
   return (
-    <div className="contaner">
-      <div className="header-comment">
-        <Avatar user={user} />
-        <span>
-          <h3>{user.displayName}</h3>
-        </span>
-      </div>
-      <div className="text">
-        <form onSubmit={handleSubmit(handleAddComment)}>
-          <IonTextarea
-            className="comment-textarea" // Add class name
-            placeholder="Add a comment..."
-            autoComplete="off"
-            {...register('text', { require: true })}
-          />
+    <StyledNewcomments>
+      <Avatar user={user} />
+      <form onSubmit={handleSubmit(handleAddComment)}>
+        <IonTextarea
+          placeholder="Add a comment..."
+          autoComplete="off"
+          {...register('text', { require: true })}
+        />
 
-          <div className="button">
-            <IonButton
-              className="comment-button" // Add class name
-              isLoading={commentLoading || loading}
-              type="submit"
-            >
-              Add Comment
-            </IonButton>
-          </div>
-        </form>
-      </div>
-    </div>
+        <IonButton isLoading={commentLoading || loading}type="submit">
+          Add Comment
+        </IonButton>
+      </form>
+    </StyledNewcomments>
   );
 }
 

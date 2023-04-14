@@ -1,7 +1,12 @@
+//!React
 import React from 'react';
-import { IonAvatar, IonChip, IonLabel } from '@ionic/react';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+//! Ionic components
+import { IonAvatar, IonChip, IonLabel } from '@ionic/react';
+//!prop-types
+import PropTypes from 'prop-types';
+//! Styled Components
+import StyledAvatar from './StyledAvatar';
 
 const Avatar = ({ user = {}, overrideAvatar = null }) => {
   const history = useHistory();
@@ -11,12 +16,14 @@ const Avatar = ({ user = {}, overrideAvatar = null }) => {
   };
 
   return (
+    <StyledAvatar>
     <IonChip color="light" onClick={handleAvatarClick}>
-      <IonAvatar style={{ border: '0.5px solid rgb(227, 213, 202)', width: '40px', height: '40px' }}>
+      <IonAvatar>
         <img src={overrideAvatar || user.avatar} alt="Silhouette of a person's head" />
       </IonAvatar>
-      <IonLabel color="dark">{user.username}</IonLabel>
+      <IonLabel color="dark" >{user.username}</IonLabel>
     </IonChip>
+    </StyledAvatar>
   );
 };
 
