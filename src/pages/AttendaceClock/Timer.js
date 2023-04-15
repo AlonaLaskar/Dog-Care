@@ -22,7 +22,6 @@ const intervalRef = useRef(null);
     const now = new Date();
     const startTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     setStart(startTime);
-    console.log('start'+ start);
   };
 
   const handleStop = () => {
@@ -33,7 +32,6 @@ const intervalRef = useRef(null);
     const now = new Date();
     const stopTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     setStop(stopTime);
-    console.log('stop'+ stop);
   };
 
   return (

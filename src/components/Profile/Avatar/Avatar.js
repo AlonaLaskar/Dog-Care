@@ -15,6 +15,14 @@ const Avatar = ({ user = {}, overrideAvatar = null }) => {
     history.push(`/my/profile/${user.id}`);
   };
 
+//not shrer if this is the best way to do this
+
+if (!user){
+  return (
+    user.avatar= 'https://static-00.iconduck.com/assets.00/user-avatar-icon-512x512-vufpcmdn.png'
+  )
+}
+
   return (
     <StyledAvatar>
     <IonChip color="light" onClick={handleAvatarClick}>

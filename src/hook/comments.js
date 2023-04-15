@@ -4,6 +4,7 @@ import { collection, deleteDoc, doc, orderBy, query, setDoc, where } from 'fireb
 import { db } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+
 export function useAddComment({ postID, uid }) {
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
@@ -35,14 +36,13 @@ export function useDeleteComment(id) {
   const presentToast = useToast();
 
   async function deleteComment() {
-    console.log('delete pushhhh');
-    const res = window.confirm('תרצו למחוק את התגובה?');
+    const res = window.confirm('Would you like to delete this comment?');
 
     if (res) {
       setLoading(true);
       const docRef = doc(db, 'comments', id);
       await deleteDoc(docRef);
-      presentToast('התגובה נמחקה בהצלחה', 'success');
+      presentToast('The comment was successfully deleted ', 'success');
       setLoading(false);
     }
   }

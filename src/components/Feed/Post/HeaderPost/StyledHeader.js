@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-const StyledHeaderPost = styled.div`
+const StyledHeader = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   ion-header {
     display: flex;
     align-items: center;
     margin-left: 10px;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    
   }
 
   ion-text {
@@ -16,4 +19,4 @@ const StyledHeaderPost = styled.div`
   }
 `;
 
-export default StyledHeaderPost;
+export default StyledHeader;

@@ -1,35 +1,25 @@
+//!React
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { formatDistanceToNow } from 'date-fns';
-import { trash } from 'ionicons/icons';
-import {
-  IonCardTitle,
-  IonButton,
-  IonIcon,
-  IonTextarea,
-  IonText,
-  IonLabel,
-  IonCard,
-  IonCardHeader,
-  IonCardContent
-} from '@ionic/react';
-
-import AuthContext from 'providers/AuthContext';
-import { useUser } from 'hook/users';
+//! Ionic components
+import {IonButton,IonIcon,IonText} from '@ionic/react';
+import { trashOutline } from 'ionicons/icons';
+//!hooks
 import { useDeleteComment } from 'hook/comments';
-
-import Avatar from '../../Profile/Avatar';
-
+//! Components
+import AuthContext from 'providers/AuthContext';
+import HeaderPost from '../../Feed/Post/HeaderPost';
+//! Styled Components
 import StyledSingleComments from './StyledSingleComments';
 
-function SingleComment({ comment }) {
-  const { text, uid, date, id } = comment;
 
-  const { user, isLoading: userLoading } = useUser(uid);
+function SingleComment({ comment }) {
+  const { text, uid, id } = comment;
+
   const { userId, loading } = useContext(AuthContext) || {};
   const { deleteComment, isLoading: deleteLoading } = useDeleteComment(id);
 
-  if (userLoading) {
+  if (loading) {
     return 'Loading...';
   }
 
@@ -37,25 +27,19 @@ function SingleComment({ comment }) {
 
   return (
     <StyledSingleComments>
-      <IonCard>
-        <IonCardHeader>
-          <Avatar user={user} />
-          <IonCardTitle>{user.displayName}</IonCardTitle>
-          <IonText>{formatDistanceToNow(date)} ago </IonText>
-        </IonCardHeader>
-        <IonCardContent>
-          <IonLabel>
-            <IonTextarea value={text} readonly />
-          </IonLabel>
-
-          {isCurrentUser && (
-            <IonButton onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger">
-              <IonIcon slot="start" icon={trash} />
-              delete
-            </IonButton>
-          )}
-        </IonCardContent>
-      </IonCard>
+      <div className="header">
+        <HeaderPost post={comment} />
+      </div>
+      <div className="text">
+        <IonText>{text}</IonText>
+      </div>
+      <div className="delete">
+        {isCurrentUser && (
+          <IonButton onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger" fill="clear">
+            <IonIcon slot="start" icon={trashOutline} />
+          </IonButton>
+        )}
+      </div>
     </StyledSingleComments>
   );
 }

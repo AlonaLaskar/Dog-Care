@@ -38,6 +38,12 @@ export function useAddPost() {
       console.error(error);
     }
   }
+  
+
+
+
+
+
 
   return { addPost, isLoading };
 }
@@ -61,7 +67,6 @@ export function useDeletePost(id) {
   const presentToast = useToast();
 
   async function deletePost() {
-    console.log('delete post');
     const res = window.confirm('Are you sure you want to delete this post?');
     if (res) {
       setLoading(true);

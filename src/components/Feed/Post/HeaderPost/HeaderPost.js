@@ -8,26 +8,28 @@ import PropTypes from 'prop-types';
 import { useUser } from '../../../../hook/users';
 import Avatar from '../../../Profile/Avatar';
 //! Styled Components
-import StyledHeaderPost from './StyledHeaderPost';
+import StyledHeader from './StyledHeader';
 
-export default function HeaderPost({ post }) {
+export default function Header({ post }) {
   const { uid, date } = post;
 
-  const { user, isLoading } = useUser(uid);
-  console.log()
+  const { user, isLoading } = useUser(uid) || {};
+
+  console.log('user in avatar',user);
 
   if (isLoading) return 'Loading...';
+
   return (
-    <StyledHeaderPost>
+    <StyledHeader>
       <IonHeader>
         <Avatar user={user} />
         <IonText>
           {formatDistanceToNow(date) + ' ago'}
         </IonText>
       </IonHeader>
-  </StyledHeaderPost>
+  </StyledHeader>
   );
 }
-HeaderPost.propTypes = {
+Header.propTypes = {
   post: PropTypes.any
 };

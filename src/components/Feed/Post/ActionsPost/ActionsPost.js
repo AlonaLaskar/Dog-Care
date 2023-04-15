@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
 //!Ionic-pacakges
-import { IonIcon, IonButton, IonButtons } from '@ionic/react';
+import { IonIcon, IonButton} from '@ionic/react';
 import { trashOutline, heartOutline, chatboxOutline, heartDislike } from 'ionicons/icons';
 //!Hooks
 import { useToggleLike, useDeletePost } from 'hook/posts';
@@ -38,7 +38,7 @@ export default function Actions({ post }) {
     <StyledActionPost>
         <IonButton color="primary" fill="clear" onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
           <IonIcon slot="end" icon={ chatboxOutline }  />
-           Replay {comments?.length}
+          Reply {comments?.length}
         </IonButton>
 
       

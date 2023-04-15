@@ -31,14 +31,13 @@ import StyledRegister from './StyledRegister';
 
 //! Yup schema for validation
 const schema = yup.object().shape({
-  email: yup.string().email().required('הכנס כתובת מייל תקינה'),
-  password: yup.string(),
-  //.min(6).max(15).lowercase ().uppercase().required('הסיסמא חייבת להכיל לפחות 6 תווים וחייב שימוש באות גדולה וקטנה'),
-  verifyPassword: yup.string().oneOf([yup.ref('password'), null], 'הסיסמאות לא תואמות'),
-  firstName: yup.string().required('שדה חובה'),
-  lastName: yup.string().required('שדה חובה'),
-  phone: yup.string().required('אנא הכנס מספר טלפון'),
-  address: yup.string().required('הזן רחוב ומספר בית'),
+  email: yup.string().email().required('The email is required'),
+  password: yup.string().min(6).max(15).lowercase ().uppercase().required('The password is required,6-15 characters,lowercase,uppercase'),
+  verifyPassword: yup.string().oneOf([yup.ref('password'), null], `Passwords dont match`),
+  firstName: yup.string().required('Must enter first name'),
+  lastName: yup.string().required('Must enter last name'),
+  phone: yup.string().required('Enter phone number'),
+  address: yup.string().required(),
   birthDate: yup.string()
 });
 
@@ -64,7 +63,6 @@ export default function Register() {
 
   //! Handle register with credentials and profile data
   const handleRegister = async ({ email, password, ...rest }) => {
-    console.log('handleRegister');
 
     setIsLoading(true);
 
@@ -86,8 +84,7 @@ export default function Register() {
         id,
         username: email.split('@')[0],
         email,
-        avatar: ' ',
-        date: Date.now(),
+        avatar:'',
         ...rest
       });
       presentToast('Registration successfully', true);
@@ -106,14 +103,15 @@ export default function Register() {
 
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
-            <Input id="email" title="כתובת מייל" placeholder="הכנס כתובת מייל" position="floating" />
-            <Input id="password" title="סיסמא" placeholder="הכנס סיסמא" position="floating" />
-            <Input id="verifyPassword" type="password" title="Verify password" position="floating" />
-            <Input id="firstName" title="שם פרטי" placeholder="הכנס שם פרטי" position="floating" />
-            <Input id="lastName" title="שם משפחה" placeholder="הכנס שם משפחה" position="floating" />
-            <Input id="phone" title="טלפון" placeholder="הכנס מספר טלפון" position="floating" />
-            <Input id="address" title="כתובת" placeholder="הכנס כתובת" position="floating" />
-            <Input id="birthDate" type="date" title="תאריך לידה" placeholder="הכנס תאריך לידה" position="floating" />
+            <Input id="email" title="email address " placeholder="Enter email address" position="floating" />
+            <Input id="password" title="password" placeholder="Enter password" position="floating" />
+            <Input id="verifyPassword" type="verify-Password" title="Verify password" position="floating" />
+            <Input id="firstName" title="first name" placeholder="Enter first name" position="floating" />
+            <Input id="lastName" title="last name" placeholder="Enter last name" position="floating" />
+            <Input id="phone" title="cellphone" placeholder="Enter phone number" position="floating" />
+            <Input id="address" title="address" placeholder="Enter address" position="floating" />
+            <Input id="birthDate" type="date" title="Birthday" placeholder="Enter birthday" position="floating" />
+
 
             <div className="form-group">
               <IonButton type="submit" expand="block">

@@ -48,7 +48,6 @@ const ManualFeed = () => {
       totalPayment: payment.toFixed(2),
       hours: hours.toFixed(2),
     });
-    console.log(`Payment: $${payment.toFixed(2)} for ${hours.toFixed(2)} hours`);
 
     
 
