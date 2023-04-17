@@ -59,17 +59,17 @@ const NewPost = () => {
         </IonButton>
 
          
+       <IonButton type="submit"  fill="clear" color='dark'>
+          <IonIcon icon={newspaperOutline} slot="end" color='dark'  />
+          <span>Post</span>
+
+        </IonButton>
         <IonButton type="button"  fill="clear" color='dark'>
           <IonIcon icon={cameraOutline}  slot="end" color='dark' />
           <span> Photo</span>
          
         </IonButton>
        
-       <IonButton type="submit"  fill="clear" color='dark'>
-          <IonIcon icon={newspaperOutline} slot="end" color='dark'  />
-          <span>Post</span>
-
-        </IonButton>
       </form>
         
     </StyledNewPost>

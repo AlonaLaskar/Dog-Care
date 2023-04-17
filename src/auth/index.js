@@ -18,3 +18,4 @@ export function _useAuthInit(setter) {
     setter((prev) => ({ ...prev, loading: false, ...auth }));
   });
 }
+

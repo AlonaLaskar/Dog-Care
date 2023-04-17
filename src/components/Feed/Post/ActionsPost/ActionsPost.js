@@ -36,10 +36,12 @@ export default function Actions({ post }) {
   };
   return (
     <StyledActionPost>
-        <IonButton color="primary" fill="clear" onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
-          <IonIcon slot="end" icon={ chatboxOutline }  />
-          Reply {comments?.length}
-        </IonButton>
+        {!loading && userId === uid && (
+          <IonButton color="danger"  fill="clear" onClick={deletePost} isLoading={deleteLoading}  isRound>
+            <IonIcon slot="end" icon={ trashOutline }    />
+             Delete
+          </IonButton>
+        )}
 
       
         <IonButton color="secondary"   fill="clear" onClick={toggleLike} isLoading={likeLoading || loading} isRound >
@@ -47,13 +49,11 @@ export default function Actions({ post }) {
           Like {likes?.length}
         </IonButton>
 
-        {!loading && userId === uid && (
-          <IonButton color="danger"  fill="clear" onClick={deletePost} isLoading={deleteLoading}  isRound>
-            <IonIcon slot="end" icon={ trashOutline }    />
-             Delete
-          </IonButton>
-        )}
    
+        <IonButton color="primary" fill="clear" onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
+          <IonIcon slot="end" icon={ chatboxOutline }  />
+          Reply {comments?.length}
+        </IonButton>
 
       {showComments && <CommentList post={post} />}
     </StyledActionPost>

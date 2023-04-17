@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { IonContent } from '@ionic/react';
 
-const DisplayfeesStayle = styled(IonContent).attrs({ className: 'ion-padding' })`
+const DisplayScheduleStayle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,4 +49,4 @@ const DisplayfeesStayle = styled(IonContent).attrs({ className: 'ion-padding' })
   }
 `;
 
-export default DisplayfeesStayle;
+export default DisplayScheduleStayle;

@@ -1,70 +1,92 @@
-import { IonImg , IonTitle, IonList, IonItem, IonIcon, IonLabel, IonToggle, IonCheckbox, IonButton, IonHeader } from '@ionic/react';
-import { personCircleOutline, mailOutline, callOutline, mapOutline, calendarOutline, warningOutline, basketOutline, createOutline } from 'ionicons/icons';
+import {
+  IonTitle,
+  IonList,
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonToggle,
+  IonCheckbox,
+  IonButton,
+  IonCard,
+  IonCardHeader,
+  IonCardContent
+} from '@ionic/react';
+import {
+  locationOutline,
+  createOutline
+} from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
-
+import StyledUserProfile from './StyledUserProfile';
 const UserProfile = () => {
   const history = useHistory();
-  const { userId, loading } = useContext(AuthContext) || {};
+  const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
-
   const [isUserMode, setIsUserMode] = useState(true);
-  const [serviceDescription, setServiceDescription] = useState(user?.serviceDescription || '');
-
   const handleToggleChange = () => setIsUserMode(!isUserMode);
-
-  const userData = [
-    { label: 'Username', value: user?.username, icon: personCircleOutline },
-    { label: 'Email', value: user?.email, icon: mailOutline },
-    { label: 'Phone', value: user?.phone, icon: callOutline },
-    { label: 'Address', value: user?.address, icon: mapOutline },
-    { label: 'Birthday', value: user?.birthDate, icon: calendarOutline },
-    { label: isUserMode ? 'User mod' : 'Service mod', value: isUserMode ? user?.serviceDescription : serviceDescription, icon: warningOutline }
-  ];
 
   const handleEditButtonClick = () => {
     history.push(`/my/editProfile/${userId}`);
   };
+  //! Calculate age
+  const dob = new Date(user?.birthDate);
+  const ageInMs = Date.now() - dob.getTime();
+  const ageInYears = new Date(ageInMs).getFullYear() - 1970;
+  console.log(user?.aboutMe);
 
   return (
-    <>
-      <IonHeader>
-        <IonTitle> {`Hello ${user?.username}`}</IonTitle>
-        <IonButton onClick={handleEditButtonClick}>
-          <IonIcon slot="icon-only" icon={createOutline} />
-        </IonButton>
-      </IonHeader>
-      <IonImg  src={user?.avatar} style={{
-        width: '50%',
-        height: '50%',
-      }} />
-      <IonList>
-        {userData.map(({ label, value, icon }, index) => (
-          <IonItem key={index}>
-            <IonIcon slot="start" icon={icon} />
-            <IonLabel>
-              <h2>{label}</h2>
-              <p>{value}</p>
-            </IonLabel>
-          </IonItem>
-        ))}
-      </IonList>
-      {!isUserMode && (
-        <IonList>
-          <IonItem>
-            <IonCheckbox slot="start" />
-            <IonLabel>Walking with the dog</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonCheckbox slot="start" />
-            <IonLabel>Keeping the dog</IonLabel>
-          </IonItem>
-        </IonList>
-      )}
-      <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
-    </>
+    <StyledUserProfile>
+      <IonCard>
+        <IonCardHeader>
+          <IonTitle>My Profile</IonTitle>
+          <IonButton onClick={handleEditButtonClick}>
+            <IonIcon slot="icon-only" icon={createOutline} />
+          </IonButton>
+        </IonCardHeader>
+        <IonCardContent>
+          <img src={user?.avatar} />
+          <div className='name'>
+            {user?.fullName},{ageInYears}
+          </div>
+          <div className='location'>
+            <IonIcon icon={locationOutline} />
+            {user?.address},Israel
+          </div>
+
+     
+     <div className='aboutMe'>
+            <p>
+              <span>about Me:</span><br/>
+              {user?.aboutMe}
+            </p>
+          </div>
+
+
+        <div className='mood'>
+          {!isUserMode && (
+            <IonList >
+              <IonItem>
+              <IonToggle
+              slot='start'
+               enableOnOffLabels={true}
+               >
+                Walking with the dog
+                </IonToggle>
+              
+              </IonItem>
+              <IonItem>
+                <IonCheckbox slot="start" />
+                <IonLabel>Keeping the dog</IonLabel>
+              </IonItem>
+            </IonList>
+          )}
+          <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
+        </div>
+        </IonCardContent>
+      </IonCard>
+    </StyledUserProfile>
   );
 };
 

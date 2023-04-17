@@ -1,11 +1,15 @@
 import StyledHome from './StyledHome';
-import { auth } from '../../firebase';
+import { IonButton,IonIcon } from '@ionic/react';
+import {logOutOutline} from 'ionicons/icons';
+import { auth as firebaseAuth } from  '../../firebase';
 
 const Home = () => {
+
+
   return (
     <StyledHome>
-      <p>@@@@@@@@@@@@@@@@@@@ page</p>
-      <p>alona laskart</p>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+
     </StyledHome>
   );
 };

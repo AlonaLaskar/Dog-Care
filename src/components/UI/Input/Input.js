@@ -1,17 +1,16 @@
 import { useContext } from 'react';
 import { IonItem, IonLabel, IonInput, IonNote } from '@ionic/react';
-
 import FormContext from 'providers/FormContext';
 import StyledInput from './StyledInput';
 import PropTypes from 'prop-types';
 
-const Input = ({ id, type = id, title, placeholder, validateHandler, position = 'stacked' }) => {
+const Input = ({ id, type = id, title, placeholder, validateHandler, position }) => {
   const { register, errors } = useContext(FormContext);
 
   return (
     <StyledInput>
       <IonItem>
-        <IonLabel position={position}>{title}</IonLabel>
+        <IonLabel position={position || 'stacked'}>{title}</IonLabel>
         <IonInput type={type} placeholder={placeholder} {...register(id, validateHandler)} />
       </IonItem>
       {errors[id] && <IonNote slot="error">{errors[id]?.message}</IonNote>}
@@ -20,8 +19,6 @@ const Input = ({ id, type = id, title, placeholder, validateHandler, position = 
 };
 
 Input.propTypes = {
-  register: PropTypes.func,
-  errors: PropTypes.object,
   id: PropTypes.string,
   type: PropTypes.string,
   title: PropTypes.string,

@@ -15,7 +15,6 @@ export default function Header({ post }) {
 
   const { user, isLoading } = useUser(uid) || {};
 
-  console.log('user in avatar',user);
 
   if (isLoading) return 'Loading...';
 

@@ -1,24 +1,20 @@
   import { createGlobalStyle } from 'styled-components';
   import Background from '../assets/Background.png';
-  const isLoginRoute = window.location.pathname.startsWith('/login');
 
   const GlobalStyle = createGlobalStyle`
-
-    ion-tab-bar{
-      display: ${isLoginRoute && 'none'};
-    }
-    
     html, body {
-      direction: rtl;
+      direction: ltr;
+    }
+    ion-toolbar {
+      position: absolute;
+      margin-top:  35px;
+      margin-bottom: 20px;
     }
 
     body {
-
       background-image: url(${Background});
-
-      
       button {
-        /* box-sizing: border-box;
+        box-sizing: border-box;
           position: absolute;
           left: 0%;
           right: 0%;
@@ -28,7 +24,7 @@
           background: #FFFFFF;
           border: 1px solid #024C71;
           border-radius: 50px;
-         */
+        
           cursor: pointer;
           transition: opacity 0.3s ease-in-out;
 

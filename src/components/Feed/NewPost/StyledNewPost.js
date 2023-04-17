@@ -5,8 +5,8 @@ const StyledNewPost = styled.div`
   height: 97px;
   width: 90%;
   position: absolute;
-  left: 0%;
-  right: 1.5%;
+  left: 1.5%;
+  right: 0%;
   top: 5%;
   bottom: 0%;
 
@@ -19,6 +19,7 @@ const StyledNewPost = styled.div`
     & ion-textarea {
       box-sizing: border-box;
       position: absolute;
+      left: 13%;
       width: 85%;
       height: 40%;
       border-radius: 50px;
@@ -34,7 +35,6 @@ const StyledNewPost = styled.div`
         right: 48.16%;
         top: 19.59%;
         bottom: 58.76%;
-
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
@@ -62,6 +62,7 @@ const StyledNewPost = styled.div`
       right: 10%;
 
       &:nth-of-type(1) {
+        position: absolute;
         left: 37.63%;
         right: 36.05%;
         top: 57.73%;
@@ -83,12 +84,14 @@ const StyledNewPost = styled.div`
       }
     }
     & ion-avatar {
+      position: absolute;
+      left:1%;
+      top: 14%;
       height: 39px;
       width: 40px;
       border-radius: 0px;
-      position: absolute;
-      top: 20%;
-      left: 88%;
+  
+     
       border-radius: 0px;
     }
   }

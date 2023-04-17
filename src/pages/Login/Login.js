@@ -9,7 +9,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, db, googleProvider, facebookProvider } from 'firebase.js';
 
 //! Ionic components
-import { IonLoading, IonButton, IonIcon } from '@ionic/react';
+import { IonLoading, IonButton, IonIcon, } from '@ionic/react';
 import { personCircle, logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
 
 //! Custom hooks
@@ -17,18 +17,24 @@ import useToast from 'hook/useToast';
 import { emailValidate, passwordValidate } from 'hook/form-validate';
 
 //! Providers
-import AuthContext from 'providers/AuthContext';
 import FormContext from 'providers/FormContext';
 
 //! Components
 import Input from 'components/UI/Input';
 import StyledLogin from './StyledLogin';
+import { Redirect } from 'react-router-dom';
+import AuthContext from 'providers/AuthContext';
 
-function Login() {
-  //! Init states
-  const [isLoading, setIsLoading] = useState(false);
+
+
+function Login( ) {
   const { loggedIn } = useContext(AuthContext);
-  const history = useHistory();
+if (loggedIn) {
+    console.log("im logged in");
+    return <Redirect to="/my/home"/>;
+  }
+
+  const [isLoading, setIsLoading] = useState(false);
   const presentToast = useToast();
 
   //! Init forms
@@ -38,17 +44,12 @@ function Login() {
     formState: { errors }
   } = useForm();
 
-  //! Check if user is logged in
-  const pushToHome = () => history.push({ pathname: '/my/home' });
-  if (loggedIn) return pushToHome();
-
   //! Handle login with email and password
   const handleLogin = async (data) => {
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, data?.email, data?.password);
       presentToast('Logged in successfully', true);
-      pushToHome();
     } catch (error) {
       presentToast(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
@@ -61,7 +62,6 @@ function Login() {
     try {
       await signInWithPopup(auth, provider);
       presentToast('Logged in successfully', true);
-      pushToHome();
     } catch (error) {
       presentToast(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
@@ -83,7 +83,7 @@ function Login() {
             />
 
             <div className="form-buttons">
-              <IonButton type="submit" expand="block" fill="solid">
+              <IonButton type="submit" expand="block" fill="solid" >
                 <IonIcon slot="start" icon={personCircle} />
                 התחברות
               </IonButton>

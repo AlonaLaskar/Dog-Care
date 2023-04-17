@@ -10,4 +10,5 @@ const StyledHeader = styled(IonHeader)`
 
 `;
 
+
 export default StyledHeader;

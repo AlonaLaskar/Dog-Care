@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 const StyledSingleComments = styled.div`
  
-    width:95%;
+    width:100%;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 2px solid #024c71;
     height: 150px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #024c71;
-    border-radius: 10px;
+  
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -36,7 +38,7 @@ const StyledSingleComments = styled.div`
     .delete{
         position: absolute;
         top: 70%;
-        right: 100%;
+        left: 78%;
     }
 
 

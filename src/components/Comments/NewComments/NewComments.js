@@ -5,7 +5,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 //! Ionic components
 import { IonButton, IonIcon, IonTextarea } from '@ionic/react';
-import { addOutline } from 'ionicons/icons';
+import { sendOutline } from 'ionicons/icons';
 //! Firebase
 import { auth } from '../../../firebase';
 //! Context
@@ -46,7 +46,6 @@ export default function NewComments({ post }) {
 
   return (
     <StyledNewcomments>
-      <Avatar user={user} />
       <form onSubmit={handleSubmit(handleAddComment)}>
         <IonTextarea
           placeholder="Add a comment..."
@@ -63,7 +62,7 @@ export default function NewComments({ post }) {
           type="submit"
           fill="clear"
         >
-          <IonIcon slot="start" icon={addOutline} />
+          <IonIcon slot="start" icon={sendOutline} />
         </IonButton>
       </form>
     </StyledNewcomments>

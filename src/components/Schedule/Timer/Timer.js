@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 import { IonButton, IonLabel, IonItem } from '@ionic/react';
-import StyledAttendaceClock from './StyledAttendaceClock';
+import StyledTimer from './StyledTimer';
 
 function Timer() {
 const [isRunning, setIsRunning] = useState(false);
@@ -35,7 +35,7 @@ const intervalRef = useRef(null);
   };
 
   return (
-    <StyledAttendaceClock>
+    <StyledTimer>
         <div className='buttom'>
         {!isRunning ? (
           <IonButton
@@ -53,7 +53,7 @@ const intervalRef = useRef(null);
       </div>      
         <IonLabel>Time: {time}</IonLabel>
     
-    </StyledAttendaceClock>
+    </StyledTimer>
   );
 }
 

@@ -1,18 +1,27 @@
-import { IonLoading } from '@ionic/react';
+//!React
+import { useEffect, useState } from 'react';
+import { IonLoading, IonRouterOutlet } from '@ionic/react';
 import AuthContext from 'providers/AuthContext';
-
-import { ThemeProvider } from 'styled-components';
+//!Router
+import { Route,Redirect } from 'react-router-dom';
+import { IonReactRouter } from '@ionic/react-router';
+import { Switch } from 'react-router-dom';
+//!Styled-components
 import theme from 'styles/theme';
 import GlobalStyle from 'styles/globalStyle';
-import { _useAuthInit } from 'auth';
-import { IonReactRouter } from '@ionic/react-router';
+import { ThemeProvider } from 'styled-components';
+
+//!Pages
+import Login from 'pages/Login';
+import Register from 'pages/Register';
+
+import Header from 'components/layout/Header';
 import { AppTabs } from '../layout/AppTabs';
-import { useEffect, useState } from 'react';
-import { Switch } from 'react-router-dom';
-import { bool } from 'prop-types';
+import { _useAuthInit } from 'auth';
 
 const Layout = () => {
   const [auth, setAuth] = useState({ loading: true });
+  console.log(auth);
 
   useEffect(() => {
     _useAuthInit(setAuth);
@@ -27,9 +36,25 @@ const Layout = () => {
       <AuthContext.Provider value={auth}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Switch>
-            <AppTabs />
-          </Switch>
+
+       
+            <IonRouterOutlet>
+              <Switch>
+              <Redirect exact path="/" to="/login" />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              </Switch>
+            </IonRouterOutlet>
+       
+
+              <Switch>
+              <Route path="/my">
+                <AppTabs />
+                <Header />
+              </Route>
+            </Switch>
+
+           
         </ThemeProvider>
       </AuthContext.Provider>
     </IonReactRouter>
@@ -37,6 +62,3 @@ const Layout = () => {
 };
 export default Layout;
 
-Layout.propTypes = {
-  user: bool
-};

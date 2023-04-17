@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { setupIonicReact, IonApp } from '@ionic/react';
 import Layout from 'components/layout';
 
@@ -25,6 +25,7 @@ export default function App() {
 
   return (
     <IonApp>
+
       <Layout  />
     </IonApp>
   );
