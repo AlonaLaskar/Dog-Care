@@ -10,18 +10,20 @@ export function useUser(id) {
   const [user, isLoading] = useDocumentData(q);
   return { user, isLoading };
 }
+
 export function useUsers() {
-  const [user, isLoading] = useCollectionData(collection(db, 'users'));
-  return { user, isLoading };
+  const [users, isLoading] = useCollectionData(collection(db, 'users'));
+  return { users, isLoading };
 }
 export function useUpdateAvatar(uid) {
   const [isLoading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
-  const [present] = useToast();
+  const presentToast = useToast();
+
 
   async function updateAvatar() {
     if (!file) {
-      present('לא נבחר קובץ', false);
+      presentToast('Not found a file', false);
       return;
     }
     setLoading(true);
@@ -32,7 +34,8 @@ export function useUpdateAvatar(uid) {
     const avatarURL = await getDownloadURL(fileRef);
     const docRef = doc(db, 'users', uid);
     await updateDoc(docRef, { avatar: avatarURL });
-    present('התמונה עודכנה בהצלחה', true);
+    presentToast('The photo update successfully', true);
+
     setLoading(false);
     //navigetion
   }

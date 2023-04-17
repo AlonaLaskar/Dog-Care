@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { IonContent } from '@ionic/react';
+import { IonPage } from '@ionic/react';
 
-const StyledLogin = styled(IonContent).attrs({ className: 'ion-padding .ion-justify-content-center' })`
+const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify-content-center' })`
   display: flex;
   flex-direction: column;
   justify-content: center;

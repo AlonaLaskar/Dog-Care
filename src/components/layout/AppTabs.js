@@ -1,81 +1,75 @@
+//!React
 import { Route, Redirect } from 'react-router-dom';
-import propTypes from 'prop-types';
-
-import { ThemeProvider } from 'styled-components';
-import theme from 'styles/theme';
-import GlobalStyle from 'styles/globalStyle';
+//! Ionic-pacakges
 import { IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonIcon, IonLabel } from '@ionic/react';
-import { person, home, create, timer } from 'ionicons/icons';
+import { person, duplicate, newspaper, today, chatbox } from 'ionicons/icons';
+//!system-components
 
+//!pages
 import Home from 'pages/Home';
-
-import Login from 'pages/Login';
-import Register from 'pages/Register';
 import Profile from 'pages/Profile';
-import AttendaceClock from 'pages/AttendaceClock';
+import Schedule from 'pages/Schedule';
 import Comments from 'pages/Comments';
-import Dashboard from 'components/Dashboard';
-import Post from 'pages/post/postIndex';
+import Post from 'pages/Feed';
 import NotFound from 'pages/NotFound';
+import EditProfile from '../Profile/EditProfile';
+import Chat from 'pages/Chat';
+
+//!context
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 
 export const AppTabs = () => {
+  //if user is not logged in redirect to login page
+  const { loggedIn } = useContext(AuthContext);
+  if (!loggedIn) {
+    console.log('not logged in');
+    return <Redirect to="/login" />;
+  }
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <IonTabs>
-        <IonRouterOutlet>
-          {/* Authentication */}
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+    <IonTabs>
+      <IonRouterOutlet>
+        {/* Profile */}
 
-          {/* Profile */}
-          <Route path="/my/home" component={Home} />
-          <Route path="/my/register" component={Register} />
-          <Route path="/my/profile" component={Profile} />
-          <Route path="/my/post" component={Post} />
-          <Route path="/my/attendaceclock" component={AttendaceClock} />
-          <Route path="/my/bashboard" component={Dashboard} />
-          <Route path="/my/comments/:id" component={Comments} />
+        <Route exact path="/my/home" component={Home} />
+        <Route exact path="/my/profile/:id" component={Profile} />
+        <Route exact path="/my/editProfile/:id" component={EditProfile} />
+        <Route exact path="/my/post" component={Post} />
+        <Route exact path="/my/Schedule" component={Schedule} />
+        <Route exact path="/my/comments/:id" component={Comments} />
+        <Route exact path="/my/chat" component={Chat} />
 
-          {/* Redirects */}
-          <Redirect exact path="/" to="/my/home" />
-          <Redirect exact path="/my" to="/my/home" />
+        {/* Errors handling */}
+        <Route component={NotFound} status={404} />
+      </IonRouterOutlet>
 
-          {/* Errors handling */}
-          <Route component={NotFound} status={404} />
-        </IonRouterOutlet>
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="Chat" href="/my/chat">
+          <IonIcon icon={chatbox} />
+          <IonLabel>Chat</IonLabel>
+        </IonTabButton>
 
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/my/home">
-            <IonIcon icon={home} />
-            <IonLabel>עמוד הבית</IonLabel>
-          </IonTabButton>
+        <IonTabButton tab="profile" href="/my/profile/:id">
+          <IonIcon icon={person} />
+          <IonLabel>Profile</IonLabel>
+        </IonTabButton>
 
-          <IonTabButton tab="profile" href="/my/profile/:id">
-            <IonIcon icon={person} />
-            <IonLabel>פרופיל</IonLabel>
-          </IonTabButton>
+        <IonTabButton tab="home" href="/my/home">
+          <IonIcon icon={duplicate} />
+          <IonLabel>Service</IonLabel>
+        </IonTabButton>
 
-          <IonTabButton tab="post" href="/my/post">
-            <IonIcon icon={create} />
-            <IonLabel>יצירת פוסט</IonLabel>
-          </IonTabButton>
+        <IonTabButton tab="Schedule" href="/my/Schedule">
+          <IonIcon icon={today} />
+          <IonLabel>Schedule</IonLabel>
+        </IonTabButton>
 
-          <IonTabButton tab="attendaceclock" href="/my/attendaceclock">
-            <IonIcon icon={timer} />
-            <IonLabel>שעון נוכחות</IonLabel>
-          </IonTabButton>
-
-          <IonTabButton tab="bashboard" href="/my/bashboard">
-            <IonIcon icon={timer} />
-            <IonLabel> פייד</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </ThemeProvider>
+        <IonTabButton tab="post" href="/my/post">
+          <IonIcon icon={newspaper} />
+          <IonLabel> Feed</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
+    </IonTabs>
   );
-};
-
-AppTabs.propTypes = {
-  authStatus: propTypes.bool
 };

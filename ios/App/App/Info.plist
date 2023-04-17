@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>dogCare</string>
+        <string>dog_sitter_react</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,5 +45,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Location is needed to find nearby dogsitters</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Location is needed to find nearby dogsitters</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>Location is needed to find nearby dogsitters</string>
+<key>NSCameraUsageDescription</key>
+<string>Camera is needed to take pictures of your dog</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Photo Library is needed to upload pictures of your dog</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Photo Library is needed to upload pictures of your dog</string>
+<key>NSMicrophoneUsageDescription</key>
+
+
+
 </dict>
 </plist>

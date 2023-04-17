@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { IonContent } from '@ionic/react';
+import { IonPage } from '@ionic/react';
 
-const StyledNotFound = styled(IonContent).attrs({ className: 'ion-padding' })``;
+const StyledNotFound = styled(IonPage).attrs({ className: 'ion-padding' })``;
 
 export default StyledNotFound;
