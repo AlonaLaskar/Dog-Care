@@ -9,7 +9,8 @@ import {
   IonButton,
   IonCard,
   IonCardHeader,
-  IonCardContent
+  IonCardContent,
+  IonText
 } from '@ionic/react';
 import {
   locationOutline,
@@ -20,10 +21,13 @@ import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
 import StyledUserProfile from './StyledUserProfile';
+import UserMode from '../UserMod';
 const UserProfile = () => {
   const history = useHistory();
+//! Get user id from AuthContext
   const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
+
   const [isUserMode, setIsUserMode] = useState(true);
   const handleToggleChange = () => setIsUserMode(!isUserMode);
 
@@ -34,7 +38,6 @@ const UserProfile = () => {
   const dob = new Date(user?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
-  console.log(user?.aboutMe);
 
   return (
     <StyledUserProfile>
@@ -66,21 +69,7 @@ const UserProfile = () => {
 
         <div className='mood'>
           {!isUserMode && (
-            <IonList >
-              <IonItem>
-              <IonToggle
-              slot='start'
-               enableOnOffLabels={true}
-               >
-                Walking with the dog
-                </IonToggle>
-              
-              </IonItem>
-              <IonItem>
-                <IonCheckbox slot="start" />
-                <IonLabel>Keeping the dog</IonLabel>
-              </IonItem>
-            </IonList>
+        <UserMode/>
           )}
           <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
         </div>

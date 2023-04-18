@@ -10,6 +10,7 @@ const StyledUserProfile = styled.div`
     height: 100%;
     overflow: hidden;
     position: relative;
+    background-color:pink;
     ion-card {
         height: 100%;
         width: 100%;
@@ -62,7 +63,6 @@ const StyledUserProfile = styled.div`
         left: 8.08%;
         top: 9.38%;
         border-radius: 50%;
-        background-color: pink;
     }
     .name { 
         position: absolute;
@@ -103,12 +103,6 @@ const StyledUserProfile = styled.div`
             top: 30%;
         }
 
-        .mood {
-            position: absolute;
-            left: 30%;
-            top: 50%;
-            background-color: pink;
-        }
 
       
 
