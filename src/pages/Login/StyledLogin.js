@@ -10,6 +10,9 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
   margin: 20px;
   width: auto;
 
+
+  
+
   .form-title {
     color: ${({ theme }) => theme.colors?.pageTitle};
     margin: 0;
@@ -31,10 +34,6 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     .form-buttons {
       display: flex;
       align-items: center;
-      justify-content: center;
-      align-items: center;
-      margin-right: 50%;
-      width: 0;
       gap: 10px;
       margin-top: 10px;
     }

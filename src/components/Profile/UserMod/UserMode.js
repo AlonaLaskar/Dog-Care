@@ -4,6 +4,7 @@ import { db } from '../../../firebase';
 import { useState, useContext } from 'react';
 import AuthContext from 'providers/AuthContext';
 import { doc, updateDoc } from 'firebase/firestore';
+import { useHistory } from 'react-router-dom';
 
 import useToast from 'hook/useToast';
 const UserMode = () => {
@@ -12,6 +13,7 @@ const UserMode = () => {
   const [walkingPrice, setWalkingPrice] = useState('');
   const [keepingPrice, setKeepingPrice] = useState('');
   const { userId } = useContext(AuthContext) || {};
+  const history = useHistory();
 
   const presentToast = useToast();
   async function saveProfile() {
@@ -24,6 +26,8 @@ const UserMode = () => {
         keepingPrice: keepingPrice
       });
       presentToast('You on provied mod!', true);
+      history.push('/my/home');
+    
       console.log('You on provied mod!');
     } catch (error) {
       presentToast('Something went wrong!', false);

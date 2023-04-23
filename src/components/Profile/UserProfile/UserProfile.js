@@ -1,21 +1,5 @@
-import {
-  IonTitle,
-  IonList,
-  IonItem,
-  IonIcon,
-  IonLabel,
-  IonToggle,
-  IonCheckbox,
-  IonButton,
-  IonCard,
-  IonCardHeader,
-  IonCardContent,
-  IonText
-} from '@ionic/react';
-import {
-  locationOutline,
-  createOutline
-} from 'ionicons/icons';
+import { IonTitle, IonIcon, IonToggle, IonButton, IonCard, IonCardHeader, IonCardContent } from '@ionic/react';
+import { locationOutline, createOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
@@ -24,7 +8,7 @@ import StyledUserProfile from './StyledUserProfile';
 import UserMode from '../UserMod';
 const UserProfile = () => {
   const history = useHistory();
-//! Get user id from AuthContext
+  //! Get user id from AuthContext
   const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
 
@@ -50,29 +34,26 @@ const UserProfile = () => {
         </IonCardHeader>
         <IonCardContent>
           <img src={user?.avatar} />
-          <div className='name'>
+          <div className="name">
             {user?.fullName},{ageInYears}
           </div>
-          <div className='location'>
+          <div className="location">
             <IonIcon icon={locationOutline} />
             {user?.address},Israel
           </div>
 
-     
-     <div className='aboutMe'>
+          <div className="aboutMe">
             <p>
-              <span>about Me:</span><br/>
+              <span>about Me:</span>
+              <br />
               {user?.aboutMe}
             </p>
           </div>
 
-
-        <div className='mood'>
-          {!isUserMode && (
-        <UserMode/>
-          )}
-          <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
-        </div>
+          <div className="mood">
+            {!isUserMode && <UserMode />}
+            <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
+          </div>
         </IonCardContent>
       </IonCard>
     </StyledUserProfile>
