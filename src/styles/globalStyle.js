@@ -1,15 +1,13 @@
-  import { createGlobalStyle } from 'styled-components';
-  import Background from '../assets/Background.png';
+import { createGlobalStyle } from 'styled-components';
+import Background from '../assets/Background.png';
 
-  const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
+
     html, body {
       direction: ltr;
+
     }
-    ion-toolbar {
-      position: absolute;
-      margin-top:  35px;
-      margin-bottom: 20px;
-    }
+
 
     body {
       background-image: url(${Background});
@@ -42,7 +40,6 @@
           border-radius: 5px;
           padding: 15px;
           outline: none;
-
           &:focus {
             border: 1px solid ${({ theme }) => theme.colors.forms?.borderColorFocus};
           }
@@ -50,4 +47,4 @@
     }
   `;
 
-  export default GlobalStyle;
+export default GlobalStyle;

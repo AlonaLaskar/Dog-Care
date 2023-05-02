@@ -29,7 +29,6 @@ import AuthContext from 'providers/AuthContext';
 function Login( ) {
   const { loggedIn } = useContext(AuthContext);
 if (loggedIn) {
-    console.log("im logged in");
     return <Redirect to="/my/home"/>;
   }
 
@@ -84,12 +83,12 @@ if (loggedIn) {
             <div className="form-buttons">
               <IonButton type="submit" expand="block" fill="solid" >
                 <IonIcon slot="start" icon={personCircle} />
-                התחברות
+                Login
               </IonButton>
 
               <IonButton routerLink="/register" expand="block" fill="clear">
                 <IonIcon slot="start" icon={personAdd} />
-                הרשמה
+                Register
               </IonButton>
             </div>
           </form>

@@ -21,7 +21,7 @@ import { _useAuthInit } from 'auth';
 
 const Layout = () => {
   const [auth, setAuth] = useState({ loading: true });
-  console.log(auth);
+  // console.log(auth);
 
   useEffect(() => {
     _useAuthInit(setAuth);
@@ -50,7 +50,7 @@ const Layout = () => {
               <Switch>
               <Route path="/my">
                 <AppTabs />
-                <Header />
+                {/* <Header /> */}
               </Route>
             </Switch>
 
