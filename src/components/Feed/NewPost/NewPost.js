@@ -13,7 +13,6 @@ import StyledNewPost from './StyledNewPost';
 //!context package
 import AuthContext from 'providers/AuthContext';
 
-import { usePhotoGallery } from 'hook/usePhotoGallery';
 const NewPost = () => {
   const { register, handleSubmit, reset } = useForm();
   const { addPost, isLoading: addingPost } = useAddPost() || {};
