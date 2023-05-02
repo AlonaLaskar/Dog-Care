@@ -10,12 +10,16 @@ const StyledUserProfile = styled.div`
     height: 100%;
     overflow: hidden;
     position: relative;
-    background-color:pink;
+ 
+   
     ion-card {
         height: 100%;
         width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px 0px 0px 0px;
     }
     ion-card-header {
         height: 10%;
@@ -28,19 +32,9 @@ const StyledUserProfile = styled.div`
         justify-content: space-between;
         padding: 0 10px;
 
-        .ion-title {
-            position: absolute;
-            font-family: 'Arial Rounded MT Bold';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 28px;
-            line-height: 32px;
-            display: flex;
-            align-items: center;
-            color: #024C71;
-
-        }
+   
     }
+
     ion-card-content {
         height: 100%;
         width: 100%;
@@ -60,8 +54,8 @@ const StyledUserProfile = styled.div`
         width: 117px;
         border-radius: 50%;
         position: absolute;
-        left: 8.08%;
-        top: 9.38%;
+        left: 6%;
+        top: 9%;
         border-radius: 50%;
     }
     .name { 
@@ -102,6 +96,16 @@ const StyledUserProfile = styled.div`
             left: 10%;
             top: 30%;
         }
+
+        ion-toolbar {
+            position: absolute;
+            left: 0%;
+            top: 1%;
+            bottom: 0%;
+            width: 100%;
+            height: 90%;
+        }
+   
 
 
       

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonSelect, IonToolbar } from '@ionic/react';
 import StyledHome from './StyledHome';
 import ProfileCard from 'components/ProfileCard/ProfileCard';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection, doc } from 'firebase/firestore';
 import { db, auth } from '../../firebase';
 import ActionButton from 'components/ProfileCard/ActionButton/ActionButton';
+import {  IonSelectOption } from '@ionic/react';
 
 const Home = () => {
   const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
@@ -18,7 +19,7 @@ const Home = () => {
     return { users, isLoading };
   }
 
-  const { users, isLoading } = useUsers();
+  const { users} = useUsers();
   const user = auth.currentUser;
   const userRef = doc(db, 'users', user.uid);
 
@@ -48,7 +49,13 @@ const Home = () => {
     <StyledHome>
       <IonHeader mode="ios">
         <IonToolbar mode="ios">
-          <IonTitle onClick={handleTitleClick}>{pageStatus}</IonTitle>
+          <div className='action-bar'>
+        <IonSelect aria-label="Fruit" interface="action-sheet" placeholder={pageStatus} onIonChange={e => setPageStatus(e.detail.value)}>
+          <IonSelectOption value="Dog-walker" onClick={handleTitleClick}>Dog-walker</IonSelectOption>
+          <IonSelectOption value="Dog-Sitter"onClick={handleTitleClick}>Dog-Sitter </IonSelectOption>
+        </IonSelect>
+        </div>
+          {/* <IonTitle onClick={handleTitleClick}>{pageStatus}</IonTitle> */}
         </IonToolbar>
       </IonHeader>
       <IonContent>

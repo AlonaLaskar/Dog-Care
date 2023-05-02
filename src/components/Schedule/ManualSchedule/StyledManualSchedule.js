@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IonContent } from '@ionic/react';
+
 
 const StyledManualSchedule =styled.div`
 .p {

@@ -96,6 +96,13 @@ align-items: center;
  
     
 }
+.card-container>.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
 .card-container >.details-container >.price > ion-icon {
     margin-right: 10px;
     

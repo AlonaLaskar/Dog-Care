@@ -14,7 +14,7 @@ export default function EditProfile({isOpen, onClose}) {
       setFile,
       updateAvatar,
       isLoading: fileLoading,
-      fileURL,
+      
     } = useUpdateAvatar(userId);
   
     function handleChange(e) {

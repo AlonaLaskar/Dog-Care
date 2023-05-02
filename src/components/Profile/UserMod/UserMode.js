@@ -1,5 +1,5 @@
 import StyledUserMode from './StyledUserMode';
-import { IonList, IonItem, IonLabel, IonCheckbox, IonText, IonInput, IonButton } from '@ionic/react';
+import { IonLabel, IonCheckbox, IonText, IonInput, IonButton } from '@ionic/react';
 import { db } from '../../../firebase';
 import { useState, useContext } from 'react';
 import AuthContext from 'providers/AuthContext';
@@ -7,6 +7,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { useHistory } from 'react-router-dom';
 
 import useToast from 'hook/useToast';
+
 const UserMode = () => {
   const [walkingChecked, setWalkingChecked] = useState(false);
   const [keepingChecked, setKeepingChecked] = useState(false);
@@ -19,47 +20,71 @@ const UserMode = () => {
   async function saveProfile() {
     const userRef = doc(db, 'users', userId);
     try {
-      await updateDoc(userRef, {
-        walking: walkingChecked,
-        keeping: keepingChecked,
-        walkingPrice: walkingPrice,
-        keepingPrice: keepingPrice
-      });
-      presentToast('You on provied mod!', true);
-      history.push('/my/home');
-    
-      console.log('You on provied mod!');
+      if (walkingChecked === false && keepingChecked === false) {
+        presentToast('You must choose at least one option!', false);
+        return;
+      }
+      if ((walkingChecked === true && walkingPrice === '')|| (keepingChecked === true && keepingPrice === '')) {
+        presentToast('You must enter a price !', false);
+        return;
+      }
+      if ((walkingChecked&&walkingPrice > 0) || (keepingChecked&&keepingPrice > 0)) { // Check if the inputs are greater than 0
+        await updateDoc(userRef, {
+          walking: walkingChecked,
+          keeping: keepingChecked,
+          walkingPrice: walkingPrice,
+          keepingPrice: keepingPrice
+        });
+        presentToast('You on provied mod!', true);
+        history.push('/my/home');
+      } else {
+        presentToast('Please enter a valid price!', false);
+      }
     } catch (error) {
       presentToast('Something went wrong!', false);
-      console.log('Something went wrong!');
     }
   }
 
   return (
     <StyledUserMode>
-      <IonList>
-        <IonText>Searching for:</IonText>
-        <IonCheckbox checked={walkingChecked} onIonChange={(event) => setWalkingChecked(event.detail.checked)} />
-        <IonLabel>Walking the dog</IonLabel>
-
-        <IonCheckbox checked={keepingChecked} onIonChange={(event) => setKeepingChecked(event.detail.checked)} />
-        <IonLabel>Keeping the dog</IonLabel>
-
-        <IonText>Price ranges:</IonText>
-        <IonInput
-          type="number"
-          placeholder="Dog walking"
-          value={walkingPrice}
-          onIonChange={(event) => setWalkingPrice(event.detail.value)}
+      <div className="sarch">
+        <IonText className="searchText"> Job:</IonText>
+        <IonCheckbox
+          className="walkingChecked"
+          checked={walkingChecked}
+          onIonChange={(event) => setWalkingChecked(event.detail.checked)}
         />
-        <IonInput
-          type="number"
-          placeholder="Dog-keeping"
-          value={keepingPrice}
-          onIonChange={(event) => setKeepingPrice(event.detail.value)}
+        <IonLabel className="wakkingText">Walking the dog</IonLabel>
+
+        <IonCheckbox
+          className="keepingChecked"
+          checked={keepingChecked}
+          onIonChange={(event) => setKeepingChecked(event.detail.checked)}
         />
-        <IonButton onClick={saveProfile}>Save</IonButton>
-      </IonList>
+        <IonLabel className='keepingText'>Keeping the dog</IonLabel>
+      </div>
+      <div className="price">
+      <IonText className="price">Price ranges:</IonText>
+      <IonInput
+      label="Dog walking"
+      labelPlacement="floating"
+      fill="solid"
+      type="number"
+      placeholder="Dog-walking"
+      value={walkingPrice}
+      onIonChange={(event) => setWalkingPrice(event.detail.value)}
+      />
+      <IonInput
+      label="Dog keeping"
+      labelPlacement="floating"
+      fill="solid"
+      type="number"
+      placeholder="Dog-keeping"
+      value={keepingPrice}
+      onIonChange={(event) => setKeepingPrice(event.detail.value)}
+      />
+      </div>
+      <IonButton className='save' onClick={saveProfile}>Save</IonButton>
     </StyledUserMode>
   );
 };

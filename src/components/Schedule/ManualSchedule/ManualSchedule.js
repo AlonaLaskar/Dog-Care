@@ -39,7 +39,7 @@ const ManualSchedule = () => {
   const submitForm = (data) => {
     const { payment, hours } = calculatePayment(data.dateStart, data.start, data.dateStop, data.stop, data.payment);
 //!set data to firebase
-    const docRef = addDoc(collection(db, 'WorkHistory'), {
+    addDoc(collection(db, 'WorkHistory'), {
       owner: data.owner,
       dateStart: data.dateStart,
       start: data.start,

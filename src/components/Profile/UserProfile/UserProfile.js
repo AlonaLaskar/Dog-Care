@@ -1,4 +1,4 @@
-import { IonTitle, IonIcon, IonToggle, IonButton, IonCard, IonCardHeader, IonCardContent } from '@ionic/react';
+import { IonTitle, IonIcon, IonToggle, IonButton, IonCard, IonCardHeader, IonCardContent, IonToolbar } from '@ionic/react';
 import { locationOutline, createOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
@@ -26,11 +26,14 @@ const UserProfile = () => {
   return (
     <StyledUserProfile>
       <IonCard>
-        <IonCardHeader>
+        <IonCardHeader mode='ios'>
+          <IonToolbar mode='ios'>
           <IonTitle>My Profile</IonTitle>
           <IonButton onClick={handleEditButtonClick}>
             <IonIcon slot="icon-only" icon={createOutline} />
           </IonButton>
+          </IonToolbar>
+     
         </IonCardHeader>
         <IonCardContent>
           <img src={user?.avatar} />

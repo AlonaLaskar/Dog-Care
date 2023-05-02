@@ -1,6 +1,6 @@
 //!Ionic components
 
-import { IonItem, IonList } from '@ionic/react';
+import { IonItem} from '@ionic/react';
 //! React-Packages
 import PropTypes from 'prop-types';
 
