@@ -1,12 +1,13 @@
-import { IonTitle, IonIcon, IonToggle, IonButton, IonCard, IonCardHeader, IonCardContent, IonToolbar } from '@ionic/react';
+import { IonTitle, IonIcon, IonToggle, IonButton} from '@ionic/react';
 import { locationOutline, createOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
-import StyledUserProfile from './StyledUserProfile';
 import ServiceMode from 'components/Schedule/ServiceMode';
+import StyledUserProfile from './StyledUserProfile';
 import UnUserMode from 'components/Profile/UnUserMode';
+
 
 const UserProfile = () => {
   const history = useHistory();
@@ -19,6 +20,8 @@ const UserProfile = () => {
 
   const handleEditButtonClick = () => {
     history.push(`/my/editProfile/${userId}`);
+
+    
   };
   //! Calculate age
   const dob = new Date(user?.birthDate);
@@ -32,6 +35,11 @@ const UserProfile = () => {
       <div className="header">
         <div className="title">
           <IonTitle>My Profile</IonTitle>
+        </div>
+        <div className="edit">
+          <IonButton onClick={handleEditButtonClick}>
+          <IonIcon icon={createOutline} onClick={handleEditButtonClick} />
+          </IonButton>
         </div>
 
         <img src={user?.avatar} />

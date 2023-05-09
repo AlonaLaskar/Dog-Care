@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 //! Firebase
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, db, googleProvider, facebookProvider } from 'firebase.js';
+import { auth, googleProvider, facebookProvider } from 'firebase.js';
 
 //! Ionic components
 import { IonLoading, IonButton, IonIcon } from '@ionic/react';
@@ -92,6 +92,12 @@ if (loggedIn) {
               </IonButton>
             </div>
           </form>
+
+          <div className="forgetPassword">
+            <IonButton routerLink="./ForgetPassword" fill="clear" color="dark">
+              Forget password?
+            </IonButton>
+          </div>
 
           <h3 className="social-title">- or with -</h3>
           <div className="social">

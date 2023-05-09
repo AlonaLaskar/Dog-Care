@@ -20,7 +20,7 @@ function DisplaySchedule() {
     <DisplayScheduleStayle>
       <IonCard>
         <IonCardHeader>
-          <IonTitle>מעקב עבודות</IonTitle>
+          <IonTitle>Job history</IonTitle>
         </IonCardHeader>
         
         {attendance.map((item, index) => (

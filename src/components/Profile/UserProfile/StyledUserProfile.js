@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledUserProfile = styled.div`
- 
 
 flex-direction: column;
 justify-content: center;
@@ -9,7 +8,7 @@ align-items: center;
 
 
     .header {
-    height: 360px;
+    height: 340px;
     width: 360px;
     border-radius: 10px;
     position: absolute;

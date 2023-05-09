@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import StylesProfileCard from './StylesProfileCard';
-import { IonCard, IonImg, IonText, createGesture, IonFabButton, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
-import { chevronDown } from 'ionicons/icons';
+import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
 import { locationOutline, walletOutline } from 'ionicons/icons';
 import PropsTypes from 'prop-types';
 
 
 const ProfileCard = (props) => {
-  console.log(props);
   const ref = React.useRef(null);
   useEffect(() => {
     gestureInit();

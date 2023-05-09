@@ -12,8 +12,8 @@ import Schedule from 'pages/Schedule';
 import Comments from 'pages/Comments';
 import Post from 'pages/Feed';
 import NotFound from 'pages/NotFound';
-import EditProfile from '../Profile/EditProfile';
 import Chat from 'pages/Chat';
+import EditProfile from 'pages/EditProfile';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -21,13 +21,14 @@ import { useContext } from 'react';
 
 export const AppTabs = () => {
   //if user is not logged in redirect to login page
-  const { loggedIn } = useContext(AuthContext);
+  const { loggedIn,userId } = useContext(AuthContext);
   if (!loggedIn) {
     console.log('not logged in');
     return <Redirect to="/login" />;
   }
 
   return (
+  
     <IonTabs>
       <IonRouterOutlet>
         {/* Profile */}
@@ -50,7 +51,7 @@ export const AppTabs = () => {
           <IonLabel>Chat</IonLabel>
         </IonTabButton>
 
-        <IonTabButton tab="profile" href="/my/profile/:id">
+        <IonTabButton tab="profile" href={`/my/profile/${userId}`}>
           <IonIcon icon={person} />
           <IonLabel>Profile</IonLabel>
         </IonTabButton>

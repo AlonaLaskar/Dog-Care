@@ -7,7 +7,6 @@ import { doc, updateDoc } from 'firebase/firestore';
 
  function UnUserMode  ()  {
   const { userId } = useContext(AuthContext) || {};
-  console.log(userId);
   const userRef = doc(db, 'users', userId);
 
    updateDoc(userRef, {

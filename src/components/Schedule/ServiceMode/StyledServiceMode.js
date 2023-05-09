@@ -9,6 +9,7 @@ const StyledServiceMode =styled.div`
     top: 20%;
     ion-card {
         border-radius: 20px;
+      
     }
     .card-container {
         display: grid;

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const StyledNewPost = styled.div`
   box-sizing: border-box;
   height: 120px;
-  width: 90%;
+  width: 95%;
   position: absolute;
   left: 1.5%;
   right: 0%;
-  top: 5%;
+  top: 10%;
   bottom: 0%;
 
   border-radius: 10px;

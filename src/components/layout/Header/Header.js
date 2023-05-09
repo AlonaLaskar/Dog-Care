@@ -1,14 +1,21 @@
-import { IonButtons, IonToolbar, IonIcon, IonTitle } from '@ionic/react';
+import { IonButtons, IonToolbar, IonIcon, IonTitle,IonText } from '@ionic/react';
 import StyledHeader from './StyledHeader';
 import config from 'config';
 import { auth } from '../../../firebase';
 import { logOutOutline } from 'ionicons/icons';
+import { useUser } from 'hook/users';
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 
 
 const Header = () => {
+  const { userId } = useContext(AuthContext) || {};
+  const { user } = useUser(userId) || {};
+  console.log(user);
     function hendeleLogout(){
       auth.signOut();
     }
+
   return (
     <StyledHeader>
       <IonToolbar  >
@@ -16,7 +23,7 @@ const Header = () => {
         <IonButtons slot="start" onClick={hendeleLogout} color="danger" expand="block">
           <IonIcon solt='start' icon={logOutOutline}  />
         </IonButtons>
-
+          {/* <IonText className='hello'>{ `Hello ${user?.username}`}</IonText> */}
       </IonToolbar>
     </StyledHeader>
   );

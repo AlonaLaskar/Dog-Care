@@ -16,22 +16,21 @@ export const usernameValidate = {
   export const emailValidate = {
     required: {
       value: true,
-      message: 'אנא הזן אימייל',
+      message: 'please enter email',
     },
     pattern: {
       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      message: 'האימייל שהזנת אינו תקין',
+      message:'Invalid email address',
     },
   };
   
   export const passwordValidate = {
     required: {
       value: true,
-      message: 'אנא הזן סיסמא',
-    },
+      message: 'Please enter password',    },
     minLength: {
       value: 6,
-      message: 'הסיסמא חייבת להכיל אות קטנה וגדולה ומינימום אורך 6 תווים'
+      message: 'Password must be at least 6 characters long',
     },
   };
   

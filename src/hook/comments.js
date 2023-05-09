@@ -16,7 +16,7 @@ export function useAddComment({ postID, uid }) {
     const date = Date.now();
     const docRef = doc(db, 'comments', id);
     await setDoc(docRef, { text, id, postID, date, uid });
-    presentToast('התגובה נשלחה בהצלחה', true);
+    presentToast('The response was sent successfully ', true);
     setLoading(false);
   }
 

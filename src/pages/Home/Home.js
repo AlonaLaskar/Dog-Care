@@ -67,7 +67,7 @@ const Home = () => {
                 (user) =>
                   pageStatus === 'Dog-walker'
                     ? user.role==='Dog-walker' && user.payment> 0
-                    : user.role === "Dog-Sitter" && user.payment > 0
+                    : user.role === 'Dog-Sitter' && user.payment > 0
               )
               .map((user) => (
                 <ProfileCard {...user} key={user.id} {...ProfileEvents} pageStatus={pageStatus} />
