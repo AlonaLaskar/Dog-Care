@@ -5,7 +5,9 @@ import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
 import StyledUserProfile from './StyledUserProfile';
-import UserMode from '../UserMod';
+import ServiceMode from 'components/Schedule/ServiceMode';
+import UnUserMode from 'components/Profile/UnUserMode';
+
 const UserProfile = () => {
   const history = useHistory();
   //! Get user id from AuthContext
@@ -23,42 +25,43 @@ const UserProfile = () => {
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
 
+  const title = isUserMode ? 'My Profile' : 'Service Provider Mode';
+
   return (
     <StyledUserProfile>
-      <IonCard>
-        <IonCardHeader mode='ios'>
-          <IonToolbar mode='ios'>
+      <div className="header">
+        <div className="title">
           <IonTitle>My Profile</IonTitle>
-          <IonButton onClick={handleEditButtonClick}>
-            <IonIcon slot="icon-only" icon={createOutline} />
-          </IonButton>
-          </IonToolbar>
-     
-        </IonCardHeader>
-        <IonCardContent>
-          <img src={user?.avatar} />
-          <div className="name">
-            {user?.fullName},{ageInYears}
-          </div>
-          <div className="location">
-            <IonIcon icon={locationOutline} />
-            {user?.address},Israel
-          </div>
+        </div>
 
-          <div className="aboutMe">
-            <p>
-              <span>about Me:</span>
-              <br />
-              {user?.aboutMe}
-            </p>
-          </div>
+        <img src={user?.avatar} />
+        <div className="name">
+          {user?.fullName},{ageInYears}
+        </div>
+        <div className="location">
+          <IonIcon icon={locationOutline} />
+          {user?.city},Israel
+        </div>
 
-          <div className="mood">
-            {!isUserMode && <UserMode />}
-            <IonToggle checked={!isUserMode} onIonChange={handleToggleChange} />
-          </div>
-        </IonCardContent>
-      </IonCard>
+        <div className="bio">
+          <p>
+            <span>about Me:</span>
+            <br />
+            {user?.aboutMe}
+          </p>
+        </div>
+      </div>
+
+      <div className="mode">
+        {!isUserMode && <ServiceMode  />}
+
+        {isUserMode && <UnUserMode/> }
+      
+        <IonToggle checked={!isUserMode} onIonChange={handleToggleChange}>
+          <IonIcon slot="start" icon={createOutline} />
+          <IonTitle>{title}</IonTitle>
+        </IonToggle>
+      </div>
     </StyledUserProfile>
   );
 };

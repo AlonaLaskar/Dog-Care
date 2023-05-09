@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import StylesProfileCard from './StylesProfileCard';
-import { IonCard, IonImg, IonText, createGesture, IonFabButton, IonIcon } from '@ionic/react';
+import { IonCard, IonImg, IonText, createGesture, IonFabButton, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
 import { chevronDown } from 'ionicons/icons';
+import { locationOutline, walletOutline } from 'ionicons/icons';
 import PropsTypes from 'prop-types';
-import { IonFab } from '@ionic/react';
+
 
 const ProfileCard = (props) => {
   console.log(props);
@@ -50,6 +51,14 @@ const ProfileCard = (props) => {
     <StylesProfileCard>
       <div ref={ref}>
         <IonCard>
+          <IonCardHeader>
+          {props.pageStatus === 'Dog-walker' ? (
+            <IonCardTitle> Walk With Me </IonCardTitle>
+          ) : (
+            <IonCardTitle>Sleep with me</IonCardTitle>
+          )}
+          </IonCardHeader>
+
           <div className="card-container">
             <div className="image-container">
               <IonImg src={props.avatar} />
@@ -59,22 +68,25 @@ const ProfileCard = (props) => {
                 {props.fullName}, {ageInYears}
               </IonText>{' '}
               <br />
-              <IonText className="address">{props.address}</IonText>
+              <IonText className="address">
+                <IonIcon icon={locationOutline} />
+                {props.city},Israel
+              </IonText>
               <IonText className="bio">
                 <p>{props.aboutMe}</p>
               </IonText>
               {props.pageStatus === 'Dog-walker' ? (
-                <IonText className="price">{`${props.walkingPrice}₪ per hour to walk your dog `}</IonText>
+                <IonText className="price">
+                  <IonIcon icon={walletOutline} />
+                  {`${props.payment}₪ per hour to walk your dog `}
+                </IonText>
               ) : (
-                <IonText className="price">{`${props.keepingPrice}₪ per hour to keepin your dog `}</IonText>
+                <IonText className="price">
+                  <IonIcon icon={walletOutline} />
+                  {`${props.payment}₪ per hour to keepin your dog `}
+                </IonText>
               )}
             </div>
-            <div className="button-container"></div>
-            <IonFab slot="add" horizontal="center" vertical="center">
-              <IonFabButton color="secondary">
-                <IonIcon icon={chevronDown}></IonIcon>
-              </IonFabButton>
-            </IonFab>
           </div>
         </IonCard>
       </div>
@@ -90,12 +102,10 @@ ProfileCard.defaultProps = {
 ProfileCard.propTypes = {
   avatar: PropsTypes.string.isRequired,
   fullName: PropsTypes.string.isRequired,
-  address: PropsTypes.string.isRequired,
+  city: PropsTypes.string.isRequired,
   birthDate: PropsTypes.string.isRequired,
-  walkingPrice: PropsTypes.number.isRequired,
-  keepingPrice: PropsTypes.number.isRequired,
+  payment: PropsTypes.number.isRequired,
   pageStatus: PropsTypes.string.isRequired,
-
   aboutMe: PropsTypes.string.isRequired,
   onMatch: PropsTypes.func.isRequired,
   onUnmatch: PropsTypes.func.isRequired,

@@ -8,7 +8,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, db, googleProvider, facebookProvider } from 'firebase.js';
 
 //! Ionic components
-import { IonLoading, IonButton, IonIcon, } from '@ionic/react';
+import { IonLoading, IonButton, IonIcon } from '@ionic/react';
 import { personCircle, logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
 
 //! Custom hooks

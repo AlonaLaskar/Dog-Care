@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import DisplayScheduleStayle from './DisplayScheduleStayle';
-import { IonCardHeader, IonTitle, IonCardContent } from '@ionic/react';
+import { IonCardHeader, IonTitle, IonCardContent, IonCard } from '@ionic/react';
 
 function DisplaySchedule() {
   const [attendance, setAttendance] = useState([]);
@@ -18,28 +18,31 @@ function DisplaySchedule() {
 
   return (
     <DisplayScheduleStayle>
-      <IonCardHeader>
-        <IonTitle>מעקב עבודות</IonTitle>
-      </IonCardHeader>
-      {attendance.map((item, index) => (
-        <IonCardContent className="ion-text-center" key={index}>
-          <h1>{`שם הבעלים: ${item.owner}`}</h1>
-          <p>{`בתאריך: ${item.dateStart}  , שעת תחילת העבודה: ${item.start} `}</p>
-          <p>{` בתאריך: ${item.dateStop}  ,  שעת סוף העבודה: ${item.stop}`}</p>
-          <p>
-            {` חושב לפי: ${item.payment} לשעה`}
-            <br />
-          </p>
-          <p>
-            {` התשלום הנדרש: ${item.totalPayment}`}
-            <br />
-          </p>
-          <p>
-            {` בעבוד שעות: ${item.hours}`}
-            <br />
-          </p>
-        </IonCardContent>
-      ))}
+      <IonCard>
+        <IonCardHeader>
+          <IonTitle>מעקב עבודות</IonTitle>
+        </IonCardHeader>
+        
+        {attendance.map((item, index) => (
+          <IonCardContent className="ion-text-center" key={index}>
+            <h1>{`Owner Name: ${item.owner}`}</h1>
+            <p>{`On date: ${item.dateStart} , work start time: ${item.start} `}</p>
+            <p>{` on date: ${item.dateStop} , work end time: ${item.stop}`}</p>
+            <p>
+              {` calculated according to: ${item.payment} per hour`}
+              <br />
+            </p>
+            <p>
+              {`Required payment: ${item.totalPayment}`}
+              <br />
+            </p>
+            <p>
+              {` working hours: ${item.hours}`}
+              <br />
+            </p>
+          </IonCardContent>
+        ))}
+      </IonCard>
     </DisplayScheduleStayle>
   );
 }

@@ -3,6 +3,7 @@ import { IonPage } from '@ionic/react';
 
 const StyledProfile = styled(IonPage).attrs({ className: 'ion-padding' })`
 
+
 `;
 
 export default StyledProfile;

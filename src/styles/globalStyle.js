@@ -3,26 +3,42 @@ import Background from '../assets/Background.png';
 
 const GlobalStyle = createGlobalStyle`
 
-    html, body {
-      direction: ltr;
+html, body {
+  direction: ltr;
+}
 
-    }
+ion-header .globalHeader {
+  position: absolute;
+  top:1%;
+  left: 0;
+  right: 0;
+  background: pink;
+  color: #fff; 
+  display: flex;
+  align-items: center;
+
+}
 
 
-    body {
-      background-image: url(${Background});
-      button {
-        box-sizing: border-box;
-          position: absolute;
-          left: 0%;
-          right: 0%;
-          top: 0%;
-          bottom: 0%;
 
-          background: #FFFFFF;
-          border: 1px solid #024C71;
-          border-radius: 50px;
-        
+
+
+body {
+  background-image: url(${Background});
+  
+  button {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    background: #FFFFFF;
+    border: 1px solid #024C71;
+    border-radius: 50px;
+    
+    
           cursor: pointer;
           transition: opacity 0.3s ease-in-out;
 

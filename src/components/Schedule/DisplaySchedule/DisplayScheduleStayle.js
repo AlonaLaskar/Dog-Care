@@ -11,6 +11,7 @@ const DisplayScheduleStayle = styled.div`
   border: 1px solid rgb(227, 213, 202);
   border-radius: 5px;
   border-radius: 1px;
+  background-color: pink;
 
   .description {
     border: 1px solid rgb(227, 213, 202);

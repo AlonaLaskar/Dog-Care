@@ -42,7 +42,8 @@ const schema = yup.object().shape({
   verifyPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords dont match'),
   fullName: yup.string().required('Enter full name'),
   phone: yup.string().required('Enter phone number'),
-  address: yup.string().required('Enter address'),
+  city: yup.string().required('Enter city'),
+  street: yup.string().required('Enter street'),
   birthDate: yup.string(),
   aboutMe: yup.string()
 });
@@ -114,10 +115,10 @@ export default function Register() {
             <Input id="verifyPassword" type="verify-Password" title="Verify password" position="floating" />
             <Input id="fullName" title="fullName" placeholder="Enter fullName" position="floating" />
             <Input id="phone" title="cellphone" placeholder="Enter phone number" position="floating" />
-            <Input id="address" title="address" placeholder="Enter address" position="floating" />
+            <Input id="city" title="city" placeholder="Enter city" position="floating" />
             <Input id="birthDate" type="date" title="Birthday" placeholder="Enter birthday" position="floating" />
             <Input id="aboutMe" title="About me" placeholder="Enter about me" position="floating" />
-
+`            <Input id="street" title="street" placeholder="Enter street" position="floating" />  
             <div className="form-group">
               <IonButton type="submit" expand="block">
                 <IonIcon slot="start" icon={personAdd} />

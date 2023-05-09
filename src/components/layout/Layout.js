@@ -50,7 +50,7 @@ const Layout = () => {
               <Switch>
               <Route path="/my">
                 <AppTabs />
-                {/* <Header /> */}
+                <Header />
               </Route>
             </Switch>
 
