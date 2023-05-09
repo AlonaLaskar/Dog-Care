@@ -6,11 +6,11 @@ const StyledPost = styled.div`
     box-sizing: border-box;
 
     border-radius: 10px;
-    width: 90%;
+    width: 96%;
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    overflow: auto;
+    overflow:scroll;
 
     ion-card-content {
       padding: 10px;

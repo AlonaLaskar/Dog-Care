@@ -1,76 +1,89 @@
-import React, { useState } from 'react';
-import { IonCard, IonImg, IonText, IonIcon } from '@ionic/react';
-import { cashOutline, pinOutline, micOutline } from 'ionicons/icons';
+import React, { useEffect } from 'react';
 import StylesProfileCard from './StylesProfileCard';
+import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
+import { locationOutline, walletOutline } from 'ionicons/icons';
 import PropsTypes from 'prop-types';
 
-const ProfileCard = ({
-  avatar,
-  fullName,
-  address,
-  birthDate,
-  walkingPrice,
-  keepingPrice,
-  pageStatus,
-  aboutMe,
-  onMatch,
-  onUnmatch,
-  onReset = () => {}
-}) => {
-  const [cardStyle, setCardStyle] = useState({ transform: 'translateX(0px)' });
 
-  const handleMove = (detail) => {
-    setCardStyle({
-      transform: `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`
-    });
-    if (detail.deltaX > 0) {
-      onMatch();
-    } else {
-      onUnmatch();
+const ProfileCard = (props) => {
+  const ref = React.useRef(null);
+  useEffect(() => {
+    gestureInit();
+  }, []);
+
+  const gestureInit = () => {
+    const card = ref.current;
+    if (card) {
+      const gesture = createGesture({
+        el: card,
+        gestureName: 'card-swipe',
+        onMove: (detail) => {
+          card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
+          if (detail.deltaX > 0) {
+            props.onMatch();
+          } else {
+            props.onUnmatch();
+          }
+        },
+        onEnd: (detail) => {
+          const windowWidth = window.innerWidth;
+          props.onReset();
+          if (detail.deltaX > windowWidth / 2) {
+            card.style.transform = `translateX(${windowWidth}px)`;
+          } else if (detail.deltaX < -windowWidth / 2) {
+            card.style.transform = `translateX(-${windowWidth}px)`;
+          } else {
+            card.style.transform = 'translateX(0px)';
+          }
+        }
+      });
+      gesture.enable();
     }
   };
-
-  const handleEnd = (detail) => {
-    const windowWidth = window.innerWidth;
-    onReset();
-    if (detail.deltaX > windowWidth / 2) {
-      setCardStyle({ transform: `translateX(${windowWidth}px)` });
-    } else if (detail.deltaX < -windowWidth / 2) {
-      setCardStyle({ transform: `translateX(-${windowWidth}px)` });
-    } else {
-      setCardStyle({ transform: 'translateX(0px)' });
-    }
-  };
-
-  const dob = new Date(birthDate);
+  //!get the age
+  const dob = new Date(props.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
 
   return (
     <StylesProfileCard>
-      <div style={cardStyle} onPointerMove={handleMove} onPointerUp={handleEnd}>
+      <div ref={ref}>
         <IonCard>
+          <IonCardHeader>
+          {props.pageStatus === 'Dog-walker' ? (
+            <IonCardTitle> Walk With Me </IonCardTitle>
+          ) : (
+            <IonCardTitle>Sleep with me</IonCardTitle>
+          )}
+          </IonCardHeader>
+
           <div className="card-container">
             <div className="image-container">
-              <IonImg src={avatar} />
+              <IonImg src={props.avatar} />
             </div>
-
             <div className="details-container">
-              <IonText className="name">{`${fullName}, ${ageInYears}`}</IonText> <br />
-              <div className="location">
-                <IonIcon icon={pinOutline} />
-                <IonText className="address">{address}</IonText>
-              </div>
-              <div className="bip">
-                <IonIcon icon={micOutline} />
-                <IonText className="bio">{aboutMe}</IonText>
-              </div>
-              <div className="price">
-                <IonIcon icon={cashOutline} />
-                <IonText>{`${pageStatus === 'Dog-walker' ? walkingPrice : keepingPrice}₪ per hour to ${
-                  pageStatus === 'Dog-walker' ? 'walk' : 'keep'
-                } your dog`}</IonText>
-              </div>
+              <IonText className="name">
+                {props.fullName}, {ageInYears}
+              </IonText>{' '}
+              <br />
+              <IonText className="address">
+                <IonIcon icon={locationOutline} />
+                {props.city},Israel
+              </IonText>
+              <IonText className="bio">
+                <p>{props.aboutMe}</p>
+              </IonText>
+              {props.pageStatus === 'Dog-walker' ? (
+                <IonText className="price">
+                  <IonIcon icon={walletOutline} />
+                  {`${props.payment}₪ per hour to walk your dog `}
+                </IonText>
+              ) : (
+                <IonText className="price">
+                  <IonIcon icon={walletOutline} />
+                  {`${props.payment}₪ per hour to keepin your dog `}
+                </IonText>
+              )}
             </div>
           </div>
         </IonCard>
@@ -78,22 +91,21 @@ const ProfileCard = ({
     </StylesProfileCard>
   );
 };
-
 export default ProfileCard;
 
 ProfileCard.defaultProps = {
   onReset: () => {} // Add a default value for onReset prop
 };
+
 ProfileCard.propTypes = {
   avatar: PropsTypes.string.isRequired,
   fullName: PropsTypes.string.isRequired,
-  address: PropsTypes.string.isRequired,
+  city: PropsTypes.string.isRequired,
   birthDate: PropsTypes.string.isRequired,
-  walkingPrice: PropsTypes.number.isRequired,
-  keepingPrice: PropsTypes.number.isRequired,
+  payment: PropsTypes.number.isRequired,
   pageStatus: PropsTypes.string.isRequired,
   aboutMe: PropsTypes.string.isRequired,
   onMatch: PropsTypes.func.isRequired,
   onUnmatch: PropsTypes.func.isRequired,
-  onReset: PropsTypes.func
+  onReset: PropsTypes.func // Remove the "isRequired" from onReset prop
 };

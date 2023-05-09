@@ -14,6 +14,7 @@ import { ThemeProvider } from 'styled-components';
 //!Pages
 import Login from 'pages/Login';
 import Register from 'pages/Register';
+import ForgetPassword from 'pages/ForgetPassword';
 
 import Header from 'components/layout/Header';
 import { AppTabs } from '../layout/AppTabs';
@@ -43,6 +44,7 @@ const Layout = () => {
               <Redirect exact path="/" to="/login" />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
+              <Route exact path='/ForgetPassword' component={ForgetPassword} />
               </Switch>
             </IonRouterOutlet>
        
@@ -50,7 +52,7 @@ const Layout = () => {
               <Switch>
               <Route path="/my">
                 <AppTabs />
-                {/* <Header /> */}
+                <Header />
               </Route>
             </Switch>
 

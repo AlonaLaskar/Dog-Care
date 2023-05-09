@@ -8,6 +8,16 @@ const StyledHeader = styled(IonHeader)`
   font-weight: bold;
   font-size: 1.5rem;
 
+
+/* ion-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+  position: absolute;
+  top: 15%;
+  left: 59%;
+} */
 `;
 
 

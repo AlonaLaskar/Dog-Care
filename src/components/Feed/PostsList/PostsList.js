@@ -1,5 +1,5 @@
 //! Ionic components
-import { IonCard, IonText } from '@ionic/react';
+import {  IonText } from '@ionic/react';
 //!prop-types
 import PropTypes from 'prop-types';
 //! Components

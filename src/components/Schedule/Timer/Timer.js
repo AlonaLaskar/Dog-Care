@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useRef } from 'react';
-import { IonButton, IonLabel, IonItem } from '@ionic/react';
+import { IonButton, IonLabel } from '@ionic/react';
 import StyledTimer from './StyledTimer';
 
 function Timer() {
 const [isRunning, setIsRunning] = useState(false);
 const [time, setTime] = useState(0);
-const [start, setStart] = useState('');
-const [stop, setStop] = useState('');
+const [ setStart] = useState('');
+const [ setStop] = useState('');
 
 const intervalRef = useRef(null);
 

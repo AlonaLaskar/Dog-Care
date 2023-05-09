@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const StyledNewPost = styled.div`
   box-sizing: border-box;
-  height: 97px;
-  width: 90%;
+  height: 120px;
+  width: 95%;
   position: absolute;
   left: 1.5%;
   right: 0%;
-  top: 5%;
+  top: 10%;
   bottom: 0%;
 
   border-radius: 10px;
@@ -19,9 +19,10 @@ const StyledNewPost = styled.div`
     & ion-textarea {
       box-sizing: border-box;
       position: absolute;
-      left: 13%;
       width: 85%;
-      height: 40%;
+      max-height: 10px;
+      
+      left: 13%;
       border-radius: 50px;
       top: 10%;
       right: 14%;

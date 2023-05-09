@@ -1,5 +1,5 @@
 import React from 'react';
-import { setupIonicReact, IonApp } from '@ionic/react';
+import { setupIonicReact, IonApp, IonHeader, IonContent } from '@ionic/react';
 import Layout from 'components/layout';
 
 /* Core CSS required for Ionic components to work properly */
@@ -19,13 +19,15 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import 'styles/fonts.css';
 import 'styles/variables.css';
+
+import Header from 'components/layout/Header';
+
 setupIonicReact({});
 
 export default function App() {
 
   return (
     <IonApp>
-
       <Layout  />
     </IonApp>
   );

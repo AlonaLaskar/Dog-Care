@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonHeader, IonSelect, IonToolbar } from '@ionic/react';
 import StyledHome from './StyledHome';
 import ProfileCard from 'components/ProfileCard/ProfileCard';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection, doc } from 'firebase/firestore';
 import { db, auth } from '../../firebase';
 import ActionButton from 'components/ProfileCard/ActionButton/ActionButton';
+import {  IonSelectOption } from '@ionic/react';
 
 const Home = () => {
   const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
   const [animateMatchButton, setAnimateMatchButton] = useState(false);
+
   const [pageStatus, setPageStatus] = useState('Dog-walker');
 
   function useUsers() {
@@ -18,7 +20,7 @@ const Home = () => {
     return { users, isLoading };
   }
 
-  const { users, isLoading } = useUsers();
+  const { users} = useUsers();
   const user = auth.currentUser;
   const userRef = doc(db, 'users', user.uid);
 
@@ -42,24 +44,30 @@ const Home = () => {
       prevStatus === 'Dog-walker' ? 'Dog-Sitter' : 'Dog-walker'
     );
   };
-  console.log("pageStatus, ", pageStatus);
+ 
 
   return (
     <StyledHome>
-      <IonHeader mode="ios">
-        <IonToolbar mode="ios">
-          <IonTitle onClick={handleTitleClick}>{pageStatus}</IonTitle>
+      <IonHeader>
+        <IonToolbar >
+          <div className='action-bar'>
+        <IonSelect aria-label="Fruit" interface="action-sheet" placeholder={pageStatus} onIonChange={e => setPageStatus(e.detail.value)}>
+          <IonSelectOption value="Dog-walker" onClick={handleTitleClick}>Dog-walker</IonSelectOption>
+          <IonSelectOption value="Dog-Sitter"onClick={handleTitleClick}>Dog-Sitter </IonSelectOption>
+        </IonSelect>
+        </div>
+          {/* <IonTitle onClick={handleTitleClick}>{pageStatus}</IonTitle> */}
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+   
         <div className="card-stack-container">
           {users &&
             users
               .filter(
                 (user) =>
                   pageStatus === 'Dog-walker'
-                    ? user.walking === true && user.walkingPrice > 0
-                    : user.keeping === true && user.keepingPrice > 0
+                    ? user.role==='Dog-walker' && user.payment> 0
+                    : user.role === 'Dog-Sitter' && user.payment > 0
               )
               .map((user) => (
                 <ProfileCard {...user} key={user.id} {...ProfileEvents} pageStatus={pageStatus} />
@@ -71,7 +79,7 @@ const Home = () => {
             animateUnmatchButton,
           }}
         />
-      </IonContent>
+    
     </StyledHome>
   );
 };
