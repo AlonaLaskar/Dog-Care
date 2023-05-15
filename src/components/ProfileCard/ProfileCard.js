@@ -4,8 +4,17 @@ import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCard
 import { locationOutline, walletOutline } from 'ionicons/icons';
 import PropsTypes from 'prop-types';
 
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
+import { saveRightSwipe } from 'hook/users';
+
+
 
 const ProfileCard = (props) => {
+
+  const { userId}= useContext(AuthContext) || {};
+
+
   const ref = React.useRef(null);
   useEffect(() => {
     gestureInit();
@@ -21,6 +30,8 @@ const ProfileCard = (props) => {
           card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
           if (detail.deltaX > 0) {
             props.onMatch();
+            saveRightSwipe(userId, props.id);
+
           } else {
             props.onUnmatch();
           }
@@ -28,12 +39,13 @@ const ProfileCard = (props) => {
         onEnd: (detail) => {
           const windowWidth = window.innerWidth;
           props.onReset();
+          card.style.transition = '0.5s cubic-bezier(0.175,0.885,0.32,1.275)'
           if (detail.deltaX > windowWidth / 2) {
-            card.style.transform = `translateX(${windowWidth}px)`;
+            card.style.transform = `translateX(${windowWidth*1.5}px)`;
           } else if (detail.deltaX < -windowWidth / 2) {
-            card.style.transform = `translateX(-${windowWidth}px)`;
+            card.style.transform = `translateX(-${windowWidth*1.5}px)`;
           } else {
-            card.style.transform = 'translateX(0px)';
+            card.style.transform = '';
           }
         }
       });
@@ -49,7 +61,7 @@ const ProfileCard = (props) => {
     <StylesProfileCard>
       <div ref={ref}>
         <IonCard>
-          <IonCardHeader>
+          <IonCardHeader >
           {props.pageStatus === 'Dog-walker' ? (
             <IonCardTitle> Walk With Me </IonCardTitle>
           ) : (
@@ -99,6 +111,7 @@ ProfileCard.defaultProps = {
 
 ProfileCard.propTypes = {
   avatar: PropsTypes.string.isRequired,
+  id: PropsTypes.string.isRequired,
   fullName: PropsTypes.string.isRequired,
   city: PropsTypes.string.isRequired,
   birthDate: PropsTypes.string.isRequired,
@@ -107,5 +120,5 @@ ProfileCard.propTypes = {
   aboutMe: PropsTypes.string.isRequired,
   onMatch: PropsTypes.func.isRequired,
   onUnmatch: PropsTypes.func.isRequired,
-  onReset: PropsTypes.func // Remove the "isRequired" from onReset prop
+  onReset: PropsTypes.func
 };

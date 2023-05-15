@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const StyledServiceMode =styled.div`
+const StyledDogWalkerService =styled.div`
 align-items: center;
 justify-content: center;
 display: flex;
@@ -15,4 +15,4 @@ font-style: normal;
 
 `;
 
-export default StyledServiceMode;
+export default StyledDogWalkerService;

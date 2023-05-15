@@ -7,7 +7,6 @@ const StyledPostList = styled.div`
   left: 1.5%;;
   right: 0;
   bottom: 0;
-  background-color: pink;
   overflow: auto;
   
 

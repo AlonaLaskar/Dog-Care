@@ -1,9 +1,18 @@
-import { IonButton, IonInput, IonLabel, IonItem, IonNote,IonSelectOption, IonSelect, IonHeader, IonToolbar } from '@ionic/react';
+import {
+  IonButton,
+  IonInput,
+  IonLabel,
+  IonItem,
+  IonNote,
+  IonSelectOption,
+  IonSelect,
+  IonHeader,
+  IonToolbar
+} from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { getDoc, arrayUnion,setDoc,doc, updateDoc } from 'firebase/firestore';
-
+import { getDoc, arrayUnion, setDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import { useState } from 'react';
 
@@ -13,26 +22,22 @@ import { useContext } from 'react';
 import useToast from 'hook/useToast';
 import { useHistory } from 'react-router-dom';
 
-
 //!style
-import StyledServiceMode from './StyledServiceMode';
+import StyledDogWalkerService from './StyledDogWalkerService';
 
 const schema = yup.object().shape({
   dateStart: yup.string().required('This is an important value'),
   start: yup.string().required('This is an important value'),
-  dateStop: yup.string().required('This is an important value'),
   stop: yup.string().required('This is an important value'),
   payment: yup.string().required('This is an important value')
 });
 
-const ServiceMode = () => {
-
-  
+const DogWalkerService = () => {
   const { userId } = useContext(AuthContext) || {};
   const presentToast = useToast();
   const history = useHistory();
 
-  const [pageStatus, setPageStatus] = useState('Dog-Sitter');
+  const [pageStatus, setPageStatus] = useState('Dog-walker');
 
   const handleTitleClick = () => {
     setPageStatus((prevStatus) => (prevStatus === 'Dog-walker' ? 'Dog-Sitter' : 'Dog-walker'));
@@ -45,6 +50,7 @@ const ServiceMode = () => {
   } = useForm({
     resolver: yupResolver(schema)
   });
+
 
   async function submitForm(data) {
     const userRef = doc(db, 'availability', `${userId}`);
@@ -66,10 +72,9 @@ const ServiceMode = () => {
       presentToast(error.message, false);
     }
   }
-
-
+  
   return (
-    <StyledServiceMode>
+    <StyledDogWalkerService>
       <div className="form">
         <form onSubmit={handleSubmit(submitForm)}>
           <IonHeader mode="ios">
@@ -81,57 +86,60 @@ const ServiceMode = () => {
                   placeholder={pageStatus}
                   onIonChange={(e) => setPageStatus(e.detail.value)}
                 >
-                  <IonSelectOption value="Dog-walker" onClick={handleTitleClick} >
-                   <span> Dog-walker</span>
+                  <IonSelectOption value="Dog-walker" onClick={handleTitleClick}>
+                    <span> Dog-walker</span>
                   </IonSelectOption>
                   <IonSelectOption value="Dog-Sitter" onClick={handleTitleClick}>
-                    <span>Dog-Sitter{' '} </span>
+                    <span>Dog-Sitter </span>
                   </IonSelectOption>
                 </IonSelect>
               </div>
             </IonToolbar>
           </IonHeader>
 
-        
           <div className="date">
-            <IonItem >
-              <IonInput position="stack" type="date" label=' The day the shift starts' {...register('dateStart')}></IonInput>
+            <IonItem>
+              <IonInput
+                position="stack"
+                type="date"
+                label=" The day the shift starts"
+                {...register('dateStart')}
+              ></IonInput>
             </IonItem>
             {errors.dateStart && <IonNote slot="error">{errors.dateStart.message}</IonNote>}
           </div>
           <div className="from">
-            <IonItem >
-              <IonInput position="stack" label='The time the shift starts' type="time" {...register('start')}></IonInput>
+            <IonItem>
+              <IonInput
+                position="stack"
+                label="The time the shift starts"
+                type="time"
+                {...register('start')}
+              ></IonInput>
             </IonItem>
             {errors.start && <IonNote slot="error">{errors.start.message}</IonNote>}
           </div>
-          <div className="date">
-            <IonItem>
-              <IonInput position="stack" label='Start shift' type="date" {...register('dateStop')}></IonInput>
-            </IonItem>
-            {errors.dateStop && <IonNote slot="error">{errors.dateStop.message}</IonNote>}
-          </div>
+
           <div className="to">
             <IonItem>
-              <IonInput type="time" position="stack" label='End shift' {...register('stop')}></IonInput>
+              <IonInput type="time" position="stack" label="End shift" {...register('stop')}></IonInput>
             </IonItem>
             {errors.stop && <IonNote slot="error">{errors.stop.message}</IonNote>}
           </div>
 
           <div className="payment">
-            <IonItem >
-              <IonInput type="number"position="stack" label='Hourly payment' {...register('payment')}></IonInput>
+            <IonItem>
+              <IonInput type="number" position="stack" label="Hourly payment" {...register('payment')}></IonInput>
             </IonItem>
 
             {errors.payment && <IonNote slot="error">{errors.payment.message}</IonNote>}
-
           </div>
           <div className="buttom">
             <IonButton type="submit">Save</IonButton>
           </div>
         </form>
       </div>
-    </StyledServiceMode>
+    </StyledDogWalkerService>
   );
 };
-export default ServiceMode;
+export default DogWalkerService;

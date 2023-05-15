@@ -11,7 +11,6 @@ import { sendOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 //! Hooks-components
 import { useAddComment } from '../../../hook/comments';
-import { useUser } from '../../../hook/users';
 
 //! Styles
 import StyledNewcomments from './StyledNewcomments';

@@ -11,7 +11,6 @@ import { useContext } from 'react';
 const Header = () => {
   const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
-  console.log(user);
     function hendeleLogout(){
       auth.signOut();
     }

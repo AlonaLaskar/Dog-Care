@@ -4,7 +4,7 @@ import StyledHistoryJob from './StyledHistoryJob';
 const HistoryJob = () => {
     return (
         <StyledHistoryJob>
-           HistoryJob
+            <h1>History Job</h1>
         </StyledHistoryJob>
     );
 }

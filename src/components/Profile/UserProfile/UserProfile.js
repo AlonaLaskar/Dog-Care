@@ -1,4 +1,4 @@
-import { IonTitle, IonIcon, IonToggle, IonButton} from '@ionic/react';
+import { IonCardTitle, IonIcon, IonToggle, IonButton, IonCard, IonCardSubtitle,IonTitle, IonCardHeader, IonImg} from '@ionic/react';
 import { locationOutline, createOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
@@ -32,20 +32,21 @@ const UserProfile = () => {
 
   return (
     <StyledUserProfile>
-      <div className="header">
-        <div className="title">
-          <IonTitle>My Profile</IonTitle>
-        </div>
-        <div className="edit">
+        <IonCard className="card">
+          <IonCardHeader>
+          <IonCardTitle>
+         
+          </IonCardTitle>
+          <IonCardSubtitle>
           <IonButton onClick={handleEditButtonClick}>
           <IonIcon icon={createOutline} onClick={handleEditButtonClick} />
           </IonButton>
-        </div>
-
-        <img src={user?.avatar} />
+          </IonCardSubtitle>
+        <IonImg src={user?.avatar} />
         <div className="name">
           {user?.fullName},{ageInYears}
         </div>
+        </IonCardHeader>
         <div className="location">
           <IonIcon icon={locationOutline} />
           {user?.city},Israel
@@ -58,9 +59,9 @@ const UserProfile = () => {
             {user?.aboutMe}
           </p>
         </div>
-      </div>
-
-      <div className="mode">
+   
+      </IonCard>
+     <div className="mode">
         {!isUserMode && <ServiceMode  />}
 
         {isUserMode && <UnUserMode/> }
@@ -69,7 +70,9 @@ const UserProfile = () => {
           <IonIcon slot="start" icon={createOutline} />
           <IonTitle>{title}</IonTitle>
         </IonToggle>
+
       </div>
+      
     </StyledUserProfile>
   );
 };
