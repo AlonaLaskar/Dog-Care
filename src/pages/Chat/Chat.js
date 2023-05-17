@@ -1,12 +1,12 @@
 
 import StyledChat from './StyledChat';
-import CreateChat from '../../components/Chat/CreateChat/CreateChat';
+import HistoryJob from '../../components/Schedule/HistoryJob'
+
 
 const Chat = () => {
   return (
     <StyledChat>
-      <CreateChat />
-
+<HistoryJob/>
     </StyledChat>
   );
 };

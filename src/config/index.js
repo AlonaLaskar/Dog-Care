@@ -1,5 +1,5 @@
 const config = {
-  siteName: 'Dog-sitter',
+  siteName: 'Dog-Care',
   theme: 'light',
 
   authentication: {

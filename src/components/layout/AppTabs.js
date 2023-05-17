@@ -16,7 +16,6 @@ import Chat from 'pages/Chat';
 import EditProfile from 'pages/EditProfile';
 import ServiceMode from 'components/Schedule/ServiceMode';
 import DogSitterService from 'components/Schedule/DogSitterService';
-import DogWalkerService from 'components/Schedule/DogWalkerService';
 import SendRequestMassage from 'components/Schedule/DogSitterService/SendRequestMassage';
 
 
@@ -47,7 +46,6 @@ export const AppTabs = () => {
         <Route exact path="/my/chat" component={Chat} />
         <Route exact path="/my/serviceMode" component={ServiceMode} />
         <Route exact path="/my/DogSitterService" component={DogSitterService} />
-        <Route exact path="/my/DogWalkerService" component={DogWalkerService} />
         <Route exact path="/my/SendRequestMassage" component={SendRequestMassage} />
 
 

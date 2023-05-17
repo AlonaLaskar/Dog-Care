@@ -1,4 +1,4 @@
-import { IonButton, IonInput, IonLabel, IonItem, IonNote,IonSelectOption, IonSelect, IonHeader, IonToolbar } from '@ionic/react';
+import { IonButton, IonSelectOption, IonSelect, IonHeader, IonToolbar, IonCard } from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -12,6 +12,7 @@ import AuthContext from 'providers/AuthContext';
 import { useContext } from 'react';
 import useToast from 'hook/useToast';
 import { useHistory } from 'react-router-dom';
+import FormInput from 'components/UI/FormInput'
 
 
 //!style
@@ -49,6 +50,7 @@ const ServiceMode = () => {
   async function submitForm(data) {
     const userRef = doc(db, 'availability', `${userId}`);
     const docSnapshot = await getDoc(userRef);
+    const userRefUpdate = doc(db, 'users', userId);
   
     try {
       if (docSnapshot.exists()) {
@@ -57,21 +59,33 @@ const ServiceMode = () => {
         });
       } else {
         await setDoc(userRef, {
-          [pageStatus]: [data]
+          [pageStatus]: [data],
+          userId: userId, // Add the user's UID to the data
+          
         });
-        presentToast('Your availability to work!', true);
-        // history.push('/my/home');
+     
       }
+      await updateDoc(userRefUpdate, {
+        uid: userId,
+        role: pageStatus,
+        dateStart: data.dateStart,
+        start: data.start,
+        dateStop: data.dateStop,
+        stop: data.stop,
+        payment: data.payment
+      });
+      history.push('/my/home');
+      presentToast('Your availability to work!', true);
     } catch (error) {
       presentToast(error.message, false);
     }
   }
 
-
   return (
     <StyledServiceMode>
       <div className="form">
         <form onSubmit={handleSubmit(submitForm)}>
+          <IonCard>
           <IonHeader mode="ios">
             <IonToolbar mode="ios">
               <div className="action-bar">
@@ -93,42 +107,60 @@ const ServiceMode = () => {
           </IonHeader>
 
         
-          <div className="date">
-            <IonItem >
-              <IonInput position="stack" type="date" label=' The day the shift starts' {...register('dateStart')}></IonInput>
-            </IonItem>
-            {errors.dateStart && <IonNote slot="error">{errors.dateStart.message}</IonNote>}
-          </div>
-          <div className="from">
-            <IonItem >
-              <IonInput position="stack" label='The time the shift starts' type="time" {...register('start')}></IonInput>
-            </IonItem>
-            {errors.start && <IonNote slot="error">{errors.start.message}</IonNote>}
-          </div>
-          <div className="date">
-            <IonItem>
-              <IonInput position="stack" label='Start shift' type="date" {...register('dateStop')}></IonInput>
-            </IonItem>
-            {errors.dateStop && <IonNote slot="error">{errors.dateStop.message}</IonNote>}
-          </div>
-          <div className="to">
-            <IonItem>
-              <IonInput type="time" position="stack" label='End shift' {...register('stop')}></IonInput>
-            </IonItem>
-            {errors.stop && <IonNote slot="error">{errors.stop.message}</IonNote>}
-          </div>
+          <div className="dateStart">
+              <FormInput
+                label="From"
+                name="dateStart"
+                type="date"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-          <div className="payment">
-            <IonItem >
-              <IonInput type="number"position="stack" label='Hourly payment' {...register('payment')}></IonInput>
-            </IonItem>
+            <div className="dateEnd">
+              <FormInput
+                label="To"
+                name="dateStop"
+                type="date"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-            {errors.payment && <IonNote slot="error">{errors.payment.message}</IonNote>}
+            <div className="fromStart">
+              <FormInput
+                label="From"
+                name="start"
+                type="time"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-          </div>
+            <div className="toEnd">
+              <FormInput
+                label="To"
+                name="stop"
+                type="time"
+                register={register}
+                errors={errors}
+              />
+            </div>
+
+            <div className="payment">
+              <FormInput
+                label="Payment"
+                name="payment"
+                type="number"
+                register={register}
+                errors={errors}
+              />
+            </div>
+              <h3>₪</h3>
           <div className="buttom">
             <IonButton type="submit">Save</IonButton>
           </div>
+          </IonCard>
         </form>
       </div>
     </StyledServiceMode>

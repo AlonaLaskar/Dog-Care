@@ -3,20 +3,30 @@ import StayledJobSearch from './StayledJobSearch';
 import { IonButton, IonTitle } from '@ionic/react';
 import dogsitter from '../../../assets/dogsitter.jpg';
 import dogwolker from '../../../assets/dogwolker.jpg';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../../../firebase';
+import AuthContext from 'providers/AuthContext';
+import { useContext } from 'react';
 
 function JobSearch() {
+  const { userId } = useContext(AuthContext) || {};
+
   const [selectedService, setSelectedService] = useState(null);
 
   function handleClick(service) {
     setSelectedService(service);
   }
-
+//update the user role in the database
+  async function updatePageStatus() {
+    const userRefUpdate = doc(db, 'users', userId);
+    await updateDoc(userRefUpdate, {
+      role: selectedService,
+    });
+  }
+//update the user and move on to the next page
   function getNextHref() {
-    if (selectedService === 'dog-sitting') {
-      return '/my/DogSitterService'
-    } else {
-      return '/my/DogWalkerService';
-    }
+    updatePageStatus();
+    return '/my/DogSitterService';
   }
 
   return (
@@ -54,7 +64,8 @@ function JobSearch() {
         <IonButton color='primary' href={getNextHref()}>
           Next
         </IonButton>
-      </div>      
+      </div>
+       
     </StayledJobSearch>
   );
 }
