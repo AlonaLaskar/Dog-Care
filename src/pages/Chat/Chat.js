@@ -1,13 +1,23 @@
+//! Custom Hooks
+import { usePosts } from 'hook/posts';
 
-import StyledChat from './StyledChat';
-import HistoryJob from '../../components/Schedule/HistoryJob'
+//! Components
+import Post from 'components/Feed/Post';
 
 
 const Chat = () => {
+
+  const { posts, isLoading } = usePosts();
+
+
+  if (isLoading) return 'Loading...';
+
   return (
-    <StyledChat>
-<HistoryJob/>
-    </StyledChat>
+    <>
+      {posts.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
+    </>
   );
 };
 

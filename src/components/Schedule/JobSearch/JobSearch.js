@@ -1,32 +1,37 @@
+//!React
 import React, { useState } from 'react';
-import StayledJobSearch from './StayledJobSearch';
 import { IonButton, IonTitle } from '@ionic/react';
-import dogsitter from '../../../assets/dogsitter.jpg';
-import dogwolker from '../../../assets/dogwolker.jpg';
+import { useContext } from 'react';
+//!Firebase
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../../firebase';
+//!Self-components
 import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
+import dogwolker from '../../../assets/dogwolker.jpg';
+import dogsitter from '../../../assets/dogsitter.jpg';
+import StayledJobSearch from './StayledJobSearch';
+import DogSitterService from '../../Schedule/DogSitterService';
+import { useHistory } from 'react-router-dom';
 
 function JobSearch() {
   const { userId } = useContext(AuthContext) || {};
 
-  const [selectedService, setSelectedService] = useState(null);
-
+  const [selectedService, setSelectedService] = useState('');
+  const [nextClicked, setNextClicked] = useState(false);
   function handleClick(service) {
     setSelectedService(service);
   }
-//update the user role in the database
-  async function updatePageStatus() {
-    const userRefUpdate = doc(db, 'users', userId);
-    await updateDoc(userRefUpdate, {
-      role: selectedService,
-    });
+
+  function handleNextClick() {
+    if (selectedService) {
+      setNextClicked(true);
+    } else {
+      return;
+    }
   }
-//update the user and move on to the next page
-  function getNextHref() {
-    updatePageStatus();
-    return '/my/DogSitterService';
+
+  if (nextClicked) {
+    return <DogSitterService selectedService={selectedService} />
   }
 
   return (
@@ -34,8 +39,8 @@ function JobSearch() {
       <IonTitle>Creating a job application:</IonTitle>
 
       <div
-        className={`dogsitter ${selectedService === 'dog-sitting' ? 'selected' : ''}`}
-        onClick={() => handleClick('dog-sitting')}
+        className={`dogsitter ${selectedService === 'Dog-Sitter' ? 'selected' : ''}`}
+        onClick={() => handleClick('Dog-Sitter')}
       >
         <h1>Dog-Sitter</h1>
         <div className='img'>
@@ -47,8 +52,8 @@ function JobSearch() {
       </div>
 
       <div
-        className={`dogwolker ${selectedService === 'dog-walking' ? 'selected' : ''}`}
-        onClick={() => handleClick('dog-walking')}
+        className={`dogwolker ${selectedService === 'Dog-walker' ? 'selected' : ''}`}
+        onClick={() => handleClick('Dog-walker')}
       >
         <h1>Dog-Walker</h1>
         <div className='img'>
@@ -61,10 +66,13 @@ function JobSearch() {
       </div>
 
       <div className='button'>
-        <IonButton color='primary' href={getNextHref()}>
+        <IonButton fill='clear' onClick={handleNextClick}>
           Next
         </IonButton>
       </div>
+   
+    
+     
        
     </StayledJobSearch>
   );

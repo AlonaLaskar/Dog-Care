@@ -21,10 +21,8 @@ export function useUsers() {
 
 
 export async function saveRightSwipe(userId, swipedUserId) {
-  
-  const swipeRef = doc(db, 'swipes', `${userId}`);
-  const swipeSnapshot = await getDoc(swipeRef);
-
+    const swipeRef = doc(db, 'swipes', `${userId}`);
+      const swipeSnapshot = await getDoc(swipeRef);
   if (swipeSnapshot.exists()) {
     await updateDoc(swipeRef, {
       rightSwipes: arrayUnion(swipedUserId),

@@ -24,10 +24,7 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     position: relative;
     top: 0px;
     left: 0px;
-    
   }
-
-
 
   .subtitle span {
     position: absolute;
@@ -75,6 +72,14 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     border: 2px solid #024c71;
     border-radius: 10px;
   }
+  .passwordtotal {
+    position: absolute;
+    width: 375px;
+    height: 37.76px;
+    left: 1.71px;
+    top: 302.64px;
+  }
+
 
   ion-input.fullName {
     box-sizing: border-box;
@@ -87,7 +92,7 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     border: 2px solid #024c71;
     border-radius: 10px;
   }
-  ion-input.password {
+ion-input.password {
     box-sizing: border-box;
     position: absolute;
     width: 175.86px;
@@ -98,6 +103,15 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     border: 2px solid #024c71;
     border-radius: 10px;
   }
+  ion-icon.password {
+    position: absolute;
+    width: 17px;
+    height: 24px;
+    left: 179px;
+    top: 351px;
+    color: #024c71;
+      
+  }
   ion-input.verifyPassword {
     box-sizing: border-box;
     position: absolute;
@@ -105,7 +119,6 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     height: 37.76px;
     left: 194px;
     top: 336.77px;
-
     background: #ffffff;
     border: 2px solid #024c71;
     border-radius: 10px;
@@ -131,6 +144,13 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     background: #ffffff;
     border: 2px solid #024c71;
     border-radius: 10px;
+    word-wrap: break-word;
+    white-space: pre-line;
+       word-break: break-all;
+
+    
+    
+
   }
   ion-input.address {
     box-sizing: border-box;
@@ -178,6 +198,7 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     left: 45%;
     top: 2%;
   }
+
 `;
 
 export default StyledRegister;

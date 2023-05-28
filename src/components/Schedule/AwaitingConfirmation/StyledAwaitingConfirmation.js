@@ -1,21 +1,12 @@
 import styled from 'styled-components';
+const StyledAwaitingConfirmation = styled.div`
 
-const StyledPeopleULike = styled.div`
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
 
-    .title {
-        position: absolute;
-        left: -40%;
-        right: 0%;
-        top: 110%;
-        font-size: 24px;
-        line-height: 28px;
-        text-align: center;
-    }
-    ion-list {
+  ion-list {
     position: relative;
     width: 272px;
     height: 213px;
@@ -26,23 +17,9 @@ const StyledPeopleULike = styled.div`
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .city ion-text {
-    position: absolute;
-    top: 40%;
-    left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    
-  }
   .date ion-text {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 7%;
     font-family: 'Nunito';
     font-style: normal;
@@ -60,7 +37,7 @@ const StyledPeopleULike = styled.div`
   }
   .time ion-text {
     position: absolute;
-    top: 60%;
+    top: 40%;
     left: 7%;
     font-family: 'Nunito';
     font-style: normal;
@@ -73,7 +50,7 @@ const StyledPeopleULike = styled.div`
   }
   .payment ion-text {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 7%;
     font-family: 'Nunito';
     font-style: normal;
@@ -84,24 +61,11 @@ const StyledPeopleULike = styled.div`
     align-items: center;
     color: #000000;
   }
-  .role ion-text {
-    position: absolute;
-    top: 16%;
-    left: 40%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  }
-  ion-title{
-    position: absolute;
-    left: 20%;
-    right: 0%;
-    top: 6%;
+
+  h3 {
+    position: relative;
+    top: -8%;
+    left: 30%;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
@@ -111,14 +75,39 @@ const StyledPeopleULike = styled.div`
     align-items: center;
     text-align: center;
   }
-    ion-avatar{
-        position: absolute;
-        left: 7%;
-        top: 10%;
-    }
+
+  ion-button.editButton {
+    position: absolute;
+    top: -2%;
+    left: 82%;
+    box-sizing: border-box;
+  }
+  ion-button.deleteButton {
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    box-sizing: border-box;
+  }
+  ion-checkbox {
+    position: absolute;
+    top: 85%;
+    left: 89%;
+    box-sizing: border-box;
+  }
+  ion-button.SeeRequests {
+    position: absolute;
+    left: 22.09%;
+    right: 24.86%;
+    top: 78.52%;
+    bottom: 22.72%;
+    background: #fb8500;
+    border-radius: 6px;
+    color:  #ffffff;
+    font-weight: 700;
 
 
+  }
 
-    `;
+`;
 
-export default StyledPeopleULike;
+export default StyledAwaitingConfirmation;

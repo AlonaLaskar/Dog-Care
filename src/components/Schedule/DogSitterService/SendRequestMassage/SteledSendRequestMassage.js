@@ -124,6 +124,18 @@ align-items: center;
 color: #024C71;
 
 }
+ion-button{
+height: 35px;
+width: 155px;
+background: #FB8500;
+border-radius: 6px;
+color: #FFFFFF;
+position: absolute;
+left: 15%;
+
+
+
+}
 
 
 

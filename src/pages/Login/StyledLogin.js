@@ -125,12 +125,12 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     position: absolute;
     width: 136px;
     height: 17px;
-    left: 147px;
+    left: 121px;
     top: 644px;
 
     font-family: 'Arial';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 15px;
     line-height: 17px;
     display: flex;
@@ -154,9 +154,6 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     display: flex;
     align-items: center;
     text-decoration-line: underline;
-
-    color: #3e3e3e;
-
     // On click
     // Navigate to: "Registration";
     // Animate: Smart animate;

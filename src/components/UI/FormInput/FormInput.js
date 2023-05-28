@@ -1,16 +1,18 @@
-import StyledFromInput from './StyledFromInput';
-import { IonInput, IonLabel, IonNote } from '@ionic/react';
+import { IonInput } from '@ionic/react';
 import PropTypes from 'prop-types';
+import useToast from 'hook/useToast';
 
 // Reusable Input component
 const FormInput = ({ label, name, type, register, errors }) => {
+  const presentToast = useToast();
+
   return (
     <div>
       <div className={label}>
-      <span >{label}</span>
+        <span>{label}</span>
       </div>
       <IonInput position="stack" type={type} {...register(name)}></IonInput>
-      {errors[name] && <IonNote slot="error">{errors[name].message}</IonNote>}
+      {errors[name] && presentToast(errors[name]?.message, false)}
     </div>
   );
 };

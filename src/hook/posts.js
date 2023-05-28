@@ -40,12 +40,6 @@ export function useAddPost() {
     }
   }
   
-
-
-
-
-
-
   return { addPost, isLoading };
 }
 

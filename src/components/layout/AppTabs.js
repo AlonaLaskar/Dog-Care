@@ -6,18 +6,21 @@ import { person, duplicate, newspaper, today, chatbox } from 'ionicons/icons';
 //!system-components
 
 //!pages
-import Home from 'pages/Home';
-import Profile from 'pages/Profile';
-import Schedule from 'pages/Schedule';
-import Comments from 'pages/Comments';
-import Post from 'pages/Feed';
-import NotFound from 'pages/NotFound';
-import Chat from 'pages/Chat';
-import EditProfile from 'pages/EditProfile';
-import ServiceMode from 'components/Schedule/ServiceMode';
+import Home from '../../pages/Home';
+import Profile from '../../pages/Profile';
+import Schedule from '../../pages/Schedule';
+import Comments from '../../pages/Comments';
+import Post from '../../pages/Feed';
+import NotFound from '../../pages/NotFound';
+import Chat from '../../pages/Chat';
+import EditProfile from '../../pages/EditProfile';
+import ServiceMode from '../../components/Schedule/ServiceMode';
 import DogSitterService from 'components/Schedule/DogSitterService';
-import SendRequestMassage from 'components/Schedule/DogSitterService/SendRequestMassage';
-
+import SendRequestMassage from '../../components/Schedule/DogSitterService/SendRequestMassage';
+import PeopleULike from '../../components/Schedule/PeopleULike';
+import AwaitingConfirmation from '../../components/Schedule/AwaitingConfirmation';
+import JobSearch from '../../components/Schedule/JobSearch';
+import { Switch } from 'react-router-dom';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -25,14 +28,13 @@ import { useContext } from 'react';
 
 export const AppTabs = () => {
   //if user is not logged in redirect to login page
-  const { loggedIn,userId } = useContext(AuthContext);
+  const { loggedIn, userId } = useContext(AuthContext);
   if (!loggedIn) {
     console.log('not logged in');
     return <Redirect to="/login" />;
   }
 
   return (
-  
     <IonTabs>
       <IonRouterOutlet>
         {/* Profile */}
@@ -45,9 +47,11 @@ export const AppTabs = () => {
         <Route exact path="/my/comments/:id" component={Comments} />
         <Route exact path="/my/chat" component={Chat} />
         <Route exact path="/my/serviceMode" component={ServiceMode} />
-        <Route exact path="/my/DogSitterService" component={DogSitterService} />
-        <Route exact path="/my/SendRequestMassage" component={SendRequestMassage} />
-
+        <Route exact path="/my/DogSitterService:selectedService" component={DogSitterService} />
+        <Route exact path="/my/SendRequestMassage/:id" component={SendRequestMassage} />
+        <Route exact path="/my/peopleulike" component={PeopleULike} />
+        <Route exact path="/my/awaitingconfirmation" component={AwaitingConfirmation} />
+        <Route exact path="/my/jobsearch" component={JobSearch} />
 
         {/* Errors handling */}
         <Route component={NotFound} status={404} />

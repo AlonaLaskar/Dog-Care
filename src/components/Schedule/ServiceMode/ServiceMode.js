@@ -5,14 +5,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { getDoc, arrayUnion,setDoc,doc, updateDoc } from 'firebase/firestore';
 
 import { db } from '../../../firebase';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 
 import AuthContext from 'providers/AuthContext';
 
-import { useContext } from 'react';
 import useToast from 'hook/useToast';
 import { useHistory } from 'react-router-dom';
 import FormInput from 'components/UI/FormInput'
+import { format } from 'date-fns';
+import { uuidv4 } from '@firebase/util';
+
 
 
 //!style
@@ -51,31 +53,38 @@ const ServiceMode = () => {
     const userRef = doc(db, 'availability', `${userId}`);
     const docSnapshot = await getDoc(userRef);
     const userRefUpdate = doc(db, 'users', userId);
-  
+      // Convert date strings to the desired format
+  const formattedDateStart = format(new Date(data.dateStart), 'dd-MM-yyyy');
+  const formattedDateStop = format(new Date(data.dateStop), 'dd-MM-yyyy');
+  const id = uuidv4();
+
     try {
       if (docSnapshot.exists()) {
         await updateDoc(userRef, {
-          [pageStatus]: arrayUnion(data)
+          [pageStatus]: arrayUnion({
+            ...data,dateStart:formattedDateStart ,dateStop:formattedDateStop,availabilityId:id
+          })
         });
       } else {
         await setDoc(userRef, {
-          [pageStatus]: [data],
           userId: userId, // Add the user's UID to the data
+          [pageStatus]: [{ ...data, dateStart:formattedDateStart ,dateStop:formattedDateStop,availabilityId:id }]
           
         });
      
       }
       await updateDoc(userRefUpdate, {
-        uid: userId,
         role: pageStatus,
+        listOdAvailability: arrayUnion(id),
+        pageStatus: pageStatus,
         dateStart: data.dateStart,
         start: data.start,
         dateStop: data.dateStop,
         stop: data.stop,
         payment: data.payment
       });
-      history.push('/my/home');
       presentToast('Your availability to work!', true);
+      history.push('/my/home');
     } catch (error) {
       presentToast(error.message, false);
     }
@@ -158,7 +167,7 @@ const ServiceMode = () => {
             </div>
               <h3>₪</h3>
           <div className="buttom">
-            <IonButton type="submit">Save</IonButton>
+            <IonButton type="submit"fill='clear'>Save</IonButton>
           </div>
           </IonCard>
         </form>

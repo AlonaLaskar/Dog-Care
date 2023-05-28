@@ -2,28 +2,22 @@
 import { useState, useContext,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-
 //! Firebase
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { signInWithPopup } from 'firebase/auth';
 import { auth } from 'firebase.js';
-
 //! Ionic components
 import { IonLoading, IonButton, IonIcon, IonAlert  } from '@ionic/react';
 import { personCircle} from 'ionicons/icons';
-
 //! Custom hooks
 import useToast from 'hook/useToast';
-
-
 //! Providers
 import FormContext from 'providers/FormContext';
-
 //! Components
 import Input from 'components/UI/Input';
 import StyledLogin from './StyledLogin';
 import AuthContext from 'providers/AuthContext';
-
+//!
 import boneLogo from '../../assets/boneLogo.png';
 import dogLogo from '../../assets/dogLogo.png';
 
@@ -127,7 +121,6 @@ function Login() {
           header="Alert"
           subHeader="Important message"
           message={alertMessage}
-          trigger="present-alert"
           buttons={['OK']}
           onDidDismiss={() => setShowAlert(false)}
         />

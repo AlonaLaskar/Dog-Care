@@ -33,11 +33,15 @@ body {
     right: 0%;
     top: 0%;
     bottom: 0%;
-    
-    background: #FFFFFF;
-    border: 1px solid #024C71;
-    border-radius: 50px;
-    
+    background: #FB8500;
+    border-radius: 6px;
+    height: 35px;
+    width: 155px;
+    left: 138px;
+    top: 387px;
+    border-radius: 6px;
+
+
     
           cursor: pointer;
           transition: opacity 0.3s ease-in-out;

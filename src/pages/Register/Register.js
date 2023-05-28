@@ -19,8 +19,8 @@ import useToast from 'hook/useToast';
 import { isEmailExists } from 'hook/isEmailExists';
 
 //! Ionic components
-import { IonLoading, IonButton, IonIcon, IonTitle, IonCard, IonCardTitle, IonCardSubtitle } from '@ionic/react';
-import { personAdd } from 'ionicons/icons';
+import { IonLoading, IonButton, IonIcon, IonTitle, IonCard, IonCardTitle, IonCardSubtitle, IonContent, IonItem } from '@ionic/react';
+import { personAdd , eyeOutline ,eyeOffOutline } from 'ionicons/icons';
 
 //! Providers
 import AuthContext from 'providers/AuthContext';
@@ -35,13 +35,20 @@ import dogLogo from '../../assets/dogLogo.png';
 //! Yup schema for validation
 const schema = yup.object().shape({
   email: yup.string().email().required(),
-  password: yup.string(),
-  // verifyPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords dont match'),
+  password: yup
+    .string()
+    .required()
+    .min(8)
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+      'Password must contain at least 8 characters, including uppercase and lowercase letters, numbers, and special characters.'
+    ),
+  verifyPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords don't match"),
   fullName: yup.string().required(),
-  tel: yup.string().required(),
+  tel: yup.string().required().matches(/^\d{10}$/, 'Invalid telephone number format.'),
   address: yup.string().required(),
-  birthDate: yup.string(),
-  aboutMe: yup.string()
+  birthDate: yup.string().matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.').nullable(),
+  aboutMe: yup.string().nullable()
 });
 
 export default function Register() {
@@ -50,6 +57,12 @@ export default function Register() {
   const { loggedIn } = useContext(AuthContext);
   const presentToast = useToast();
   const history = useHistory();
+//password visible
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [password, setPassword] = useState('');
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   //! Init forms
   const {
@@ -127,7 +140,20 @@ export default function Register() {
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
             <Input id="email" title="Email address " placeholder="Enter email address" />
-            <Input id="password" title="Password" placeholder="Enter password" type="password" />
+            
+          
+            <Input
+              id="password"
+              title="Password"
+              type={passwordVisible ? 'text' : 'password'}
+              onIonChange={(e) => setPassword(e.detail.value || '')}
+              />
+            <IonIcon
+              className='password'
+              slot="end"
+              icon={passwordVisible ? eyeOffOutline : eyeOutline}
+              onClick={handlePasswordVisibility}
+            />
             <Input id="verifyPassword" title="Verify password" type="password" placeholder="Enter verify password" />
             <Input id="fullName" title="Full Name" placeholder="Enter fullName" />
             <Input id="tel" title="Phone Number" type="tel" placeholder="Enter phone number" />

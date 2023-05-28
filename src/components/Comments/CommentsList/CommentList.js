@@ -19,7 +19,7 @@ export default function CommentList({ post }) {
   if (isLoading) return 'Loading...';
 
   return (
-    <StylesCommentsList>
+    <>
       {/* !if there are no comments, show this */}
       {comments.map((comment) => (
         <IonItem key={comment.id}>
@@ -27,7 +27,7 @@ export default function CommentList({ post }) {
         </IonItem>
       ))}
       <NewComment post={post} />
-    </StylesCommentsList>
+    </>
   );
 }
 
