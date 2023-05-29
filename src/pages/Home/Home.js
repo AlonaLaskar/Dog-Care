@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonHeader, IonSelect, IonToolbar,IonContent, IonTitle, IonSelectOption} from '@ionic/react';
+import { IonHeader, IonSelect, IonToolbar, IonContent, IonTitle, IonSelectOption } from '@ionic/react';
 import StyledHome from './StyledHome';
 import ProfileCard from 'components/ProfileCard/ProfileCard';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -10,23 +10,16 @@ import { saveRightSwipe } from 'hook/users';
 import { useParams } from 'react-router-dom';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 const Home = () => {
-
-
-
   const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
   const [animateMatchButton, setAnimateMatchButton] = useState(false);
 
-  const [pageStatus, setPageStatus] = useState('Dog-walker');
 
-  function useUsers() {
-    const [users, isLoading] = useCollectionData(collection(db, 'users'));
-
-    return { users, isLoading };
+  function useavAilabilitys() {
+    const [ailabilitys, isLoading] = useCollectionData(collection(db, 'availability'));
+    return { ailabilitys, isLoading };
   }
 
-  const { users} = useUsers();
-  const user = auth.currentUser;
-  const userRef = doc(db, 'users', user.uid);
+
 
   const ProfileEvents = {
     onMatch: () => {
@@ -37,50 +30,41 @@ const Home = () => {
       setAnimateUnmatchButton(true);
       setAnimateMatchButton(false);
     },
-    onreset: () => {
+    onReset: () => {
       setAnimateUnmatchButton(false);
       setAnimateMatchButton(false);
-    },
+    }
   };
 
-  const handleTitleClick = () => {
-    setPageStatus((prevStatus) =>
-      prevStatus === 'Dog-walker' ? 'Dog-Sitter' : 'Dog-walker'
-    );
-  };
- 
+  const { ailabilitys, isLoading } = useavAilabilitys();
+  console.log(ailabilitys);
+
+  // Check if availability data is still loading or if it's not an array
+  if (isLoading || !Array.isArray(ailabilitys)) {
+    return <div>Loading...</div>; // You can display a loading indicator here
+  }
 
   return (
     <StyledHome>
       <IonHeader>
-        <IonToolbar >
-          <div className='action-bar'>
-        <IonSelect aria-label="Fruit" interface="action-sheet" placeholder={pageStatus} onIonChange={e => setPageStatus(e.detail.value)}>
-          <IonSelectOption value="Dog-walker" onClick={handleTitleClick}>Dog-walker</IonSelectOption>
-          <IonSelectOption value="Dog-Sitterr"onClick={handleTitleClick}>Dog-Sitter </IonSelectOption>
-        </IonSelect>
-        </div>
-          {/* <IonTitle onClick={handleTitleClick}>{pageStatus}</IonTitle> */}
-        </IonToolbar>
+        
       </IonHeader>
       <IonContent fullscreen>
         <div className="card-stack-container">
-          {users &&
-            users
-              .filter(
-                (user) =>
-                  pageStatus === 'Dog-walker'
-                    ? user.role==='Dog-walker' && user.payment> 0
-                    : user.role === 'Dog-Sitter' && user.payment > 0
-              )
-              .map((user) => (
-                <ProfileCard {...user} key={user.id} {...ProfileEvents} pageStatus={pageStatus} />
-              ))}
+          {ailabilitys.map((availability) => (
+            <ProfileCard
+              availability={availability} // Pass the availability ID
+              onMatch={ProfileEvents.onMatch}
+              onUnmatch={ProfileEvents.onUnmatch}
+              onReset={ProfileEvents.onReset}
+              key={availability.id} // Add a unique key prop
+            />
+          ))}
         </div>
         <ActionButton
           {...{
             animateMatchButton,
-            animateUnmatchButton,
+            animateUnmatchButton
           }}
         />
       </IonContent>

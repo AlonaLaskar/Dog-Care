@@ -6,14 +6,14 @@ import { person, duplicate, newspaper, today, chatbox } from 'ionicons/icons';
 //!system-components
 
 //!pages
-import Home from '../../pages/Home';
-import Profile from '../../pages/Profile';
-import Schedule from '../../pages/Schedule';
-import Comments from '../../pages/Comments';
-import Post from '../../pages/Feed';
-import NotFound from '../../pages/NotFound';
-import Chat from '../../pages/Chat';
-import EditProfile from '../../pages/EditProfile';
+import Home from 'pages/Home';
+import Profile from 'pages/Profile';
+import Schedule from 'pages/Schedule';
+import Comments from 'pages/Comments';
+import Post from 'pages/Feed';
+import NotFound from 'pages/NotFound';
+import Chat from 'pages/Chat';
+import EditProfile from 'pages/EditProfile';
 import ServiceMode from '../../components/Schedule/ServiceMode';
 import DogSitterService from 'components/Schedule/DogSitterService';
 import SendRequestMassage from '../../components/Schedule/DogSitterService/SendRequestMassage';
@@ -28,13 +28,14 @@ import { useContext } from 'react';
 
 export const AppTabs = () => {
   //if user is not logged in redirect to login page
-  const { loggedIn, userId } = useContext(AuthContext);
+  const { loggedIn,userId } = useContext(AuthContext);
   if (!loggedIn) {
     console.log('not logged in');
     return <Redirect to="/login" />;
   }
 
   return (
+  
     <IonTabs>
       <IonRouterOutlet>
         {/* Profile */}
@@ -86,3 +87,4 @@ export const AppTabs = () => {
     </IonTabs>
   );
 };
+

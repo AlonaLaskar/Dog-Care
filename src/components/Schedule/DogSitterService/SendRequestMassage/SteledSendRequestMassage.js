@@ -31,7 +31,7 @@ bottom: 76.92%;
 }
 
 ion-card{
-height: 273px;
+height: 367px;
 width: 306px;
 border-radius: 10px;
 background: #FFFFFF;
@@ -66,9 +66,9 @@ justify-content: space-between;
 align-items: center;
 margin: 10px;
 position: absolute;
-left: 8.88%;
+left: 14.88%;
 right: 6.21%;
-top:30.23%;
+top:17.23%;
 bottom: 76.92%;
 margin: 10px;
 }
@@ -112,7 +112,7 @@ margin-top: 5.0px;
 position: absolute;
 left: 8.88%;
 right: 6.21%;
-top: 77.23%;
+top: 89.23%;
 bottom: 76.92%;
 font-family: 'Nunito';
 font-style: normal;
@@ -131,7 +131,8 @@ background: #FB8500;
 border-radius: 6px;
 color: #FFFFFF;
 position: absolute;
-left: 15%;
+left: 23%;
+top:280px;
 
 
 

@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import StylesProfileCard from './StylesProfileCard';
 import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
-import { locationOutline, walletOutline, calendarNumberOutline, alarmOutline } from 'ionicons/icons';
-import PropsTypes from 'prop-types';
-
-import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
-import { saveRightSwipe } from 'hook/users';
+import {
+  locationOutline,
+  walletOutline,
+  calendarNumberOutline,
+  alarmOutline,
+  alertCircleOutline
+} from 'ionicons/icons';
+import PropTypes from 'prop-types';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
+import { useDocumentData } from 'react-firebase-hooks/firestore';
+import propTypes from 'prop-types';
 
 const ProfileCard = (props) => {
-  const { userId } = useContext(AuthContext) || {};
-  
-
   const ref = React.useRef(null);
-
   useEffect(() => {
     gestureInit();
   }, []);
@@ -28,7 +30,6 @@ const ProfileCard = (props) => {
           card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
           if (detail.deltaX > 0) {
             props.onMatch();
-            saveRightSwipe(userId, props.id);
           } else {
             props.onUnmatch();
           }
@@ -36,13 +37,12 @@ const ProfileCard = (props) => {
         onEnd: (detail) => {
           const windowWidth = window.innerWidth;
           props.onReset();
-          card.style.transition = '0.5s cubic-bezier(0.175,0.885,0.32,1.275)';
           if (detail.deltaX > windowWidth / 2) {
-            card.style.transform = `translateX(${windowWidth * 1.5}px)`;
+            card.style.transform = `translateX(${windowWidth}px)`;
           } else if (detail.deltaX < -windowWidth / 2) {
-            card.style.transform = `translateX(-${windowWidth * 1.5}px)`;
+            card.style.transform = `translateX(-${windowWidth}px)`;
           } else {
-            card.style.transform = '';
+            card.style.transform = 'translateX(0px)';
           }
         }
       });
@@ -50,21 +50,59 @@ const ProfileCard = (props) => {
     }
   };
 
-  const dob = new Date(props.birthDate);
-  const ageInMs = Date.now() - dob.getTime();
-  const ageInYears = new Date(ageInMs).getFullYear() - 1970;
+  const availabilityId = props.availability.availabilityId;
 
-  // Check if the profile card should be hidden
-  if (props.id === userId) {
-    return null; // Don't render the card if it's the user's own profile
+  const [userData, setUserData] = useState(null); // State to store the retrieved user data
+
+  async function getUserData(availabilityId) {
+    const availabilityRef = doc(db, 'availability', availabilityId);
+    const availabilitySnapshot = await getDoc(availabilityRef);
+    if (availabilitySnapshot.exists()) {
+      const availabilityData = availabilitySnapshot.data();
+      const userId = availabilityData.userId; // Get the userId from availability data
+      const userRef = doc(db, 'users', userId);
+      const userSnapshot = await getDoc(userRef);
+      if (userSnapshot.exists()) {
+        const userData = userSnapshot.data();
+        setUserData(userData); // Update the state with the retrieved user data
+        console.log(userData);
+      } else {
+        console.log('User document does not exist');
+      }
+    } else {
+      console.log('Availability document does not exist');
+    }
   }
+
+  useEffect(() => {
+    getUserData(availabilityId);
+  }, [availabilityId]);
+
+  const q = doc(db, 'availability', availabilityId);
+  const [availability, isLoadingAvailability] = useDocumentData(q);
+
+  if (isLoadingAvailability) {
+    // Handle the loading state, e.g., display a loading spinner
+    return <div>Loading...</div>;
+  }
+
+  if (!availability) {
+    // Handle the case when availability data is not found or undefined
+    return <div>No availability data found.</div>;
+  }
+
+  // Data has been fetched successfully, proceed with rendering
+
+  // const dob = moment(userData.birthDate, 'DD/MM/YYYY').toDate();
+  // const ageInMs = Date.now() - dob.getTime();
+  // const ageInYears = new Date(ageInMs).getFullYear() - 1970;
 
   return (
     <StylesProfileCard>
-      <div ref={ref}>
-        <IonCard>
+      <div>
+        <IonCard ref={ref}>
           <IonCardHeader>
-            {props.pageStatus === 'Dog-walker' ? (
+            {availability.role === 'Dog-walker' ? (
               <IonCardTitle>Walk With Me</IonCardTitle>
             ) : (
               <IonCardTitle>Sleep with me</IonCardTitle>
@@ -73,43 +111,56 @@ const ProfileCard = (props) => {
 
           <div className="card-container">
             <div className="image-container">
-              <IonImg src={props.avatar} />
+              <IonImg src={userData?.avatar} />
             </div>
             <div className="details-container">
               <IonText className="name">
-                {props.fullName}, {ageInYears}
-              </IonText>{' '}
+                {userData?.fullName},{/* {ageInYears} */}
+              </IonText>
               <br />
               <IonText className="address">
                 <IonIcon icon={locationOutline} />
-                {props.city}, Israel
+                {userData?.address}, Israel
               </IonText>
               <IonText className="bio">
-                <p>{props.aboutMe}</p>
+                <p>{userData?.aboutMe}</p>
               </IonText>
+              <div className="role">
+                <IonText>
+                  <IonIcon icon={alertCircleOutline} />
+                  {availability?.role}
+                </IonText>
+              </div>
               <div className="date">
                 <IonText>
                   <IonIcon icon={calendarNumberOutline} />
-                  {props.dateStart}
+                  {availability?.dateStart}
                   <span> - </span>
-                  {props.dateStop}
+                  {availability?.dateStop}
                 </IonText>
               </div>
               <div className="time">
                 <IonText>
                   <IonIcon icon={alarmOutline} />
-                  {props.start} <span> - </span> {props.stop}
+                  {availability?.start} <span> - </span> {availability?.stop}
                 </IonText>
               </div>
-              {props.pageStatus === 'Dog-walker' ? (
+              <div className="location">
+                <IonText color="primary">
+                  <IonIcon icon={locationOutline} />
+                  {availability?.location}
+                </IonText>
+              </div>
+
+              {availability?.role === 'Dog-walker' ? (
                 <IonText className="price">
                   <IonIcon icon={walletOutline} />
-                  {`${props.payment}₪ per hour to walk your dog `}
+                  {`${availability?.payment}₪ per hour to walk your dog `}
                 </IonText>
               ) : (
                 <IonText className="price">
                   <IonIcon icon={walletOutline} />
-                  {`${props.payment}₪ per hour to keep your dog `}
+                  {`${availability?.payment}₪ per hour to keep your dog `}
                 </IonText>
               )}
             </div>
@@ -120,26 +171,25 @@ const ProfileCard = (props) => {
   );
 };
 
-ProfileCard.defaultProps = {
-  onReset: () => {} // Add a default value for onReset prop
-};
-
-ProfileCard.propTypes = {
-  avatar: PropsTypes.string.isRequired,
-  id: PropsTypes.string.isRequired,
-  fullName: PropsTypes.string.isRequired,
-  city: PropsTypes.string.isRequired,
-  birthDate: PropsTypes.string.isRequired,
-  payment: PropsTypes.string.isRequired,
-  dateStart: PropsTypes.string.isRequired,
-  dateStop: PropsTypes.string.isRequired,
-  start: PropsTypes.string.isRequired,
-  stop: PropsTypes.string.isRequired,
-  pageStatus: PropsTypes.string.isRequired,
-  aboutMe: PropsTypes.string.isRequired,
-  onMatch: PropsTypes.func.isRequired,
-  onUnmatch: PropsTypes.func.isRequired,
-  onReset: PropsTypes.func
-};
-
 export default ProfileCard;
+ProfileCard.propTypes = {
+  availabilityId: PropTypes.string.isRequired,
+  aboutMe: PropTypes.string.isRequired,
+  onMatch: PropTypes.func.isRequired,
+  onUnmatch: PropTypes.func.isRequired,
+  onReset: PropTypes.func,
+  role: PropTypes.string.isRequired,
+  dateStart: PropTypes.string.isRequired,
+  dateStop: PropTypes.string.isRequired,
+  start: PropTypes.string.isRequired,
+  stop: PropTypes.string.isRequired,
+  payment: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  birthDate: PropTypes.string.isRequired,
+  userId: PropTypes.string.isRequired,
+  availability: PropTypes.object.isRequired,
+  userData: PropTypes.object.isRequired
+};

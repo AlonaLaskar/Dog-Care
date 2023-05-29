@@ -134,53 +134,86 @@ align-items: center;
     text-align: center;
     color: #024c71;
   }
-  .payment {
-    position: absolute;
-    height: 39px;
-    width: 171px;
-    left: 0px;
-    top: 319px;
-    border-radius: 10px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 106.4%;
+.Location {
+  position: absolute;
+  left: 0.07%;
+  right: 44.88%;
+  top: 319px;
+  display: flex;
+
+  
     span {
       position: absolute;
-      left: 2.07%;
+      left: 3.07%;
       right: 44.88%;
       top: -60.65%;
       bottom: 69.53%;
-    }
-    background: #ffffff;
+ 
+      font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 106.4%;
+    /* identical to box height, or 17px */
+    
+    color: #024c71;}
+
+  .css-13cymwt-control{
+    height: 39px;
+    width: 171px;
     border: 3px solid #024c71;
     border-radius: 10px;
   }
-  .MoreDoges {
+}
+
+    .css-1fdsijx-ValueContainer{
+
+      .css-qbdosj-Input {
+      
+    
+    }
+    .css-1uccc91-singleValue {
+      background-color: black;
+
+  }
+  .css-1nmdiq5-menu{
+    background-color: black;
+
+  }
+  .css-1hb7zxy-IndicatorsContainer{
+    background-color: black;
+  }
+
+  }
+  .payment{
     position: absolute;
     height: 39px;
-    width: 171px;
-    left: 0px;
-    top: 380px;
-    font-family: 'Nunito';
+    width: 105px;
+    left: 185px;
+    top: 319px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 3px solid #024c71;
+    border-radius: 10px;
+    span {
+      position: absolute;
+      left: -12.07%;
+      right: 28.88%;
+      top: -60.65%;
+      bottom: 69.53%;
+      font-family: 'Nunito';
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
     line-height: 106.4%;
-  }
-  .extension {
-    position: absolute;
-    height: 39px;
-    width: 171px;
-    left: 0px;
-    top: 420px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 106.4%;
-  }
+    align-items: center;
+    text-align: center;
+    color: #024c71;
+    
+  }  }
+
+
+  
   h1 {
     font-family: 'Nunito';
     font-style: normal;
@@ -188,6 +221,7 @@ align-items: center;
     font-size: 26px;
     line-height: 106.4%;
   }
+
 `;
 
 export default StyledDogSitterService;

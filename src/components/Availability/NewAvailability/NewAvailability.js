@@ -2,7 +2,7 @@
 import React from 'react' ;
 import StyledNewAvailability from './StyledNewAvailability' ;
 import { IonCard, IonCheckbox, IonIcon, IonText,IonButton } from '@ionic/react';
-import { calendarNumberOutline, alarmOutline, cashOutline } from 'ionicons/icons';
+import { calendarNumberOutline, alarmOutline, cashOutline,alertCircleOutline,locationOutline } from 'ionicons/icons';
 // import PropTypes from 'prop-types';
 import { trashOutline, createOutline } from 'ionicons/icons';
 import PropTypes from 'prop-types';
@@ -15,6 +15,13 @@ export default function NewAvailability({ availability }) {
         <StyledNewAvailability>
              <IonCard >
             {/* <h3>{title}</h3> */}
+            <div className="role">
+              <IonText color="primary">
+                <IonIcon icon={alertCircleOutline} />
+                {availability.role} 
+              </IonText>
+            </div>
+
           <div className="date">
           <IonText >
               <IonIcon icon={calendarNumberOutline} />
@@ -27,11 +34,20 @@ export default function NewAvailability({ availability }) {
               {availability.start} <span> -  </span>  {availability.stop}
             </IonText>
           </div>
+          <div className="location">
+              <IonText color="primary">
+                <IonIcon icon={locationOutline} />
+                {availability.location} 
+              </IonText>
+            </div>
+
+
           <div className="payment">
             <IonText >
               <IonIcon icon={cashOutline} />
               {availability.payment}₪ (cash)
             </IonText>
+
           </div>
           <div className="IsAccept">
             <IonCheckbox slot="end" />

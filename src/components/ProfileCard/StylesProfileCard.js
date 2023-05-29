@@ -55,6 +55,19 @@ const StylesProfileCard = styled.div`
     display: flex;
     align-items: center;
   }
+  .card-container > .details-container > .role {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 115.4%;
+    /* or 14px */
+    display: flex;
+    align-items: center;
+    }
     .card-container > .details-container > .date {
     color: #333;
     font-size: 1rem;
@@ -69,7 +82,20 @@ const StylesProfileCard = styled.div`
     align-items: center;
     }
     .card-container > .details-container > .time {
-    color: #333;
+      color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 115.4%;
+    /* or 14px */
+    display: flex;
+    align-items: center;
+    }
+    .card-container > .details-container > .location {
+      color: #333;
     font-size: 1rem;
     font-weight: 400;
     font-family: 'Nunito';

@@ -14,10 +14,7 @@ ion-card {
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .date ion-text {
-    position: absolute;
-    top: 30%;
-    left: 7%;
+  ion-text {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
@@ -26,6 +23,20 @@ ion-card {
     display: flex;
     align-items: center;
     color: #000000;
+  }
+
+  .role ion-text {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    
+  }
+
+  .date ion-text {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+
     
   }
   span {
@@ -36,28 +47,21 @@ ion-card {
     position: absolute;
     top: 40%;
     left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
+
   }
   .payment ion-text {
     position: absolute;
     top: 50%;
     left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
+  
   }
+  .location ion-text {
+    position: absolute;
+    top: 60%;
+    left: 7%;
+
+  }
+
 
   h3 {
     position: relative;

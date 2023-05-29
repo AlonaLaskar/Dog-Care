@@ -1,6 +1,6 @@
 //!Ionic
 import { IonCard, IonCardTitle, IonIcon, IonText, IonButton } from '@ionic/react';
-import { calendarNumberOutline, alarmOutline, cashOutline } from 'ionicons/icons';
+import { calendarNumberOutline, alarmOutline, cashOutline,locationOutline,alertCircleOutline } from 'ionicons/icons';
 //!others
 import { useParams,Link } from 'react-router-dom';
 import AuthContext from 'providers/AuthContext';
@@ -19,6 +19,7 @@ const SendRequestMassage = () => {
   const [availability, isLoading] = useDocumentData(q);
 
   console.log(availability);
+
   
 
   return (
@@ -28,6 +29,13 @@ const SendRequestMassage = () => {
         <IonCard>
           <IonCardTitle> Your schedule request is waiting for approval</IonCardTitle>
           <div className="details">
+          <div className="date">
+              <IonText color="primary">
+                <IonIcon icon={alertCircleOutline} />
+                {availability?.role} 
+              </IonText>
+            </div>
+
             <div className="date">
               <IonText color="primary">
                 <IonIcon icon={calendarNumberOutline} />
@@ -48,14 +56,24 @@ const SendRequestMassage = () => {
                 {availability?.payment}₪ Nis(cash)
               </IonText>
             </div>
+            <div className="date">
+              <IonText color="primary">
+                <IonIcon icon={locationOutline} />
+                {availability?.location} 
+              </IonText>
+            </div>
 
-            <div className="button">
 
-      <IonButton color="primary" expand="block" routerLink={`/my/home/${availability?.availabilityId}`}>
-      Go to Service
-      </IonButton>
 
             </div>
+            <div className="button">
+
+      <IonButton fill='clear' >
+      <Link to={`/my/home?id=${availability?.availabilityId}`}>
+      Go to Service
+      </Link>
+      </IonButton>
+
           </div>
         </IonCard>
         <div className="massege">
@@ -69,6 +87,7 @@ const SendRequestMassage = () => {
             or a phone call.
           </span>
         </div>
+
       </div>
     </SteledSendRequestMassage>
   );
