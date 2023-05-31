@@ -10,13 +10,15 @@ const StyledPost = styled.div`
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    overflow:scroll;
+    overflow:hidden;
 
     ion-card-content {
       padding: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+
 
       ion-text {
         height: 36px;

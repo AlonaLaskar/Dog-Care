@@ -14,6 +14,13 @@ import Post from 'pages/Feed';
 import NotFound from 'pages/NotFound';
 import Chat from 'pages/Chat';
 import EditProfile from 'pages/EditProfile';
+import ServiceMode from '../../components/Schedule/ServiceMode';
+import DogSitterService from 'components/Schedule/DogSitterService';
+import SendRequestMassage from '../../components/Schedule/DogSitterService/SendRequestMassage';
+import PeopleULike from '../../components/Schedule/PeopleULike';
+import AwaitingConfirmation from '../../components/Schedule/AwaitingConfirmation';
+import JobSearch from '../../components/Schedule/JobSearch';
+import { Switch } from 'react-router-dom';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -40,6 +47,12 @@ export const AppTabs = () => {
         <Route exact path="/my/Schedule" component={Schedule} />
         <Route exact path="/my/comments/:id" component={Comments} />
         <Route exact path="/my/chat" component={Chat} />
+        <Route exact path="/my/serviceMode" component={ServiceMode} />
+        <Route exact path="/my/DogSitterService:selectedService" component={DogSitterService} />
+        <Route exact path="/my/SendRequestMassage/:id" component={SendRequestMassage} />
+        <Route exact path="/my/peopleulike" component={PeopleULike} />
+        <Route exact path="/my/awaitingconfirmation" component={AwaitingConfirmation} />
+        <Route exact path="/my/jobsearch" component={JobSearch} />
 
         {/* Errors handling */}
         <Route component={NotFound} status={404} />
@@ -74,3 +87,4 @@ export const AppTabs = () => {
     </IonTabs>
   );
 };
+

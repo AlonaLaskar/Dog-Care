@@ -1,61 +1,67 @@
 //! Packages
-import { useState, useContext } from 'react';
+import { useState, useContext,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { useHistory } from 'react-router-dom';
 //! Firebase
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider, facebookProvider } from 'firebase.js';
-
+import { auth } from 'firebase.js';
 //! Ionic components
-import { IonLoading, IonButton, IonIcon } from '@ionic/react';
-import { personCircle, logoFacebook, logoGoogle, personAdd } from 'ionicons/icons';
-
+import { IonLoading, IonButton, IonIcon, IonAlert  } from '@ionic/react';
+import { personCircle} from 'ionicons/icons';
 //! Custom hooks
 import useToast from 'hook/useToast';
-import { emailValidate, passwordValidate } from 'hook/form-validate';
-
 //! Providers
 import FormContext from 'providers/FormContext';
-
 //! Components
 import Input from 'components/UI/Input';
 import StyledLogin from './StyledLogin';
-import { Redirect } from 'react-router-dom';
 import AuthContext from 'providers/AuthContext';
+//!
+import boneLogo from '../../assets/boneLogo.png';
+import dogLogo from '../../assets/dogLogo.png';
 
+function Login() {
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  console.log('alertMessage', alertMessage);
+  console.log('showAlert0', showAlert);
 
-
-function Login( ) {
+  const history = useHistory();
   const { loggedIn } = useContext(AuthContext);
-if (loggedIn) {
-    return <Redirect to="/my/home"/>;
-  }
-
-  const [isLoading, setIsLoading] = useState(false);
   const presentToast = useToast();
 
-  //! Init forms
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
 
-  //! Handle login with email and password
+  //handele login
   const handleLogin = async (data) => {
+    console.log('data', data);
+    if (!data.email ||( !data.password|| data.password.length <5)) {
+      setAlertMessage('Please enter  email and password,password must be more than 6');
+      setShowAlert(true);
+      return;
+    }
+
+    if (data.email.length > 30 || data.password.length > 30) {
+      setAlertMessage('Email and password must be less than 30 characters long.');
+      setShowAlert(true);
+      return;
+    }
     setIsLoading(true);
     try {
+      //create user
       await signInWithEmailAndPassword(auth, data?.email, data?.password);
       presentToast('Logged in successfully', true);
     } catch (error) {
       presentToast(`Login failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
     }
-
     setIsLoading(false);
   };
 
-  //! Handle login with google account or facebook account
   const loginWithHandler = async (provider) => {
     try {
       await signInWithPopup(auth, provider);
@@ -65,68 +71,64 @@ if (loggedIn) {
     }
   };
 
+  useEffect(() => {
+    if (loggedIn) {
+      history.push('/my/home');
+    }
+  }, [loggedIn, history]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <StyledLogin>
-      <FormContext.Provider value={{ errors, register }}>
-        <div className="form">
-          <h1 className="form-title">Log In</h1>
-          <form onSubmit={handleSubmit(handleLogin)}>
-            <Input id="email" title="Email" placeholder="Type your email..." validateHandler={emailValidate} />
-
-            <Input
-              id="password"
-              title="Password"
-              placeholder="Type your password..."
-              validateHandler={passwordValidate}
-            />
-
-            <div className="form-buttons">
-              <IonButton type="submit" expand="block" fill="solid" >
-                <IonIcon slot="start" icon={personCircle} />
-                Login
-              </IonButton>
-
-              <IonButton routerLink="/register" expand="block" fill="clear">
-                <IonIcon slot="start" icon={personAdd} />
-                Register
-              </IonButton>
-            </div>
-          </form>
-
-          <div className="forgetPassword">
-            <IonButton routerLink="./ForgetPassword" fill="clear" color="dark">
-              Forget password?
-            </IonButton>
-          </div>
-
-          <h3 className="social-title">- or with -</h3>
-          <div className="social">
-            <IonButton
-              expand="fill"
-              color="none"
-              id="google"
-              className="social-button"
-              onClick={() => loginWithHandler(googleProvider)}
-            >
-              <IonIcon slot="start" icon={logoGoogle} />
-              <span>Login With Google</span>
-            </IonButton>
-            <IonButton
-              expand="fill"
-              color="none"
-              id="facebook"
-              className="social-button"
-              onClick={() => loginWithHandler(facebookProvider)}
-            >
-              <IonIcon slot="start" icon={logoFacebook} />
-              <span>Login With Facebook</span>
-            </IonButton>
-          </div>
+      <div className="contener">
+        <div className="boneLogo">
+          <img src={boneLogo} alt="logo" />
         </div>
-      </FormContext.Provider>
+        <div className="dogLogo">
+          <img src={dogLogo} alt="logo" />
+        </div>
+        <FormContext.Provider value={{ errors, register }}>
+          <div className="form">
+            <form onSubmit={handleSubmit(handleLogin)}>
+              <Input id="email" title="Email" />
+              <Input id="password" title="Password" />
 
-      <IonLoading isOpen={isLoading} message={'loading...'} />
+              <div className="register">
+                <IonButton routerLink="./register" expand="block" fill="clear" color="dark">
+                  Still not registered? Sign up here
+                </IonButton>
+              </div>
+
+              <div className="forgetPassword">
+                <IonButton routerLink="./ForgetPassword" fill="clear" color="dark">
+                  Forget password?
+                </IonButton>
+              </div>
+
+              <div className="form-buttons">
+                <IonButton type="submit" expand="block" fill="clear" color="light">
+                  <IonIcon slot="start" icon={personCircle} color="light" />
+                  Login
+                </IonButton>
+              </div>
+            </form>
+          </div>
+        </FormContext.Provider>
+
+        <IonAlert
+          isOpen={showAlert}
+          header="Alert"
+          subHeader="Important message"
+          message={alertMessage}
+          buttons={['OK']}
+          onDidDismiss={() => setShowAlert(false)}
+        />
+
+        <IonLoading isOpen={isLoading} message={'loading...'} />
+      </div>
     </StyledLogin>
   );
 }
+
 export default Login;

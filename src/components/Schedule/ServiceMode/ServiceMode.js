@@ -1,17 +1,20 @@
-import { IonButton, IonInput, IonLabel, IonItem, IonNote,IonSelectOption, IonSelect, IonHeader, IonToolbar } from '@ionic/react';
+import { IonButton, IonSelectOption, IonSelect, IonHeader, IonToolbar, IonCard } from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { addDoc, collection } from 'firebase/firestore';
+import { getDoc, arrayUnion,setDoc,doc, updateDoc } from 'firebase/firestore';
+
 import { db } from '../../../firebase';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 
 import AuthContext from 'providers/AuthContext';
 
-import { useContext } from 'react';
-import { doc, updateDoc } from 'firebase/firestore';
 import useToast from 'hook/useToast';
 import { useHistory } from 'react-router-dom';
+import FormInput from 'components/UI/FormInput'
+import { format } from 'date-fns';
+import { uuidv4 } from '@firebase/util';
+
 
 
 //!style
@@ -32,7 +35,7 @@ const ServiceMode = () => {
   const presentToast = useToast();
   const history = useHistory();
 
-  const [pageStatus, setPageStatus] = useState('Dog-walker');
+  const [pageStatus, setPageStatus] = useState('Dog-Sitter');
 
   const handleTitleClick = () => {
     setPageStatus((prevStatus) => (prevStatus === 'Dog-walker' ? 'Dog-Sitter' : 'Dog-walker'));
@@ -47,23 +50,33 @@ const ServiceMode = () => {
   });
 
   async function submitForm(data) {
+    const userRef = doc(db, 'availability', `${userId}`);
+    const docSnapshot = await getDoc(userRef);
+    const userRefUpdate = doc(db, 'users', userId);
+      // Convert date strings to the desired format
+  const formattedDateStart = format(new Date(data.dateStart), 'dd-MM-yyyy');
+  const formattedDateStop = format(new Date(data.dateStop), 'dd-MM-yyyy');
+  const id = uuidv4();
 
     try {
-      // Set data to Firebase
-     await addDoc(collection(db, 'availability'), {
-        uid: userId,
-        pageStatus: pageStatus,
-        dateStart: data.dateStart,
-        start: data.start,
-        dateStop: data.dateStop,
-        stop: data.stop,
-        payment: data.payment
-      });
-
-      // Update the users collection
-      const userRef = doc(db, 'users', userId);
-      await updateDoc(userRef, {
+      if (docSnapshot.exists()) {
+        await updateDoc(userRef, {
+          [pageStatus]: arrayUnion({
+            ...data,dateStart:formattedDateStart ,dateStop:formattedDateStop,availabilityId:id
+          })
+        });
+      } else {
+        await setDoc(userRef, {
+          userId: userId, // Add the user's UID to the data
+          [pageStatus]: [{ ...data, dateStart:formattedDateStart ,dateStop:formattedDateStop,availabilityId:id }]
+          
+        });
+     
+      }
+      await updateDoc(userRefUpdate, {
         role: pageStatus,
+        listOdAvailability: arrayUnion(id),
+        pageStatus: pageStatus,
         dateStart: data.dateStart,
         start: data.start,
         dateStop: data.dateStop,
@@ -77,11 +90,11 @@ const ServiceMode = () => {
     }
   }
 
-
   return (
     <StyledServiceMode>
       <div className="form">
         <form onSubmit={handleSubmit(submitForm)}>
+          <IonCard>
           <IonHeader mode="ios">
             <IonToolbar mode="ios">
               <div className="action-bar">
@@ -103,42 +116,60 @@ const ServiceMode = () => {
           </IonHeader>
 
         
-          <div className="date">
-            <IonItem >
-              <IonInput position="stack" type="date" label=' The day the shift starts' {...register('dateStart')}></IonInput>
-            </IonItem>
-            {errors.dateStart && <IonNote slot="error">{errors.dateStart.message}</IonNote>}
-          </div>
-          <div className="from">
-            <IonItem >
-              <IonInput position="stack" label='The time the shift starts' type="time" {...register('start')}></IonInput>
-            </IonItem>
-            {errors.start && <IonNote slot="error">{errors.start.message}</IonNote>}
-          </div>
-          <div className="date">
-            <IonItem>
-              <IonInput position="stack" label='Start shift' type="date" {...register('dateStop')}></IonInput>
-            </IonItem>
-            {errors.dateStop && <IonNote slot="error">{errors.dateStop.message}</IonNote>}
-          </div>
-          <div className="to">
-            <IonItem>
-              <IonInput type="time" position="stack" label='End shift' {...register('stop')}></IonInput>
-            </IonItem>
-            {errors.stop && <IonNote slot="error">{errors.stop.message}</IonNote>}
-          </div>
+          <div className="dateStart">
+              <FormInput
+                label="From"
+                name="dateStart"
+                type="date"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-          <div className="payment">
-            <IonItem >
-              <IonInput type="number"position="stack" label='Hourly payment' {...register('payment')}></IonInput>
-            </IonItem>
+            <div className="dateEnd">
+              <FormInput
+                label="To"
+                name="dateStop"
+                type="date"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-            {errors.payment && <IonNote slot="error">{errors.payment.message}</IonNote>}
+            <div className="fromStart">
+              <FormInput
+                label="From"
+                name="start"
+                type="time"
+                register={register}
+                errors={errors}
+              />
+            </div>
 
-          </div>
+            <div className="toEnd">
+              <FormInput
+                label="To"
+                name="stop"
+                type="time"
+                register={register}
+                errors={errors}
+              />
+            </div>
+
+            <div className="payment">
+              <FormInput
+                label="Payment"
+                name="payment"
+                type="number"
+                register={register}
+                errors={errors}
+              />
+            </div>
+              <h3>₪</h3>
           <div className="buttom">
-            <IonButton type="submit">Save</IonButton>
+            <IonButton type="submit"fill='clear'>Save</IonButton>
           </div>
+          </IonCard>
         </form>
       </div>
     </StyledServiceMode>

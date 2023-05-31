@@ -12,14 +12,15 @@ import { auth, db } from 'firebase.js';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { format } from 'date-fns';
 
 //! Custom hooks
 import useToast from 'hook/useToast';
 import { isEmailExists } from 'hook/isEmailExists';
 
 //! Ionic components
-import { IonLoading, IonButton, IonIcon} from '@ionic/react';
-import { personAdd } from 'ionicons/icons';
+import { IonLoading, IonButton, IonIcon, IonTitle, IonCard, IonCardTitle, IonCardSubtitle, IonContent, IonItem } from '@ionic/react';
+import { personAdd , eyeOutline ,eyeOffOutline } from 'ionicons/icons';
 
 //! Providers
 import AuthContext from 'providers/AuthContext';
@@ -28,24 +29,26 @@ import FormContext from 'providers/FormContext';
 //! Components
 import Input from 'components/UI/Input';
 import StyledRegister from './StyledRegister';
+import boneLogo from '../../assets/boneLogo.png';
+import dogLogo from '../../assets/dogLogo.png';
 
 //! Yup schema for validation
 const schema = yup.object().shape({
-  email: yup.string().email().required('The email is required'),
+  email: yup.string().email().required(),
   password: yup
     .string()
-    .min(6)
-    .max(15)
-    .lowercase()
-    .uppercase()
-    .required('The password is required,6-15 characters,lowercase,uppercase'),
-  verifyPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords dont match'),
-  fullName: yup.string().required('Enter full name'),
-  phone: yup.string().required('Enter phone number'),
-  city: yup.string().required('Enter city'),
-  street: yup.string().required('Enter street'),
-  birthDate: yup.string(),
-  aboutMe: yup.string()
+    .required()
+    .min(8)
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+      'Password must contain at least 8 characters, including uppercase and lowercase letters, numbers, and special characters.'
+    ),
+  verifyPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords don't match"),
+  fullName: yup.string().required(),
+  tel: yup.string().required().matches(/^\d{10}$/, 'Invalid telephone number format.'),
+  address: yup.string().required(),
+  birthDate: yup.string().matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.').nullable(),
+  aboutMe: yup.string().nullable()
 });
 
 export default function Register() {
@@ -54,6 +57,12 @@ export default function Register() {
   const { loggedIn } = useContext(AuthContext);
   const presentToast = useToast();
   const history = useHistory();
+//password visible
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [password, setPassword] = useState('');
+  const handlePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   //! Init forms
   const {
@@ -69,7 +78,9 @@ export default function Register() {
   if (loggedIn) return pushToHome();
 
   //! Handle register with credentials and profile data
-  const handleRegister = async ({ email, password, ...rest }) => {
+  const handleRegister = async ({ email, password, birthDate, address, ...rest }) => {
+    console.log('rest', { email, password, birthDate, address, ...rest });
+
     setIsLoading(true);
 
     try {
@@ -82,43 +93,74 @@ export default function Register() {
       }
 
       //! Create user with email and password
-      const { user } = (await createUserWithEmailAndPassword(auth, email, password)) || {};
-      const { uid: id } = user || {};
+      try {
+        const { user } = (await createUserWithEmailAndPassword(auth, email ?? '', password)) || {};
+        const { uid: id } = user || {};
+        await setDoc(doc(db, 'users', id), {
+          id,
+          username: email.split('@')[0],
+          aboutMe: ' ',
+          birthDate: format(new Date(birthDate), 'dd/MM/yyyy'),
+          email,
+          address,
+          avatar:
+            'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
+          ...rest
+        });
+        presentToast('Registration successfully', true);
+        pushToHome();
+      } catch (error) {
+        console.error(error);
+      }
 
       //! Set user data in firestore
-      await setDoc(doc(db, 'users', id), {
-        id,
-        username: email.split('@')[0],
-        aboutMe: ' ',
-        email,
-        avatar:
-          'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
-        ...rest
-      });
-      presentToast('Registration successfully', true);
-      pushToHome();
     } catch (error) {
-      presentToast(`Registration failed: ${error?.message.split('/')[1].split(')')[0]}`, false);
+      console.error(error);
     }
     setIsLoading(false);
   };
 
   return (
     <StyledRegister>
-      <div className="form">
-        <h1 className="form-title">Registration Form</h1>
+      <div className="logo">
+        <div className="boneLogo">
+          <img src={boneLogo} alt="logo" />
+        </div>
+      </div>
+
+      <IonCard>
+        <IonCardTitle>Join us!</IonCardTitle>
+        <div className="subtitle">
+          <span>
+            Welcome to our dog care app, the perfect solution for busy pet owners who want to ensure their furry friends
+            get the exercise they need or are looked after while you are away from home.
+          </span>
+        </div>
 
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
-            <Input id="email" title="email address " placeholder="Enter email address" position="floating" />
-            <Input id="password" title="password" placeholder="Enter password" position="floating" />
-            <Input id="verifyPassword" type="verify-Password" title="Verify password" position="floating" />
-            <Input id="fullName" title="fullName" placeholder="Enter fullName" position="floating" />
-            <Input id="phone" title="cellphone" placeholder="Enter phone number" position="floating" />
-            <Input id="city" title="city" placeholder="Enter city" position="floating"  />
-`            <Input id="street" title="street" placeholder="Enter street" position="floating" />  
-            <Input id="birthDate" type="date" title="Birthday" placeholder="Enter birthday" position="floating" />
-            <Input id="aboutMe" title="About me" placeholder="Enter about me" position="floating" />
+            <Input id="email" title="Email address " placeholder="Enter email address" />
+            
+          
+            <Input
+              id="password"
+              title="Password"
+              type={passwordVisible ? 'text' : 'password'}
+              onIonChange={(e) => setPassword(e.detail.value || '')}
+              />
+            <IonIcon
+              className='password'
+              slot="end"
+              icon={passwordVisible ? eyeOffOutline : eyeOutline}
+              onClick={handlePasswordVisibility}
+            />
+            <Input id="verifyPassword" title="Verify password" type="password" placeholder="Enter verify password" />
+            <Input id="fullName" title="Full Name" placeholder="Enter fullName" />
+            <Input id="tel" title="Phone Number" type="tel" placeholder="Enter phone number" />
+            <Input id="address" title="address" placeholder="Enter address" isInput={true} />
+            <Input id="birthDate" title="Birthday" type="date" placeholder="Enter birthday" />
+            <Input id="aboutMe" title="About me" placeholder="Enter about me" />
+
             <div className="form-group">
               <IonButton type="submit" expand="block">
                 <IonIcon slot="start" icon={personAdd} />
@@ -131,7 +173,7 @@ export default function Register() {
             </div>
           </form>
         </FormContext.Provider>
-      </div>
+      </IonCard>
 
       <IonLoading isOpen={isLoading} message={'Loading...'} />
     </StyledRegister>

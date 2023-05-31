@@ -1,13 +1,17 @@
+//! Custom Hooks
+import { usePosts } from 'hook/posts';
 
-import StyledChat from './StyledChat';
-import CreateChat from '../../components/Chat/CreateChat/CreateChat';
+//! Components
+import Post from 'components/Feed/Post';
+import ProfileCard from 'components/ProfileCard/ProfileCard';
+
 
 const Chat = () => {
-  return (
-    <StyledChat>
-      <CreateChat />
 
-    </StyledChat>
+  return (
+    <>
+    <ProfileCard />
+    </>
   );
 };
 

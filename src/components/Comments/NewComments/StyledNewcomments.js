@@ -17,11 +17,7 @@ form {
         left:10%;
         top: 10%;
         border-radius: 50px;
-        position: absolute;
-        left: 10.79%;
-        right: 8.95%;
-        top: 62.31%;
-        bottom: 34.65%;
+        
         background: #FFFFFF;
         border: 1px solid #024C71;
         border-radius: 50px;

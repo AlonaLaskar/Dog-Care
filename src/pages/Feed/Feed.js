@@ -7,14 +7,22 @@ import StyledFeed from './StyledFeed';
 import NewPost from 'components/Feed/NewPost';
 
 const postIndex = () => {
+  // Fetch posts using the usePosts hook
   const { posts, isLoading } = usePosts();
+
+  // If data is still loading, render "Loading..."
   if (isLoading) return 'Loading...';
 
+  // Render the feed component
   return (
     <StyledFeed>
-       <NewPost />
+      {/* Render the NewPost component */}
+      <NewPost />
+
+      {/* Render the PostsList component and pass the posts data as a prop */}
       <PostsLists posts={posts} />
-  </StyledFeed>
+    </StyledFeed>
   );
 };
+
 export default postIndex;
