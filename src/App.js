@@ -20,7 +20,6 @@ import '@ionic/react/css/display.css';
 import 'styles/fonts.css';
 import 'styles/variables.css';
 
-import Header from 'components/layout/Header';
 
 setupIonicReact({});
 

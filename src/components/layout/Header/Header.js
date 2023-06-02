@@ -1,4 +1,4 @@
-import { IonButtons, IonToolbar, IonIcon, IonTitle, IonText, IonButton } from '@ionic/react';
+import { IonButtons, IonToolbar, IonIcon, IonTitle } from '@ionic/react';
 import StyledHeader from './StyledHeader';
 import config from 'config';
 import { auth } from '../../../firebase';

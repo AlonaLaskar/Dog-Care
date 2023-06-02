@@ -4,9 +4,8 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { useState } from 'react';
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
 import useToast from './useToast';
-import {arrayRemove, arrayUnion} from 'firebase/firestore';
-import { getDoc,setDoc } from 'firebase/firestore';
-
+import { arrayRemove, arrayUnion } from 'firebase/firestore';
+import { getDoc, setDoc } from 'firebase/firestore';
 
 export function useUser(id) {
   const q = query(doc(db, 'users', id));
@@ -14,34 +13,10 @@ export function useUser(id) {
   return { user, isLoading };
 }
 
-
-
 export function useUsers() {
   const [users, isLoading] = useCollectionData(collection(db, 'users'));
   return { users, isLoading };
 }
-
-
-export async function saveRightSwipe(userId, swipedUserId) {
-    const swipeRef = doc(db, 'swipes', `${userId}`);
-      const swipeSnapshot = await getDoc(swipeRef);
-  if (swipeSnapshot.exists()) {
-    await updateDoc(swipeRef, {
-      rightSwipes: arrayUnion(swipedUserId),
-    });
-  } else {
-    await setDoc(swipeRef, {
-      user: userId,
-      rightSwipes: [swipedUserId],
-      CreatedOn: new Date(),
-    });
-  }
-}
-
-
-
-
-
 
 export function useYouLike({ id, isLiked, uid }) {
   const [isLoading, setLoading] = useState(false);
@@ -61,7 +36,6 @@ export function useUpdateAvatar(uid) {
   const [isLoading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const presentToast = useToast();
-
 
   async function updateAvatar() {
     if (!file) {
@@ -87,5 +61,4 @@ export function useUpdateAvatar(uid) {
     isLoading,
     fileUrl: file && URL.createObjectURL(file)
   };
-
 }

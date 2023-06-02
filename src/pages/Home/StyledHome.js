@@ -8,6 +8,11 @@ ion-content {
     
 }
 ion-content >.card-stack-container {
+    margin-top: 28px;
+    align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
     display: grid;
     grid-column: 1fr;
     grid-row: 1fr;

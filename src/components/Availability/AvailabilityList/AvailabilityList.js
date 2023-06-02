@@ -17,25 +17,26 @@ export default function AvailabilityList({ availabilitys }) {
 
   return (
     <>
-      {hasAvailabilitys ? (
-        <Virtuoso
-          data={filteredAvailabilitys}
-          itemContent={(index, availabilityId) => (
-            <NewAvailability
-              key={availabilityId.availabilityId}
-              availability={availabilityId}
-            />
-          )}
-        />
-      ) : (
-        <IonText className="no-posts">
-          Boring here! Write an availability...
-        </IonText>
-      )}
+     {hasAvailabilitys ? (
+  <Virtuoso
+    data={filteredAvailabilitys}
+    itemContent={(index, availabilityId) => 
+      <NewAvailability
+        key={availabilityId.availabilityId}
+        availability={availabilityId}
+      />
+    }
+  />
+) : (
+  <IonText className="no-posts">
+    Boring here! Write an availability...
+  </IonText>
+)}
+
     </>
   );
 }
 
 AvailabilityList.propTypes = {
-  availabilitys: PropTypes.array.isRequired,
+  availabilitys: PropTypes.any,
 };

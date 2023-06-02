@@ -1,6 +1,5 @@
 //!Ionic
-import { IonButton, IonCard, IonLabel, IonText, IonToggle } from '@ionic/react';
-//!React
+import { IonCard, IonText, IonButton } from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -16,11 +15,12 @@ import { uuidv4 } from '@firebase/util';
 //!Self-components
 import useToast from 'hook/useToast';
 import AuthContext from 'providers/AuthContext';
-import FormInput from 'components/UI/FormInput';
-import ProfileCard from 'components/ProfileCard/ProfileCard';
+
 //!style
 import StyledDogSitterService from './StyledDogSitterService';
 import PropTypes from 'prop-types';
+import Input from 'components/UI/Input/Input';
+import FormContext from 'providers/FormContext';
 
 const schema = yup.object().shape({
   dateStart: yup.string().required(),
@@ -28,7 +28,8 @@ const schema = yup.object().shape({
   start: yup.string().required(),
   stop: yup.string().required(),
   payment: yup.string().required(),
-  location: yup.string() // Remove the "required" constraint
+  location: yup.string(),
+  aboutMe: yup.string()
 });
 
 const DogSitterService = ({ selectedService }) => {
@@ -47,7 +48,7 @@ const DogSitterService = ({ selectedService }) => {
   } = useForm({
     resolver: yupResolver(schema)
   });
-  const [availabilityId, setAvailabilityId] = useState(null);
+  const [availabilityId] = useState(null);
 
   const [location, setLocation] = useState(null);
   console.log('location', location);
@@ -55,6 +56,7 @@ const DogSitterService = ({ selectedService }) => {
   //update the user and move on to the next page
   async function submitForm(data) {
     const id = uuidv4();
+    console.log('data', data);
 
     // Get location details from google places
     const placeId = location.value.place_id;
@@ -62,7 +64,6 @@ const DogSitterService = ({ selectedService }) => {
     const locationDetails = geocoded[0];
 
     // Perform availability validation
-    const currentDate = new Date();
     const selectedStartDate = new Date(data.dateStart);
     const selectedEndDate = new Date(data.dateStop);
 
@@ -128,27 +129,14 @@ const DogSitterService = ({ selectedService }) => {
             </span>
           )}
         </IonText>
-        <div className="form">
+        <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(submitForm)}>
-            <div className="dateStart">
-              <FormInput label="From" name="dateStart" type="date" register={register} errors={errors} />
-            </div>
-
-            <div className="dateEnd">
-              <FormInput label="To" name="dateStop" type="date" register={register} errors={errors} />
-            </div>
-
-            <div className="fromStart">
-              <FormInput label="From" name="start" type="time" register={register} errors={errors} />
-            </div>
-
-            <div className="toEnd">
-              <FormInput label="To" name="stop" type="time" register={register} errors={errors} />
-            </div>
-
-            <div className="payment">
-              <FormInput label="Payment" name="payment" type="number" register={register} errors={errors} />
-            </div>
+            <Input id="dateStart" type="date" label="From" />
+            <Input id="dateStop" type="date" label="To" />
+            <Input id="start" type="time" label="From" />
+            <Input id="stop" type="time" label="To" />
+            <Input id="payment" type="number" label="Payment" />
+            <Input id="aboutMe" type="text" label="About me" title="Add details about the service " />
 
             <div className="Location">
               <span>Location</span>
@@ -174,12 +162,9 @@ const DogSitterService = ({ selectedService }) => {
               </IonButton>
             </div>
           </form>
-        </div>
+        </FormContext.Provider>
       </IonCard>
       {availabilityId && <DogSitterService id={availabilityId} />}
-      
-     
-
     </StyledDogSitterService>
   );
 };

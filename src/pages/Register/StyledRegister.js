@@ -2,30 +2,22 @@ import styled from 'styled-components';
 import { IonPage } from '@ionic/react';
 
 const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
-  align-items: center;
+align-items: center;
+  justify-content: center;
+  display: flex;
   flex-direction: column;
-  position: relative;
-  justify-content: space-between;
-  font-family: Roboto;
-  font-style: normal;
-  height: 100%;
 
   ion-card {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     position: relative;
-
     width: 381px;
     height: 649px;
     border-radius: 10px;
-    position: relative;
-    top: 0px;
-    left: 0px;
   }
-
+  
   .subtitle span {
     position: absolute;
     width: 350px;
@@ -40,7 +32,6 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     display: flex;
     align-items: center;
     text-align: center;
-
     color: #000000;
   }
 
@@ -48,9 +39,8 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
     position: absolute;
     width: 106px;
     height: 32px;
-    left: 48px;
+    left: 128px;
     top: 14px;
-
     font-family: 'Arial Rounded MT Bold';
     font-style: normal;
     font-weight: 400;
@@ -61,16 +51,19 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
 
     color: #024c71;
   }
-  ion-input.email {
+  ion-input{
     box-sizing: border-box;
+    background: #ffffff;
+    border: 2px solid #024c71;
+    border-radius: 10px;
+
+  }
+  ion-input.email {
     position: absolute;
     width: 375px;
     height: 37.76px;
     left: 1.71px;
     top: 218.64px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
   }
   .passwordtotal {
     position: absolute;
@@ -82,26 +75,22 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
 
 
   ion-input.fullName {
-    box-sizing: border-box;
     position: absolute;
     width: 185px;
     height: 37.76px;
     left: 1.71px;
     top: 167.51px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
+
+  }
+  ion-lable.fullName {
   }
 ion-input.password {
-    box-sizing: border-box;
     position: absolute;
     width: 175.86px;
     height: 37.76px;
     left: 4.14px;
     top: 336.77px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
+  
   }
   ion-icon.password {
     position: absolute;
@@ -113,66 +102,62 @@ ion-input.password {
       
   }
   ion-input.verifyPassword {
-    box-sizing: border-box;
     position: absolute;
     width: 185px;
     height: 37.76px;
     left: 194px;
     top: 336.77px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
+
   }
   ion-input.tel {
-    box-sizing: border-box;
     position: absolute;
     width: 175.86px;
     height: 37.76px;
     left: 4.14px;
     top: 272.51px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
+
   }
   ion-input.aboutMe {
-    box-sizing: border-box;
     position: absolute;
     width: 371.13px;
     height: 80.76px;
     left: 4.14px;
     top: 408.64px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
-    word-wrap: break-word;
-    white-space: pre-line;
-       word-break: break-all;
-
-    
-    
-
+   
   }
-  ion-input.address {
-    box-sizing: border-box;
+  .location {
     position: absolute;
-    width: 185px;
-    height: 37.76px;
+
     left: 194px;
     top: 271.51px;
+
+
+    .css-13cymwt-control{
+    box-sizing: border-box;
     background: #ffffff;
-    border: 2px solid #024c71;
+    border: 2px solid #024c71; 
+    width: 185px;
+    height: 37.76px;
     border-radius: 10px;
+    display: flex;
+    position: fixed;
+  }
+  .css-1xc3v61-indicatorContainer{
+
+  }
+  .css-1jqq78o-placeholder{
+
+  }
+
   }
   ion-input.birthDate {
-    box-sizing: border-box;
     position: absolute;
     width: 186.86px;
     height: 37.76px;
     left: 191.71px;
     top: 168.77px;
-    background: #ffffff;
-    border: 2px solid #024c71;
-    border-radius: 10px;
+
+
   }
   .form-group {
     position: absolute;

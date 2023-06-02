@@ -20,7 +20,7 @@ import SendRequestMassage from '../../components/Schedule/DogSitterService/SendR
 import PeopleULike from '../../components/Schedule/PeopleULike';
 import AwaitingConfirmation from '../../components/Schedule/AwaitingConfirmation';
 import JobSearch from '../../components/Schedule/JobSearch';
-import { Switch } from 'react-router-dom';
+import EditAvilabilty from '../../components/Availability/EditAvilabilty';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -53,6 +53,7 @@ export const AppTabs = () => {
         <Route exact path="/my/peopleulike" component={PeopleULike} />
         <Route exact path="/my/awaitingconfirmation" component={AwaitingConfirmation} />
         <Route exact path="/my/jobsearch" component={JobSearch} />
+        <Route exact path="/my/editAvilabilty/:id" component={EditAvilabilty} />
 
         {/* Errors handling */}
         <Route component={NotFound} status={404} />

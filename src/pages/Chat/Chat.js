@@ -1,18 +1,21 @@
-//! Custom Hooks
-import { usePosts } from 'hook/posts';
+import React from 'react';
+import { useavAilabilitys } from '../../hook/availabilityHook';
+import AvailabilityList from '../../components/Availability/AvailabilityList';
+import NewAvailability from 'components/Availability/NewAvailability';
 
-//! Components
-import Post from 'components/Feed/Post';
-import ProfileCard from 'components/ProfileCard/ProfileCard';
+export default function Example() {
+
+  const { availabilitys, isLoading } = useavAilabilitys();
+  if (isLoading) return 'Loading...';
+
+  return(
+    <div >
+      {/* <AvailabilityList availabilitys={availabilitys} /> */}
+      <NewAvailability availability={availabilitys} />
+    </div>
+  )
 
 
-const Chat = () => {
+  }
 
-  return (
-    <>
-    <ProfileCard />
-    </>
-  );
-};
 
-export default Chat;

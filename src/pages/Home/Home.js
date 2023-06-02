@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { IonHeader, IonSelect, IonToolbar, IonContent, IonTitle, IonSelectOption } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSegment, IonSegmentButton, IonLabel } from '@ionic/react';
 import StyledHome from './StyledHome';
 import ProfileCard from 'components/ProfileCard/ProfileCard';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection, doc } from 'firebase/firestore';
 import { db, auth } from '../../firebase';
 import ActionButton from 'components/ProfileCard/ActionButton/ActionButton';
-import { saveRightSwipe } from 'hook/users';
-import { useParams } from 'react-router-dom';
-import { useDocumentData } from 'react-firebase-hooks/firestore';
+
 const Home = () => {
   const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
   const [animateMatchButton, setAnimateMatchButton] = useState(false);
@@ -18,6 +16,7 @@ const Home = () => {
     const [ailabilitys, isLoading] = useCollectionData(collection(db, 'availability'));
     return { ailabilitys, isLoading };
   }
+  const [selectedRole, setSelectedRole] = useState('Dog-Sitter');
 
 
 
@@ -46,29 +45,39 @@ const Home = () => {
 
   return (
     <StyledHome>
-      <IonHeader>
-        
-      </IonHeader>
-      <IonContent fullscreen>
-        <div className="card-stack-container">
-          {ailabilitys.map((availability) => (
-            <ProfileCard
-              availability={availability} // Pass the availability ID
-              onMatch={ProfileEvents.onMatch}
-              onUnmatch={ProfileEvents.onUnmatch}
-              onReset={ProfileEvents.onReset}
-              key={availability.id} // Add a unique key prop
-            />
-          ))}
-        </div>
-        <ActionButton
-          {...{
-            animateMatchButton,
-            animateUnmatchButton
-          }}
-        />
-      </IonContent>
-    </StyledHome>
+    <IonHeader>
+      {/* Add the IonSegment component here */}
+      <IonSegment onIonChange={e => setSelectedRole(e.detail.value)}>
+        <IonSegmentButton value="Dog-Sitter">
+          <IonLabel>Dog Sitter</IonLabel>
+        </IonSegmentButton>
+        <IonSegmentButton value="Dog-walker">
+          <IonLabel>Dog Walker</IonLabel>
+        </IonSegmentButton>
+      </IonSegment>
+    </IonHeader>
+    <IonContent fullscreen>
+      <div className="card-stack-container">
+        {/* Filter the ailabilitys based on the selected role */}
+        {ailabilitys.filter(availability => availability.role === selectedRole)
+        .map((availability) => (
+          <ProfileCard
+            availability={availability} 
+            onMatch={ProfileEvents.onMatch}
+            onUnmatch={ProfileEvents.onUnmatch}
+            onReset={ProfileEvents.onReset}
+            key={availability.id} 
+          />
+        ))}
+      </div>
+      <ActionButton
+        {...{
+          animateMatchButton,
+          animateUnmatchButton
+        }}
+      />
+    </IonContent>
+  </StyledHome>
   );
 };
 

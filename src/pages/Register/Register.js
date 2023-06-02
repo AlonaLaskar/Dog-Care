@@ -19,8 +19,19 @@ import useToast from 'hook/useToast';
 import { isEmailExists } from 'hook/isEmailExists';
 
 //! Ionic components
-import { IonLoading, IonButton, IonIcon, IonTitle, IonCard, IonCardTitle, IonCardSubtitle, IonContent, IonItem } from '@ionic/react';
-import { personAdd , eyeOutline ,eyeOffOutline } from 'ionicons/icons';
+import {
+  IonLoading,
+  IonButton,
+  IonIcon,
+  IonTitle,
+  IonCard,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonContent,
+  IonItem
+} from '@ionic/react';
+import { personAdd, eyeOutline, eyeOffOutline } from 'ionicons/icons';
+import GooglePlacesAutocomplete, { geocodeByPlaceId } from 'react-google-places-autocomplete';
 
 //! Providers
 import AuthContext from 'providers/AuthContext';
@@ -45,10 +56,16 @@ const schema = yup.object().shape({
     ),
   verifyPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords don't match"),
   fullName: yup.string().required(),
-  tel: yup.string().required().matches(/^\d{10}$/, 'Invalid telephone number format.'),
-  address: yup.string().required(),
-  birthDate: yup.string().matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.').nullable(),
-  aboutMe: yup.string().nullable()
+  tel: yup
+    .string()
+    .required()
+    .matches(/^\d{10}$/, 'Invalid telephone number format.'),
+  birthDate: yup
+    .string()
+    .matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.')
+    .nullable(),
+  aboutMe: yup.string().nullable(),
+  location: yup.string() // Remove the "required" constraint
 });
 
 export default function Register() {
@@ -57,14 +74,18 @@ export default function Register() {
   const { loggedIn } = useContext(AuthContext);
   const presentToast = useToast();
   const history = useHistory();
-//password visible
+  //password visible
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState('');
   const handlePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  //! Init forms
+  // Check if user is logged in
+  const pushToHome = () => history.push({ pathname: '/my/home' });
+  if (loggedIn) return pushToHome();
+  
+  //Init forms
   const {
     register,
     handleSubmit,
@@ -73,15 +94,19 @@ export default function Register() {
     resolver: yupResolver(schema)
   });
 
-  //! Check if user is logged in
-  const pushToHome = () => history.push({ pathname: '/my/home' });
-  if (loggedIn) return pushToHome();
+  const [location, setLocation] = useState(null);
+
 
   //! Handle register with credentials and profile data
-  const handleRegister = async ({ email, password, birthDate, address, ...rest }) => {
-    console.log('rest', { email, password, birthDate, address, ...rest });
+  const handleRegister = async ({ email, password, birthDate, ...rest }) => {
+    console.log('rest', { email, password, birthDate, ...rest });
 
     setIsLoading(true);
+
+    // Get location details from google places
+    const placeId = location.value.place_id;
+    const geocoded = await geocodeByPlaceId(placeId);
+    const locationDetails = geocoded[0];
 
     try {
       //! Check if email is already exists
@@ -98,13 +123,12 @@ export default function Register() {
         const { uid: id } = user || {};
         await setDoc(doc(db, 'users', id), {
           id,
+          email,
           username: email.split('@')[0],
           aboutMe: ' ',
           birthDate: format(new Date(birthDate), 'dd/MM/yyyy'),
-          email,
-          address,
-          avatar:
-            'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
+          location: locationDetails?.formatted_address || '', // Save the selected location or an empty string if not selected
+          avatar:'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
           ...rest
         });
         presentToast('Registration successfully', true);
@@ -140,26 +164,40 @@ export default function Register() {
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
             <Input id="email" title="Email address " placeholder="Enter email address" />
-            
-          
+
             <Input
               id="password"
               title="Password"
               type={passwordVisible ? 'text' : 'password'}
               onIonChange={(e) => setPassword(e.detail.value || '')}
-              />
+            />
             <IonIcon
-              className='password'
+              className="password"
               slot="end"
               icon={passwordVisible ? eyeOffOutline : eyeOutline}
               onClick={handlePasswordVisibility}
             />
             <Input id="verifyPassword" title="Verify password" type="password" placeholder="Enter verify password" />
-            <Input id="fullName" title="Full Name" placeholder="Enter fullName" />
+            <Input id="fullName" title="Full Name" placeholder="Enter fullName" type="string" />
             <Input id="tel" title="Phone Number" type="tel" placeholder="Enter phone number" />
-            <Input id="address" title="address" placeholder="Enter address" isInput={true} />
             <Input id="birthDate" title="Birthday" type="date" placeholder="Enter birthday" />
-            <Input id="aboutMe" title="About me" placeholder="Enter about me" />
+            <Input id="aboutMe"  type="string" title="Help us get to know you better.." />
+            <div className="location">
+              <GooglePlacesAutocomplete
+                className="location"
+                apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+                autocompletionRequest={{
+                  componentRestrictions: {
+                    country: ['il'] // restrict to Israel
+                  }
+                }}
+                selectProps={{
+                  value: location,
+                  onChange: setLocation,
+                  placeholder: 'Enter location',
+                }}
+              />
+            </div>
 
             <div className="form-group">
               <IonButton type="submit" expand="block">

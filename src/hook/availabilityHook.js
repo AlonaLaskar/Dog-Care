@@ -1,19 +1,6 @@
 import useToast from './useToast';
 import { uuidv4 } from '@firebase/util';
-import {
-  arrayRemove,
-  arrayUnion,
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  orderBy,
-  query,
-  setDoc,
-  updateDoc,
-  where
-} from 'firebase/firestore';
-
+import { doc, setDoc, updateDoc, deleteDoc, arrayUnion, collection, query, where, getDoc, orderBy } from 'firebase/firestore';
 import { format } from 'date-fns';
 
 import { db } from '../firebase';
@@ -65,6 +52,7 @@ export function useDeleteAvailability(id) {
       setLoading(true);
       //delete post
       await deleteDoc(doc(db, 'availability', id));
+      await deleteDoc(doc(db, 'swipes', id));
       //delete comments
       // const q = query(collection(db, 'comments'), where('postId', '==', id));
       // const querySnapshot = await getDocs(q);
@@ -75,6 +63,32 @@ export function useDeleteAvailability(id) {
   }
   return { deleteAvailability, isLoading };
 }
+
+export async function saveRightSwipe(availabilityId, userId, swipedUserId) {
+  //!PROBLEM HERE USERID UNDIFINED
+  if (!userId||userId===undefined) {
+    return null;
+  }
+  console.log('RightSwipe-userId', userId);
+  console.log('RightSwipe-swipedUserId', swipedUserId);
+  console.log('RightSwipe-availabilityId', availabilityId);
+
+  const swipeRef = doc(db, 'swipes', `${availabilityId}`);
+  const swipeSnapshot = await getDoc(swipeRef);
+  if (swipeSnapshot.exists()) {
+    await updateDoc(swipeRef, {
+      rightSwipes: arrayUnion(swipedUserId)
+    });
+  } else {
+    await setDoc(swipeRef, {
+      userId: userId,
+      availabilityId: availabilityId,
+      rightSwipes: [swipedUserId],
+      CreatedOn: new Date()
+    });
+  }
+}
+
 
 export function useavAilability(id) {
   const q = doc(db, 'availability', id);
@@ -92,4 +106,25 @@ export function useavAilabilitys(uid = null) {
   const [availabilitys, isLoading, error] = useCollectionData(q);
   if (error) throw error;
   return { availabilitys, isLoading };
+}
+export function useEditAvailability(id) {
+  const history = useHistory();
+  const [isLoading, setLoading] = useState(false);
+  const presentToast = useToast();
+
+  async function editAvailability(availability) {
+    setLoading(true);
+    try {
+      await updateDoc(doc(db, 'availability', id), {
+        ...availability,
+      });
+      presentToast('The availability was updated successfully', true);
+      setLoading(false);
+    } catch (error) {
+      presentToast('Failed to update availability', false);
+      console.error(error);
+    }
+  }
+
+  return { editAvailability, isLoading };
 }

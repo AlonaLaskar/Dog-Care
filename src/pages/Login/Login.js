@@ -91,8 +91,8 @@ function Login() {
         <FormContext.Provider value={{ errors, register }}>
           <div className="form">
             <form onSubmit={handleSubmit(handleLogin)}>
-              <Input id="email" title="Email" />
-              <Input id="password" title="Password" />
+              <Input id="email" title="Email" type='email'/>
+              <Input id="password" title="Password" type='password' />
 
               <div className="register">
                 <IonButton routerLink="./register" expand="block" fill="clear" color="dark">

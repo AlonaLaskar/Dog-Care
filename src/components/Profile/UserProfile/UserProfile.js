@@ -4,7 +4,7 @@ import AuthContext from 'providers/AuthContext';
 import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
-import ServiceMode from 'components/Schedule/ServiceMode';
+import DogSitterService from 'components/Schedule/DogSitterService';
 import StyledUserProfile from './StyledUserProfile';
 import UnUserMode from 'components/Profile/UnUserMode';
 
@@ -42,7 +42,7 @@ const UserProfile = () => {
           <IonIcon icon={createOutline} onClick={handleEditButtonClick} />
           </IonButton>
           </IonCardSubtitle>
-        <IonImg src={user?.avatar} />
+        <img src={user?.avatar} />
         <div className="name">
           {user?.fullName},{ageInYears}
         </div>
@@ -62,7 +62,7 @@ const UserProfile = () => {
    
       </IonCard>
      <div className="mode">
-        {!isUserMode && <ServiceMode  />}
+        {!isUserMode && <DogSitterService  />}
 
         {isUserMode && <UnUserMode/> }
       

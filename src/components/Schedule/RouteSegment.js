@@ -15,6 +15,7 @@ const RouteSegment = () => {
   
   const { availabilitys, isLoading } = useavAilabilitys();
   if (isLoading) return 'Loading...';
+  console.log('availabilitys IN RouteSegment ', availabilitys);
 
 
   return (
