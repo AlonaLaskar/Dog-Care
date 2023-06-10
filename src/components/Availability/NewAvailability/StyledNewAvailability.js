@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledNewAvailability = styled.div`
+
 margin-top: 50px;
 
 ion-card {
@@ -136,7 +137,10 @@ ion-card {
   --height: 80%;
   --width: 80%;
 }
-
+.alert-button.sc-ion-alert-md, .alert-checkbox.sc-ion-alert-md, .alert-input.sc-ion-alert-md, .alert-radio.sc-ion-alert-md {
+    outline: auto;
+    
+}
 
 
 `;

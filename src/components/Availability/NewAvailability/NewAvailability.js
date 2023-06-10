@@ -1,21 +1,20 @@
 import React from 'react';
 import StyledNewAvailability from './StyledNewAvailability';
-import { IonCard, IonCheckbox, IonIcon, IonText, IonButton, IonCardSubtitle, IonLabel } from '@ionic/react';
+import { IonCard, IonAlert, IonIcon, IonText, IonButton } from '@ionic/react';
 import {
   calendarNumberOutline,
   alarmOutline,
   cashOutline,
   alertCircleOutline,
   locationOutline,
-  bodyOutline
+  checkmarkCircleOutline,
+  trashOutline
 } from 'ionicons/icons';
 // import PropTypes from 'prop-types';
-import { trashOutline, createOutline } from 'ionicons/icons';
 import PropTypes from 'prop-types';
-import { useDeleteAvailability, useEditAvailability } from 'hook/availabilityHook';
+import { useDeleteAvailability } from 'hook/availabilityHook';
 import { useHistory } from 'react-router-dom';
-import EditAvilabilty from 'components/Availability/EditAvilabilty';
-import { useRef, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 
 import { db } from '../../../firebase';
 import { collection, query, where } from 'firebase/firestore';
@@ -23,17 +22,18 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { doc, getDoc } from 'firebase/firestore';
 import AvailabilityModal from '../../Availability/AvailabilityModal';
 
+
 export default function NewAvailability({ availability }) {
   
   //modle settings
 
   const q = query(collection(db, 'swipes'), where('availabilityId', '==', availability.availabilityId));
   const [UserSwipesRith] = useCollectionData(q);
-  console.log('UserSwipesRith', UserSwipesRith);
   const peopleYouLike = UserSwipesRith?.[0]?.rightSwipes;
-  console.log('peopleYouLike', peopleYouLike);
 
   const [showModal, setShowModal] = useState(false);
+  const [showConfirmDeleteAlert, setShowConfirmDeleteAlert] = useState(false);
+
 
   const [user, setUser] = useState([]);
 
@@ -57,22 +57,24 @@ export default function NewAvailability({ availability }) {
     fetchData();
   }, [peopleYouLike]);
 
-  console.log('user', user);
 
-  const history = useHistory();
   const { deleteAvailability, isLoading: deleteLoading } = useDeleteAvailability(availability.availabilityId);
-  const { editAvailability, isLoading: editLoading } = useEditAvailability(availability.availabilityId);
 
   const handleApproval = (userId, isApproved) => {
     // Handle the approval logic here
     console.log(`User ID: ${userId}, Approved: ${isApproved}`);
   };
-
-  const handleEditAvailability = () => {
-    history.push(`/my/editAvilabilty/${availability.availabilityId}`);
+  const handleAcceptAvailability = () => {
+    console.log('accept');
+    // On checkmark click, display delete confirmation alert
+    setShowConfirmDeleteAlert(true);
   };
 
-
+  // Update deleteAvailability to handle the 'confirmed' state of the delete action
+  const deleteAvailabilityConfirmed = async () => {
+    setShowConfirmDeleteAlert(false);
+    await deleteAvailability();
+  };
 
   return (
     <StyledNewAvailability>
@@ -113,9 +115,7 @@ export default function NewAvailability({ availability }) {
               {availability.payment}₪ (cash)
             </IonText>
           </div>
-          <div className="IsAccept">
-            <IonCheckbox slot="end" />
-          </div>
+    
           <div className="buttons">
             <IonButton
               className="deleteButton"
@@ -129,14 +129,32 @@ export default function NewAvailability({ availability }) {
             </IonButton>
             <IonButton
               className="editButton"
-              color="warning"
+              color="Success"
               fill="clear"
               isRound
-              onClick={handleEditAvailability}
-              disabled={editLoading} // Disable the edit button while the edit operation is in progress
+              onClick={handleAcceptAvailability}
             >
-              <IonIcon icon={createOutline} />
+              <IonIcon icon={checkmarkCircleOutline} />
             </IonButton>
+            {/* Confirmation alert */}
+            <IonAlert
+              isOpen={showConfirmDeleteAlert}
+              onDidDismiss={() => setShowConfirmDeleteAlert(false)}
+              header={'Confirm Delete'}
+              message={'If you confirm, the availability will be deleted. Are you sure you want to proceed?'}
+              buttons={[
+                {
+                  text: 'Cancel',
+                  role: 'cancel',
+                  cssClass: 'secondary',
+                  handler: () => setShowConfirmDeleteAlert(false)
+                },
+                {
+                  text: 'Confirm',
+                  handler: deleteAvailabilityConfirmed
+                }
+              ]}
+            />
             <IonButton 
         className="SeeRequests" 
         fill="clear" 

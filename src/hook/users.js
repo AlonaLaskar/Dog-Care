@@ -5,9 +5,10 @@ import { useState } from 'react';
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
 import useToast from './useToast';
 import { arrayRemove, arrayUnion } from 'firebase/firestore';
-import { getDoc, setDoc } from 'firebase/firestore';
+import { getDoc} from 'firebase/firestore';
 
 export function useUser(id) {
+  console.log('id', id);
   const q = query(doc(db, 'users', id));
   const [user, isLoading] = useDocumentData(q);
   return { user, isLoading };
@@ -62,3 +63,18 @@ export function useUpdateAvatar(uid) {
     fileUrl: file && URL.createObjectURL(file)
   };
 }
+//////////////!! chenge in the all code
+export async function getUser(id) {
+  const docRef = doc(db, 'users', id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log('Document getUser:', docSnap.data());
+    return docSnap.data();
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No  such users document!");
+    return null;
+  }
+}
+

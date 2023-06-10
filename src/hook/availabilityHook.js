@@ -1,20 +1,15 @@
 import useToast from './useToast';
 import { uuidv4 } from '@firebase/util';
-import { doc, setDoc, updateDoc, deleteDoc, arrayUnion, collection, query, where, getDoc, orderBy } from 'firebase/firestore';
-import { format } from 'date-fns';
+import { doc, setDoc, updateDoc, deleteDoc,  collection, query, where, getDoc, orderBy } from 'firebase/firestore';
 
 import { db } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
-import { useContext } from 'react';
-import AuthContext from 'providers/AuthContext';
-import { useHistory } from 'react-router-dom';
 import SendRequestMassage from '../components/Schedule/DogSitterService/SendRequestMassage';
 
 
 
 export function useAddAvailability() {
-  const history = useHistory();
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
 
@@ -24,8 +19,7 @@ export function useAddAvailability() {
     const id = uuidv4();
     try {
       await setDoc(doc(db, 'availability', id), {
-        // dateStart: formattedDateStart,
-        // dateStop: formattedDateStop,
+ 
         ...availability,
         availabilityId: id,
         date: Date.now(),
@@ -50,13 +44,10 @@ export function useDeleteAvailability(id) {
     const res = window.confirm('Are you sure you want to delete this availability?');
     if (res) {
       setLoading(true);
-      //delete post
+      //delete deleteDoc
       await deleteDoc(doc(db, 'availability', id));
       await deleteDoc(doc(db, 'swipes', id));
-      //delete comments
-      // const q = query(collection(db, 'comments'), where('postId', '==', id));
-      // const querySnapshot = await getDocs(q);
-      // querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
+    
       presentToast('The availability was deleted successfully', true);
       setLoading(false);
     }
@@ -64,42 +55,15 @@ export function useDeleteAvailability(id) {
   return { deleteAvailability, isLoading };
 }
 
-export async function saveRightSwipe(availabilityId, userId, swipedUserId) {
-  //!PROBLEM HERE USERID UNDIFINED
-  if (!userId||userId===undefined) {
-    return null;
-  }
-  console.log('RightSwipe-userId', userId);
-  console.log('RightSwipe-swipedUserId', swipedUserId);
-  console.log('RightSwipe-availabilityId', availabilityId);
-
-  const swipeRef = doc(db, 'swipes', `${availabilityId}`);
-  const swipeSnapshot = await getDoc(swipeRef);
-  if (swipeSnapshot.exists()) {
-    await updateDoc(swipeRef, {
-      rightSwipes: arrayUnion(swipedUserId)
-    });
-  } else {
-    await setDoc(swipeRef, {
-      userId: userId,
-      availabilityId: availabilityId,
-      rightSwipes: [swipedUserId],
-      CreatedOn: new Date()
-    });
-  }
-}
-
 
 export function useavAilability(id) {
   const q = doc(db, 'availability', id);
   const [availability, isLoading] = useDocumentData(q);
-  console.log("availabilityISHOOK",availability);
   return { availability, isLoading };
 }
 
 export function useavAilabilitys(uid = null) {
 
-  const { userId } = useContext(AuthContext) || {};
   const q = uid
     ? query(collection(db, 'availability'), orderBy('date', 'desc'), where('availabilityId', '==', uid))
     : query(collection(db, 'availability'), orderBy('date', 'desc'));
@@ -107,8 +71,8 @@ export function useavAilabilitys(uid = null) {
   if (error) throw error;
   return { availabilitys, isLoading };
 }
+
 export function useEditAvailability(id) {
-  const history = useHistory();
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
 
@@ -127,4 +91,18 @@ export function useEditAvailability(id) {
   }
 
   return { editAvailability, isLoading };
+}
+
+
+//!!!!!
+export async function getAvailability(id) {
+  const docRef = doc(db, 'availability', id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    console.log("No such  availability document!");
+    return null;
+  }
 }

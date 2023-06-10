@@ -2,13 +2,27 @@ import styled from 'styled-components';
 import { IonPage } from '@ionic/react';
 
 const StyledHome = styled(IonPage).attrs({ className: 'ion-padding' }).attrs({ className: 'ion-padding' })`
-margin-top: 28px;
+
 ion-content {
     --background: none;
-    
+}
+ion-segment {
+    margin-top: 35px;
+    width: 100%;
+    height:100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    align-items: center;
+
+
+ion-segment-button {
+
+
+
+}
 }
 ion-content >.card-stack-container {
-    margin-top: 28px;
+    margin-top: 26px;
     align-items: center;
   justify-content: center;
   display: flex;

@@ -1,4 +1,4 @@
-import { IonButtons, IonToolbar, IonIcon, IonTitle } from '@ionic/react';
+import { IonButtons, IonToolbar, IonIcon, IonTitle, IonImg } from '@ionic/react';
 import StyledHeader from './StyledHeader';
 import config from 'config';
 import { auth } from '../../../firebase';
@@ -8,6 +8,9 @@ import AuthContext from 'providers/AuthContext';
 import { useContext } from 'react';
 import { arrowBackOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
+import dogLogo from '../../../../src/assets/dogLogo.png';
+import boneLogo from '../../../../src/assets/boneLogo.png';
+
 
 const Header = () => {
   const { userId } = useContext(AuthContext) || {};
@@ -24,12 +27,16 @@ const Header = () => {
   return (
     <StyledHeader>
       <IonToolbar>
-        <IonTitle>{config.siteName}</IonTitle>
+        {/* <IonTitle>{config.siteName}</IonTitle> */}
+        <div className='logo'>
+        <img src={boneLogo} className='bone'/>
+        <img src={dogLogo} className='dog'/>
+        </div>
         <IonButtons slot="start" onClick={hendeleLogout} color="danger" expand="block">
-          <IonIcon solt="start" icon={logOutOutline} />
+          <IonIcon solt="start" icon={logOutOutline} size='large'/>
         </IonButtons>
         <IonButtons slot="end" onClick={hendeleBack}>
-          <IonIcon solt="end" icon={arrowBackOutline} />
+          <IonIcon solt="end" icon={arrowBackOutline} size='large' />
         </IonButtons>
       </IonToolbar>
     </StyledHeader>

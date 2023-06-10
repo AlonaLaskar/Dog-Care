@@ -10,12 +10,7 @@ import { doc, updateDoc } from 'firebase/firestore';
   const userRef = doc(db, 'users', userId);
 
    updateDoc(userRef, {
-    role: "",
-    dateStart:" ",
-    start: " ",
-    dateStop:   " ",
-    stop: " ",
-    payment: " "
+
   });
   return ;
 }

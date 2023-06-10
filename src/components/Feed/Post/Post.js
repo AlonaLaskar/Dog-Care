@@ -1,29 +1,40 @@
-//! Ionic components
-import { IonCard, IonCardContent, IonLabel, IonText } from '@ionic/react';
-//! Components
+import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonImg, IonLabel, IonText } from '@ionic/react';
 import Action from './ActionsPost';
 import HeaderPost from './HeaderPost';
 import StyledPost from './StyledPost';
-import { Virtuoso } from 'react-virtuoso';
 import PropTypes from 'prop-types';
+import { useUser } from 'hook/users';
+import { formatDistanceToNow } from 'date-fns';
+
 
 export default function Post({ post }) {
+
+  const { uid, date } = post;
+
+  const { user, isLoading } = useUser(uid) || {};
+
   return (
-    <Virtuoso
-      style={{ height: '250px' }} // Adjust the height to fit your requirements
-      totalCount={1} // Pass 1 as the total count since there is only one post
-      item={() => (
-        <StyledPost>
-          <IonCard>
-            <HeaderPost post={post} />
-            <IonCardContent>
-              <IonText className='postText'>{post.text}</IonText>
-              <Action post={post} />
-            </IonCardContent>
-          </IonCard>
-        </StyledPost>
-      )}
-    />
+    <StyledPost>
+      <IonCard className='postcard'>
+         <IonCardHeader>
+  
+  <IonAvatar>
+      <img src={user?.avatar} alt={user?.fullName}/>
+    </IonAvatar>
+    <IonLabel className='name'>
+      {user?.fullName}
+    </IonLabel>
+    <IonLabel className='date'>
+      <h2>{formatDistanceToNow(date) + ' ago'}</h2>
+    </IonLabel>
+  </IonCardHeader>
+       
+        <IonCardContent>
+          <IonLabel className='postText'>{post.text}</IonLabel>
+          <Action post={post} />
+        </IonCardContent>
+      </IonCard>
+    </StyledPost>
   );
 }
 

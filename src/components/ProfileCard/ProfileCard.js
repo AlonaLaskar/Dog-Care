@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import StylesProfileCard from './StylesProfileCard';
 import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
 import {
   locationOutline,
@@ -10,22 +9,26 @@ import {
 } from 'ionicons/icons';
 import PropTypes from 'prop-types';
 import { doc, getDoc } from 'firebase/firestore';
-import {  db } from '../../firebase';
+import { db } from '../../firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
-
-import { saveRightSwipe } from '../../hook/availabilityHook';
+import { saveRightSwipe } from '../../hook/swips';
 import AuthContext from 'providers/AuthContext';
 import { useContext } from 'react';
+import StylesProfileCard from './StylesProfileCard';
 
 const ProfileCard = (props) => {
   const { userId } = useContext(AuthContext) || {};
- 
+  
 
+  
   const ref = React.useRef(null);
   useEffect(() => {
     gestureInit();
   });
+
   const gestureInit = () => {
+    const swipeThreshold = window.innerWidth * 0.5; // Adjust the value as needed
+
     const card = ref.current;
     if (card) {
       const gesture = createGesture({
@@ -35,25 +38,24 @@ const ProfileCard = (props) => {
           card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
           if (detail.deltaX > 0) {
             props.onMatch();
-
-            saveRightSwipe(props.availability.availabilityId, props.availability.userId,userId);
-          } else {
-            props.onUnmatch();
+          if (detail.deltaX > swipeThreshold) {
+            card.style.transform = `translateX(${window.innerWidth}px)`;
+            saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
             
+          } 
+        }
+          else {
+            props.onUnmatch();
           }
         },
         onEnd: (detail) => {
           const windowWidth = window.innerWidth;
-          props.onReset();
-          if (detail.deltaX > windowWidth / 2) {
-            saveRightSwipe(props.availability.availabilityId, userId);
+          if (detail.deltaX > windowWidth - swipeThreshold) {
             props.onMatch();
-            
-            
-            card.style.transform = `translateX(${windowWidth}px)`;
-          } else if (detail.deltaX < -windowWidth / 2) {
-            card.style.transform = `translateX(-${windowWidth}px)`;
+            saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
+            card.style.transform = `translateX(${window.innerWidth}px)`;
           } else {
+            props.onReset();
             card.style.transform = 'translateX(0px)';
           }
         }
@@ -61,16 +63,13 @@ const ProfileCard = (props) => {
       gesture.enable();
     }
   };
-  
-
 
   const availabilityId = props.availability.availabilityId;
   const userId1 = props.availability.userId;
-  
-  const [userData, setUserData] = useState(null); // State to store the retrieved user data
+
+  const [userData, setUserData] = useState(null);
 
   async function getUserData(availabilityId) {
-
     const availabilityRef = doc(db, 'availability', availabilityId);
     const availabilitySnapshot = await getDoc(availabilityRef);
     if (availabilitySnapshot.exists()) {
@@ -78,8 +77,7 @@ const ProfileCard = (props) => {
       const userSnapshot = await getDoc(userRef);
       if (userSnapshot.exists()) {
         const userData = userSnapshot.data();
-        setUserData(userData); // Update the state with the retrieved user data
-        console.log(userData);
+        setUserData(userData);
       } else {
         console.log('User document does not exist');
       }
@@ -87,7 +85,6 @@ const ProfileCard = (props) => {
       console.log('Availability document does not exist');
     }
   }
-
 
   useEffect(() => {
     getUserData(availabilityId);
@@ -97,25 +94,19 @@ const ProfileCard = (props) => {
   const [availability, isLoadingAvailability] = useDocumentData(q);
 
   if (isLoadingAvailability) {
-    // Handle the loading state, e.g., display a loading spinner
     return <div>Loading...</div>;
   }
 
   if (!availability) {
-    // Handle the case when availability data is not found or undefined
     return <div>No availability data found.</div>;
   }
 
-  // // const dob = moment(userData.birthDate, 'DD/MM/YYYY').toDate();
-  // const ageInMs = Date.now() - availability.birthDate.getTime();
-  // const ageInYears = new Date(ageInMs).getFullYear() - 1970;
-
   return (
     <StylesProfileCard>
-      <div>
+      <div key={props.availability.id}>
         <IonCard ref={ref}>
           <IonCardHeader>
-            {availability.role === 'Dog-walker' ? (
+            {availability.role === 'Dog-Walker' ? (
               <IonCardTitle>Walk With Me</IonCardTitle>
             ) : (
               <IonCardTitle>Sleep with me</IonCardTitle>
@@ -166,7 +157,7 @@ const ProfileCard = (props) => {
                 </IonText>
               </div>
 
-              {availability?.role === 'Dog-walker' ? (
+              {availability?.role === 'Dog-Walker' ? (
                 <IonText className="price">
                   <IonIcon icon={walletOutline} />
                   {`${availability?.payment}₪ per hour to walk your dog `}
@@ -186,10 +177,10 @@ const ProfileCard = (props) => {
 };
 
 export default ProfileCard;
+
 ProfileCard.propTypes = {
   availability: PropTypes.object.isRequired,
   onMatch: PropTypes.func.isRequired,
   onUnmatch: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired
-
 };

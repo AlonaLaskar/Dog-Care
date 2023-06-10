@@ -1,21 +1,17 @@
-import React from 'react';
-import { useavAilabilitys } from '../../hook/availabilityHook';
-import AvailabilityList from '../../components/Availability/AvailabilityList';
-import NewAvailability from 'components/Availability/NewAvailability';
 
-export default function Example() {
-
-  const { availabilitys, isLoading } = useavAilabilitys();
-  if (isLoading) return 'Loading...';
-
-  return(
-    <div >
-      {/* <AvailabilityList availabilitys={availabilitys} /> */}
-      <NewAvailability availability={availabilitys} />
-    </div>
-  )
+import StyledChat from "./StyledChat";
+import MapG  from '../../GoogleMap/MapG';
+import React, { useState } from 'react';
 
 
-  }
+export default function Chat() {
 
+  return (
+    <StyledChat>
+      <h1>Chat</h1>
+   
+      <MapG/> 
+    </StyledChat>
 
+  );
+}

@@ -26,7 +26,7 @@ ion-header .globalHeader {
 body {
   background-image: url(${Background});
   
-  button {
+  /* button {
     box-sizing: border-box;
     position: absolute;
     left: 0%;
@@ -50,7 +50,7 @@ body {
             opacity: 0.8;
             font-weight: bold;
           }
-      }
+      } */
 
       
       input {

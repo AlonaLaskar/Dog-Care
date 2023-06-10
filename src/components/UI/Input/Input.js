@@ -13,6 +13,7 @@ const Input = ({ id, type, title, label }) => {
   if (id === 'aboutMe') {
     return (
       <StyledInput>
+        {label && <IonLabel className={id} position="stacked">{label}</IonLabel>}
         <IonInput
           className={id}
           type={type}

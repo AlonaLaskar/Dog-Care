@@ -3,10 +3,11 @@ import styled from 'styled-components';
 const StyledPostList = styled.div`
 
   position: absolute;
-  top: 30%;
   left: 1.5%;;
+  top: 30%;
   right: 0;
   bottom: 0;
+
   /* overflow: auto; */
   
 
