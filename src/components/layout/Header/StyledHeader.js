@@ -12,6 +12,7 @@ const StyledHeader = styled(IonHeader)`
   ion-toolbar {
     height: 60px;
     width: 100%;
+
   }
 
   .logo {
@@ -20,23 +21,16 @@ const StyledHeader = styled(IonHeader)`
     display: inline-flex;
     flex-direction: inherit;
 
-    .dog {
-      width: 39px;
-      height: 39px;
+    .logo {
+      width: 100px;
+      height: 57px;
       position: absolute;
       top: 2.65%;
       left: 41.58%;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 
-    .bone {
-      width: 76px;
-      height: 40px;
-      position: absolute;
-      top: 32.36%;
-      left: 36.41%;
-      filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
-    }
+
   }
 
 

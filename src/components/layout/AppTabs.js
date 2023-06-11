@@ -60,10 +60,10 @@ export const AppTabs = () => {
       </IonRouterOutlet>
 
       <IonTabBar slot="bottom">
-        <IonTabButton tab="Chat" href="/my/chat">
+        {/* <IonTabButton tab="Chat" href="/my/chat">
           <IonIcon icon={chatbox} />
           <IonLabel>Chat</IonLabel>
-        </IonTabButton>
+        </IonTabButton> */}
 
         <IonTabButton tab="profile" href={`/my/profile/${userId}`}>
           <IonIcon icon={person} />

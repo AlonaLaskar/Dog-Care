@@ -1,4 +1,4 @@
-import { IonButtons, IonToolbar, IonIcon, IonTitle, IonImg } from '@ionic/react';
+import { IonButtons, IonToolbar, IonIcon, IonTitle, IonImg, IonHeader } from '@ionic/react';
 import StyledHeader from './StyledHeader';
 import config from 'config';
 import { auth } from '../../../firebase';
@@ -10,6 +10,7 @@ import { arrowBackOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import dogLogo from '../../../../src/assets/dogLogo.png';
 import boneLogo from '../../../../src/assets/boneLogo.png';
+import LOGO from '../../../../src/assets/LOGO.png';
 
 
 const Header = () => {
@@ -26,11 +27,11 @@ const Header = () => {
 
   return (
     <StyledHeader>
+ 
       <IonToolbar>
-        {/* <IonTitle>{config.siteName}</IonTitle> */}
+     
         <div className='logo'>
-        <img src={boneLogo} className='bone'/>
-        <img src={dogLogo} className='dog'/>
+        <img src={LOGO} className='logo'/>
         </div>
         <IonButtons slot="start" onClick={hendeleLogout} color="danger" expand="block">
           <IonIcon solt="start" icon={logOutOutline} size='large'/>

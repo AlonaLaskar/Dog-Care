@@ -24,13 +24,13 @@ import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 
 
+
 setupIonicReact({});
 
 export default function App() {
-
   return (
     <IonApp>
-      <Layout  />
+      <Layout />
     </IonApp>
   );
 }

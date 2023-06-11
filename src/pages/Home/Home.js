@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonSegment, IonSegmentButton, IonLabel, IonModal, IonButton } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonSegment,
+  IonIcon,
+  IonSegmentButton,
+  IonLabel,
+  IonModal,
+  IonButton
+} from '@ionic/react';
 import { db } from '../../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection } from 'firebase/firestore';
@@ -15,6 +24,8 @@ import { useEffect } from 'react';
 import { Geolocation } from '@capacitor/geolocation';
 import { useUser } from '../../hook/users';
 import { Client } from '@googlemaps/google-maps-services-js';
+import emptyStateImage from '../../assets/emptyStateImage1.jpg';
+import { optionsOutline } from 'ionicons/icons';
 
 const useAvailabilities = (selectedRole) => {
   const availabilitiesRef = collection(db, 'availability');
@@ -22,7 +33,6 @@ const useAvailabilities = (selectedRole) => {
   const [availabilities, isLoading] = useCollectionData(q, { idField: 'availabilityId' });
   return { availabilities, isLoading };
 };
-
 const Home = () => {
   const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
@@ -48,23 +58,12 @@ const Home = () => {
     }
   };
 
-  const [filterDistance, setFilterDistance] = useState(10); // Distance in kilometers
-  const [userLocation, setUserLocation] = useState(null);
-
-  useEffect(() => {
-    const fetchLocation = async () => {
-      const location = await Geolocation.getCurrentPosition();
-      setUserLocation(location);
-    };
-
-    fetchLocation();
-  }, []);
+  const [filterDistance, setFilterDistance] = useState(0); // Distance in kilometers
 
   const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
   const [animateMatchButton, setAnimateMatchButton] = useState(false);
 
   // Create state variables for the filters
-  const [filterCity, setFilterCity] = useState('');
   const [filterHourlyRate, setFilterHourlyRate] = useState(0);
 
   // Create state variable for the modal
@@ -108,6 +107,7 @@ const Home = () => {
       console.log(error);
     }
   }
+
   if (isLoading || !Array.isArray(availabilities)) {
     return <div>Loading...</div>;
   }
@@ -117,50 +117,85 @@ const Home = () => {
     (availability) =>
       availability.role === selectedRole &&
       availability.userId !== userId &&
-      (!filterCity || availability.location === filterCity) &&
       (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
       (!filterDistance || calculateDistance(user.location, availability.location) <= filterDistance) // Add distance filter
   );
-
-  console.log('userLocation', userLocation);
+  console.log('filteredAvailabilities', filteredAvailabilities);
 
   return (
     <StyledHome>
       <IonHeader>
-        <IonSegment onIonChange={(e) => setSelectedRole(e.detail.value)}>
+        <IonSegment color="secondary" onIonChange={(e) => setSelectedRole(e.detail.value)}>
           <IonSegmentButton value="Dog-Sitter">
-            <IonLabel>Dog Sitter</IonLabel>
+            <IonLabel>Dog-Sitter</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="Dog-Walker">
+          <IonSegmentButton value="Dog Walker">
             <IonLabel>Dog Walker</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent>
         <div className="card-stack-container">
-          {filteredAvailabilities.map((availability) => (
-            <ProfileCard
-              availability={availability}
-              onMatch={ProfileEvents.onMatch}
-              onUnmatch={ProfileEvents.onUnmatch}
-              onReset={ProfileEvents.onReset}
-              key={availability.availabilityId}
-            />
-          ))}
+          {filteredAvailabilities.length > 0 ? (
+            filteredAvailabilities.map((availability) => (
+              <ProfileCard
+                availability={availability}
+                onMatch={ProfileEvents.onMatch}
+                onUnmatch={ProfileEvents.onUnmatch}
+                onReset={ProfileEvents.onReset}
+                key={availability.availabilityId}
+              />
+            ))
+          ) : (
+            <div>
+              <IonLabel className="noavila">No availability found</IonLabel>
+              <img src={emptyStateImage} alt="No availability found" />
+            </div>
+          )}
         </div>
-        <ActionButton animateMatchButton={animateMatchButton} animateUnmatchButton={animateUnmatchButton} />
-        {/* Add a button that opens the modal with the filtering options */}
-        <IonButton onClick={() => setShowModal(true)}>Filter</IonButton>
 
+        {filteredAvailabilities.length > 0 && (
+          <ActionButton animateMatchButton={animateMatchButton} animateUnmatchButton={animateUnmatchButton} />
+        )}
+        {/* Add a button that opens the modal with the filtering options */}
+        <IonButton onClick={() => setShowModal(true)} className="filter-button" fill="clear">
+          <IonIcon icon={optionsOutline} color="light" size="large" />
+        </IonButton>
         {/* Modal with the filtering options */}
-        <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)}>
+        <IonModal
+          isOpen={showModal}
+          onDidDismiss={() => setShowModal(false)}
+          style={{
+            width: '335px',
+            height: '318px',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          }}
+          className="filter"
+        >
           <Filtering
             filterDistance={filterDistance}
             setFilterDistance={setFilterDistance}
             filterHourlyRate={filterHourlyRate}
             setFilterHourlyRate={setFilterHourlyRate}
           />
-          <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+          <IonButton className="close" onClick={() => setShowModal(false)} fill="clear" 
+          style={{
+            position: 'absolute',
+            top: '89%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            with: '119px',
+            height: '37px',
+            maxWidth: '335px',
+            maxHeight: '45px',
+            background: '#8ECAE6',
+            borderRadius: '6px',
+          }}>
+            Done
+          </IonButton>
         </IonModal>
       </IonContent>
     </StyledHome>
