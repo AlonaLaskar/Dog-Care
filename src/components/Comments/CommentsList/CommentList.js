@@ -1,36 +1,42 @@
 //!Ionic components
-
-import { IonItem} from '@ionic/react';
+import { IonItem } from '@ionic/react';
 //! React-Packages
 import PropTypes from 'prop-types';
-
 //!components
 import NewComment from '../NewComments';
 import SingleComments from '../SingleComments';
 import { useComments } from 'hook/comments';
-
 //!style
 import StylesCommentsList from './StylesCommentsList';
 
 export default function CommentList({ post }) {
   const { id } = post;
   const { comments, isLoading } = useComments(id);
-  //!check if comments are loading
-  if (isLoading) return 'Loading...';
+
+  if (isLoading) {
+    return 'Loading...';
+  }
 
   return (
     <>
-      {/* !if there are no comments, show this */}
-      {comments.map((comment) => (
-        <IonItem key={comment.id}>
-          <SingleComments comment={comment} />
-        </IonItem>
-      ))}
+      <StylesCommentsList>
+        {comments.length === 0 ? (
+          <IonItem lines="none" className="no-comments">
+            <p>No comments yet.</p>
+          </IonItem>
+        ) : (
+          comments.map((comment) => (
+            <div key={comment.id}>
+              <SingleComments comment={comment} />
+            </div>
+          ))
+        )}
+      </StylesCommentsList>
       <NewComment post={post} />
     </>
   );
 }
 
 CommentList.propTypes = {
-  post: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired,
 };

@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
 import PeopleULike from './PeopleULike';
 import JobSearch from './JobSearch';
 import { useavAilabilitys } from '../../hook/availabilityHook';
 import AvailabilityList from '../Availability/AvailabilityList';
-
+import { getAllSwipesData } from '../../hook/swips';
 
 const RouteSegment = () => {
   const [selectedSegment, setSelectedSegment] = useState('');
+  const [swipesData, setSwipesData] = useState([]);
+  const { availabilitys, isLoading } = useavAilabilitys();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    try {
+      const data = await getAllSwipesData();
+      setSwipesData(data);
+    } catch (error) {
+      console.error('Error fetching swipes data:', error);
+    }
+  }
+
+
+
+
 
   const handleSegmentChange = (event) => {
     setSelectedSegment(event.detail.value);
   };
   
-  const { availabilitys, isLoading } = useavAilabilitys();
   if (isLoading) return 'Loading...';
-
+  
 
   return (
     <>
@@ -30,7 +48,7 @@ const RouteSegment = () => {
         <IonLabel>Job application</IonLabel>
         </IonSegmentButton>
       </IonSegment>
-      {selectedSegment === 'PeopleULike' && <PeopleULike />}
+      {selectedSegment === 'PeopleULike' && <PeopleULike swipesData={swipesData} />}
       {selectedSegment === 'AvailabilityList' && <AvailabilityList availabilitys={availabilitys} />}
       {selectedSegment === 'JobSearch' && <JobSearch />}
     </>

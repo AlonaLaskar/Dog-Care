@@ -76,7 +76,7 @@ margin: 10px;
 font-family: 'Nunito';
 font-style: normal;
 font-weight: 600;
-font-size: 18px;
+font-size: 15px;
 line-height: 23px;
 display: flex;
 align-items: center;

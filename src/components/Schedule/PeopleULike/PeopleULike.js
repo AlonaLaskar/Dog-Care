@@ -1,118 +1,110 @@
 import { IonList, IonAvatar, IonIcon, IonText, IonTitle, IonImg } from '@ionic/react';
 import { calendarNumberOutline, alarmOutline, cashOutline,locationOutline } from 'ionicons/icons';
 import StyledPeopleULike from './StyledPeopleULike';
-import { db } from '../../../firebase';
-import { collection, query, where } from 'firebase/firestore';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from 'providers/AuthContext';
-import { doc,getDoc } from 'firebase/firestore';
+import PropTypes from 'prop-types';
+import { checkUserRightSwipe } from '../../../hook/swips';
+import { getAvailability } from '../../../hook/availabilityHook';
+import { getUser } from '../../../hook/users';
 
-function findPeopleYouLike() {
+
+function PeopleULike({ swipesData }) {
   const { userId } = useContext(AuthContext) || {};
-  const q = query(collection(db, 'swipes'), where('user', '==', userId));
-  const [swipes] = useCollectionData(q);
-  if (swipes === undefined) {
-    console.log('swipes is undefined');
-    return [];
-  }
-  const peopleYouLike = swipes?.[0]?.rightSwipes;
-  return peopleYouLike;
-}
+  const [swipesIds, setSwipesIds] = useState([]);
+  const [userAvailabilities, setUserAvailabilities] = useState([]);
+  const [userDetails, setUserDetails] = useState([]);
 
-const PeopleULike = () => {
-  const [user, setUser] = useState([]);
-  const peopleYouLike = findPeopleYouLike();
   useEffect(() => {
-    async function fetchData() {
-      const newUsers = [];
-
-      if (peopleYouLike && peopleYouLike.length > 0) {
-        for (const uid of peopleYouLike) {
-          const docRef = doc(db, 'users', uid);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            console.log('Document data:', data);
-            newUsers.push(
-              data.avatar +
-                ',' +
-                data.fullName +
-                ',' +
-                data.city +
-                ',' +
-                data.dateStart +
-                ',' +
-                data.dateStop +
-                ',' +
-                data.start +
-                ',' +
-                data.stop +
-                ',' +
-                data.role+
-                ','+
-                data.payment
-
-            );
-          } else {
-            console.log('No such document!');
-          }
+    const fetchSwipesIds = async () => {
+      const ids = [];
+      for (const swipe of swipesData) {
+        const swipesId = await checkUserRightSwipe(swipe.availabilityId, userId);
+        if (swipesId) {
+          ids.push(...swipesId);
         }
       }
+      setSwipesIds(ids);
+    };
 
-      setUser(newUsers);
-    }
+    fetchSwipesIds();
+  }, [swipesData, userId]);
 
-    fetchData();
-  }, [peopleYouLike]);
-  return (
-    <StyledPeopleULike>
+  useEffect(() => {
+    const fetchAvailabilityAndUserDetails = async () => {
+      try {
+        const availabilitiesPromises = swipesIds.map(swipe => getAvailability(swipe.swipeId));
+        const usersPromises = swipesIds.map(swipe => getUser(swipe.userIdAv));
+  
+        const availabilities = await Promise.all(availabilitiesPromises);
+        const users = await Promise.all(usersPromises);
+  
+        setUserAvailabilities(availabilities);
+        setUserDetails(users);
+      } catch (error) {
+        console.error('An error occurred while fetching availability and user details:', error);
+      }
+    };
+  
+    fetchAvailabilityAndUserDetails();
+  }, [swipesIds]);
+
+
+return (
+   
+      <StyledPeopleULike>
       <div className="title">
         <span>People you like </span>
       </div>
 
-        {user.map((user) => (
-      <IonList  key={user}>
-            <IonTitle>{user.split(',')[1]}</IonTitle>
+        {userDetails.map((user,index) => (
+      <IonList key={index}>
+            <IonTitle>{user.fullName}</IonTitle>
             <IonAvatar slot="start">
-              <IonImg src={user.split(',')[0]} />
+              <IonImg src={user.avatar} />
             </IonAvatar>{' '}
             <div className="city">
               <IonText>
                 <IonIcon icon={locationOutline} />
-                {user.split(',')[2]}
+                {user.location}
               </IonText>
             </div>
             <div className="date">
               <IonText>
                 <IonIcon icon={calendarNumberOutline} />
-                {user.split(',')[3]}
+                {userAvailabilities[index].dateStart}
                 <span> - </span>
-                {user.split(',')[4]}      
+                {userAvailabilities[index].dateStop}   
                 </IonText>
             </div>
             <div className="time">
               <IonText>
                 <IonIcon icon={alarmOutline} />
-                {user.split(',')[5]} <span> - </span> {user.split(',')[6]}
+                {userAvailabilities[index].start}   <span> - </span> {userAvailabilities[index].stop}
               </IonText>
             </div>
             <div className="payment">
               <IonText>
                 <IonIcon icon={cashOutline} />
-                {user.split(',')[8]}₪ (cash)
+                {userAvailabilities[index].payment}₪ (cash)
               </IonText>
             </div>
             <div className="role">
               <IonText>
-                {user.split(',')[7]}
+              {userAvailabilities[index].role}
               </IonText>
             </div>
-            <IonText></IonText>         
       </IonList>
         ))}
 
     </StyledPeopleULike>
+
   );
-};
+}
+
+
 export default PeopleULike;
+PeopleULike.propTypes = {
+  swipesData: PropTypes.any,
+};

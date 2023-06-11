@@ -15,13 +15,13 @@ import { useHistory } from 'react-router-dom';
 
 function JobSearch() {
   const { userId } = useContext(AuthContext) || {};
+  const history = useHistory();
 
   const [selectedService, setSelectedService] = useState('');
   const [nextClicked, setNextClicked] = useState(false);
   function handleClick(service) {
     setSelectedService(service);
   }
-
   function handleNextClick() {
     if (selectedService) {
       setNextClicked(true);
@@ -29,8 +29,9 @@ function JobSearch() {
       return;
     }
   }
-
   if (nextClicked) {
+    // history.push(`/my/DogSitterService:${selectedService}`);
+
     return <DogSitterService selectedService={selectedService} />
   }
 

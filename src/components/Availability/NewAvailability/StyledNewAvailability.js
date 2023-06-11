@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const StyledNewAvailability = styled.div`
+
 margin-top: 50px;
 
 ion-card {
     position: relative;
-    width: 272px;
-    height: 213px;
+    width: 326px;
+    height: 238px;
     background: #ffffff;
     box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -108,6 +109,38 @@ ion-card {
 
 
   }
+  ion-button.SeeRequests:hover {
+    background: #fb8500;
+    border-radius: 6px;
+    color:  #ffffff;
+    font-weight: 700;
+  }
+  ion-list{
+
+    position: relative;
+    width: 272px;
+    height: 213px;
+    background: #ffffff;
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: pink;
+  }
+  ion-modal.stack-modal {
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  --backdrop-background-color: #000000;
+  --backdrop-filter: blur(3px);
+  --border-radius: 10px;
+  --height: 80%;
+  --width: 80%;
+}
+.alert-button.sc-ion-alert-md, .alert-checkbox.sc-ion-alert-md, .alert-input.sc-ion-alert-md, .alert-radio.sc-ion-alert-md {
+    outline: auto;
+    
+}
 
 
 `;

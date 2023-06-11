@@ -119,6 +119,38 @@ const StyledPeopleULike = styled.div`
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     `;
 
 export default StyledPeopleULike;

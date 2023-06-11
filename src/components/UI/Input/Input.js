@@ -1,20 +1,19 @@
 import { useContext } from 'react';
-import { IonInput } from '@ionic/react';
+import { IonInput, IonLabel } from '@ionic/react';
 import FormContext from 'providers/FormContext';
 import StyledInput from './StyledInput';
 import PropTypes from 'prop-types';
 import useToast from 'hook/useToast';
 
-
-const Input = ({ id, type = id, title, validateHandler }) => {
+const Input = ({ id, type, title, label }) => {
   const { register, errors } = useContext(FormContext);
-  console.log('errors', errors);
-  const presentToast = useToast();
 
+  const presentToast = useToast();
 
   if (id === 'aboutMe') {
     return (
       <StyledInput>
+        {label && <IonLabel className={id} position="stacked">{label}</IonLabel>}
         <IonInput
           className={id}
           type={type}
@@ -22,8 +21,8 @@ const Input = ({ id, type = id, title, validateHandler }) => {
           counter={true}
           maxlength={100}
           aria-label
-          placeholder="Help us get to know you better..."
-          {...register(id, validateHandler)}
+          placeholder={title}
+          {...register(id)}
         />
         {errors[id] && presentToast(errors[id]?.message, false)}
       </StyledInput>
@@ -32,7 +31,8 @@ const Input = ({ id, type = id, title, validateHandler }) => {
 
   return (
     <StyledInput>
-      <IonInput className={id} type={type} placeholder={title} {...register(id, validateHandler)} />
+      {label && <IonLabel className={id} position="stacked">{label}</IonLabel>}
+      <IonInput className={id} type={type} placeholder={title} {...register(id)} />
       {errors[id] && presentToast(errors[id]?.message, false)}
     </StyledInput>
   );
@@ -43,7 +43,7 @@ Input.propTypes = {
   type: PropTypes.string,
   title: PropTypes.string,
   placeholder: PropTypes.string,
-  validateHandler: PropTypes.object,
+  label: PropTypes.string,
   position: PropTypes.string
 };
 
