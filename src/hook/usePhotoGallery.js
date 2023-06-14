@@ -1,53 +1,87 @@
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { add } from 'date-fns';
 import { isPlatform } from '@ionic/core';
-import{Filesystem,Directory} from '@capacitor/filesystem';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import useToast from '../hook/useToast';
+import { storage } from '../firebase';
+import { ref, uploadBytes, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../firebase';
+import { useContext } from 'react';
+import AuthContext from '../providers/AuthContext';
+export const usePhotoGallery = () => {
+  const { userId } = useContext(AuthContext);
+  const [isLoading, setLoading] = useState(false);
+  const [file, setFile] = useState(null);
+  const [photos, setPhotos] = useState([]);
 
-export  const usePhotoGallery = () => {
+  const presentToast = useToast();
+  const takePhoto = async () => {
+    const file1 = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Photos // Camera, Photos or Prompt!
+    });
 
+    if (!file1) {
+      presentToast('Not found a file', false);
+      return;
+    }
 
-    const [photos, setPhotos] = useState([]);
+    // Convert the blob URL to a blob
+    const response = await fetch(file1.webPath);
+    const blob = await response.blob();
 
-    const takePhoto = async () => {
-        console.log("file useGallery");
-        const cameraPhoto = await Camera.getPhoto({
+    setLoading(true);
+
+    const fileRef = ref(storage, 'avatars/' + userId);
+
+    const metadata = {
+      contentType: 'image/jpeg'
+    };
+
+    const snapshot = await uploadBytesResumable(fileRef, blob, metadata);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+
+    const docRef = doc(db, 'users', userId);
+    await updateDoc(docRef, { avatar: downloadURL });
+    presentToast('The photo was uploaded and updated successfully', true);
+
+    setLoading(false);
+  };
+
+  const chooseFromGallery = async () => {
+    console.log('Choosing from gallery...');
+    if (isPlatform('hybrid')) {
+      const image = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: true,
         resultType: CameraResultType.Uri,
-        source: CameraSource.Camera,
-        quality: 100
-        });
-        console.log("file useGallery",cameraPhoto);
+        source: CameraSource.Photos
+      });
+      console.log('Image from gallery:', image);
 
-        const fileName = new Date().getTime() + '.jpeg';
-
-        // const newPhotos = [{
-        // filepath: fileName,
-        // webviewPath: cameraPhoto.webPath
-        // }, ...photos];
-        // setPhotos(newPhotos)
-    };
-    const setPhoto=async(photo,fileName)=>{
-        if (isPlatform('hybrid')){
-            const file = await Filesystem.writeFile({
-                path: photo.filepath,
-                directory: Directory.Data,
-                data: photo.webviewPath
-            });
-            const base64Data = file.data;
-            return `data:image/jpeg;base64,${base64Data}`;
-        }
-        
+      const response = await fetch(image.webPath);
+      const blob = await response.blob();
+      setFile(blob);
+    } else {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = (event) => {
+        const file = event.target.files[0];
+        setFile(URL.createObjectURL(file));
+      };
+      input.click();
     }
+  };
 
-    const deletePhoto = async (photo) => {
-        const newPhotos = photos.filter(p => p.filepath !== photo.filepath);
-        setPhotos(newPhotos);
-    };
+  return {
+    file,
+    setFile,
+    takePhoto
+  };
+};
 
-    
-    return {
-        photos,
-        takePhoto,
-        deletePhoto
-    };
-    }
+export default usePhotoGallery;

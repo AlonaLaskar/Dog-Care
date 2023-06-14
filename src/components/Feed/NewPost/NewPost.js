@@ -41,7 +41,7 @@ const NewPost = () => {
           <img src={user?.avatar} />
         </IonAvatar>
         <IonTextarea
-          placeholder="...Say something"
+          placeholder='...Say something'
           rows={5}
           cols={20}
           autoGrow={true}
@@ -51,22 +51,22 @@ const NewPost = () => {
         />
 
         <IonButton
-          type="button"
-          color="dark"
-          fill="clear"
-          textLoading="Creating Post"
+          type='button'
+          color='dark'
+          fill='clear'
+          textLoading='Creating Post'
           isLoading={loading || addingPost}
         >
-          <IonIcon icon={videocamOutline} slot="end" color="dark" />
+          <IonIcon icon={videocamOutline} slot='end' color='dark' />
           <span>VIDEO</span>
         </IonButton>
 
-        <IonButton type="submit" fill="clear" color="dark">
-          <IonIcon icon={newspaperOutline} slot="end" color="dark" />
+        <IonButton type='submit' fill='clear' color='dark'>
+          <IonIcon icon={newspaperOutline} slot='end' color='dark' />
           <span>Post</span>
         </IonButton>
-        <IonButton type="button" fill="clear" color="dark">
-          <IonIcon icon={cameraOutline} slot="end" color="dark" />
+        <IonButton type='button' fill='clear' color='dark'>
+          <IonIcon icon={cameraOutline} slot='end' color='dark' />
           <span> Photo</span>
         </IonButton>
       </form>

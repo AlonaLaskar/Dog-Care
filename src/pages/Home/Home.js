@@ -89,13 +89,11 @@ const Home = () => {
   const { availabilities, isLoading } = useAvailabilities(selectedRole) || {};
 
   async function calculateDistance(userAddress, availableAddress) {
-    console.log('userAddress', userAddress);
-    console.log('availableAddress', availableAddress);
+
     try {
       const userCoordinates = await geocodeAddress(userAddress);
       const availableCoordinates = await geocodeAddress(availableAddress);
-      console.log('userCoordinates2', userCoordinates);
-      console.log('availableCoordinates2', availableCoordinates);
+  
 
       return (
         haversineDistance(
@@ -120,22 +118,21 @@ const Home = () => {
       (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
       (!filterDistance || calculateDistance(user.location, availability.location) <= filterDistance) // Add distance filter
   );
-  console.log('filteredAvailabilities', filteredAvailabilities);
 
   return (
     <StyledHome>
       <IonHeader>
-        <IonSegment color="secondary" onIonChange={(e) => setSelectedRole(e.detail.value)}>
-          <IonSegmentButton value="Dog-Sitter">
+        <IonSegment color='secondary' onIonChange={(e) => setSelectedRole(e.detail.value)}>
+          <IonSegmentButton value='Dog-Sitter'>
             <IonLabel>Dog-Sitter</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="Dog Walker">
+          <IonSegmentButton value='Dog Walker'>
             <IonLabel>Dog Walker</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </IonHeader>
       <IonContent>
-        <div className="card-stack-container">
+        <div className='card-stack-container'>
           {filteredAvailabilities.length > 0 ? (
             filteredAvailabilities.map((availability) => (
               <ProfileCard
@@ -148,8 +145,8 @@ const Home = () => {
             ))
           ) : (
             <div>
-              <IonLabel className="noavila">No availability found</IonLabel>
-              <img src={emptyStateImage} alt="No availability found" />
+              <IonLabel className='noavila'>No availability found</IonLabel>
+              <img src={emptyStateImage} alt='No availability found' />
             </div>
           )}
         </div>
@@ -158,8 +155,8 @@ const Home = () => {
           <ActionButton animateMatchButton={animateMatchButton} animateUnmatchButton={animateUnmatchButton} />
         )}
         {/* Add a button that opens the modal with the filtering options */}
-        <IonButton onClick={() => setShowModal(true)} className="filter-button" fill="clear">
-          <IonIcon icon={optionsOutline} color="light" size="large" />
+        <IonButton onClick={() => setShowModal(true)} className='filter-button' fill='clear'>
+          <IonIcon icon={optionsOutline} color='light' size='large' />
         </IonButton>
         {/* Modal with the filtering options */}
         <IonModal
@@ -173,7 +170,7 @@ const Home = () => {
             left: '50%',
             transform: 'translate(-50%, -50%)'
           }}
-          className="filter"
+          className='filter'
         >
           <Filtering
             filterDistance={filterDistance}
@@ -181,7 +178,7 @@ const Home = () => {
             filterHourlyRate={filterHourlyRate}
             setFilterHourlyRate={setFilterHourlyRate}
           />
-          <IonButton className="close" onClick={() => setShowModal(false)} fill="clear" 
+          <IonButton className='close' onClick={() => setShowModal(false)} fill='clear' 
           style={{
             position: 'absolute',
             top: '89%',

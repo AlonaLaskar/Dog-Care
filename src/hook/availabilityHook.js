@@ -102,7 +102,7 @@ export async function getAvailability(id) {
   if (docSnap.exists()) {
     return docSnap.data();
   } else {
-    console.log("No such  availability document!");
+    console.log('No such  availability document!');
     return null;
   }
 }

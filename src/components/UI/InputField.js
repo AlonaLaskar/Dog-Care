@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const InputField = ({ icon, label, value, onChange }) => {
   return (
     <IonItem>
-      <IonIcon slot="start" icon={icon} />
-      <IonLabel position="floating">{label}</IonLabel>
+      <IonIcon slot='start' icon={icon} />
+      <IonLabel position='floating'>{label}</IonLabel>
       <IonInput value={value} onIonChange={onChange} />
     </IonItem>
   );

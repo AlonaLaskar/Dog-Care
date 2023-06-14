@@ -1,5 +1,5 @@
 
-import StyledChat from "./StyledChat";
+import StyledChat from './StyledChat';
 import MapG  from '../../GoogleMap/MapG';
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';

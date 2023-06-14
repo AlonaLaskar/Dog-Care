@@ -11,7 +11,7 @@ const FormInput = ({ label, name, type, register, errors }) => {
       <div className={label}>
         <span>{label}</span>
       </div>
-      <IonInput position="stack" type={type} {...register(name)}></IonInput>
+      <IonInput position='stack' type={type} {...register(name)}></IonInput>
       {errors[name] && presentToast(errors[name]?.message, false)}
     </div>
   );

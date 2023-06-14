@@ -56,6 +56,8 @@ align-items: center;
     background: #ffffff;
     border: 2px solid #024c71;
     border-radius: 10px;
+    --highlight-color-focused:none;
+
 
   }
   ion-input.email {

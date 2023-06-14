@@ -113,30 +113,30 @@ const ProfileCard = (props) => {
             )}
           </IonCardHeader>
 
-          <div className="card-container">
-            <div className="image-container">
+          <div className='card-container'>
+            <div className='image-container'>
               <IonImg src={userData?.avatar} />
             </div>
-            <div className="details-container">
-              <IonText className="name">
+            <div className='details-container'>
+              <IonText className='name'>
                 {userData?.fullName}
                 {/* ,{ageInYears} */}
               </IonText>
               <br />
-              <IonText className="address">
+              <IonText className='address'>
                 <IonIcon icon={locationOutline} />
                 {userData?.address}, Israel
               </IonText>
-              <IonText className="bio">
+              <IonText className='bio'>
                 <p>{availability?.aboutMe}</p>
               </IonText>
-              <div className="role">
+              <div className='role'>
                 <IonText>
                   <IonIcon icon={alertCircleOutline} />
                   {availability?.role}
                 </IonText>
               </div>
-              <div className="date">
+              <div className='date'>
                 <IonText>
                   <IonIcon icon={calendarNumberOutline} />
                   {availability?.dateStart}
@@ -144,26 +144,26 @@ const ProfileCard = (props) => {
                   {availability?.dateStop}
                 </IonText>
               </div>
-              <div className="time">
+              <div className='time'>
                 <IonText>
                   <IonIcon icon={alarmOutline} />
                   {availability?.start} <span> - </span> {availability?.stop}
                 </IonText>
               </div>
-              <div className="location">
-                <IonText color="primary">
+              <div className='location'>
+                <IonText color='primary'>
                   <IonIcon icon={locationOutline} />
                   {availability?.location}
                 </IonText>
               </div>
 
               {availability?.role === 'Dog-Walker' ? (
-                <IonText className="price">
+                <IonText className='price'>
                   <IonIcon icon={walletOutline} />
                   {`${availability?.payment}₪ per hour to walk your dog `}
                 </IonText>
               ) : (
-                <IonText className="price">
+                <IonText className='price'>
                   <IonIcon icon={walletOutline} />
                   {`${availability?.payment}₪ per hour to keep your dog `}
                 </IonText>

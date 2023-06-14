@@ -11,11 +11,11 @@ const Filtering = ({ filterDistance, setFilterDistance, filterHourlyRate, setFil
     <>
           <IonRange
         value={filterHourlyRate}
-        labelPlacement="payment"
+        labelPlacement='payment'
         min={0}
         max={300}
         pin={true}
-        className="payment"
+        className='payment'
         pinFormatter={(value) => `${value}₪`}
         onIonChange={(e) => setFilterHourlyRate(e.detail.value)}
         style={{
@@ -34,27 +34,27 @@ const Filtering = ({ filterDistance, setFilterDistance, filterHourlyRate, setFil
         }}
         
       >
-        <IonLabel slot="start" className="payment">payment</IonLabel>
-        <IonLabel slot="start">0</IonLabel>
-        <IonLabel slot="end">300</IonLabel>
+        <IonLabel slot='start' className='payment'>payment</IonLabel>
+        <IonLabel slot='start'>0</IonLabel>
+        <IonLabel slot='end'>300</IonLabel>
       </IonRange>
 
 
 
       <IonRange
         value={filterDistance}
-        labelPlacement="distance"
+        labelPlacement='distance'
         min={0}
         max={100}
         pin={true}
-        className="distance"
+        className='distance'
         pinFormatter={(value) => `${value} km`}
         onIonChange={(e) => setFilterDistance(e.detail.value)}
       >
-        <IonLabel slot="start">distance</IonLabel>
+        <IonLabel slot='start'>distance</IonLabel>
 
-        <IonLabel slot="start">0</IonLabel>
-        <IonLabel slot="end">100</IonLabel>
+        <IonLabel slot='start'>0</IonLabel>
+        <IonLabel slot='end'>100</IonLabel>
       </IonRange>
 
 

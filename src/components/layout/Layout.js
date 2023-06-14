@@ -41,16 +41,16 @@ const Layout = () => {
        
             <IonRouterOutlet>
               <Switch>
-              <Redirect exact path="/" to="/login" />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
+              <Redirect exact path='/' to='/login' />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/register' component={Register} />
               <Route exact path='/ForgetPassword' component={ForgetPassword} />
               </Switch>
             </IonRouterOutlet>
        
 
               <Switch>
-              <Route path="/my">
+              <Route path='/my'>
                 <AppTabs />
                 <Header />
               </Route>

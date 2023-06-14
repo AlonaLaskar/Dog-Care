@@ -92,22 +92,22 @@ const ServiceMode = () => {
 
   return (
     <StyledServiceMode>
-      <div className="form">
+      <div className='form'>
         <form onSubmit={handleSubmit(submitForm)}>
           <IonCard>
-          <IonHeader mode="ios">
-            <IonToolbar mode="ios">
-              <div className="action-bar">
+          <IonHeader mode='ios'>
+            <IonToolbar mode='ios'>
+              <div className='action-bar'>
                 <IonSelect
-                  aria-label="Fruit"
-                  interface="action-sheet"
+                  aria-label='Fruit'
+                  interface='action-sheet'
                   placeholder={pageStatus}
                   onIonChange={(e) => setPageStatus(e.detail.value)}
                 >
-                  <IonSelectOption value="Dog-walker" onClick={handleTitleClick} >
+                  <IonSelectOption value='Dog-walker' onClick={handleTitleClick} >
                    <span> Dog-walker</span>
                   </IonSelectOption>
-                  <IonSelectOption value="Dog-Sitter" onClick={handleTitleClick}>
+                  <IonSelectOption value='Dog-Sitter' onClick={handleTitleClick}>
                     <span>Dog-Sitter{' '} </span>
                   </IonSelectOption>
                 </IonSelect>
@@ -116,58 +116,58 @@ const ServiceMode = () => {
           </IonHeader>
 
         
-          <div className="dateStart">
+          <div className='dateStart'>
               <FormInput
-                label="From"
-                name="dateStart"
-                type="date"
+                label='From'
+                name='dateStart'
+                type='date'
                 register={register}
                 errors={errors}
               />
             </div>
 
-            <div className="dateEnd">
+            <div className='dateEnd'>
               <FormInput
-                label="To"
-                name="dateStop"
-                type="date"
+                label='To'
+                name='dateStop'
+                type='date'
                 register={register}
                 errors={errors}
               />
             </div>
 
-            <div className="fromStart">
+            <div className='fromStart'>
               <FormInput
-                label="From"
-                name="start"
-                type="time"
+                label='From'
+                name='start'
+                type='time'
                 register={register}
                 errors={errors}
               />
             </div>
 
-            <div className="toEnd">
+            <div className='toEnd'>
               <FormInput
-                label="To"
-                name="stop"
-                type="time"
+                label='To'
+                name='stop'
+                type='time'
                 register={register}
                 errors={errors}
               />
             </div>
 
-            <div className="payment">
+            <div className='payment'>
               <FormInput
-                label="Payment"
-                name="payment"
-                type="number"
+                label='Payment'
+                name='payment'
+                type='number'
                 register={register}
                 errors={errors}
               />
             </div>
               <h3>₪</h3>
-          <div className="buttom">
-            <IonButton type="submit"fill='clear'>Save</IonButton>
+          <div className='buttom'>
+            <IonButton type='submit'fill='clear'>Save</IonButton>
           </div>
           </IonCard>
         </form>

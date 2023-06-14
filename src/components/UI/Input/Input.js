@@ -13,7 +13,7 @@ const Input = ({ id, type, title, label }) => {
   if (id === 'aboutMe') {
     return (
       <StyledInput>
-        {label && <IonLabel className={id} position="stacked">{label}</IonLabel>}
+        {label && <IonLabel className={id} position='stacked'>{label}</IonLabel>}
         <IonInput
           className={id}
           type={type}
@@ -31,7 +31,7 @@ const Input = ({ id, type, title, label }) => {
 
   return (
     <StyledInput>
-      {label && <IonLabel className={id} position="stacked">{label}</IonLabel>}
+      {label && <IonLabel className={id} position='stacked'>{label}</IonLabel>}
       <IonInput className={id} type={type} placeholder={title} {...register(id)} />
       {errors[id] && presentToast(errors[id]?.message, false)}
     </StyledInput>

@@ -131,17 +131,17 @@ const DogSitterService = ({ selectedService }) => {
         </IonText>
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(submitForm)}>
-            <Input id="dateStart" type="date" label="From" />
-            <Input id="dateStop" type="date" label="To" />
-            <Input id="start" type="time" label="From" />
-            <Input id="stop" type="time" label="To" />
-            <Input id="payment" type="number" label="Payment" />
-            <Input id="aboutMe" type="text" label="About me" title="Add details about the service " />
+            <Input id='dateStart' type='date' label='From' />
+            <Input id='dateStop' type='date' label='To' />
+            <Input id='start' type='time' label='From' />
+            <Input id='stop' type='time' label='To' />
+            <Input id='payment' type='number' label='Payment' />
+            <Input id='aboutMe' type='text' label='About me' title='Add details about the service ' />
 
-            <div className="Location">
+            <div className='Location'>
               <span>Location</span>
               <GooglePlacesAutocomplete
-                className="Location"
+                className='Location'
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 autocompletionRequest={{
                   componentRestrictions: {
@@ -155,8 +155,8 @@ const DogSitterService = ({ selectedService }) => {
               />
             </div>
 
-            <div className="button">
-              <IonButton type="submit" fill="clear">
+            <div className='button'>
+              <IonButton type='submit' fill='clear'>
                 {' '}
                 Send Request
               </IonButton>

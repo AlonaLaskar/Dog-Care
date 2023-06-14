@@ -33,11 +33,11 @@ const Header = () => {
         <div className='logo'>
         <img src={LOGO} className='logo'/>
         </div>
-        <IonButtons slot="start" onClick={hendeleLogout} color="danger" expand="block">
-          <IonIcon solt="start" icon={logOutOutline} size='large'/>
+        <IonButtons slot='start' onClick={hendeleLogout} color='danger' expand='block'>
+          <IonIcon solt='start' icon={logOutOutline} size='large'/>
         </IonButtons>
-        <IonButtons slot="end" onClick={hendeleBack}>
-          <IonIcon solt="end" icon={arrowBackOutline} size='large' />
+        <IonButtons slot='end' onClick={hendeleBack}>
+          <IonIcon solt='end' icon={arrowBackOutline} size='large' />
         </IonButtons>
       </IonToolbar>
     </StyledHeader>

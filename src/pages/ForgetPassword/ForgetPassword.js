@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {IonInput, IonButton, IonToast } from '@ionic/react';
+import {IonInput, IonButton, IonToast,IonLabel, IonText } from '@ionic/react';
 import {auth} from '../../firebase';
 import StyledForgetPassword from './StyledForgetPassword';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { useHistory } from 'react-router-dom';
+import LOGO from '../../assets/LOGO.png';
 
 
 const ForgotPassword = () => {
@@ -46,20 +47,23 @@ const ForgotPassword = () => {
   return (
     <StyledForgetPassword>
       <div className='contener'>
-        <h1>Reset Password</h1>
-        <span>Enter your email address and we will send you a link to reset your password.</span>
-        <br />
-      
+
+        <img src={LOGO} alt='LOGO' /> 
+  <IonLabel className='restartTitle'>Reset Password</IonLabel>
+        <IonText className='text'>
+        your email address and we will send you a link to reset your
+        </IonText>
+
         <form onSubmit={handleFormSubmit}>
-          <IonInput
-            type="email"
-            placeholder="Email"
+          <IonInput className='input'
+            type='email'
+            placeholder='Email'
             value={email}
             onIonChange={handleEmailChange}
             required
           />
-          {validationError && <div className="validation-error">{validationError}</div>}
-          <IonButton type="submit" expand="block">
+          {validationError && <div className='validation-error'>{validationError}</div>}
+          <IonButton className="restart" type='submit' expand='block' fill='clear'>
             Reset Password
           </IonButton>
         </form>

@@ -37,33 +37,33 @@ const UserProfile = () => {
 
   return (
     <StyledUserProfile>
-      <IonCard className="card">
+      <IonCard className='card'>
         <IonCardHeader>
           <IonCardTitle>My Profile</IonCardTitle>
           <IonCardSubtitle>
-            <IonButton onClick={handleEditButtonClick} fill="clear">
-              <IonIcon icon={createOutline} color="light" />
+            <IonButton onClick={handleEditButtonClick} fill='clear'>
+              <IonIcon icon={createOutline} color='light' />
             </IonButton>
           </IonCardSubtitle>
           <IonImg src={user?.avatar} />
 
-          <IonLabel className="name">
+          <IonLabel className='name'>
             {user?.fullName}, {ageInYears}
           </IonLabel>
         </IonCardHeader>
-        <IonLabel className="location">
+        <IonLabel className='location'>
           <IonIcon icon={locationOutline} />
           {user?.location}, Israel
         </IonLabel>
         <IonText>
-          <IonLabel className="bio">About Me:</IonLabel>
+          <IonLabel className='bio'>About Me:</IonLabel>
           {user?.aboutMe}
         </IonText>
         <IonSegment value={isUserMode ? 'user' : 'provider'} onIonChange={handleToggleChange} className='mode'>
-          <IonSegmentButton value="user">
+          <IonSegmentButton value='user'>
             <IonLabel>Service Receiver</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="provider">
+          <IonSegmentButton value='provider'>
             <IonLabel>Service Provider</IonLabel>
           </IonSegmentButton>
         </IonSegment>

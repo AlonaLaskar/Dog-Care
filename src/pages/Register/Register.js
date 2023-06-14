@@ -23,12 +23,9 @@ import {
   IonLoading,
   IonButton,
   IonIcon,
-  IonTitle,
   IonCard,
   IonCardTitle,
-  IonCardSubtitle,
-  IonContent,
-  IonItem
+
 } from '@ionic/react';
 import { personAdd, eyeOutline, eyeOffOutline } from 'ionicons/icons';
 import GooglePlacesAutocomplete, { geocodeByPlaceId } from 'react-google-places-autocomplete';
@@ -65,7 +62,7 @@ const schema = yup.object().shape({
     .matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.')
     .nullable(),
   aboutMe: yup.string().nullable(),
-  location: yup.string() // Remove the "required" constraint
+  location: yup.string() // Remove the 'required' constraint
 });
 
 export default function Register() {
@@ -146,15 +143,15 @@ export default function Register() {
 
   return (
     <StyledRegister>
-      <div className="logo">
-        <div className="boneLogo">
-          <img src={boneLogo} alt="logo" />
+      <div className='logo'>
+        <div className='boneLogo'>
+          <img src={boneLogo} alt='logo' />
         </div>
       </div>
 
       <IonCard>
         <IonCardTitle>Join us!</IonCardTitle>
-        <div className="subtitle">
+        <div className='subtitle'>
           <span>
             Welcome to our dog care app, the perfect solution for busy pet owners who want to ensure their furry friends
             get the exercise they need or are looked after while you are away from home.
@@ -163,28 +160,28 @@ export default function Register() {
 
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
-            <Input id="email" title="Email address " placeholder="Enter email address" />
+            <Input id='email' title='Email address ' placeholder='Enter email address' />
 
             <Input
-              id="password"
-              title="Password"
+              id='password'
+              title='Password'
               type={passwordVisible ? 'text' : 'password'}
               onIonChange={(e) => setPassword(e.detail.value || '')}
             />
             <IonIcon
-              className="password"
-              slot="end"
+              className='password'
+              slot='end'
               icon={passwordVisible ? eyeOffOutline : eyeOutline}
               onClick={handlePasswordVisibility}
             />
-            <Input id="verifyPassword" title="Verify password" type="password" placeholder="Enter verify password" />
-            <Input id="fullName" title="Full Name" placeholder="Enter fullName" type="string" />
-            <Input id="tel" title="Phone Number" type="tel" placeholder="Enter phone number" />
-            <Input id="birthDate" title="Birthday" type="date" placeholder="Enter birthday" />
-            <Input id="aboutMe"  type="string" title="Help us get to know you better.." />
-            <div className="location">
+            <Input id='verifyPassword' title='Verify password' type='password' placeholder='Enter verify password' />
+            <Input id='fullName' title='Full Name' placeholder='Enter fullName' type='string' />
+            <Input id='tel' title='Phone Number' type='tel' placeholder='Enter phone number' />
+            <Input id='birthDate' title='Birthday' type='date' placeholder='Enter birthday' />
+            <Input id='aboutMe'  type='string' title='Help us get to know you better..' />
+            <div className='location'>
               <GooglePlacesAutocomplete
-                className="location"
+                className='location'
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 autocompletionRequest={{
                   componentRestrictions: {
@@ -199,14 +196,14 @@ export default function Register() {
               />
             </div>
 
-            <div className="form-group">
-              <IonButton type="submit" expand="block">
-                <IonIcon slot="start" icon={personAdd} />
+            <div className='form-group'>
+              <IonButton type='submit' expand='block'>
+                <IonIcon slot='start' icon={personAdd} />
                 <span>Register</span>
               </IonButton>
               <p>
                 <span>Got an account? </span>
-                <Link to="/login">Login</Link>
+                <Link to='/login'>Login</Link>
               </p>
             </div>
           </form>

@@ -28,7 +28,7 @@ const pulseKeyframes = [
 
   return (
     <StyledActionButton>
-      <div className="action-button-container">
+      <div className='action-button-container'>
         <CreateAnimation
         ref={unmatchButtonRef}
         duration={1000}
@@ -37,7 +37,7 @@ const pulseKeyframes = [
         play={props.animateUnmatchButton}
         stop={!props.animateUnmatchButton}
         >
-          <IonButton className="unmatch"fill="solid" onClick={()=>playUnmatchAnimation()}>
+          <IonButton className='unmatch'fill='solid' onClick={()=>playUnmatchAnimation()}>
             <IonIcon icon={closeOutline}></IonIcon>
           </IonButton>
         </CreateAnimation>
@@ -50,7 +50,7 @@ const pulseKeyframes = [
         play={props.animateMatchButton}
         stop={!props.animateMatchButton}
         >
-          <IonButton className="match" fill="solid"onClick={()=>playMatchAnimation()} >
+          <IonButton className='match' fill='solid'onClick={()=>playMatchAnimation()} >
             <IonIcon icon={heart}></IonIcon>
           </IonButton>
         </CreateAnimation>

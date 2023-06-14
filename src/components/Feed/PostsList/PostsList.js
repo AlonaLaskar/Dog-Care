@@ -11,14 +11,14 @@ export default function PostsList({ posts }) {
     <StyledPostList>
       {hasPosts ? (
         <Virtuoso
-          style={{ height: "700px" }}
+          style={{ height: '700px' }}
           totalCount={posts.length}
           itemContent={(index) => (
             <Post key={posts[index].id} post={posts[index]} />
           )}
         />
       ) : (
-        <IonText className="no-posts">Boring here! Write a post...</IonText>
+        <IonText className='no-posts'>Boring here! Write a post...</IonText>
       )}
     </StyledPostList>
   );
