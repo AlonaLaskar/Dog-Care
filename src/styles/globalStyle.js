@@ -19,7 +19,24 @@ ion-header .globalHeader {
 
 }
 
+ion-input {
+  box-sizing: border-box;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(2, 76, 113);
+  --padding-start:10px !important;
+  --highlight-color-focused:none !important;
+  border-radius: 10px;
+}
 
+.label-outer {
+  color:#024C71;
+  font-family:Nunito;
+  font-size:16px;
+  margin-bottom:5px;
+  display:block;
+  font-weight:500;
+  display:none;
+}
 
 
 

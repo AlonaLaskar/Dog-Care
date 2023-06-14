@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {IonInput, IonButton, IonToast,IonLabel, IonText } from '@ionic/react';
+import {IonInput, IonButton, IonToast,IonLabel, IonText, IonContent } from '@ionic/react';
 import {auth} from '../../firebase';
 import StyledForgetPassword from './StyledForgetPassword';
 import { sendPasswordResetEmail } from 'firebase/auth';
@@ -46,10 +46,11 @@ const ForgotPassword = () => {
 
   return (
     <StyledForgetPassword>
+      <IonContent>
       <div className='contener'>
 
         <img src={LOGO} alt='LOGO' /> 
-  <IonLabel className='restartTitle'>Reset Password</IonLabel>
+       <IonLabel className='restartTitle'>Reset Password</IonLabel>
         <IonText className='text'>
         your email address and we will send you a link to reset your
         </IonText>
@@ -74,6 +75,7 @@ const ForgotPassword = () => {
           duration={3000}
         />
       </div>
+      </IonContent>
     </StyledForgetPassword>
   );
 };
