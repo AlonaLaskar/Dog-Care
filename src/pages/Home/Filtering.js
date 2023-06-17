@@ -3,9 +3,10 @@ import { IonRange, IonLabel,IonList, IonItem, IonSelect, IonSelectOption } from 
 
 import PropTypes from 'prop-types';
 
-const Filtering = ({ filterDistance, setFilterDistance, filterHourlyRate, setFilterHourlyRate }) => {
+const Filtering = ({ filterDistance, setFilterDistance, filterHourlyRate, setFilterHourlyRate,filterRole,setFilterRole }) => {
   console.log('filterDistance', filterDistance);
   console.log('filterHourlyRate', filterHourlyRate);
+  console.log('filterRole', filterRole);
 
   return (
     <>
@@ -54,11 +55,17 @@ const Filtering = ({ filterDistance, setFilterDistance, filterHourlyRate, setFil
         <IonLabel slot="start">0</IonLabel>
         <IonLabel slot="end">100</IonLabel>
       </IonRange>
+
       <IonList>
         <IonItem detail={false} lines="full">
-          <IonSelect interface="popover" placeholder="Select One Option">
-            <IonSelectOption value="sitter">Dog Sitter</IonSelectOption>
-            <IonSelectOption value="walker">Dog Walker</IonSelectOption>
+          <IonSelect 
+          interface="popover"
+           placeholder="Select One Option"
+           value={filterRole}
+           onIonChange={(e) => setFilterRole(e.detail.value)}
+           >
+            <IonSelectOption value="Dog Sitter">Dog Sitter</IonSelectOption>
+            <IonSelectOption value="Dog Walker">Dog Walker</IonSelectOption>
           </IonSelect>
         </IonItem>
       </IonList>
@@ -72,7 +79,8 @@ export default Filtering;
 Filtering.propTypes = {
   filterDistance: PropTypes.number.isRequired,
   setFilterDistance: PropTypes.func.isRequired,
-
   filterHourlyRate: PropTypes.number.isRequired,
-  setFilterHourlyRate: PropTypes.func.isRequired
+  setFilterHourlyRate: PropTypes.func.isRequired,
+  filterRole: PropTypes.string.isRequired,
+  setFilterRole: PropTypes.func.isRequired
 };

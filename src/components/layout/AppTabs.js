@@ -2,7 +2,7 @@
 import { Route, Redirect } from 'react-router-dom';
 //! Ionic-pacakges
 import { IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonIcon, IonLabel } from '@ionic/react';
-import { person, duplicate, newspaper, today, chatbox } from 'ionicons/icons';
+import { person, duplicate, newspaper, today } from 'ionicons/icons';
 //!system-components
 
 //!pages
@@ -20,7 +20,6 @@ import SendRequestMassage from '../../components/Schedule/DogSitterService/SendR
 import PeopleULike from '../../components/Schedule/PeopleULike';
 import AwaitingConfirmation from '../../components/Schedule/AwaitingConfirmation';
 import JobSearch from '../../components/Schedule/JobSearch';
-import EditAvilabilty from '../../components/Availability/EditAvilabilty';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -53,17 +52,12 @@ export const AppTabs = () => {
         <Route exact path='/my/peopleulike' component={PeopleULike} />
         <Route exact path='/my/awaitingconfirmation' component={AwaitingConfirmation} />
         <Route exact path='/my/jobsearch' component={JobSearch} />
-        <Route exact path='/my/editAvilabilty/:id' component={EditAvilabilty} />
 
         {/* Errors handling */}
         <Route component={NotFound} status={404} />
       </IonRouterOutlet>
 
       <IonTabBar slot='bottom'>
-        {/* <IonTabButton tab='Chat' href='/my/chat'>
-          <IonIcon icon={chatbox} />
-          <IonLabel>Chat</IonLabel>
-        </IonTabButton> */}
 
         <IonTabButton tab='profile' href={`/my/profile/${userId}`}>
           <IonIcon icon={person} />

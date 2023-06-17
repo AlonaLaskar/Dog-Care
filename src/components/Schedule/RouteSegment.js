@@ -38,13 +38,13 @@ const RouteSegment = () => {
   return (
     <>
       <IonSegment onIonChange={handleSegmentChange} value={selectedSegment}>
-        <IonSegmentButton value='PeopleULike' >
+        <IonSegmentButton value="PeopleULike" >
             <IonLabel>You like</IonLabel>
         </IonSegmentButton>
-        <IonSegmentButton value='AvailabilityList' >
+        <IonSegmentButton value="AvailabilityList" >
             <IonLabel>Availability List</IonLabel>
         </IonSegmentButton>
-        <IonSegmentButton value='JobSearch'  >
+        <IonSegmentButton value="JobSearch"  >
         <IonLabel>Job application</IonLabel>
         </IonSegmentButton>
       </IonSegment>

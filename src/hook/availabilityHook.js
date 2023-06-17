@@ -1,6 +1,6 @@
 import useToast from './useToast';
 import { uuidv4 } from '@firebase/util';
-import { doc, setDoc, updateDoc, deleteDoc,  collection, query, where, getDoc, orderBy } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, deleteDoc,  collection, query, where, getDoc,getDocs, orderBy } from 'firebase/firestore';
 
 import { db } from '../firebase';
 import { useState } from 'react';
@@ -72,6 +72,17 @@ export function useavAilabilitys(uid = null) {
   return { availabilitys, isLoading };
 }
 
+export async function useAvilabiltys() {
+  const usersRef = collection(db, 'availability');
+  const snapshot = await getDocs(usersRef);
+  const avilabiltyList = snapshot.docs.map(doc => doc.data());
+  console.log('avilabiltyList in hoookkkkkkkkk', avilabiltyList);
+  return avilabiltyList;
+}
+
+
+
+
 export function useEditAvailability(id) {
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
@@ -102,7 +113,7 @@ export async function getAvailability(id) {
   if (docSnap.exists()) {
     return docSnap.data();
   } else {
-    console.log('No such  availability document!');
+    console.log("No such  availability document!");
     return null;
   }
 }

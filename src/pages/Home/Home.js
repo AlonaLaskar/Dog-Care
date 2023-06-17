@@ -14,88 +14,53 @@ import { useUser } from '../../hook/users';
 import { Client } from '@googlemaps/google-maps-services-js';
 import emptyStateImage from '../../assets/emptyStateImage1.jpg';
 import { optionsOutline } from 'ionicons/icons';
+import { useEffect } from 'react';
+import { useAvilabiltys } from '../../hook/availabilityHook';
 
-const useAvailabilities = (selectedRole) => {
-  const availabilitiesRef = collection(db, 'availability');
-  const q = query(availabilitiesRef, where('role', '==', selectedRole));
-  const [availabilities, isLoading] = useCollectionData(q, { idField: 'availabilityId' });
-  return { availabilities, isLoading };
-};
+
 const Home = () => {
   const { userId } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
 
-  const client = new Client({}); // Import the Client from @googlemaps/google-maps-services-js
 
-  const geocodeAddress = async (address) => {
-    const response = await client.geocode({
-      params: {
-        address: address,
-        key: process.env.REACT_APP_GOOGLE_API_KEY
-      }
-    });
-
-    const results = response.data.results;
-    if (results && results.length > 0) {
-      return {
-        lat: results[0].geometry.location.lat,
-        lng: results[0].geometry.location.lng
-      };
-    } else {
-      throw new Error('No results found');
-    }
-  };
+  const [availabilityss, setAvailabilityss] = useState([]);
 
   const [filterDistance, setFilterDistance] = useState(0); // Distance in kilometers
-
-
-
-  // Create state variables for the filters
   const [filterHourlyRate, setFilterHourlyRate] = useState(0);
+  const [filterRole, setFilterRole] = useState('');
+
+  useEffect(() => {
+    const fetchAvailabilityss = async () => {
+      const availabilityss = await useAvilabiltys();
+
+      setAvailabilityss(availabilityss);
+    };
+    fetchAvailabilityss();
+  }, []);
+
+
+console.log('avilabiltyList-in hom', availabilityss);
+
+
+  
 
   // Create state variable for the modal
   const [showModal, setShowModal] = useState(false);
 
-  const [selectedRole, setSelectedRole] = useState('Dog-Sitter');
-
-
-
-  const { availabilities, isLoading } = useAvailabilities(selectedRole) || {};
-
-  async function calculateDistance(userAddress, availableAddress) {
-    console.log('userAddress', userAddress);
-    console.log('availableAddress', availableAddress);
-    try {
-      const userCoordinates = await geocodeAddress(userAddress);
-      const availableCoordinates = await geocodeAddress(availableAddress);
-      console.log('userCoordinates2', userCoordinates);
-      console.log('availableCoordinates2', availableCoordinates);
-
-      return (
-        haversineDistance(
-          { lat: userCoordinates.lat, lng: userCoordinates.lng },
-          { lat: availableCoordinates.lat, lon: availableCoordinates.lng }
-        ) / 1000
-      ); // Convert distance to kilometers
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  if (isLoading || !Array.isArray(availabilities)) {
-    return <div>Loading...</div>;
-  }
-
   // Apply all filters
-  const filteredAvailabilities = availabilities.filter(
+  const filteredAvailabilities = availabilityss.filter(
     (availability) =>
-      availability.role === selectedRole &&
       availability.userId !== userId &&
       (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
-      (!filterDistance || calculateDistance(user.location, availability.location) <= filterDistance) // Add distance filter
-  );
-  console.log('filteredAvailabilities', filteredAvailabilities);
+      // (!filterDistance ||availability.location <= filterDistance) &&
+      (!filterRole || availability.role === filterRole)
+      );
+    console.log('filterDistance', filterDistance);
+    console.log('filterHourlyRate', filterHourlyRate);
+    console.log('filterRole', filterRole);
+    
 
+console.log('filteredAvailabilities -in hom', filteredAvailabilities);
   return (
     <StyledHome>
       <IonContent>
@@ -137,6 +102,8 @@ const Home = () => {
             setFilterDistance={setFilterDistance}
             filterHourlyRate={filterHourlyRate}
             setFilterHourlyRate={setFilterHourlyRate}
+            filterRole={filterRole}
+            setFilterRole={setFilterRole}
           />
               <div style={{ textAlign: 'center', marginTop: '16px' }}>
         <IonButton
