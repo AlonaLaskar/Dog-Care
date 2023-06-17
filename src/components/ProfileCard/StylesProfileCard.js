@@ -13,6 +13,24 @@ const StylesProfileCard = styled.div`
         object-fit: cover;
       }
     }
+    .swipe-indicator {
+      height: calc(100vh - 273px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      width:100%;
+      ion-icon {
+        opacity:0.9;
+        width:80px;
+        height:80px;
+        border-radius:100%;
+        box-shadow:0px 0px 10px #0000006e;
+      }
+    }
     .details-container {
       // height: 450px;
       height: calc(100vh - 273px);
@@ -54,6 +72,7 @@ const StylesProfileCard = styled.div`
   ion-card {
     margin-top:14px;
     margin-bottom:0;
+    border-radius:14px;
   }
 
   .right {

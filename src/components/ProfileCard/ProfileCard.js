@@ -1,6 +1,14 @@
-import React, { useEffect, useState,useContext } from 'react';
-import { IonCard, IonCardContent, IonIcon, IonImg, IonText,createGesture } from '@ionic/react';
-import { heart, closeOutline, locationOutline, alertCircleOutline, calendarNumberOutline, alarmOutline, walletOutline } from 'ionicons/icons';
+import React, { useEffect, useState, useContext } from 'react';
+import { IonCard, IonCardContent, IonIcon, IonImg, IonText, createGesture } from '@ionic/react';
+import {
+  heart,
+  closeOutline,
+  locationOutline,
+  alertCircleOutline,
+  calendarNumberOutline,
+  alarmOutline,
+  walletOutline
+} from 'ionicons/icons';
 import PropTypes from 'prop-types';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
@@ -10,6 +18,7 @@ import AuthContext from 'providers/AuthContext';
 import StylesProfileCard from './StylesProfileCard';
 
 const ProfileCard = (props) => {
+  console.log('props', props);
   const { userId } = useContext(AuthContext) || {};
 
   const [swipeDirection, setSwipeDirection] = useState(null);
@@ -35,16 +44,16 @@ const ProfileCard = (props) => {
         onMove: (detail) => {
           card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
           if (detail.deltaX > 0) {
-            card.classList.add('right');  // add right class
-            card.classList.remove('left');  // remove left class
+            card.classList.add('right'); // add right class
+            card.classList.remove('left'); // remove left class
             setSwipeDirection('right');
           } else if (detail.deltaX < 0) {
-            card.classList.add('left');  // add left class
-            card.classList.remove('right');  // remove right class
+            card.classList.add('left'); // add left class
+            card.classList.remove('right'); // remove right class
             setSwipeDirection('left');
           } else {
-            card.classList.remove('left');  // remove left class
-            card.classList.remove('right');  // remove right class
+            card.classList.remove('left'); // remove left class
+            card.classList.remove('right'); // remove right class
             setSwipeDirection(null);
           }
         },
@@ -52,13 +61,11 @@ const ProfileCard = (props) => {
           card.style.transition = '0.3s ease-out';
           if (detail.deltaX > windowWidth / 2) {
             card.style.transform = `translateX(${windowWidth * 1.5}px)`;
-            saveRightSwipe(props.availability.availabilityId, props.availability.userId,userId );
+            saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
             setSwipeDirection(null);
-
           } else if (detail.deltaX < -windowWidth / 2) {
             card.style.transform = `translateX(-${windowWidth * 1.5}}px)`;
             setSwipeDirection(null);
-
           } else {
             card.style.transform = '';
             card.classList.remove('left'); // remove left class
@@ -107,13 +114,14 @@ const ProfileCard = (props) => {
   if (!availability) {
     return <div>No availability data found.</div>;
   }
+  const dob = new Date(userData?.birthDate);
+  const ageInMs = Date.now() - dob.getTime();
+  const ageInYears = new Date(ageInMs).getFullYear() - 1970;
+  console.log('ageInYears', ageInYears);
+
 
   return (
     <StylesProfileCard>
-      <div className={`swipe-indicator ${swipeDirection}`}>
-        {swipeDirection === 'right' && <IonIcon icon={heart} />}
-        {swipeDirection === 'left' && <IonIcon icon={closeOutline} />}
-      </div>
       <div key={props.availability.id}>
         {availability.role === 'Dog-Walker' ? <h3>Walk With Me</h3> : <h3>Sleep with me</h3>}
         <IonCard ref={ref}>
@@ -124,11 +132,11 @@ const ProfileCard = (props) => {
             <div className="details-container">
               <IonText className="name">
                 {userData?.fullName}
-                {/* ,{ageInYears} */}
+                ,{ageInYears}
               </IonText>
               <IonText className="address">
                 <IonIcon icon={locationOutline} />
-                {userData?.address}, Israel
+                {props.distance} km from your location
               </IonText>
               <IonText className="bio">
                 <p>{availability?.aboutMe}</p>
@@ -172,6 +180,10 @@ const ProfileCard = (props) => {
                 </IonText>
               )}
             </div>
+            <div className={`swipe-indicator ${swipeDirection}`}>
+              {swipeDirection === 'right' && <IonIcon icon={heart} />}
+              {swipeDirection === 'left' && <IonIcon icon={closeOutline} />}
+            </div>
           </IonCardContent>
         </IonCard>
       </div>
@@ -182,6 +194,6 @@ const ProfileCard = (props) => {
 export default ProfileCard;
 
 ProfileCard.propTypes = {
-  availability: PropTypes.object.isRequired
-
+  availability: PropTypes.object.isRequired,
+  distance: PropTypes.number.isRequired
 };

@@ -66,6 +66,7 @@ body {
       box-shadow: 0px 0px 20px #0000005c;
       border-radius: 10px;
       align-items:flex-start;
+      
       .ion-page{
         padding:16px;
         display:block;
@@ -74,6 +75,15 @@ body {
         border: 2px solid #024C71;
         border-radius: 8px;
         margin-top:12px;
+      }
+      ion-radio-group {
+        display: flex;
+        justify-content: space-around;
+        margin: 32px 0;
+        ion-radio {
+          --color: #4582a3;
+          --color-checked: #024c71;
+        }
       }
       .close-button {
         --padding-start: 10px;
