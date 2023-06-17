@@ -34,6 +34,7 @@ const UserProfile = () => {
   const dob = new Date(user?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
+  console.log('ageInYears', ageInYears);
 
   return (
     <StyledUserProfile>
@@ -59,14 +60,7 @@ const UserProfile = () => {
           <IonLabel className='bio'>About Me:</IonLabel>
           {user?.aboutMe}
         </IonText>
-        <IonSegment value={isUserMode ? 'user' : 'provider'} onIonChange={handleToggleChange} className='mode'>
-          <IonSegmentButton value='user'>
-            <IonLabel>Service Receiver</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value='provider'>
-            <IonLabel>Service Provider</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
+        
   
       </IonCard>
     </StyledUserProfile>

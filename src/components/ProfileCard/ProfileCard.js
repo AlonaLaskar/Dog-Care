@@ -1,62 +1,69 @@
-import React, { useEffect, useState } from 'react';
-import { IonCard, IonImg, IonText, createGesture, IonIcon, IonCardTitle, IonCardHeader } from '@ionic/react';
-import {
-  locationOutline,
-  walletOutline,
-  calendarNumberOutline,
-  alarmOutline,
-  alertCircleOutline
-} from 'ionicons/icons';
+import React, { useEffect, useState,useContext } from 'react';
+import { IonCard, IonCardContent, IonIcon, IonImg, IonText,createGesture } from '@ionic/react';
+import { heart, closeOutline, locationOutline, alertCircleOutline, calendarNumberOutline, alarmOutline, walletOutline } from 'ionicons/icons';
 import PropTypes from 'prop-types';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { saveRightSwipe } from '../../hook/swips';
 import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
 import StylesProfileCard from './StylesProfileCard';
 
 const ProfileCard = (props) => {
   const { userId } = useContext(AuthContext) || {};
-  
 
-  
+  const [swipeDirection, setSwipeDirection] = useState(null);
+
   const ref = React.useRef(null);
   useEffect(() => {
     gestureInit();
   });
 
   const gestureInit = () => {
-    const swipeThreshold = window.innerWidth * 0.5; // Adjust the value as needed
+    // const swipeThreshold = window.innerWidth * 0.5; // Adjust the value as needed
+    const windowWidth = window.innerWidth;
 
     const card = ref.current;
     if (card) {
       const gesture = createGesture({
         el: card,
         gestureName: 'card-swipe',
+
+        onStart: () => {
+          card.style.transition = 'none';
+        },
         onMove: (detail) => {
           card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20}deg)`;
           if (detail.deltaX > 0) {
-            props.onMatch();
-          if (detail.deltaX > swipeThreshold) {
-            card.style.transform = `translateX(${window.innerWidth}px)`;
-            saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
-            
-          } 
-        }
-          else {
-            props.onUnmatch();
+            card.classList.add('right');  // add right class
+            card.classList.remove('left');  // remove left class
+            setSwipeDirection('right');
+          } else if (detail.deltaX < 0) {
+            card.classList.add('left');  // add left class
+            card.classList.remove('right');  // remove right class
+            setSwipeDirection('left');
+          } else {
+            card.classList.remove('left');  // remove left class
+            card.classList.remove('right');  // remove right class
+            setSwipeDirection(null);
           }
         },
         onEnd: (detail) => {
-          const windowWidth = window.innerWidth;
-          if (detail.deltaX > windowWidth - swipeThreshold) {
-            props.onMatch();
-            saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
-            card.style.transform = `translateX(${window.innerWidth}px)`;
+          card.style.transition = '0.3s ease-out';
+          if (detail.deltaX > windowWidth / 2) {
+            card.style.transform = `translateX(${windowWidth * 1.5}px)`;
+            saveRightSwipe(props.availability.availabilityId, props.availability.userId,userId );
+            setSwipeDirection(null);
+
+          } else if (detail.deltaX < -windowWidth / 2) {
+            card.style.transform = `translateX(-${windowWidth * 1.5}}px)`;
+            setSwipeDirection(null);
+
           } else {
-            props.onReset();
-            card.style.transform = 'translateX(0px)';
+            card.style.transform = '';
+            card.classList.remove('left'); // remove left class
+            card.classList.remove('right'); // remove right class
+            setSwipeDirection(null);
           }
         }
       });
@@ -103,40 +110,36 @@ const ProfileCard = (props) => {
 
   return (
     <StylesProfileCard>
+      <div className={`swipe-indicator ${swipeDirection}`}>
+        {swipeDirection === 'right' && <IonIcon icon={heart} />}
+        {swipeDirection === 'left' && <IonIcon icon={closeOutline} />}
+      </div>
       <div key={props.availability.id}>
+        {availability.role === 'Dog-Walker' ? <h3>Walk With Me</h3> : <h3>Sleep with me</h3>}
         <IonCard ref={ref}>
-          <IonCardHeader>
-            {availability.role === 'Dog-Walker' ? (
-              <IonCardTitle>Walk With Me</IonCardTitle>
-            ) : (
-              <IonCardTitle>Sleep with me</IonCardTitle>
-            )}
-          </IonCardHeader>
-
-          <div className='card-container'>
-            <div className='image-container'>
+          <IonCardContent>
+            <div className="image-container">
               <IonImg src={userData?.avatar} />
             </div>
-            <div className='details-container'>
-              <IonText className='name'>
+            <div className="details-container">
+              <IonText className="name">
                 {userData?.fullName}
                 {/* ,{ageInYears} */}
               </IonText>
-              <br />
-              <IonText className='address'>
+              <IonText className="address">
                 <IonIcon icon={locationOutline} />
                 {userData?.address}, Israel
               </IonText>
-              <IonText className='bio'>
+              <IonText className="bio">
                 <p>{availability?.aboutMe}</p>
               </IonText>
-              <div className='role'>
+              <div className="role">
                 <IonText>
                   <IonIcon icon={alertCircleOutline} />
                   {availability?.role}
                 </IonText>
               </div>
-              <div className='date'>
+              <div className="date">
                 <IonText>
                   <IonIcon icon={calendarNumberOutline} />
                   {availability?.dateStart}
@@ -144,32 +147,32 @@ const ProfileCard = (props) => {
                   {availability?.dateStop}
                 </IonText>
               </div>
-              <div className='time'>
+              <div className="time">
                 <IonText>
                   <IonIcon icon={alarmOutline} />
                   {availability?.start} <span> - </span> {availability?.stop}
                 </IonText>
               </div>
-              <div className='location'>
-                <IonText color='primary'>
+              <div className="location">
+                <IonText>
                   <IonIcon icon={locationOutline} />
                   {availability?.location}
                 </IonText>
               </div>
 
               {availability?.role === 'Dog-Walker' ? (
-                <IonText className='price'>
+                <IonText className="price">
                   <IonIcon icon={walletOutline} />
                   {`${availability?.payment}₪ per hour to walk your dog `}
                 </IonText>
               ) : (
-                <IonText className='price'>
+                <IonText className="price">
                   <IonIcon icon={walletOutline} />
                   {`${availability?.payment}₪ per hour to keep your dog `}
                 </IonText>
               )}
             </div>
-          </div>
+          </IonCardContent>
         </IonCard>
       </div>
     </StylesProfileCard>
@@ -179,8 +182,6 @@ const ProfileCard = (props) => {
 export default ProfileCard;
 
 ProfileCard.propTypes = {
-  availability: PropTypes.object.isRequired,
-  onMatch: PropTypes.func.isRequired,
-  onUnmatch: PropTypes.func.isRequired,
-  onReset: PropTypes.func.isRequired
+  availability: PropTypes.object.isRequired
+
 };

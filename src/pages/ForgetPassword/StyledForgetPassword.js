@@ -78,6 +78,20 @@ const StyledForgetPassword = styled(IonPage).attrs({ className: 'ion-padding' })
     border-radius: 10px;
     margin: auto;
   }
+  .toLogin{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align:center;
+    color: #3e3e3e;
+    margin-top:24px;
+
+  }
+  
 `;
 
 export default StyledForgetPassword;

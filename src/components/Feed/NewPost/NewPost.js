@@ -12,6 +12,10 @@ import { useUser } from 'hook/users';
 import StyledNewPost from './StyledNewPost';
 //!context package
 import AuthContext from 'providers/AuthContext';
+import usePhotoGallery  from 'hook/usePhotoGallery';
+
+
+
 
 const NewPost = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -19,6 +23,9 @@ const NewPost = () => {
   const { userId, loading } = useContext(AuthContext) || {};
   const { user } = useUser(userId) || {};
   const [textValue, setTextValue] = useState('');
+
+  const { takePhoto, chooseFromGallery } = usePhotoGallery();
+
 
 
   function handleAddPost(data) {
@@ -54,18 +61,26 @@ const NewPost = () => {
           type='button'
           color='dark'
           fill='clear'
-          textLoading='Creating Post'
           isLoading={loading || addingPost}
         >
-          <IonIcon icon={videocamOutline} slot='end' color='dark' />
+          <IonIcon icon={videocamOutline} slot='end' color='dark'  />
           <span>VIDEO</span>
         </IonButton>
 
-        <IonButton type='submit' fill='clear' color='dark'>
+        <IonButton
+         type='submit' 
+         fill='clear'
+         >
           <IonIcon icon={newspaperOutline} slot='end' color='dark' />
           <span>Post</span>
         </IonButton>
-        <IonButton type='button' fill='clear' color='dark'>
+
+        <IonButton 
+         type='submit' 
+         fill='clear' 
+        color='dark'
+        onClick={chooseFromGallery}
+        >
           <IonIcon icon={cameraOutline} slot='end' color='dark' />
           <span> Photo</span>
         </IonButton>

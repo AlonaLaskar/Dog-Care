@@ -14,9 +14,9 @@ import useToast from 'hook/useToast';
 import FormContext from 'providers/FormContext';
 //! Components
 import Input from 'components/UI/Input';
-import StyledLogin from './StyledLogin';
 import AuthContext from 'providers/AuthContext';
-//!
+//!style
+import StyledLogin from './StyledLogin';
 import boneLogo from '../../assets/boneLogo.png';
 import dogLogo from '../../assets/dogLogo.png';
 

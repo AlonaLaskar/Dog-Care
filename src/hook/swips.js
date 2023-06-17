@@ -1,18 +1,6 @@
-import {
-  doc,
-  setDoc,
-  updateDoc,
-  arrayUnion,
-  collection,
-  query,
-  where,
-  getDoc,
-  orderBy,
-  getDocs
-} from 'firebase/firestore';
-
+import { arrayUnion, collection, doc, getDocs, getDoc, query, setDoc, updateDoc, where } from 'firebase/firestore';
 import { db } from '../firebase';
-import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
+import {useDocumentData } from 'react-firebase-hooks/firestore';
 
 export async function saveRightSwipe(availabilityId, userId, swipedUserId) {
   //!PROBLEM HERE USERID UNDIFINED
@@ -21,8 +9,6 @@ export async function saveRightSwipe(availabilityId, userId, swipedUserId) {
   }
 
   const userChack = await checkUserRightSwipe(availabilityId, swipedUserId);
-
-  console.log('userChack', userChack);
 
   const swipeRef = doc(db, 'swipes', `${availabilityId}`);
   const swipeSnapshot = await getDoc(swipeRef);

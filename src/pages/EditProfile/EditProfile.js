@@ -1,22 +1,26 @@
-import StyledEditProfile from './StyledEditProfile';
-import Input from 'components/UI/Input';
+//!React+Ionic 
 import { useContext, useState, useEffect } from 'react';
-import AuthContext from 'providers/AuthContext';
-import { db } from '../../firebase';
-import {IonCard, IonCardTitle, IonCardHeader, IonButton, IonIcon, IonImg, IonCardContent, IonActionSheet} from '@ionic/react';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import {IonCard, IonCardTitle, IonCardHeader, IonButton, IonIcon, IonImg, IonCardContent, IonActionSheet} from '@ionic/react';
+import { cameraOutline, createOutline } from 'ionicons/icons';
+//!Firebase 
+import { db } from '../../firebase';
+import { doc, updateDoc } from 'firebase/firestore';
+//!context
+import Input from 'components/UI/Input';
+import AuthContext from 'providers/AuthContext';
 import FormContext from 'providers/FormContext';
 import * as yup from 'yup';
-import { cameraOutline, createOutline } from 'ionicons/icons';
+//!Hook
 import { useUser } from 'hook/users';
-import { doc, updateDoc } from 'firebase/firestore';
 import useToast from 'hook/useToast';
+import { yupResolver } from '@hookform/resolvers/yup';
 import usePhotoGallery  from 'hook/usePhotoGallery';
+//!Style
+import StyledEditProfile from './StyledEditProfile';
 
 const schema = yup.object().shape({
   fullName: yup.string(),
-
   aboutMe: yup.string(),
   location: yup.string(),
   avatar: yup.string()
@@ -28,11 +32,9 @@ const EditProfile = () => {
   const { userId } = useContext(AuthContext);
   const { user } = useUser(userId) || {};
   const [userProfile, setUserProfile] = useState(null);
-  const uid = userId; // Assuming the user ID is stored in the userId variable
-
   const [isOpen, setIsOpen] = useState(false);
 
-  const { file, setFile, takePhoto, chooseFromGallery, updateAvatar } = usePhotoGallery();
+  const { takePhoto, chooseFromGallery } = usePhotoGallery();
 
   const {
     register,
@@ -50,15 +52,8 @@ const EditProfile = () => {
   }, [user]);
 
   const handleRegister = async (data) => {
-    // if(file) { // If a file is present, try to update the avatar
-    //   try {
-    //     await updateAvatar();
-    //     presentToast('The photo update successfully', true);
-    //   } catch(err) {
-    //     presentToast('Failed to update photo', false);
-    //   }
-    // }
 
+//update user profile
     const userRef = doc(db, 'users', userId);
     const updatedFields = {};
 
@@ -67,7 +62,7 @@ const EditProfile = () => {
         updatedFields[key] = value;
       }
     }
-
+//update only if there are changes
     if (Object.keys(updatedFields).length > 0) {
       const updatedUserData = {
         ...userProfile,
@@ -76,7 +71,6 @@ const EditProfile = () => {
 
       await updateDoc(userRef, updatedUserData);
       presentToast('Your profile was edited successfully', true);
-
       console.log('Profile updated successfully.');
     } else {
       console.log('No changes to update.');
