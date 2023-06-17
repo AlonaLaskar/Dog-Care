@@ -66,7 +66,12 @@ body {
       box-shadow: 0px 0px 20px #0000005c;
       border-radius: 10px;
       align-items:flex-start;
-      
+      &::part(content){
+        width: 321px;
+        height: 470px;
+        margin: auto;
+        border-radius: 12px;
+      }
       .ion-page{
         padding:16px;
         display:block;
@@ -79,11 +84,19 @@ body {
       ion-radio-group {
         display: flex;
         justify-content: space-around;
-        margin: 32px 0;
+        margin: 12px 0 20px 0;
         ion-radio {
           --color: #4582a3;
           --color-checked: #024c71;
         }
+      }
+      ion-datetime-button {
+        border: 2px solid #024c71;
+        padding: 6px;
+        border-radius: 10px;
+        margin: 10px 0;
+        justify-content: flex-start;
+        width: fit-content;
       }
       .close-button {
         --padding-start: 10px;

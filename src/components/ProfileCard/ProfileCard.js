@@ -195,5 +195,5 @@ export default ProfileCard;
 
 ProfileCard.propTypes = {
   availability: PropTypes.object.isRequired,
-  distance: PropTypes.number.isRequired
+  distance: PropTypes.string.isRequired
 };

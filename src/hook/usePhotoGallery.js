@@ -14,7 +14,7 @@ import AuthContext from '../providers/AuthContext';
 
 export const usePhotoGallery = () => {
   const { userId } = useContext(AuthContext);
-  const [setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const presentToast = useToast();
 
@@ -95,6 +95,14 @@ export const usePhotoGallery = () => {
       input.click();
     }
   };
+
+
+
+
+
+
+
+  
   const chooseFromGalleryToFeed = async () => {
     console.log('Choosing from gallery...');
     if (isPlatform('hybrid')) {

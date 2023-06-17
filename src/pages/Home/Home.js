@@ -7,7 +7,6 @@ import AuthContext from 'providers/AuthContext';
 import Filtering from './Filtering';
 import haversineDistance from 'haversine-distance'; // Or any other library for calculating distance between two coordinates
 import { Geolocation } from '@capacitor/geolocation';
-import { useUser } from '../../hook/users';
 import { Client } from '@googlemaps/google-maps-services-js';
 import emptyStateImage from '../../assets/emptyStateImage1.jpg';
 import { optionsOutline } from 'ionicons/icons';
@@ -36,7 +35,6 @@ const Home = () => {
   };
 
   const { userId } = useContext(AuthContext) || {};
-  const { user } = useUser(userId) || {};
 
   const [availabilityss, setAvailabilityss] = useState([]);
   const [filterDistance, setFilterDistance] = useState(0); // Distance in kilometers
@@ -99,7 +97,7 @@ const Home = () => {
       (!filterDistance || availability.distanceInKilometers >= filterDistance) &&
       (!filterDate || availability.dateStart === filterDate)&&
       (!filterRole || availability.role === filterRole)&&
-      (!filterDateEnd || availability.dateEnd === filterDateEnd)
+      (!filterDateEnd || availability.dateStop === filterDateEnd)
   );
 
   console.log('filteredAvailabilities -in home', filteredAvailabilities);
@@ -129,14 +127,6 @@ const Home = () => {
         <IonModal
           isOpen={showModal}
           onDidDismiss={() => setShowModal(false)}
-          style={{
-            width: '335px',
-            height: '350px',
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)'
-          }}
           className="filter"
         >
           <Filtering
