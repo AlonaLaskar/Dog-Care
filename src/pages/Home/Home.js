@@ -149,7 +149,7 @@ const Home = () => {
             filterDate={tempFilterDate}
             setFilterDate={setTempFilterDate}
             filterDateEnd={tempFilterDateEnd}
-            setFilterDateEnd={setFilterDateEnd}
+            setFilterDateEnd={setTempFilterDateEnd}
           />
           <div style={{ textAlign: 'center', marginTop: '16px' }}>
             <IonButton
