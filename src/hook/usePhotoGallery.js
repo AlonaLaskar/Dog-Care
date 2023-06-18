@@ -12,35 +12,43 @@ import useToast from '../hook/useToast';
 //!Context
 import AuthContext from '../providers/AuthContext';
 
+
 export const usePhotoGallery = () => {
   const { userId } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
-  const [file, setFile] = useState(null);
   const presentToast = useToast();
 
-  const uploadPhoto = async (webPath) => {
-    const response = await fetch(webPath);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const uploadPhoto = async (identifier, storageFolder, collectionChain = [], fieldToUpdate) => {
+    if (!selectedImage || !identifier) {
+      presentToast('No image selected or identifier missing', false);
+      return;
+    }
+    const response = await fetch(selectedImage);
     const blob = await response.blob();
     setLoading(true);
-    const fileRef = ref(storage, 'avatars/' + userId);
+    const fileRef = ref(storage, `${storageFolder}/${identifier}`);
     const metadata = {
       contentType: 'image/jpeg'
     };
     const snapshot = await uploadBytesResumable(fileRef, blob, metadata);
     const downloadURL = await getDownloadURL(snapshot.ref);
-    const docRef = doc(db, 'users', userId);
-    await updateDoc(docRef, { avatar: downloadURL });
-    presentToast('The photo was uploaded and updated successfully', true);
+
+    if (collectionChain.length > 0 && fieldToUpdate) {
+      const docRef = doc(db, ...collectionChain);
+      await updateDoc(docRef, { [fieldToUpdate]: downloadURL });
+      presentToast('The photo was uploaded and updated successfully', true);
+    }
+    setSelectedImage(null);  // Clear the selected image after uploading
     setLoading(false);
   };
-
 
   const selectImage = async (webPath) => {
     if (!webPath) {
       presentToast('Not found a file', false);
       return;
     }
-    await uploadPhoto(webPath);
+    setSelectedImage(webPath);
   };
 
   const takePhoto = async () => {
@@ -58,6 +66,8 @@ export const usePhotoGallery = () => {
       }
 
       selectImage(file.webPath);
+      presentToast('The image has been selected successfully and will be uploaded after saving changes', true);
+
     } catch (error) {
       console.error('Error taking photo:', error);
     }
@@ -76,6 +86,7 @@ export const usePhotoGallery = () => {
       console.log('Image from gallery:', image);
       if (image?.webPath) {
         selectImage(image.webPath);
+        presentToast('The image has been selected successfully and will be uploaded after saving changes', true);
       } else {
         presentToast('Not found a file', false);
       }
@@ -86,8 +97,8 @@ export const usePhotoGallery = () => {
       input.onchange = (event) => {
         const file = event.target.files[0];
         if (file) {
-          setFile(URL.createObjectURL(file));
-          selectImage(URL.createObjectURL(file));
+          const webPath = URL.createObjectURL(file);
+          selectImage(webPath);
         } else {
           presentToast('Not found a file', false);
         }
@@ -96,82 +107,12 @@ export const usePhotoGallery = () => {
     }
   };
 
-
-
-
-
-
-
-  
-  const chooseFromGalleryToFeed = async () => {
-    console.log('Choosing from gallery...');
-    if (isPlatform('hybrid')) {
-      const image = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: true,
-        resultType: CameraResultType.Uri,
-        source: CameraSource.Photos
-      });
-  
-      console.log('Image from gallery:', image);
-      if (image?.webPath) {
-        const response = await fetch(image.webPath);
-        const blob = await response.blob();
-        setLoading(true);
-        const fileRef = ref(storage, 'posts/' + userId);
-        const metadata = {
-          contentType: 'image/jpeg'
-        };
-        const snapshot = await uploadBytesResumable(fileRef, blob, metadata);
-        const downloadURL = await getDownloadURL(snapshot.ref);
-        presentToast('The photo was uploaded successfully', true);
-        setLoading(false);
-      } else {
-        presentToast('Not found a file', false);
-      }
-    } else {
-      // Handle non-hybrid platforms (web)
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'image/*';
-      input.onchange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-          setFile(URL.createObjectURL(file));
-          const fileRef = ref(storage, 'posts/' + userId);
-          const metadata = {
-            contentType: 'image/jpeg'
-          };
-          setLoading(true);
-          uploadBytesResumable(fileRef, file, metadata)
-            .then((snapshot) => {
-              return getDownloadURL(snapshot.ref);
-            })
-            .then((downloadURL) => {
-              presentToast('The photo was uploaded successfully', true);
-              setLoading(false);
-            })
-            .catch((error) => {
-              console.error('Error uploading photo:', error);
-              presentToast('Failed to upload the photo', false);
-              setLoading(false);
-            });
-        } else {
-          presentToast('Not found a file', false);
-        }
-      };
-      input.click();
-    }
-  };
-  
-   
-  
   return {
-    file,
-    setFile,
+    loading,
+    selectedImage,
+    uploadPhoto,
     takePhoto,
     chooseFromGallery,
-    chooseFromGalleryToFeed
   };
 };
 

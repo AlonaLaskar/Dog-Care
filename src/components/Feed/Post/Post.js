@@ -6,32 +6,31 @@ import PropTypes from 'prop-types';
 import { useUser } from 'hook/users';
 import { formatDistanceToNow } from 'date-fns';
 
-
 export default function Post({ post }) {
+  const { uid, date,photo } = post;
 
-  const { uid, date } = post;
 
   const { user, isLoading } = useUser(uid) || {};
 
   return (
     <StyledPost>
-      <IonCard className='postcard'>
-         <IonCardHeader>
-  
-  <IonAvatar>
-      <img src={user?.avatar} alt={user?.fullName}/>
-    </IonAvatar>
-    <IonLabel className='name'>
-      {user?.fullName}
-    </IonLabel>
-    <IonLabel className='date'>
-      <h2>{formatDistanceToNow(date) + ' ago'}</h2>
-    </IonLabel>
-  </IonCardHeader>
-       
+      <IonCard className="postcard">
         <IonCardContent>
-          <IonLabel className='postText'>{post.text}</IonLabel>
-          <Action post={post} />
+          <div className="cardheader">
+            <IonAvatar>
+              <img src={user?.avatar} alt={user?.fullName} />
+            </IonAvatar>
+            <div className="card-right-content">
+              <div className="user-info">
+                <IonLabel className="name">{user?.fullName}</IonLabel>
+
+                <IonLabel className="date">{formatDistanceToNow(date) + ' ago'}</IonLabel>
+              </div>
+              <IonLabel className="postText">{post.text}</IonLabel>
+              <IonImg src={photo} />
+              <Action post={post} />
+            </div>
+          </div>
         </IonCardContent>
       </IonCard>
     </StyledPost>
@@ -39,5 +38,5 @@ export default function Post({ post }) {
 }
 
 Post.propTypes = {
-  post: PropTypes.any,
+  post: PropTypes.any
 };

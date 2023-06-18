@@ -5,10 +5,13 @@ import { usePosts } from 'hook/posts';
 import PostsLists from 'components/Feed/PostsList';
 import StyledFeed from './StyledFeed';
 import NewPost from 'components/Feed/NewPost';
+import { IonContent } from '@ionic/react';
 
 const postIndex = () => {
   // Fetch posts using the usePosts hook
   const { posts, isLoading } = usePosts();
+
+  if(!posts) return null;
 
   // If data is still loading, render "Loading..."
   if (isLoading) return 'Loading...';
@@ -17,10 +20,12 @@ const postIndex = () => {
   return (
     <StyledFeed>
       {/* Render the NewPost component */}
-      <NewPost />
+      <IonContent className="content-pt-60">
+        <NewPost />
 
-      {/* Render the PostsList component and pass the posts data as a prop */}
-      <PostsLists posts={posts} />
+        {/* Render the PostsList component and pass the posts data as a prop */}
+        <PostsLists posts={posts} />
+      </IonContent>
     </StyledFeed>
   );
 };

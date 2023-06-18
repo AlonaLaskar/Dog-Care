@@ -115,6 +115,9 @@ body {
         }
       }
     }
+    .content-pt-60 {
+      --padding-top:60px;
+    }
   `;
 
 export default GlobalStyle;

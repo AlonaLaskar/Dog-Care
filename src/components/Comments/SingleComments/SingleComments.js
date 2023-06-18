@@ -2,7 +2,17 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 //! Ionic components
-import { IonCard, IonCardContent, IonCardHeader, IonAvatar, IonText, IonButton, IonIcon, IonLabel, IonCardTitle } from '@ionic/react';
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonAvatar,
+  IonText,
+  IonButton,
+  IonIcon,
+  IonLabel,
+  IonCardTitle
+} from '@ionic/react';
 import { trashOutline } from 'ionicons/icons';
 //!hooks
 import { useDeleteComment } from 'hook/comments';
@@ -14,10 +24,9 @@ import StyledSingleComments from './StyledSingleComments';
 import { useUser } from 'hook/users';
 import { formatDistanceToNow } from 'date-fns';
 
-
 function SingleComment({ comment }) {
-  const { text, uid, id,date } = comment;
-  const {user} = useUser(uid);
+  const { text, uid, id, date } = comment;
+  const { user } = useUser(uid);
 
   const { userId, loading } = useContext(AuthContext) || {};
   const { deleteComment, isLoading: deleteLoading } = useDeleteComment(id);
@@ -31,31 +40,34 @@ function SingleComment({ comment }) {
   return (
     <StyledSingleComments>
       <IonCard>
-      <IonCardHeader>
-  
-      <IonAvatar>
-          <img src={user?.avatar} alt={user?.fullName}/>
-        </IonAvatar>
-        <IonLabel className='name'>
-          {user?.fullName}
-        </IonLabel>
-        <IonLabel className='date'>
-          <h2>{formatDistanceToNow(date) + ' ago'}</h2>
-        </IonLabel>
-      </IonCardHeader>
 
-      <IonCardContent>
-        <IonLabel>
-          <span>
-            {text}
-          </span>
-        </IonLabel>
-      </IonCardContent>
-        {isCurrentUser && (
-          <IonButton className='trash' onClick={deleteComment} disabled={deleteLoading} variant='ghost' color='danger' fill='clear'>
-            <IonIcon slot='start' icon={trashOutline} disabled={deleteLoading} onClick={deleteComment} />
-          </IonButton>
-        )}
+        <IonCardContent>
+          <div className="cardheader">
+            <IonAvatar>
+              <img src={user?.avatar} alt={user?.fullName} />
+            </IonAvatar>
+            <div className="card-right-content">
+              <div className="user-info">
+                <IonLabel className="name">{user?.fullName}</IonLabel>
+                <IonLabel className="date">{formatDistanceToNow(date) + ' ago'}</IonLabel>
+              </div>
+              <IonLabel className="postText">{text}</IonLabel>
+
+              {isCurrentUser && (
+                <IonButton
+                  className="trash"
+                  onClick={deleteComment}
+                  disabled={deleteLoading}
+                  variant="ghost"
+                  color="danger"
+                  fill="clear"
+                >
+                  <IonIcon slot="start" icon={trashOutline} disabled={deleteLoading} onClick={deleteComment} />
+                </IonButton>
+              )}
+            </div>
+          </div>
+        </IonCardContent>
       </IonCard>
     </StyledSingleComments>
   );

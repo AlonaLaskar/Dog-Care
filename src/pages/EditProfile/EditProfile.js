@@ -34,7 +34,7 @@ const EditProfile = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { takePhoto, chooseFromGallery } = usePhotoGallery();
+  const { takePhoto, chooseFromGallery,uploadPhoto } = usePhotoGallery();
 
   const {
     register,
@@ -56,7 +56,8 @@ const EditProfile = () => {
 //update user profile
     const userRef = doc(db, 'users', userId);
     const updatedFields = {};
-
+    await uploadPhoto(userId, 'users', ['users', userId], 'avatar');
+    
     for (const [key, value] of Object.entries(data)) {
       if (value && value !== userProfile[key]) {
         updatedFields[key] = value;
