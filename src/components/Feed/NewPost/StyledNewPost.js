@@ -81,24 +81,32 @@ const StyledNewPost = styled.div`
   //     border-radius: 0px;
   //   }
   // }
+
+  max-width:600px;
+  margin:auto;
   form {
     background: rgb(255, 255, 255);
     border: 2px solid rgb(2, 76, 113);
     border-radius: 10px;
+    width:95%;
+    margin:auto;
     ion-textarea {
       border: 1.5px solid #024c71;
-      border-radius: 20px;
+      border-radius: 10px;
       --padding-start: 10px;
       --highlight-color-focused: none;
     }
     ion-button {
-      height:32px;
+      height:28px;
       background: #ffffff;
       border: 1px solid #024c71;
       border-radius: 50px;
-      font-size:14px;
-      @media (max-width:370px){
-        font-size:12px;
+      font-size:12px;
+      ion-icon {
+        font-size:15px;
+        &.post-icon{
+          font-size:13px;
+        }
       }
     }
     .write-post-col {

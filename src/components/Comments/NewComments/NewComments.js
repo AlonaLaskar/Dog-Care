@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 //! Ionic components
-import { IonButton, IonIcon, IonTextarea } from '@ionic/react';
-import { sendOutline } from 'ionicons/icons';
+import { IonButton, IonIcon, IonInput, IonTextarea } from '@ionic/react';
+import { send } from 'ionicons/icons';
 
 //! Context
 import AuthContext from 'providers/AuthContext';
@@ -43,9 +43,9 @@ export default function NewComments({ post }) {
   return (
     <StyledNewcomments>
       <form onSubmit={handleSubmit(handleAddComment)}>
-        <IonTextarea
-          placeholder='Add a comment...'
-          autoComplete='on'
+        <IonInput
+          placeholder="Add a comment..."
+          autoComplete="on"
           {...register('text', { require: true })}
           clearOnEdit={false}
           value={textValue} // bind the textarea value to the state variable
@@ -53,12 +53,12 @@ export default function NewComments({ post }) {
         />
 
         <IonButton
-          className='add'
+          className="add"
           isLoading={commentLoading || loading}
-          type='submit'
-          fill='clear'
+          type="submit"
+          fill="clear"
         >
-          <IonIcon slot='start' icon={sendOutline} />
+          <IonIcon slot="start" icon={send} />
         </IonButton>
       </form>
     </StyledNewcomments>

@@ -5,13 +5,10 @@ import PropTypes from 'prop-types';
 import {
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonAvatar,
-  IonText,
   IonButton,
   IonIcon,
   IonLabel,
-  IonCardTitle
 } from '@ionic/react';
 import { trashOutline } from 'ionicons/icons';
 //!hooks

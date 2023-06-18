@@ -7,8 +7,8 @@ const StyledPost = styled.div`
   flex-direction: column;
   ion-card.postcard {
     width: 95%;
-    margin-top:0;
-    margin-bottom:10px;
+    margin-top: 0;
+    margin-bottom: 10px;
 
     ion-card-content {
       padding: 10px;
@@ -25,7 +25,7 @@ const StyledPost = styled.div`
         flex-direction: row;
         padding-top: 0;
         padding-inline: 0;
-        width:100%;
+        width: 100%;
 
         ion-avatar {
           width: 50px;
@@ -45,7 +45,13 @@ const StyledPost = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            fleex-direction:row;
+            fleex-direction: row;
+          }
+          ion-img {
+            margin: 10px 0;
+            --border-radius: 10px;
+            border-radius: 10px;
+            overflow: hidden;
           }
         }
         ion-label.name {
@@ -73,30 +79,6 @@ const StyledPost = styled.div`
       }
     }
 
-    ion-button {
-      border: 1px solid rgb(2, 76, 113);
-      border-radius: 50px;
-      font-size: 12px;
-      --padding-start: 8px;
-      --padding-end: 8px;
-      height:26px;
-
-      // &:nth-of-type(1) {
-      //   position: absolute;
-      //   top: 60%;
-      //        left: 72%;
-      // }
-      // &:nth-of-type(2) {
-      //   position: absolute;
-      //   top: 60%;
-      //   left: 36%;
-      // }
-      // &:nth-of-type(3) {
-      //   position: absolute;
-      //   top: 60%;
-      //   left: 0%;
-      // }
-    }
   }
 `;
 
