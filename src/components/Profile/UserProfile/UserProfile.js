@@ -4,22 +4,9 @@ import { useContext, useState } from 'react';
 import { useUser } from 'hook/users';
 import { useHistory } from 'react-router-dom';
 import StyledUserProfile from './StyledUserProfile';
-import { auth } from '../../../firebase';
-import { getAuth, deleteUser } from 'firebase/auth';
 import { query, collection, getDocs, deleteDoc, where } from 'firebase/firestore';
 import { db } from '../../../firebase';
-import {
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonImg,
-  IonLabel,
-  IonText,
-  IonButton,
-  IonIcon,
-  IonAlert
-} from '@ionic/react';
+import {IonCard,IonCardHeader,IonCardSubtitle,IonCardTitle,IonImg,IonLabel,IonText,IonButton,IonIcon,IonAlert} from '@ionic/react';
 
 const UserProfile = () => {
   const history = useHistory();
@@ -27,8 +14,6 @@ const UserProfile = () => {
   const { user } = useUser(userId) || {};
   console.log('userId', userId);
 
-  const [isUserMode, setIsUserMode] = useState(true);
-  const handleToggleChange = (event) => setIsUserMode(event.detail.value === 'user');
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -36,7 +21,7 @@ const UserProfile = () => {
     setShowAlert(true);
   };
   const handleEditButtonClick = () => {
-    // history.push(`/my/editProfile/${userId}`);
+    history.push(`/my/editProfile/${userId}`);
   };
 
   const handleRemoveUser  = async () => {

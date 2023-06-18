@@ -9,11 +9,30 @@ const Filtering = ({
   setFilterHourlyRate,
   filterRole,
   setFilterRole,
-  filterDate,
-  setFilterDate,
-  filterDateEnd,
-  setFilterDateEnd
+  filterDdateStart,
+  setFilterDateStart,
+  filterDateStop,
+  setFilterDateStop,
+  setFilterTimeStart,
+  setFilterTimeStop,
 }) => {
+  const handleStartDateChange = (e) => {
+    const datetime = new Date(e.detail.value);
+    const date = datetime.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }); // format date as DD/MM/YYYY
+    const time = datetime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // format time as HH:mm
+    setFilterDateStart(date); // assuming you have a setter for start date
+    setFilterTimeStart(time); // assuming you have a setter for start time
+  };
+
+  const handleEndDateChange = (e) => {
+    const datetime = new Date(e.detail.value);
+    const date = datetime.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }); // format date as DD/MM/YYYY
+    const time = datetime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // format time as HH:mm
+    setFilterDateStop(date); // assuming you have a setter for end date
+    setFilterTimeStop(time); // assuming you have a setter for end time
+  };
+
+
   return (
     <>
       <div className="filter-modal-title">
@@ -25,7 +44,7 @@ const Filtering = ({
         labelPlacement="payment"
         min={0}
         max={300}
-        mode='ios'
+        mode="ios"
         pin={true}
         className="payment"
         pinFormatter={(value) => `${value}₪`}
@@ -42,7 +61,7 @@ const Filtering = ({
       <IonRange
         value={filterDistance}
         labelPlacement="distance"
-        mode='ios'
+        mode="ios"
         min={0}
         max={100}
         pin={true}
@@ -58,7 +77,6 @@ const Filtering = ({
 
       <IonLabel>Role</IonLabel>
       <IonRadioGroup value={filterRole} onIonChange={(e) => setFilterRole(e.detail.value)} mode="md">
-        
         <IonRadio value="Dog-Sitter" labelPlacement="end">
           Dog Sitter
         </IonRadio>
@@ -68,11 +86,17 @@ const Filtering = ({
       </IonRadioGroup>
 
       <IonLabel>Date Start</IonLabel>
-      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="datetime"></IonDatetimeButton>
+      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="startDate" value={filterDdateStart}></IonDatetimeButton>
+
       <IonLabel>Date End</IonLabel>
-      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="datetime"></IonDatetimeButton>
+      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="endDate" value={filterDateStop}></IonDatetimeButton>
+
       <IonModal keepContentsMounted={true}>
-        <IonDatetime id="datetime" onIonChange={(e) => setFilterDateEnd(e.detail.value)}></IonDatetime>
+        <IonDatetime id="startDate" onIonChange={handleStartDateChange}></IonDatetime>
+      </IonModal>
+
+      <IonModal keepContentsMounted={true}>
+        <IonDatetime id="endDate" onIonChange={handleEndDateChange}></IonDatetime>
       </IonModal>
     </>
   );
@@ -87,8 +111,10 @@ Filtering.propTypes = {
   setFilterHourlyRate: PropTypes.func.isRequired,
   filterRole: PropTypes.string.isRequired,
   setFilterRole: PropTypes.func.isRequired,
-  filterDate: PropTypes.string.isRequired,
-  setFilterDate: PropTypes.func.isRequired,
-  filterDateEnd: PropTypes.string.isRequired,
-  setFilterDateEnd: PropTypes.func.isRequired
+  filterDdateStart: PropTypes.string.isRequired,
+  setFilterDateStart: PropTypes.func.isRequired,
+  filterDateStop: PropTypes.string.isRequired,
+  setFilterDateStop: PropTypes.func.isRequired,
+  setFilterTimeStart: PropTypes.func.isRequired,
+  setFilterTimeStop: PropTypes.func.isRequired,
 };

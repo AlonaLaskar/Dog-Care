@@ -1,19 +1,22 @@
-import React, { useState, useContext } from 'react';
+//!React+Ionic
+import React, { useState, useContext, useEffect } from 'react';
 import { IonContent, IonModal, IonButton, IonIcon, IonLabel } from '@ionic/react';
-
-import ProfileCard from 'components/ProfileCard/ProfileCard';
-import StyledHome from './StyledHome';
-import AuthContext from 'providers/AuthContext';
-import Filtering from './Filtering';
-import haversineDistance from 'haversine-distance'; // Or any other library for calculating distance between two coordinates
+import { optionsOutline } from 'ionicons/icons';
+//!GoogleMaps+calculateDistance
 import { Geolocation } from '@capacitor/geolocation';
 import { Client } from '@googlemaps/google-maps-services-js';
-import emptyStateImage from '../../assets/emptyStateImage1.jpg';
-import { optionsOutline } from 'ionicons/icons';
-import { useEffect } from 'react';
+import haversineDistance from 'haversine-distance';
+//!Self_components
+import ProfileCard from 'components/ProfileCard/ProfileCard';
+import AuthContext from 'providers/AuthContext';
+import Filtering from './Filtering';
 import { useAvilabiltys } from '../../hook/availabilityHook';
+//!Styled_components
+import StyledHome from './StyledHome';
+import emptyStateImage from '../../assets/emptyStateImage1.jpg';
 
 const Home = () => {
+  //!CalculateDistance
   const geocodeAddress = async (address) => {
     const client = new Client();
     const response = await client.geocode({
@@ -27,7 +30,6 @@ const Home = () => {
     if (response.status === 200 && response.data.results.length > 0) {
       const result = response.data.results[0];
       const { lat, lng } = result.geometry.location;
-      console.log('lat, lng', lat, lng);
       return { latitude: lat, longitude: lng };
     } else {
       throw new Error('Failed to geocode address');
@@ -38,18 +40,6 @@ const Home = () => {
 
   const [availabilityss, setAvailabilityss] = useState([]);
   const [filterDistance, setFilterDistance] = useState(0); // Distance in kilometers
-  const [filterHourlyRate, setFilterHourlyRate] = useState(0);
-  const [filterRole, setFilterRole] = useState('');
-  const [filterDate, setFilterDate] = useState('');
-  const[filterDateEnd,setFilterDateEnd]=useState('')
-
-
-
-  const [tempFilterDistance, setTempFilterDistance] = useState(filterDistance);
-  const [tempFilterHourlyRate, setTempFilterHourlyRate] = useState(filterHourlyRate);
-  const [tempFilterRole, setTempFilterRole] = useState(filterRole);
-  const [tempFilterDate, setTempFilterDate] = useState(filterDate);
-  const [tempFilterDateEnd, setTempFilterDateEnd] = useState(filterDateEnd);
 
   useEffect(() => {
     const fetchAvailabilityss = async () => {
@@ -62,8 +52,6 @@ const Home = () => {
         longitude: coords.longitude
       };
 
-      console.log('userLocation', userLocation);
-
       const availabilityssWithDistance = await Promise.all(
         availabilityss.map(async (availability) => {
           const address = availability.location;
@@ -72,8 +60,7 @@ const Home = () => {
             const distanceInMeters = haversineDistance(userLocation, availabilityLocation);
             const distanceInKilometers = (distanceInMeters / 1000).toFixed(0); // Convert meters to kilometers and round to 2 decimal places
 
-            console.log('distance', distanceInKilometers); // Output the distance in kilometers
-            return { ...availability, distanceInKilometers  };
+            return { ...availability, distanceInKilometers };
           } catch (error) {
             console.error(`Failed to geocode address "${address}": ${error}`);
             // Handle the error as needed
@@ -86,6 +73,22 @@ const Home = () => {
     fetchAvailabilityss();
   }, []);
 
+  //!Filtering
+  const [filterHourlyRate, setFilterHourlyRate] = useState(0);
+  const [filterRole, setFilterRole] = useState('');
+  const [filterDdateStart, setFilterDateStart] = useState('');
+  const [filterTimeStart, setFilterTimeStart] = useState('');
+  const [filterDateStop, setFilterDateStop] = useState('');
+  const [filterTimeStop, setFilterTimeStop] = useState('');
+  //!TempFiltering for send the modal after click on done
+  const [tempFilterDistance, setTempFilterDistance] = useState(filterDistance);
+  const [tempFilterHourlyRate, setTempFilterHourlyRate] = useState(filterHourlyRate);
+  const [tempFilterRole, setTempFilterRole] = useState(filterRole);
+  const [tempFilterDateStart, setTempFilterDateStart] = useState(filterDdateStart);
+  const [tempFilterTimeStart, setTempFilterTimeStart] = useState(filterTimeStart);
+  const [tempfilterDateStop, setTempFilterDateStop] = useState(filterDateStop);
+  const [tempFilterTimeStop, setTempFilterTimeStop] = useState(filterTimeStop);
+
   // Create state variable for the modal
   const [showModal, setShowModal] = useState(false);
 
@@ -95,12 +98,19 @@ const Home = () => {
       availability.userId !== userId &&
       (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
       (!filterDistance || availability.distanceInKilometers >= filterDistance) &&
-      (!filterDate || availability.dateStart === filterDate)&&
-      (!filterRole || availability.role === filterRole)&&
-      (!filterDateEnd || availability.dateStop === filterDateEnd)
+      (!filterRole || availability.role === filterRole) &&
+      (!filterDdateStart || availability.dateStart >= filterDdateStart) &&
+      (!filterDateStop || availability.dateStop >= filterDateStop) &&
+      (!filterTimeStart || availability.start >= filterTimeStart) &&
+      (!filterTimeStop || availability.stop >= filterTimeStop)
   );
 
-  console.log('filteredAvailabilities -in home', filteredAvailabilities);
+  console.log(
+    'filterDdateStart111 ' + filterDdateStart,
+    'filterDdateStop111 ' + filterDateStop,
+    'filterTimeStart11 ' + filterTimeStart,
+    'filterTimeStop111 ' + filterTimeStop
+  );
 
   return (
     <StyledHome>
@@ -111,9 +121,10 @@ const Home = () => {
           </IonButton>
           {filteredAvailabilities.length > 0 ? (
             filteredAvailabilities.map((availability) => (
-              <ProfileCard availability={availability} 
-              key={availability.availabilityId}
-              distance={availability.distanceInKilometers} // Pass distanceInKilometers as a prop
+              <ProfileCard
+                availability={availability}
+                key={availability.availabilityId}
+                distance={availability.distanceInKilometers} // Pass distanceInKilometers as a prop
               />
             ))
           ) : (
@@ -124,11 +135,7 @@ const Home = () => {
           )}
         </div>
 
-        <IonModal
-          isOpen={showModal}
-          onDidDismiss={() => setShowModal(false)}
-          className="filter"
-        >
+        <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)} className="filter">
           <Filtering
             filterDistance={tempFilterDistance}
             setFilterDistance={setTempFilterDistance}
@@ -136,10 +143,12 @@ const Home = () => {
             setFilterHourlyRate={setTempFilterHourlyRate}
             filterRole={tempFilterRole}
             setFilterRole={setTempFilterRole}
-            filterDate={tempFilterDate}
-            setFilterDate={setTempFilterDate}
-            filterDateEnd={tempFilterDateEnd}
-            setFilterDateEnd={setTempFilterDateEnd}
+            filterDdateStart={tempFilterDateStart}
+            setFilterDateStart={setTempFilterDateStart}
+            filterDateStop={tempfilterDateStop}
+            setFilterDateStop={setTempFilterDateStop}
+            setFilterTimeStart={setTempFilterTimeStart}
+            setFilterTimeStop={setTempFilterTimeStop}
           />
           <div style={{ textAlign: 'center', marginTop: '16px' }}>
             <IonButton
@@ -148,8 +157,10 @@ const Home = () => {
                 setFilterDistance(tempFilterDistance);
                 setFilterHourlyRate(tempFilterHourlyRate);
                 setFilterRole(tempFilterRole);
-                setFilterDate(tempFilterDate);
-                setFilterDateEnd(tempFilterDateEnd);
+                setFilterDateStart(tempFilterDateStart);
+                setFilterTimeStart(tempFilterTimeStart);
+                setFilterDateStop(tempfilterDateStop);
+                setFilterTimeStop(tempFilterTimeStop);
                 setShowModal(false);
               }}
               fill="clear"

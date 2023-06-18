@@ -18,7 +18,6 @@ import AuthContext from 'providers/AuthContext';
 import StylesProfileCard from './StylesProfileCard';
 
 const ProfileCard = (props) => {
-  console.log('props', props);
   const { userId } = useContext(AuthContext) || {};
 
   const [swipeDirection, setSwipeDirection] = useState(null);
@@ -114,10 +113,10 @@ const ProfileCard = (props) => {
   if (!availability) {
     return <div>No availability data found.</div>;
   }
+  
   const dob = new Date(userData?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
-  console.log('ageInYears', ageInYears);
 
 
   return (
