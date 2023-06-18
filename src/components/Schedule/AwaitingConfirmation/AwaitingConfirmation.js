@@ -17,40 +17,40 @@ const JobItem = ({ title, items }) => (
       items.map((item, index) => (
         <IonList key={index}>
             <h3>{title}</h3>
-          <div className="date">
+          <div className='date'>
           <IonText >
               <IonIcon icon={calendarNumberOutline} />
               {item.dateStart}<span> - </span>{item.dateStop}
             </IonText>
           </div>
-          <div className="time">
+          <div className='time'>
           <IonText >
               <IonIcon icon={alarmOutline} />
               {item.start} <span> -  </span>  {item.stop}
             </IonText>
           </div>
-          <div className="payment">
+          <div className='payment'>
             <IonText >
               <IonIcon icon={cashOutline} />
               {item.payment}₪ (cash)
             </IonText>
           </div>
-          <div className="IsAccept">
-            <IonCheckbox slot="end" />
+          <div className='IsAccept'>
+            <IonCheckbox slot='end' />
           </div>
-          <div className="buttons">
+          <div className='buttons'>
             <IonButton
-              className="deleteButton"
-              color="danger"
-              fill="clear"
+              className='deleteButton'
+              color='danger'
+              fill='clear'
               isRound
             >
               <IonIcon icon={trashOutline} />
             </IonButton>
-            <IonButton className="editButton" color='warning' fill="clear" isRound>
+            <IonButton className='editButton' color='warning' fill='clear' isRound>
               <IonIcon icon={createOutline} />
             </IonButton>
-            <IonButton className="SeeRequests"  fill="clear" isRound>
+            <IonButton className='SeeRequests'  fill='clear' isRound>
               See Requests
             </IonButton>
 
@@ -90,8 +90,8 @@ const AwaitingConfirmation = () => {
       <h2>Awaiting Confirmation</h2>
       {/* {availableJob.map((data) => (
         <React.Fragment key={data.id}>
-          <JobItem title="Dog-Sitter" items={data['Dog-Sitter']} />
-          <JobItem title="Dog-walker" items={data['Dog-walker']} />
+          <JobItem title='Dog-Sitter' items={data['Dog-Sitter']} />
+          <JobItem title='Dog-walker' items={data['Dog-walker']} />
         </React.Fragment>
       ))} */}
     </StyledAwaitingConfirmation>

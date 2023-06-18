@@ -25,11 +25,11 @@ if (!user){
 
   return (
     <StyledAvatar>
-    <IonChip color="light" onClick={handleAvatarClick}>
+    <IonChip color='light' onClick={handleAvatarClick}>
       <IonAvatar>
-        <img src={overrideAvatar || user.avatar} alt="Silhouette of a person's head" />
+        <img src={overrideAvatar || user.avatar} alt='Silhouette of a persons head' />
       </IonAvatar>
-      <IonLabel color="dark" >{user.username}</IonLabel>
+      <IonLabel color='dark' >{user.username}</IonLabel>
     </IonChip>
     </StyledAvatar>
   );

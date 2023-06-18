@@ -19,7 +19,7 @@ const Photo = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonFab vertical="button" horizontal="end" slot="fixed">
+        <IonFab vertical='button' horizontal='end' slot='fixed'>
           <IonFabButton onClick={takePhoto}>
             <IonIcon icon={camera} />
           </IonFabButton>

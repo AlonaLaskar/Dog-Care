@@ -24,40 +24,40 @@ const SendRequestMassage = () => {
 
   return (
     <SteledSendRequestMassage>
-      <div className="contener">
+      <div className='contener'>
         <h1> Your request was sent!</h1>
         <IonCard>
           <IonCardTitle> Your schedule request is waiting for approval</IonCardTitle>
-          <div className="details">
-          <div className="date">
-              <IonText color="primary">
+          <div className='details'>
+          <div className='date'>
+              <IonText color='primary'>
                 <IonIcon icon={alertCircleOutline} />
                 {availability?.role} 
               </IonText>
             </div>
 
-            <div className="date">
-              <IonText color="primary">
+            <div className='date'>
+              <IonText color='primary'>
                 <IonIcon icon={calendarNumberOutline} />
                 {availability?.dateStart} - {availability?.dateStop}
               </IonText>
             </div>
 
-            <div className="date">
-              <IonText color="primary">
+            <div className='date'>
+              <IonText color='primary'>
                 <IonIcon icon={alarmOutline} />
                 {availability?.start} - {availability?.stop}
               </IonText>
             </div>
 
-            <div className="date">
-              <IonText color="primary">
+            <div className='date'>
+              <IonText color='primary'>
                 <IonIcon icon={cashOutline} />
                 {availability?.payment}₪ Nis(cash)
               </IonText>
             </div>
-            <div className="date">
-              <IonText color="primary">
+            <div className='date'>
+              <IonText color='primary'>
                 <IonIcon icon={locationOutline} />
                 {availability?.location} 
               </IonText>
@@ -66,7 +66,7 @@ const SendRequestMassage = () => {
 
 
             </div>
-            <div className="button">
+            <div className='button'>
 
       <IonButton fill='clear' >
       <Link to={`/my/home?id=${availability?.availabilityId}`}>
@@ -76,7 +76,7 @@ const SendRequestMassage = () => {
 
           </div>
         </IonCard>
-        <div className="massege">
+        <div className='massege'>
           <span>
             Your request has been successfully sent.
             <br />

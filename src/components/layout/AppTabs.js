@@ -2,7 +2,7 @@
 import { Route, Redirect } from 'react-router-dom';
 //! Ionic-pacakges
 import { IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonIcon, IonLabel } from '@ionic/react';
-import { person, duplicate, newspaper, today, chatbox } from 'ionicons/icons';
+import { person, duplicate, newspaper, today } from 'ionicons/icons';
 //!system-components
 
 //!pages
@@ -20,7 +20,6 @@ import SendRequestMassage from '../../components/Schedule/DogSitterService/SendR
 import PeopleULike from '../../components/Schedule/PeopleULike';
 import AwaitingConfirmation from '../../components/Schedule/AwaitingConfirmation';
 import JobSearch from '../../components/Schedule/JobSearch';
-import EditAvilabilty from '../../components/Availability/EditAvilabilty';
 
 //!context
 import AuthContext from 'providers/AuthContext';
@@ -31,7 +30,7 @@ export const AppTabs = () => {
   const { loggedIn,userId } = useContext(AuthContext);
   if (!loggedIn) {
     console.log('not logged in');
-    return <Redirect to="/login" />;
+    return <Redirect to='/login' />;
   }
 
   return (
@@ -40,47 +39,42 @@ export const AppTabs = () => {
       <IonRouterOutlet>
         {/* Profile */}
 
-        <Route exact path="/my/home" component={Home} />
-        <Route exact path="/my/profile/:id" component={Profile} />
-        <Route exact path="/my/editProfile/:id" component={EditProfile} />
-        <Route exact path="/my/post" component={Post} />
-        <Route exact path="/my/Schedule" component={Schedule} />
-        <Route exact path="/my/comments/:id" component={Comments} />
-        <Route exact path="/my/chat" component={Chat} />
-        <Route exact path="/my/serviceMode" component={ServiceMode} />
-        <Route exact path="/my/DogSitterService:selectedService" component={DogSitterService} />
-        <Route exact path="/my/SendRequestMassage/:id" component={SendRequestMassage} />
-        <Route exact path="/my/peopleulike" component={PeopleULike} />
-        <Route exact path="/my/awaitingconfirmation" component={AwaitingConfirmation} />
-        <Route exact path="/my/jobsearch" component={JobSearch} />
-        <Route exact path="/my/editAvilabilty/:id" component={EditAvilabilty} />
+        <Route exact path='/my/home' component={Home} />
+        <Route exact path='/my/profile/:id' component={Profile} />
+        <Route exact path='/my/editProfile/:id' component={EditProfile} />
+        <Route exact path='/my/post' component={Post} />
+        <Route exact path='/my/Schedule' component={Schedule} />
+        <Route exact path='/my/comments/:id' component={Comments} />
+        <Route exact path='/my/chat' component={Chat} />
+        <Route exact path='/my/serviceMode' component={ServiceMode} />
+        <Route exact path='/my/DogSitterService:selectedService' component={DogSitterService} />
+        <Route exact path='/my/SendRequestMassage/:id' component={SendRequestMassage} />
+        <Route exact path='/my/peopleulike' component={PeopleULike} />
+        <Route exact path='/my/awaitingconfirmation' component={AwaitingConfirmation} />
+        <Route exact path='/my/jobsearch' component={JobSearch} />
 
         {/* Errors handling */}
         <Route component={NotFound} status={404} />
       </IonRouterOutlet>
 
-      <IonTabBar slot="bottom">
-        {/* <IonTabButton tab="Chat" href="/my/chat">
-          <IonIcon icon={chatbox} />
-          <IonLabel>Chat</IonLabel>
-        </IonTabButton> */}
+      <IonTabBar slot='bottom'>
 
-        <IonTabButton tab="profile" href={`/my/profile/${userId}`}>
+        <IonTabButton tab='profile' href={`/my/profile/${userId}`}>
           <IonIcon icon={person} />
           <IonLabel>Profile</IonLabel>
         </IonTabButton>
 
-        <IonTabButton tab="home" href="/my/home">
+        <IonTabButton tab='home' href='/my/home'>
           <IonIcon icon={duplicate} />
           <IonLabel>Service</IonLabel>
         </IonTabButton>
 
-        <IonTabButton tab="Schedule" href="/my/Schedule">
+        <IonTabButton tab='Schedule' href='/my/Schedule'>
           <IonIcon icon={today} />
           <IonLabel>Schedule</IonLabel>
         </IonTabButton>
 
-        <IonTabButton tab="post" href="/my/post">
+        <IonTabButton tab='post' href='/my/post'>
           <IonIcon icon={newspaper} />
           <IonLabel> Feed</IonLabel>
         </IonTabButton>

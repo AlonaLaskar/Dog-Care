@@ -38,21 +38,21 @@ export default function Actions({ post }) {
   return (
     <StyledActionPost>
         {!loading && userId === uid && (
-          <IonButton color="danger"  fill="clear" onClick={deletePost} isLoading={deleteLoading}  isRound>
-            <IonIcon slot="end" icon={ trashOutline }    />
+          <IonButton color='danger'  fill='clear' onClick={deletePost} isLoading={deleteLoading}  isRound>
+            <IonIcon slot='end' icon={ trashOutline }    />
              Delete
           </IonButton>
         )}
 
       
-        <IonButton color="secondary"   fill="clear" onClick={toggleLike} isLoading={likeLoading || loading} isRound >
-          <IonIcon  slot="end" icon={isLiked ? heartDislike : heartOutline}  />
+        <IonButton color='secondary'   fill='clear' onClick={toggleLike} isLoading={likeLoading || loading} isRound >
+          <IonIcon  slot='end' icon={isLiked ? heartDislike : heartOutline}  />
           Like {likes?.length}
         </IonButton>
 
    
-        <IonButton color="primary" fill="clear" onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
-          <IonIcon slot="end" icon={ chatboxOutline }  />
+        <IonButton color='primary' fill='clear' onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
+          <IonIcon slot='end' icon={ chatboxOutline }  />
           Reply {comments?.length}
         </IonButton>
 

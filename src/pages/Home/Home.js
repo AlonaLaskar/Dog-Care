@@ -1,149 +1,130 @@
-import React, { useState } from 'react';
-import {
-  IonContent,
-  IonHeader,
-  IonSegment,
-  IonIcon,
-  IonSegmentButton,
-  IonLabel,
-  IonModal,
-  IonButton
-} from '@ionic/react';
-import { db } from '../../firebase';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { collection } from 'firebase/firestore';
-import ProfileCard from 'components/ProfileCard/ProfileCard';
-import StyledHome from './StyledHome';
-import ActionButton from 'components/ProfileCard/ActionButton/ActionButton';
-import AuthContext from 'providers/AuthContext';
-import { useContext } from 'react';
-import Filtering from './Filtering';
-import { query, where } from 'firebase/firestore';
-import haversineDistance from 'haversine-distance'; // Or any other library for calculating distance between two coordinates
-import { useEffect } from 'react';
-import { Geolocation } from '@capacitor/geolocation';
-import { useUser } from '../../hook/users';
-import { Client } from '@googlemaps/google-maps-services-js';
-import emptyStateImage from '../../assets/emptyStateImage1.jpg';
+//!React+Ionic
+import React, { useState, useContext, useEffect } from 'react';
+import { IonContent, IonModal, IonButton, IonIcon, IonLabel } from '@ionic/react';
 import { optionsOutline } from 'ionicons/icons';
+//!GoogleMaps+calculateDistance
+import { Geolocation } from '@capacitor/geolocation';
+import { Client } from '@googlemaps/google-maps-services-js';
+import haversineDistance from 'haversine-distance';
+//!Self_components
+import ProfileCard from 'components/ProfileCard/ProfileCard';
+import AuthContext from 'providers/AuthContext';
+import Filtering from './Filtering';
+import { useAvilabiltys } from '../../hook/availabilityHook';
+//!Styled_components
+import StyledHome from './StyledHome';
+import emptyStateImage from '../../assets/emptyStateImage1.jpg';
 
-const useAvailabilities = (selectedRole) => {
-  const availabilitiesRef = collection(db, 'availability');
-  const q = query(availabilitiesRef, where('role', '==', selectedRole));
-  const [availabilities, isLoading] = useCollectionData(q, { idField: 'availabilityId' });
-  return { availabilities, isLoading };
-};
 const Home = () => {
-  const { userId } = useContext(AuthContext) || {};
-  const { user } = useUser(userId) || {};
-
-  const client = new Client({}); // Import the Client from @googlemaps/google-maps-services-js
-
+  //!CalculateDistance
   const geocodeAddress = async (address) => {
+    const client = new Client();
     const response = await client.geocode({
       params: {
-        address: address,
+        address,
         key: process.env.REACT_APP_GOOGLE_API_KEY
-      }
+      },
+      timeout: 1000 // Optional timeout value
     });
 
-    const results = response.data.results;
-    if (results && results.length > 0) {
-      return {
-        lat: results[0].geometry.location.lat,
-        lng: results[0].geometry.location.lng
-      };
+    if (response.status === 200 && response.data.results.length > 0) {
+      const result = response.data.results[0];
+      const { lat, lng } = result.geometry.location;
+      return { latitude: lat, longitude: lng };
     } else {
-      throw new Error('No results found');
+      throw new Error('Failed to geocode address');
     }
   };
 
+  const { userId } = useContext(AuthContext) || {};
+
+  const [availabilityss, setAvailabilityss] = useState([]);
   const [filterDistance, setFilterDistance] = useState(0); // Distance in kilometers
 
-  const [animateUnmatchButton, setAnimateUnmatchButton] = useState(false);
-  const [animateMatchButton, setAnimateMatchButton] = useState(false);
+  useEffect(() => {
+    const fetchAvailabilityss = async () => {
+      const availabilityss = await useAvilabiltys();
 
-  // Create state variables for the filters
+      // Get current position
+      const { coords } = await Geolocation.getCurrentPosition();
+      const userLocation = {
+        latitude: coords.latitude,
+        longitude: coords.longitude
+      };
+
+      const availabilityssWithDistance = await Promise.all(
+        availabilityss.map(async (availability) => {
+          const address = availability.location;
+          try {
+            const availabilityLocation = await geocodeAddress(address);
+            const distanceInMeters = haversineDistance(userLocation, availabilityLocation);
+            const distanceInKilometers = (distanceInMeters / 1000).toFixed(0); // Convert meters to kilometers and round to 2 decimal places
+
+            return { ...availability, distanceInKilometers };
+          } catch (error) {
+            console.error(`Failed to geocode address "${address}": ${error}`);
+            // Handle the error as needed
+            return availability; // Return the availability without distance calculation
+          }
+        })
+      );
+      setAvailabilityss(availabilityssWithDistance); // Update the state with distances
+    };
+    fetchAvailabilityss();
+  }, []);
+
+  //!Filtering
   const [filterHourlyRate, setFilterHourlyRate] = useState(0);
+  const [filterRole, setFilterRole] = useState('');
+  const [filterDdateStart, setFilterDateStart] = useState('');
+  const [filterTimeStart, setFilterTimeStart] = useState('');
+  const [filterDateStop, setFilterDateStop] = useState('');
+  const [filterTimeStop, setFilterTimeStop] = useState('');
+  //!TempFiltering for send the modal after click on done
+  const [tempFilterDistance, setTempFilterDistance] = useState(filterDistance);
+  const [tempFilterHourlyRate, setTempFilterHourlyRate] = useState(filterHourlyRate);
+  const [tempFilterRole, setTempFilterRole] = useState(filterRole);
+  const [tempFilterDateStart, setTempFilterDateStart] = useState(filterDdateStart);
+  const [tempFilterTimeStart, setTempFilterTimeStart] = useState(filterTimeStart);
+  const [tempfilterDateStop, setTempFilterDateStop] = useState(filterDateStop);
+  const [tempFilterTimeStop, setTempFilterTimeStop] = useState(filterTimeStop);
 
   // Create state variable for the modal
   const [showModal, setShowModal] = useState(false);
 
-  const [selectedRole, setSelectedRole] = useState('Dog-Sitter');
-
-  const ProfileEvents = {
-    onMatch: () => {
-      setAnimateMatchButton(true);
-      setAnimateUnmatchButton(false);
-    },
-    onUnmatch: () => {
-      setAnimateUnmatchButton(true);
-      setAnimateMatchButton(false);
-    },
-    onReset: () => {
-      setAnimateUnmatchButton(false);
-      setAnimateMatchButton(false);
-    }
-  };
-
-  const { availabilities, isLoading } = useAvailabilities(selectedRole) || {};
-
-  async function calculateDistance(userAddress, availableAddress) {
-    console.log('userAddress', userAddress);
-    console.log('availableAddress', availableAddress);
-    try {
-      const userCoordinates = await geocodeAddress(userAddress);
-      const availableCoordinates = await geocodeAddress(availableAddress);
-      console.log('userCoordinates2', userCoordinates);
-      console.log('availableCoordinates2', availableCoordinates);
-
-      return (
-        haversineDistance(
-          { lat: userCoordinates.lat, lng: userCoordinates.lng },
-          { lat: availableCoordinates.lat, lon: availableCoordinates.lng }
-        ) / 1000
-      ); // Convert distance to kilometers
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  if (isLoading || !Array.isArray(availabilities)) {
-    return <div>Loading...</div>;
-  }
-
   // Apply all filters
-  const filteredAvailabilities = availabilities.filter(
+  const filteredAvailabilities = availabilityss.filter(
     (availability) =>
-      availability.role === selectedRole &&
       availability.userId !== userId &&
       (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
-      (!filterDistance || calculateDistance(user.location, availability.location) <= filterDistance) // Add distance filter
+      (!filterDistance || availability.distanceInKilometers >= filterDistance) &&
+      (!filterRole || availability.role === filterRole) &&
+      (!filterDdateStart || availability.dateStart >= filterDdateStart) &&
+      (!filterDateStop || availability.dateStop >= filterDateStop) &&
+      (!filterTimeStart || availability.start >= filterTimeStart) &&
+      (!filterTimeStop || availability.stop >= filterTimeStop)
   );
-  console.log('filteredAvailabilities', filteredAvailabilities);
+
+  console.log(
+    'filterDdateStart111 ' + filterDdateStart,
+    'filterDdateStop111 ' + filterDateStop,
+    'filterTimeStart11 ' + filterTimeStart,
+    'filterTimeStop111 ' + filterTimeStop
+  );
 
   return (
     <StyledHome>
-      <IonHeader>
-        <IonSegment color="secondary" onIonChange={(e) => setSelectedRole(e.detail.value)}>
-          <IonSegmentButton value="Dog-Sitter">
-            <IonLabel>Dog-Sitter</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="Dog Walker">
-            <IonLabel>Dog Walker</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
-      </IonHeader>
       <IonContent>
         <div className="card-stack-container">
+          <IonButton onClick={() => setShowModal(true)} className="filter-button" fill="clear">
+            <IonIcon icon={optionsOutline} color="light" size="large" />
+          </IonButton>
           {filteredAvailabilities.length > 0 ? (
             filteredAvailabilities.map((availability) => (
               <ProfileCard
                 availability={availability}
-                onMatch={ProfileEvents.onMatch}
-                onUnmatch={ProfileEvents.onUnmatch}
-                onReset={ProfileEvents.onReset}
                 key={availability.availabilityId}
+                distance={availability.distanceInKilometers} // Pass distanceInKilometers as a prop
               />
             ))
           ) : (
@@ -154,48 +135,46 @@ const Home = () => {
           )}
         </div>
 
-        {filteredAvailabilities.length > 0 && (
-          <ActionButton animateMatchButton={animateMatchButton} animateUnmatchButton={animateUnmatchButton} />
-        )}
-        {/* Add a button that opens the modal with the filtering options */}
-        <IonButton onClick={() => setShowModal(true)} className="filter-button" fill="clear">
-          <IonIcon icon={optionsOutline} color="light" size="large" />
-        </IonButton>
-        {/* Modal with the filtering options */}
-        <IonModal
-          isOpen={showModal}
-          onDidDismiss={() => setShowModal(false)}
-          style={{
-            width: '335px',
-            height: '318px',
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)'
-          }}
-          className="filter"
-        >
+        <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)} className="filter">
           <Filtering
-            filterDistance={filterDistance}
-            setFilterDistance={setFilterDistance}
-            filterHourlyRate={filterHourlyRate}
-            setFilterHourlyRate={setFilterHourlyRate}
+            filterDistance={tempFilterDistance}
+            setFilterDistance={setTempFilterDistance}
+            filterHourlyRate={tempFilterHourlyRate}
+            setFilterHourlyRate={setTempFilterHourlyRate}
+            filterRole={tempFilterRole}
+            setFilterRole={setTempFilterRole}
+            filterDdateStart={tempFilterDateStart}
+            setFilterDateStart={setTempFilterDateStart}
+            filterDateStop={tempfilterDateStop}
+            setFilterDateStop={setTempFilterDateStop}
+            setFilterTimeStart={setTempFilterTimeStart}
+            setFilterTimeStop={setTempFilterTimeStop}
           />
-          <IonButton className="close" onClick={() => setShowModal(false)} fill="clear" 
-          style={{
-            position: 'absolute',
-            top: '89%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            with: '119px',
-            height: '37px',
-            maxWidth: '335px',
-            maxHeight: '45px',
-            background: '#8ECAE6',
-            borderRadius: '6px',
-          }}>
-            Done
-          </IonButton>
+          <div style={{ textAlign: 'center', marginTop: '16px' }}>
+            <IonButton
+              className="close"
+              onClick={() => {
+                setFilterDistance(tempFilterDistance);
+                setFilterHourlyRate(tempFilterHourlyRate);
+                setFilterRole(tempFilterRole);
+                setFilterDateStart(tempFilterDateStart);
+                setFilterTimeStart(tempFilterTimeStart);
+                setFilterDateStop(tempfilterDateStop);
+                setFilterTimeStop(tempFilterTimeStop);
+                setShowModal(false);
+              }}
+              fill="clear"
+              style={{
+                height: '37px',
+                width: '200px',
+                background: 'rgb(142, 202, 230)',
+                borderRadius: '6px',
+                color: '#024C71'
+              }}
+            >
+              Done
+            </IonButton>
+          </div>
         </IonModal>
       </IonContent>
     </StyledHome>

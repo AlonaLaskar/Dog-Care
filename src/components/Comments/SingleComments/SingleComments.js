@@ -52,8 +52,8 @@ function SingleComment({ comment }) {
         </IonLabel>
       </IonCardContent>
         {isCurrentUser && (
-          <IonButton className='trash' onClick={deleteComment} disabled={deleteLoading} variant="ghost" color="danger" fill="clear">
-            <IonIcon slot="start" icon={trashOutline} disabled={deleteLoading} onClick={deleteComment} />
+          <IonButton className='trash' onClick={deleteComment} disabled={deleteLoading} variant='ghost' color='danger' fill='clear'>
+            <IonIcon slot='start' icon={trashOutline} disabled={deleteLoading} onClick={deleteComment} />
           </IonButton>
         )}
       </IonCard>

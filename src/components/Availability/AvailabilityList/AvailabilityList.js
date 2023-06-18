@@ -28,7 +28,7 @@ export default function AvailabilityList({ availabilitys }) {
     }
   />
 ) : (
-  <IonText className="no-posts">
+  <IonText className='no-posts'>
     Boring here! Write an availability...
   </IonText>
 )}

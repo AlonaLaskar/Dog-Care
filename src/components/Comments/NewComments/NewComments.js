@@ -44,8 +44,8 @@ export default function NewComments({ post }) {
     <StyledNewcomments>
       <form onSubmit={handleSubmit(handleAddComment)}>
         <IonTextarea
-          placeholder="Add a comment..."
-          autoComplete="on"
+          placeholder='Add a comment...'
+          autoComplete='on'
           {...register('text', { require: true })}
           clearOnEdit={false}
           value={textValue} // bind the textarea value to the state variable
@@ -53,12 +53,12 @@ export default function NewComments({ post }) {
         />
 
         <IonButton
-          className="add"
+          className='add'
           isLoading={commentLoading || loading}
-          type="submit"
-          fill="clear"
+          type='submit'
+          fill='clear'
         >
-          <IonIcon slot="start" icon={sendOutline} />
+          <IonIcon slot='start' icon={sendOutline} />
         </IonButton>
       </form>
     </StyledNewcomments>

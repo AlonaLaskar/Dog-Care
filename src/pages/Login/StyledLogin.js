@@ -10,6 +10,25 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
   font-style: normal;
   height: 100%;
 
+  ion-content {
+    --background: transparent;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+  }
+
+  .password-wrapper {
+    position:relative;
+  }
+
+  .password-wrapper ion-icon {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 9;
+  }
+
   .contener {
     display: flex;
     flex-direction: column;
@@ -17,26 +36,21 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     align-items: center;
     height: 100%;
     position: relative;
-    height: 932px;
-    width: 430px;
+    // height: 932px;
+    max-width: 430px;
+    width:100%;
     left: 0px;
     top: 0px;
     border-radius: 0px;
+    margin: auto;
   }
 
-  .boneLogo {
-    position: absolute;
-    width: 331px;
-    height: 145px;
-    left: 50px;
-    top: 286px;
-  }
+
   .dogLogo {
-    position: absolute;
     width: 162px;
     height: 176.01px;
-    left: 134px;
-    top: 189px;
+    margin-bottom: -82px;
+ 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 
@@ -44,7 +58,7 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    margin-top:24px;
 
     .errorUser {
       color: ${({ theme }) => theme.colors.forms?.errorColor};
@@ -53,8 +67,8 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     .form-buttons {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 10px;
+      justify-content:center;
+   
     }
 
     .primary-button {
@@ -69,64 +83,50 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     }
     .email {
       box-sizing: border-box;
-      position: absolute;
-      width: 319px;
+      position: relative;
+      width: 100%;
       height: 48px;
-      left: 55px;
-      top: 466px;
+      --padding-start:10px;
+      // left: 55px;
+      // top: 466px;
       background: #ffffff;
       border: 4px solid #024c71;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
+      margin-bottom: 24px;
     }
   }
 
-  .social {
-    .social-title {
-      color: ${({ theme }) => theme.colors.forms?.labelColor};
-      font-weight: 400;
-    }
-    .social-button {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      margin-right: 0%;
-
-      &#google {
-        background-color: #4285f4;
-        color: white;
-        width: 240px;
-      }
-
-      &#facebook {
-        background-color: #3b5998;
-        color: white;
-        width: 240px;
-      }
-    }
-  }
+ 
+  
 
   .password {
     box-sizing: border-box;
-    position: absolute;
-    width: 319px;
+    // position: absolute;
+    width: 100%;
     height: 48px;
-    left: 55px;
-    top: 538px;
+    margin-bottom: 24px;
+    --padding-start:10px;
+    // left: 55px;
+    // top: 538px;
 
     background: #ffffff;
     border: 4px solid #024c71;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
   }
+  .native-input {
+    height:48px;
+  }
+  ion-input {
+    --highlight-color-focused:none;
+  }
   .forgetPassword {
-    position: absolute;
-    width: 136px;
+    // position: absolute;
+    width: 100%;
     height: 17px;
-    left: 121px;
-    top: 644px;
+    // left: 121px;
+    // top: 644px;
 
     font-family: 'Arial';
     font-style: normal;
@@ -136,15 +136,17 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     display: flex;
     align-items: center;
     text-decoration-line: underline;
-
+    justify-content:center;
+    margin-bottom:24px;
     color: #3e3e3e;
   }
   .register {
-    position: absolute;
-    width: 252px;
+    // position: absolute;
+    width: 100%;
     height: 18px;
-    left: 50px;
-    top: 610px;
+    margin-bottom:1rem;
+    // left: 50px;
+    // top: 610px;
 
     font-family: 'Arial';
     font-style: normal;
@@ -153,6 +155,7 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     line-height: 18px;
     display: flex;
     align-items: center;
+    justify-content:center;
     text-decoration-line: underline;
     // On click
     // Navigate to: "Registration";
@@ -162,14 +165,15 @@ const StyledLogin = styled(IonPage).attrs({ className: 'ion-padding .ion-justify
     color: #3e3e3e;
   }
   .form-buttons {
-    position: absolute;
+    // position: absolute;
     width: 120px;
     height: 48px;
-    left: 153px;
-    top: 685px;
+    // left: 153px;
+    // top: 685px;
     background: #fb8500;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    margin:auto;
   }
   ion-icon {
     font-size: 30px;

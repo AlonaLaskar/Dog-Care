@@ -54,23 +54,23 @@ function PeopleULike({ swipesData }) {
 return (
    
       <StyledPeopleULike>
-      <div className="title">
+      <div className='title'>
         <span>People you like </span>
       </div>
 
         {userDetails.map((user,index) => (
       <IonList key={index}>
             <IonTitle>{user.fullName}</IonTitle>
-            <IonAvatar slot="start">
+            <IonAvatar slot='start'>
               <IonImg src={user.avatar} />
             </IonAvatar>{' '}
-            <div className="city">
+            <div className='city'>
               <IonText>
                 <IonIcon icon={locationOutline} />
                 {user.location}
               </IonText>
             </div>
-            <div className="date">
+            <div className='date'>
               <IonText>
                 <IonIcon icon={calendarNumberOutline} />
                 {userAvailabilities[index].dateStart}
@@ -78,19 +78,19 @@ return (
                 {userAvailabilities[index].dateStop}   
                 </IonText>
             </div>
-            <div className="time">
+            <div className='time'>
               <IonText>
                 <IonIcon icon={alarmOutline} />
                 {userAvailabilities[index].start}   <span> - </span> {userAvailabilities[index].stop}
               </IonText>
             </div>
-            <div className="payment">
+            <div className='payment'>
               <IonText>
                 <IonIcon icon={cashOutline} />
                 {userAvailabilities[index].payment}₪ (cash)
               </IonText>
             </div>
-            <div className="role">
+            <div className='role'>
               <IonText>
               {userAvailabilities[index].role}
               </IonText>
