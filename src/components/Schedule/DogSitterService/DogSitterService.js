@@ -201,11 +201,6 @@ const DogSitterService = ({ selectedService }) => {
                     <GooglePlacesAutocomplete
                       className="Location"
                       apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
-                      autocompletionRequest={{
-                        componentRestrictions: {
-                          country: ['il'] // restrict to Israel
-                        }
-                      }}
                       selectProps={{
                         value: location,
                         onChange: setLocation,
