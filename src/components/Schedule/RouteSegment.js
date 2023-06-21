@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonHeader, IonLabel, IonSegment, IonSegmentButton, IonToolbar, IonContent } from '@ionic/react';
 import PeopleULike from './PeopleULike';
 import JobSearch from './JobSearch';
 import { useavAilabilitys } from '../../hook/availabilityHook';
@@ -37,7 +37,9 @@ const RouteSegment = () => {
 
   return (
     <>
-      <IonSegment onIonChange={handleSegmentChange} value={selectedSegment}>
+    <IonHeader className="customheader-schedule">
+    <IonToolbar>
+      <IonSegment className='schedule-segment' mode='ios' onIonChange={handleSegmentChange} value={selectedSegment}>
         <IonSegmentButton value="PeopleULike" >
             <IonLabel>You like</IonLabel>
         </IonSegmentButton>
@@ -48,9 +50,13 @@ const RouteSegment = () => {
         <IonLabel>Job application</IonLabel>
         </IonSegmentButton>
       </IonSegment>
+      </IonToolbar>
+      </IonHeader>
+      <IonContent>
       {selectedSegment === 'PeopleULike' && <PeopleULike swipesData={swipesData} />}
       {selectedSegment === 'AvailabilityList' && <AvailabilityList availabilitys={availabilitys} />}
       {selectedSegment === 'JobSearch' && <JobSearch />}
+      </IonContent>
     </>
   );
 };

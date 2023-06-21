@@ -8,7 +8,8 @@ import {
   alertCircleOutline,
   locationOutline,
   checkmarkCircleOutline,
-  trashOutline
+  trashOutline,
+  createOutline,
 } from 'ionicons/icons';
 // import PropTypes from 'prop-types';
 import PropTypes from 'prop-types';
@@ -79,16 +80,16 @@ export default function NewAvailability({ availability }) {
   return (
     <StyledNewAvailability>
       <>
-        <IonCard>
+        <div className='availability-card'>
           {/* <h3>{title}</h3> */}
-          <div className='role'>
-            <IonText color='primary'>
+          <div className="role">
+            <IonText color="primary">
               <IonIcon icon={alertCircleOutline} />
               {availability.role}
             </IonText>
           </div>
 
-          <div className='date'>
+          <div className="date">
             <IonText>
               <IonIcon icon={calendarNumberOutline} />
               {availability.dateStart}
@@ -96,31 +97,31 @@ export default function NewAvailability({ availability }) {
               {availability.dateStop}
             </IonText>
           </div>
-          <div className='time'>
+          <div className="time">
             <IonText>
               <IonIcon icon={alarmOutline} />
               {availability.start} <span> - </span> {availability.stop}
             </IonText>
           </div>
-          <div className='location'>
-            <IonText color='primary'>
+          <div className="location">
+            <IonText color="primary">
               <IonIcon icon={locationOutline} />
               {availability.location}
             </IonText>
           </div>
 
-          <div className='payment'>
+          <div className="payment">
             <IonText>
               <IonIcon icon={cashOutline} />
               {availability.payment}₪ (cash)
             </IonText>
           </div>
     
-          <div className='buttons'>
+          <div className="buttons">
             <IonButton
-              className='deleteButton'
-              color='danger'
-              fill='clear'
+              className="deleteButton"
+              color="danger"
+              fill="clear"
               onClick={deleteAvailability}
               isLoading={deleteLoading}
               isRound
@@ -128,9 +129,9 @@ export default function NewAvailability({ availability }) {
               <IonIcon icon={trashOutline} />
             </IonButton>
             <IonButton
-              className='editButton'
-              color='Success'
-              fill='clear'
+              className="editButton"
+              color="Success"
+              fill="clear"
               isRound
               onClick={handleAcceptAvailability}
             >
@@ -156,8 +157,8 @@ export default function NewAvailability({ availability }) {
               ]}
             />
             <IonButton 
-        className='SeeRequests' 
-        fill='clear' 
+        className="SeeRequests" 
+        fill="clear" 
         isRound 
         onClick={() => setShowModal(true)} // Modify this button's onClick to set showModal to true when clicked
       >
@@ -165,7 +166,7 @@ export default function NewAvailability({ availability }) {
       </IonButton>
       <AvailabilityModal user={user} handleApproval={handleApproval} showModal={showModal} setShowModal={setShowModal} />
           </div>
-        </IonCard>
+        </div>
       </>
     </StyledNewAvailability>
   );

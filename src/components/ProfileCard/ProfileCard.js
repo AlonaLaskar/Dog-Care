@@ -63,7 +63,7 @@ const ProfileCard = (props) => {
             saveRightSwipe(props.availability.availabilityId, props.availability.userId, userId);
             setSwipeDirection(null);
           } else if (detail.deltaX < -windowWidth / 2) {
-            card.style.transform = `translateX(-${windowWidth * 1.5}}px)`;
+            card.style.transform = `translateX(-${windowWidth * 1.5}px)`;
             setSwipeDirection(null);
           } else {
             card.style.transform = '';
@@ -113,7 +113,6 @@ const ProfileCard = (props) => {
   if (!availability) {
     return <div>No availability data found.</div>;
   }
-  
   const dob = new Date(userData?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
@@ -122,7 +121,7 @@ const ProfileCard = (props) => {
   return (
     <StylesProfileCard>
       <div key={props.availability.id}>
-        {availability.role === 'Dog-Walker' ? <h3>Walk With Me</h3> : <h3>Sleep with me</h3>}
+        {availability.role === 'Dog-Sitter' ? <h3> I’m a dog sitter</h3> : <h3> I’m a dog walker </h3>}
         <IonCard ref={ref}>
           <IonCardContent>
             <div className="image-container">

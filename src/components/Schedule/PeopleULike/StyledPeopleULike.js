@@ -1,107 +1,64 @@
 import styled from 'styled-components';
 
 const StyledPeopleULike = styled.div`
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  height: calc(100vh - 210px);
 
-    .title {
-        position: absolute;
-        left: -40%;
-        right: 0%;
-        top: 110%;
-        font-size: 24px;
-        line-height: 28px;
-        text-align: center;
+  .userinfo-header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    .role {
+      font-size: 16px;
+      opacity:0.6;
     }
-    ion-list {
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+    font-family: 'Nunito';
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  .name {
+    font-size:20px;
+  }
+  ion-list {
     position: relative;
-    width: 272px;
-    height: 213px;
+    width: 100%;
     background: #ffffff;
     box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px auto;
+    padding:16px;
   }
-  .city ion-text {
-    position: absolute;
-    top: 40%;
-    left: 7%;
+  ion-text {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 17px;
     display: flex;
     align-items: center;
     color: #000000;
-    
+    gap:10px;
   }
-  .date ion-text {
-    position: absolute;
-    top: 50%;
-    left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    
+  ion-icon {
+    color:#fb8500;
   }
   span {
     margin-left: 5px;
     margin-right: 5px;
   }
-  .time ion-text {
-    position: absolute;
-    top: 60%;
-    left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  }
-  .payment ion-text {
-    position: absolute;
-    top: 70%;
-    left: 7%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  }
-  .role ion-text {
-    position: absolute;
-    top: 16%;
-    left: 40%;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  }
-  ion-title{
-    position: absolute;
-    left: 20%;
-    right: 0%;
-    top: 6%;
+  ion-title {
+
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
@@ -111,46 +68,9 @@ const StyledPeopleULike = styled.div`
     align-items: center;
     text-align: center;
   }
-    ion-avatar{
-        position: absolute;
-        left: 7%;
-        top: 10%;
-    }
+  ion-avatar {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    `;
+  }
+`;
 
 export default StyledPeopleULike;

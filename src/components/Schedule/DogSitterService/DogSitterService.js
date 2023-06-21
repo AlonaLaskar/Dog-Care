@@ -1,11 +1,12 @@
 //!Ionic
-import { IonCard, IonText, IonButton } from '@ionic/react';
+import { IonCard, IonText, IonButton, IonGrid, IonIcon, IonRow, IonCol, IonLabel, IonTextarea } from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import GooglePlacesAutocomplete, { geocodeByPlaceId } from 'react-google-places-autocomplete';
+import { locationOutline } from 'ionicons/icons';
 
 //!Firebase
 import { setDoc, doc } from 'firebase/firestore';
@@ -33,7 +34,6 @@ const schema = yup.object().shape({
 });
 
 const DogSitterService = ({ selectedService }) => {
-  console.log('selectedService', selectedService);
 
   const { userId } = useContext(AuthContext) || {};
 
@@ -131,32 +131,62 @@ const DogSitterService = ({ selectedService }) => {
         </IonText>
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(submitForm)}>
-            <Input id='dateStart' type='date' label='From' />
-            <Input id='dateStop' type='date' label='To' />
-            <Input id='start' type='time' label='From' />
-            <Input id='stop' type='time' label='To' />
-            <Input id='payment' type='number' label='Payment' />
-            <Input id='aboutMe' type='text' label='About me' title='Add details about the service ' />
+            <IonGrid>
+              <IonRow>
+                <IonCol size="6">
+                  <Input id="dateStart" type="date" label="From" />
+                </IonCol>
+                <IonCol size="6">
+                  <Input id="dateStop" type="date" label="To" />
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="6">
+                  <Input id="start" type="time" label="From" />
+                </IonCol>
+                <IonCol size="6">
+                  <Input id="stop" type="time" label="To" />
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="6">
+                  <Input id="payment" type="number" label="Payment" />
+                </IonCol>
+                <IonCol size="6">
+                    <IonLabel>Location</IonLabel>
+                  <div className="location">
+                    <GooglePlacesAutocomplete
+                      className="Location"
+                      apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+                      autocompletionRequest={{
+                        componentRestrictions: {
+                          country: ['il'] // restrict to Israel
+                        }
+                      }}
+                      selectProps={{
+                        value: location,
+                        onChange: setLocation
+                      }}
+                    />
+                    <IonIcon icon={locationOutline} />
+                  </div>
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="12">
+                  <IonTextarea
+                      counter={true}
+                      maxlength={100}
+                      rows={3}
+                      id="aboutMe"
+                      placeholder="Add details about the service "
+                    ></IonTextarea>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
 
-            <div className='Location'>
-              <span>Location</span>
-              <GooglePlacesAutocomplete
-                className='Location'
-                apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
-                autocompletionRequest={{
-                  componentRestrictions: {
-                    country: ['il'] // restrict to Israel
-                  }
-                }}
-                selectProps={{
-                  value: location,
-                  onChange: setLocation
-                }}
-              />
-            </div>
-
-            <div className='button'>
-              <IonButton type='submit' fill='clear'>
+            <div className="button">
+              <IonButton type="submit" fill="clear">
                 {' '}
                 Send Request
               </IonButton>
