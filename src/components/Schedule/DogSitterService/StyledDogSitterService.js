@@ -42,6 +42,7 @@ margin:auto;
   }
   .location {
     position:relative;
+    z-index:99;
   }
   .location ion-icon {
     position: absolute;
@@ -63,9 +64,6 @@ margin:auto;
   }
   ion-button {
     width: 172px;
-    // left: calc(50% - 172px / 2 - 0.5px);
-    // top: 87.76%;
-    // bottom: 15.13%;
     background: #fb8500;
     border-radius: 6px;
     color: #ffffff;
@@ -122,7 +120,8 @@ margin:auto;
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
-    line-height: 106.4%;
+    line-height: 1;
+    margin:0;
   }
 
 `;

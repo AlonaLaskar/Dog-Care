@@ -192,10 +192,7 @@ const DogSitterService = ({ selectedService }) => {
                 </IonCol>
               </IonRow>
               <IonRow>
-                <IonCol size="6">
-                  <Input id="payment" type="number" label="Payment" />
-                </IonCol>
-                <IonCol size="6">
+              <IonCol size="12">
                     <IonLabel>Location</IonLabel>
                   <div className="location">
                     <GooglePlacesAutocomplete
@@ -216,6 +213,11 @@ const DogSitterService = ({ selectedService }) => {
               </IonRow>
               <IonRow>
                 <IonCol size="12">
+                  <Input id="payment" type="number" label="Payment" />
+                </IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="12">
                   <IonTextarea
                       counter={true}
                       maxlength={100}
@@ -224,6 +226,7 @@ const DogSitterService = ({ selectedService }) => {
                       placeholder="Add details about the service "
                     ></IonTextarea>
                 </IonCol>
+                
               </IonRow>
             </IonGrid>
 

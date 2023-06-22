@@ -4,7 +4,7 @@ const StyledPeopleULike = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
+  overflow-y: scroll;
   max-width: 600px;
   margin: auto;
   padding: 0 10px;
@@ -68,9 +68,7 @@ const StyledPeopleULike = styled.div`
     align-items: center;
     text-align: center;
   }
-  ion-avatar {
 
-  }
 `;
 
 export default StyledPeopleULike;
