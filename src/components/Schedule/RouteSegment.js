@@ -7,7 +7,7 @@ import AvailabilityList from '../Availability/AvailabilityList';
 import { getAllSwipesData } from '../../hook/swips';
 
 const RouteSegment = () => {
-  const [selectedSegment, setSelectedSegment] = useState('');
+  const [selectedSegment, setSelectedSegment] = useState('JobSearch');
   const [swipesData, setSwipesData] = useState([]);
   const { availabilitys, isLoading } = useavAilabilitys();
 
@@ -23,10 +23,6 @@ const RouteSegment = () => {
       console.error('Error fetching swipes data:', error);
     }
   }
-
-
-
-
 
   const handleSegmentChange = (event) => {
     setSelectedSegment(event.detail.value);
