@@ -1,120 +1,146 @@
-import styled from 'styled-components';
-import { IonPage } from '@ionic/react';
+//!React+Ionic
+import { useContext, useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import {
+  IonCard,
+  IonCardTitle,
+  IonCardHeader,
+  IonButton,
+  IonIcon,
+  IonImg,
+  IonCardContent,
+  IonActionSheet,
+  IonTextarea,
+  IonLabel
+} from '@ionic/react';
+import { cameraOutline, createOutline } from 'ionicons/icons';
+//!Firebase
+import { db } from '../../firebase';
+import { doc, updateDoc } from 'firebase/firestore';
+//!context
+import Input from 'components/UI/Input';
+import AuthContext from 'providers/AuthContext';
+import FormContext from 'providers/FormContext';
+import * as yup from 'yup';
+//!Hook
+import { useUser } from 'hook/users';
+import useToast from 'hook/useToast';
+import { yupResolver } from '@hookform/resolvers/yup';
+import usePhotoGallery from 'hook/usePhotoGallery';
+//!Style
+import StyledEditProfile from './StyledEditProfile';
 
-const StyledEditProfile = styled(IonPage).attrs({ className: 'ion-padding' })`
-  ion-card.card {
-    max-width: 580px;
-    width: 100%;
-    border-radius: 10px;
-    margin: auto;
-    overflow-y: auto;
+const schema = yup.object().shape({
+  fullName: yup.string(),
+  aboutMe: yup.string(),
+  location: yup.string(),
+  avatar: yup.string()
+});
 
-    ion-card-title {
-      font-family: 'Arial Rounded MT Bold';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 28px;
-      line-height: 32px;
-      display: flex;
-      align-items: center;
-      color: #024c71;
+const EditProfile = () => {
+  const presentToast = useToast();
+
+  const { userId } = useContext(AuthContext);
+  const { user } = useUser(userId) || {};
+  const [userProfile, setUserProfile] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { takePhoto, chooseFromGallery, uploadPhoto } = usePhotoGallery();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  useEffect(() => {
+    if (user) {
+      setUserProfile(user);
     }
+  }, [user]);
 
-    .user-pic {
-      width: 130px;
-      margin: auto;
-      position: relative;
-    }
+  const handleRegister = async (data) => {
+    //update user profile
+    const userRef = doc(db, 'users', userId);
+    const updatedFields = {};
+    await uploadPhoto(userId, 'users', ['users', userId], 'avatar');
 
-    .editAvatar {
-      width: 40px;
-      height: 40px;
-      background: rgb(251, 133, 0);
-      border-radius: 50px;
-      --padding-end: 0;
-      --padding-start: 0;
-      position: absolute;
-      right: -5px;
-      --border-radius: 100%;
-      --box-shadow: 0px 2px 3px #00000061;
-      ion-icon {
-        font-size: 24px;
+    for (const [key, value] of Object.entries(data)) {
+      if (value && value !== userProfile[key]) {
+        updatedFields[key] = value;
       }
     }
+    //update only if there are changes
+    if (Object.keys(updatedFields).length > 0) {
+      const updatedUserData = {
+        ...userProfile,
+        ...updatedFields
+      };
 
-    ion-input {
-      height: 45px;
-      min-height: 45px;
-      margin-top:0;
-      margin-bottom:10px;
+      await updateDoc(userRef, updatedUserData);
+      presentToast('Your profile was edited successfully', true);
+      console.log('Profile updated successfully.');
+    } else {
+      console.log('No changes to update.');
     }
-    ion-textarea {
-      box-sizing: border-box;
-      background: #ffffff;
-      border: 2px solid #024c71;
-      border-radius: 10px;
-      --padding-start: 10px;
-      --highlight-color-focused: none !important;
-    }
-    .textarea-bottom {
-      padding-right: 10px;
-      padding-bottom: 4px;
-    }
-    ion-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 100%;
-      object-fit: cover;
-      overflow: hidden;
-      margin: auto;
-    }
+  };
 
-    ion-label {
-      font-family: 'Nunito';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 20px;
-      color: #024c71;
-    }
+  return (
+    <StyledEditProfile>
+      <IonCard className="card">
+        <FormContext.Provider value={{ errors, register }}>
+          <form onSubmit={handleSubmit(handleRegister)}>
+            <IonCardHeader>
+              <IonCardTitle>Edit Profile</IonCardTitle>
+            </IonCardHeader>
+            <IonCardContent>
+              <div className="user-pic">
+                <IonButton fill="clear" className="editAvatar" onClick={() => setIsOpen(true)}>
+                  <IonIcon icon={cameraOutline} color="light" />
+                </IonButton>
+                <IonImg src={user?.avatar} />
+              </div>
+              <IonActionSheet
+                isOpen={isOpen}
+                header="Actions"
+                buttons={[
+                  {
+                    text: 'Take a photo',
+                    role: 'destructive',
+                    handler: () => takePhoto()
+                  },
+                  {
+                    text: 'Choose from gallery',
+                    handler: () => chooseFromGallery()
+                  }
+                  // rest of the buttons...
+                ]}
+                onDidDismiss={() => setIsOpen(false)}
+              ></IonActionSheet>
+              <Input id="fullName" type="string" title={userProfile?.fullName} label="Full Name" />
+              <Input id="location" type="string" title={userProfile?.location} label="Location" />
+              <IonLabel>Information about you</IonLabel>
+              <IonTextarea
+                counter={true}
+                maxlength={100}
+                rows={3}
+                id="aboutMe"
+                placeholder="Information about you"
+                value={userProfile?.aboutMe}
+              ></IonTextarea>
+              {/* <Input id="aboutMe" type="string" title={userProfile?.aboutMe} label="Information about you" /> */}
+            <IonButton type="submit" expand="block" fill="clear" style={{ background: '#FB8500' }}>
+              <IonIcon slot="start" color="light" icon={createOutline} />
+              <span>Save changes</span>
+            </IonButton>
+            </IonCardContent>
+          </form>
+        </FormContext.Provider>
+      </IonCard>
+    </StyledEditProfile>
+  );
+};
 
-    ion-card-contect ion-input.fullName {
-      width: 331px;
-      left: 26px;
-      top: 221px;
-      border-radius: 10px;
-    }
-    ion-card-contect ion-label.fullName {
-    }
-    // .sc-ion-input-md-h {
-    //   margin-top: 10px;
-    //   display: block;
-    //   width: 100%;
-    //   padding: 0 !important;
-    //   color: var(--ion-color-step-850, #000000);
-    //   font-family: var(--ion-font-family, inherit);
-    //   z-index: 2;
-    // }
-
-    span {
-      color: #fff;
-    }
-
-    ion-button {
-      border-radius: 10px;
-      max-width: 200px;
-      margin: 12px auto;
-    }
-  }
-  ion-action-sheet.my-custom-class {
-    --background: #f58840;
-    --backdrop-opacity: 0.6;
-    --button-background-selected: #e97223;
-    --button-color: #000000;
-    --color: #fff;
-    /* role: "destructive" button iOS styling override */
-    --ion-color-danger: #000000;
-  }
-`;
-
-export default StyledEditProfile;
+export default EditProfile;
