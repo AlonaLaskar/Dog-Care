@@ -17,7 +17,7 @@ import {
 import { db,storage } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
-import { getStorage, ref as storageRef, deleteObject as deleteStorageObject } from 'firebase/storage';
+import {  ref as storageRef, deleteObject as deleteStorageObject } from 'firebase/storage';
 
 
 

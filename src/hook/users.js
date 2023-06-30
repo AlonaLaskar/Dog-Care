@@ -1,9 +1,7 @@
-import { db, storage } from '../firebase';
-import { collection, doc, query, updateDoc } from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { db} from '../firebase';
+import {  doc, query, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
-import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
-import useToast from './useToast';
+import {  useDocumentData } from 'react-firebase-hooks/firestore';
 import { arrayRemove, arrayUnion } from 'firebase/firestore';
 import { getDoc} from 'firebase/firestore';
 
@@ -37,7 +35,7 @@ export async function getUser(id) {
     return docSnap.data();
   } else {
     // doc.data() will be undefined in this case
-    console.log("No  such users document!");
+    console.log('No  such users document!');
     return null;
   }
 }

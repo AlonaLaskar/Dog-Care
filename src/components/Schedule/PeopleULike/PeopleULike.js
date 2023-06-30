@@ -1,4 +1,4 @@
-import { IonList, IonAvatar, IonIcon, IonText, IonTitle, IonImg } from '@ionic/react';
+import { IonList, IonAvatar, IonIcon, IonText, IonImg } from '@ionic/react';
 import { calendarNumberOutline, alarmOutline, cashOutline, locationOutline } from 'ionicons/icons';
 import StyledPeopleULike from './StyledPeopleULike';
 

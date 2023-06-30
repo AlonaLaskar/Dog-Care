@@ -15,7 +15,6 @@ import { trashOutline } from 'ionicons/icons';
 import { useDeleteComment } from 'hook/comments';
 //! Components
 import AuthContext from 'providers/AuthContext';
-import HeaderPost from '../../Feed/Post/HeaderPost';
 //! Styled Components
 import StyledSingleComments from './StyledSingleComments';
 import { useUser } from 'hook/users';

@@ -1,6 +1,5 @@
-import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonImg, IonLabel, IonText } from '@ionic/react';
+import { IonAvatar, IonCard, IonCardContent, IonImg, IonLabel } from '@ionic/react';
 import Action from './ActionsPost';
-import HeaderPost from './HeaderPost';
 import StyledPost from './StyledPost';
 import PropTypes from 'prop-types';
 import { useUser } from 'hook/users';
@@ -10,7 +9,7 @@ export default function Post({ post }) {
   const { uid, date,photo } = post;
 
 
-  const { user, isLoading } = useUser(uid) || {};
+  const { user} = useUser(uid) || {};
 
   return (
     <StyledPost>

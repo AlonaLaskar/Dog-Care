@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import PropTypes from 'prop-types';
 //!Ionic-pacakges
 import { IonIcon, IonButton } from '@ionic/react';
-import { trashOutline, heartOutline, chatboxOutline, heartDislike } from 'ionicons/icons';
+import { trashOutline, chatboxOutline } from 'ionicons/icons';
 import LikeIcon from 'assets/like.svg';
 //!Hooks
 import { useToggleLike, useDeletePost } from 'hook/posts';

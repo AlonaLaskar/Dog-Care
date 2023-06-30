@@ -9,7 +9,6 @@ import { db } from '../../../firebase';
 import {
   IonCard,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
   IonImg,
   IonLabel,

@@ -1,5 +1,5 @@
 //!React
-import { useState,useContext } from 'react';
+import { useState } from 'react';
 //!Firebase
 import { doc, updateDoc } from 'firebase/firestore';
 import { storage,db } from '../firebase';
@@ -10,11 +10,9 @@ import { isPlatform } from '@ionic/core';
 //!Hook
 import useToast from '../hook/useToast';
 //!Context
-import AuthContext from '../providers/AuthContext';
 
 
 export const usePhotoGallery = () => {
-  const { userId } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const presentToast = useToast();
 

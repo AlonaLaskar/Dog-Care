@@ -7,8 +7,7 @@ export async function saveRightSwipe(availabilityId, userId, swipedUserId) {
   if (!userId || userId === undefined) {
     return null;
   }
-
-  const userChack = await checkUserRightSwipe(availabilityId, swipedUserId);
+ await checkUserRightSwipe(availabilityId, swipedUserId);
 
   const swipeRef = doc(db, 'swipes', `${availabilityId}`);
   const swipeSnapshot = await getDoc(swipeRef);

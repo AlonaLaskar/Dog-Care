@@ -22,7 +22,7 @@ const NewPost = () => {
   const { user } = useUser(userId) || {};
   const [textValue, setTextValue] = useState(''); // add this state
 
-  const [postId, setPostId] = useState(null);  // add this state
+  const [ setPostId] = useState(null);  // add this state
 
   const { takePhoto, chooseFromGallery, uploadPhoto } = usePhotoGallery();
 

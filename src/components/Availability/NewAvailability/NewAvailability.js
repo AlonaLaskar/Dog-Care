@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledNewAvailability from './StyledNewAvailability';
-import { IonCard, IonAlert, IonIcon, IonText, IonButton } from '@ionic/react';
+import {  IonAlert, IonIcon, IonText, IonButton } from '@ionic/react';
 import {
   calendarNumberOutline,
   alarmOutline,
@@ -9,12 +9,10 @@ import {
   locationOutline,
   checkmarkCircleOutline,
   trashOutline,
-  createOutline,
 } from 'ionicons/icons';
 // import PropTypes from 'prop-types';
 import PropTypes from 'prop-types';
 import { useDeleteAvailability } from 'hook/availabilityHook';
-import { useHistory } from 'react-router-dom';
 import {  useEffect, useState } from 'react';
 
 import { db } from '../../../firebase';

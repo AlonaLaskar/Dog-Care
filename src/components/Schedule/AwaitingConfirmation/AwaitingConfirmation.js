@@ -4,8 +4,6 @@ import { collection, getDocs, where, query } from 'firebase/firestore';
 import { IonCheckbox, IonIcon, IonList, IonText,IonButton } from '@ionic/react';
 import { calendarNumberOutline, alarmOutline, cashOutline } from 'ionicons/icons';
 import AuthContext from 'providers/AuthContext';
-import StyledAwaitingConfirmation from './StyledAwaitingConfirmation';
-import { useUser } from 'hook/users';
 import PropTypes from 'prop-types';
 import { trashOutline, createOutline } from 'ionicons/icons';
 
@@ -67,7 +65,7 @@ const JobItem = ({ title, items }) => (
 
 const AwaitingConfirmation = () => {
   const { userId } = useContext(AuthContext);
-  const [availableJob, setAvailableJob] = useState([]);
+  const [ setAvailableJob] = useState([]);
 
   useEffect(() => {
     const getAvailableJobList = async () => {
@@ -84,18 +82,6 @@ const AwaitingConfirmation = () => {
     };
     getAvailableJobList();
   }, [userId]);
-
-  return (
-    <StyledAwaitingConfirmation>
-      <h2>Awaiting Confirmation</h2>
-      {/* {availableJob.map((data) => (
-        <React.Fragment key={data.id}>
-          <JobItem title='Dog-Sitter' items={data['Dog-Sitter']} />
-          <JobItem title='Dog-walker' items={data['Dog-walker']} />
-        </React.Fragment>
-      ))} */}
-    </StyledAwaitingConfirmation>
-  );
 };
 
 export default AwaitingConfirmation;

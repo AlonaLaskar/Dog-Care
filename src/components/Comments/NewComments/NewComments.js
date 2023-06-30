@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 //! Ionic components
-import { IonButton, IonIcon, IonInput, IonTextarea } from '@ionic/react';
+import { IonButton, IonIcon, IonInput } from '@ionic/react';
 import { send } from 'ionicons/icons';
 
 //! Context
