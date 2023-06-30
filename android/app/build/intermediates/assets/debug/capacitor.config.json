@@ -1,0 +1,20 @@
+{
+	"appId": "com.dogCare.www",
+	"appName": "Dog-Care",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "http://192.168.1.2:3000",
+		"cleartext": true
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchAutoHide": true,
+			"backgroundColor": "#ffffff",
+			"androidScaleType": "CENTER_CROP",
+			"androidSplashResourceName": "splash",
+			"androidSplashDrawableId": "splash"
+		}
+	}
+}

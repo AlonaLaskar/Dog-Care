@@ -9,6 +9,8 @@ const config: CapacitorConfig = {
   webDir: 'build',
   bundledWebRuntime: false,
 
+
+
   plugins: {
     SplashScreen: {
       // Configuration options for the SplashScreen plugin.
