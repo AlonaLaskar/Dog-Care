@@ -1,9 +1,20 @@
-//!React+Ionic 
+//!React+Ionic
 import { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import {IonCard, IonCardTitle, IonCardHeader, IonButton, IonIcon, IonImg, IonCardContent, IonActionSheet} from '@ionic/react';
+import {
+  IonCard,
+  IonCardTitle,
+  IonCardHeader,
+  IonButton,
+  IonIcon,
+  IonImg,
+  IonCardContent,
+  IonActionSheet,
+  IonTextarea,
+  IonLabel
+} from '@ionic/react';
 import { cameraOutline, createOutline } from 'ionicons/icons';
-//!Firebase 
+//!Firebase
 import { db } from '../../firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 //!context
@@ -15,7 +26,7 @@ import * as yup from 'yup';
 import { useUser } from 'hook/users';
 import useToast from 'hook/useToast';
 import { yupResolver } from '@hookform/resolvers/yup';
-import usePhotoGallery  from 'hook/usePhotoGallery';
+import usePhotoGallery from 'hook/usePhotoGallery';
 //!Style
 import StyledEditProfile from './StyledEditProfile';
 
@@ -34,7 +45,7 @@ const EditProfile = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { takePhoto, chooseFromGallery } = usePhotoGallery();
+  const { takePhoto, chooseFromGallery, uploadPhoto } = usePhotoGallery();
 
   const {
     register,
@@ -44,7 +55,6 @@ const EditProfile = () => {
     resolver: yupResolver(schema)
   });
 
-
   useEffect(() => {
     if (user) {
       setUserProfile(user);
@@ -52,17 +62,17 @@ const EditProfile = () => {
   }, [user]);
 
   const handleRegister = async (data) => {
-
-//update user profile
+    //update user profile
     const userRef = doc(db, 'users', userId);
     const updatedFields = {};
+    await uploadPhoto(userId, 'users', ['users', userId], 'avatar');
 
     for (const [key, value] of Object.entries(data)) {
       if (value && value !== userProfile[key]) {
         updatedFields[key] = value;
       }
     }
-//update only if there are changes
+    //update only if there are changes
     if (Object.keys(updatedFields).length > 0) {
       const updatedUserData = {
         ...userProfile,
@@ -76,61 +86,56 @@ const EditProfile = () => {
       console.log('No changes to update.');
     }
   };
-  
 
   return (
     <StyledEditProfile>
       <IonCard className="card">
         <FormContext.Provider value={{ errors, register }}>
           <form onSubmit={handleSubmit(handleRegister)}>
-            <IonCardTitle>Edit Profile</IonCardTitle>
             <IonCardHeader>
-              <IonButton
-                fill="clear"
-                className="editAvatar"
-                onClick={() => setIsOpen(true)}
-                style={{
-                  width: '60px',
-                  height: '60px',
-                  bottom: '40px',
-                  right: '40px',
-                  background: '#FB8500',
-                  borderRadius: '50px',
-                  position: 'absolute',
-                  top: '5%',
-                  left: '79%'
-                }}
-              >
-                <IonIcon icon={cameraOutline} color="light" size="large"  />
-              </IonButton>
-              <IonActionSheet
-                  isOpen={isOpen}
-                  header="Actions"
-                  buttons={[
-                    {
-                      text: 'Take a photo',
-                      role: 'destructive',
-                      handler: () => takePhoto(),
-                    },
-                    {
-                      text: 'Choose from gallery',
-                      handler: () => chooseFromGallery()
-                    },
-                    // rest of the buttons...
-                  ]}
-                  onDidDismiss={() => setIsOpen(false)}
-                ></IonActionSheet>
-              <IonImg src={user?.avatar} />
+              <IonCardTitle>Edit Profile</IonCardTitle>
             </IonCardHeader>
             <IonCardContent>
+              <div className="user-pic">
+                <IonButton fill="clear" className="editAvatar" onClick={() => setIsOpen(true)}>
+                  <IonIcon icon={cameraOutline} color="light" />
+                </IonButton>
+                <IonImg src={user?.avatar} />
+              </div>
+              <IonActionSheet
+                isOpen={isOpen}
+                header="Actions"
+                buttons={[
+                  {
+                    text: 'Take a photo',
+                    role: 'destructive',
+                    handler: () => takePhoto()
+                  },
+                  {
+                    text: 'Choose from gallery',
+                    handler: () => chooseFromGallery()
+                  }
+                  // rest of the buttons...
+                ]}
+                onDidDismiss={() => setIsOpen(false)}
+              ></IonActionSheet>
               <Input id="fullName" type="string" title={userProfile?.fullName} label="Full Name" />
               <Input id="location" type="string" title={userProfile?.location} label="Location" />
-              <Input id="aboutMe" type="string" title={userProfile?.aboutMe} label="Information about you" />
-            </IonCardContent>
+              <IonLabel>Information about you</IonLabel>
+              <IonTextarea
+                counter={true}
+                maxlength={100}
+                rows={3}
+                id="aboutMe"
+                placeholder="Information about you"
+                value={userProfile?.aboutMe}
+              ></IonTextarea>
+              {/* <Input id="aboutMe" type="string" title={userProfile?.aboutMe} label="Information about you" /> */}
             <IonButton type="submit" expand="block" fill="clear" style={{ background: '#FB8500' }}>
               <IonIcon slot="start" color="light" icon={createOutline} />
               <span>Save changes</span>
             </IonButton>
+            </IonCardContent>
           </form>
         </FormContext.Provider>
       </IonCard>

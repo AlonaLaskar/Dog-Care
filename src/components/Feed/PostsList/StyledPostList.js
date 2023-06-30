@@ -2,16 +2,22 @@ import styled from 'styled-components';
 
 const StyledPostList = styled.div`
 
-  position: absolute;
-  left: 1.5%;;
-  top: 30%;
-  right: 0;
-  bottom: 0;
+
 
   /* overflow: auto; */
-  
 
-  
+  max-width:600px;
+  margin:auto;
+
+  div[data-test-id="virtuoso-item-list"] {
+    > div {
+      &:nth-of-type(1){
+        ion-card {
+          margin-top:10px;
+        }
+      }
+    }
+  }
   
   .title {
     font-size: 18px;

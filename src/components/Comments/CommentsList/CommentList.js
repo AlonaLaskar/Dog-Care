@@ -21,7 +21,7 @@ export default function CommentList({ post }) {
     <>
       <StylesCommentsList>
         {comments.length === 0 ? (
-          <IonItem lines='none' className='no-comments'>
+          <IonItem lines="none" className="no-comments">
             <p>No comments yet.</p>
           </IonItem>
         ) : (

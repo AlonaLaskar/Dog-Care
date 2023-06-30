@@ -12,7 +12,6 @@ import Schedule from 'pages/Schedule';
 import Comments from 'pages/Comments';
 import Post from 'pages/Feed';
 import NotFound from 'pages/NotFound';
-import Chat from 'pages/Chat';
 import EditProfile from 'pages/EditProfile';
 import ServiceMode from '../../components/Schedule/ServiceMode';
 import DogSitterService from 'components/Schedule/DogSitterService';
@@ -45,7 +44,6 @@ export const AppTabs = () => {
         <Route exact path='/my/post' component={Post} />
         <Route exact path='/my/Schedule' component={Schedule} />
         <Route exact path='/my/comments/:id' component={Comments} />
-        <Route exact path='/my/chat' component={Chat} />
         <Route exact path='/my/serviceMode' component={ServiceMode} />
         <Route exact path='/my/DogSitterService:selectedService' component={DogSitterService} />
         <Route exact path='/my/SendRequestMassage/:id' component={SendRequestMassage} />

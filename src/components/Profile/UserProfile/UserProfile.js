@@ -6,14 +6,24 @@ import { useHistory } from 'react-router-dom';
 import StyledUserProfile from './StyledUserProfile';
 import { query, collection, getDocs, deleteDoc, where } from 'firebase/firestore';
 import { db } from '../../../firebase';
-import {IonCard,IonCardHeader,IonCardSubtitle,IonCardTitle,IonImg,IonLabel,IonText,IonButton,IonIcon,IonAlert} from '@ionic/react';
+import {
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonImg,
+  IonLabel,
+  IonText,
+  IonButton,
+  IonIcon,
+  IonAlert,
+  IonCardContent
+} from '@ionic/react';
 
 const UserProfile = () => {
   const history = useHistory();
   const { userId } = useContext(AuthContext);
   const { user } = useUser(userId) || {};
   console.log('userId', userId);
-
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -24,7 +34,7 @@ const UserProfile = () => {
     history.push(`/my/editProfile/${userId}`);
   };
 
-  const handleRemoveUser  = async () => {
+  const handleRemoveUser = async () => {
     setShowAlert(false);
 
     var userAuth = user.currentUser;
@@ -39,7 +49,7 @@ const UserProfile = () => {
           deleteDoc(doc.ref);
         });
       };
-      
+
       // Now you can use this function to delete the documents in each collection
       await deleteUserCollections('users', 'id');
       await deleteUserCollections('posts', 'uid');
@@ -63,7 +73,7 @@ const UserProfile = () => {
       <IonAlert
         isOpen={showAlert}
         onDidDismiss={() => setShowAlert(false)}
-        cssClass='my-custom-class'
+        cssClass="my-custom-class"
         header={'Confirm'}
         message={'Are you sure you want to delete your account? This action cannot be undone.'}
         buttons={[
@@ -84,28 +94,38 @@ const UserProfile = () => {
       <IonCard className="card">
         <IonCardHeader>
           <IonCardTitle>My Profile</IonCardTitle>
-          <IonCardSubtitle>
-            <IonButton onClick={handleEditButtonClick} fill="clear">
-              <IonIcon icon={createOutline} color="light" />
-            </IonButton>
-          </IonCardSubtitle>
-          <IonImg src={user?.avatar} />
-
-          <IonLabel className="name">
-            {user?.fullName}, {ageInYears}
-          </IonLabel>
+          <IonButton onClick={handleEditButtonClick} fill="clear">
+            <IonIcon icon={createOutline} color="light" />
+          </IonButton>
         </IonCardHeader>
+        <IonCardContent>
+        <IonImg src={user?.avatar} />
+
+        <IonLabel className="name">
+          {user?.fullName}, {ageInYears}
+        </IonLabel>
         <IonLabel className="location">
           <IonIcon icon={locationOutline} />
           {user?.location}, Israel
         </IonLabel>
         <IonText>
           <IonLabel className="bio">About Me:</IonLabel>
-          {user?.aboutMe}
+          <div>{user?.aboutMe}</div>
         </IonText>
+        <IonText>
+          <IonLabel className="bio">Phone number:</IonLabel>
+          <div>212-4567892</div>
+        </IonText>
+        <IonText>
+          <IonLabel className="bio">Email:</IonLabel>
+          <div>Email@email.com</div>
+        </IonText>
+        <div className="ion-text-right">
         <IonButton className="removeUser" color="danger" onClick={handleDeleteButtonClick}>
           delete account
         </IonButton>
+        </div>
+        </IonCardContent>
       </IonCard>
     </StyledUserProfile>
   );

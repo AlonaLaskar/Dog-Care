@@ -12,6 +12,7 @@ import { auth, db } from 'firebase.js';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { format} from 'date-fns';
 
 //! Custom hooks
 import useToast from 'hook/useToast';
@@ -126,7 +127,7 @@ export default function Register() {
 
 
   //! Handle register with credentials and profile data
-  const handleRegister = async ({ email, password,...rest }) => {
+  const handleRegister = async ({ email, password, birthDate, ...rest }) => {
 
     setIsLoading(true);
 // Get location details from google places
@@ -167,6 +168,7 @@ if (isGeolocationLocation) {
           email,
           username: email.split('@')[0],
           aboutMe: ' ',
+          birthDate: format(new Date(birthDate), 'dd/MM/yyyy'),
           location:selectedLocation, // Save the selected location or an empty string if not selected
           avatar:
             'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
@@ -296,11 +298,7 @@ if (isGeolocationLocation) {
                       <GooglePlacesAutocomplete
                         className="location"
                         apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
-                        autocompletionRequest={{
-                          componentRestrictions: {
-                            country: ['il'] // restrict to Israel
-                          }
-                        }}
+            
                         selectProps={{
                           value: location,
                           onChange: setLocation,

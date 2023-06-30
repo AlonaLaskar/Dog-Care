@@ -38,7 +38,9 @@ ion-input {
   display:none;
 }
 
-
+ion-content{
+  --background:transparent;
+}
 
 body {
   background-image: url(${Background});
@@ -115,6 +117,127 @@ body {
         }
       }
     }
+    .content-pt-60 {
+      --padding-top:60px;
+    }
+
+    
+
+    .schedule-segment {
+      --background: #024c71;
+      height: 35px;
+      color:#fff;
+      border-radius:30px;
+      max-width: 580px;
+      margin: auto;
+      @media (max-width:370px) {
+        height: 35px;
+        font-size:12px;
+      }
+      ion-segment-button {
+        --indicator-color: #fb8500;
+        --border-radius: 30px;
+        --border-color: #fff;
+      }
+    }
+    .customheader-schedule {
+      margin-top:55px;
+      box-shadow: none;
+      ion-toolbar {
+        --background: transparent;
+      }
+    }
+
+    .availability-wrapper {
+      height: calc(100vh - 210px);
+      max-width:600px;
+      margin:auto;
+      // padding:0 10px;
+    }
+    .service-request-modal {
+      ion-item {
+        width: calc(100% - 20px);
+        background: #ffffff;
+        box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin: 30px auto;
+        padding: 20px 0 5px 5px;
+        position:relative;
+        overflow:visible;
+        ion-avatar {
+          width:50px;
+          height:50px;
+        }
+        ion-text {
+          ion-icon {
+            margin-right:12px;
+            color: #fb8500;
+          }
+        }
+        .buttons {
+          left: 0;
+          width: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          .whatsappButton {
+            position: absolute;
+            top: -45px;
+            background: #fff;
+            border-radius: 100%;
+            width: 45px;
+            height: 45px;
+            --padding-start: 0;
+            --padding-end: 0;
+            box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+            left: -65px;
+            ion-icon {
+              font-size:24px;
+              color: #fb8500;
+            }
+          }
+          .callButton {
+            position: absolute;
+            top: -45px;
+            background: #fff;
+            border-radius: 100%;
+            width: 45px;
+            height: 45px;
+            --padding-start: 0;
+            --padding-end: 0;
+            box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+            right: 20px;
+            color: #fb8500;
+            ion-icon {
+              font-size:24px;
+              color: #fb8500;
+            }
+          }
+        }
+      }
+    }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius:10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #024c71;
+    border-radius:10px;
+    
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #024c71; 
+  }
   `;
 
 export default GlobalStyle;

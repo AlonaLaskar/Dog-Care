@@ -1,10 +1,11 @@
 {
-  "name": "Dog-sitter",
+  "name": "Dog-Care",
   "integrations": {
     "capacitor": {
-      "server": {
-        "url": "http://localhost:",
-        "cleartext": true
+      "plugins": {
+        "SplashScreen": {
+          "launchShowDuration": 0
+        }
       }
     }
   },

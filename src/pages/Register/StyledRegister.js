@@ -116,6 +116,7 @@ const StyledRegister = styled(IonPage).attrs({ className: 'ion-padding' })`
   }
   .location {
     position:relative;
+    z-index:99;
   }
   .location ion-icon {
     position: absolute;

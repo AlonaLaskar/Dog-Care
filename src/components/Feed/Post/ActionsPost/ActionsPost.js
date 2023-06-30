@@ -4,15 +4,15 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import PropTypes from 'prop-types';
 //!Ionic-pacakges
-import { IonIcon, IonButton} from '@ionic/react';
-import { trashOutline, heartOutline, chatboxOutline, heartDislike } from 'ionicons/icons';
+import { IonIcon, IonButton } from '@ionic/react';
+import { trashOutline, chatboxOutline } from 'ionicons/icons';
+import LikeIcon from 'assets/like.svg';
 //!Hooks
 import { useToggleLike, useDeletePost } from 'hook/posts';
 import { useComments } from 'hook/comments';
 //!Components
 import CommentList from 'components/Comments/CommentsList/CommentList';
 import AuthContext from 'providers/AuthContext';
-
 
 import StyledActionPost from './StyledActionPost';
 
@@ -37,24 +37,46 @@ export default function Actions({ post }) {
   };
   return (
     <StyledActionPost>
-        {!loading && userId === uid && (
-          <IonButton color='danger'  fill='clear' onClick={deletePost} isLoading={deleteLoading}  isRound>
-            <IonIcon slot='end' icon={ trashOutline }    />
-             Delete
+      <div className="action-post">
+        <div>
+          {!loading && userId === uid && (
+            <IonButton color="danger" fill="clear" onClick={deletePost} isLoading={deleteLoading} isRound>
+              <IonIcon slot="start" icon={trashOutline} />
+              Delete
+            </IonButton>
+          )}
+
+          <IonButton
+            fill="clear"
+            onClick={toggleLike}
+            isLoading={likeLoading || loading}
+            isRound
+            className={isLiked ? 'active' : ''}
+          >
+            <IonIcon slot="start" icon={isLiked ? LikeIcon : LikeIcon} />
+            Like
           </IonButton>
-        )}
 
-      
-        <IonButton color='secondary'   fill='clear' onClick={toggleLike} isLoading={likeLoading || loading} isRound >
-          <IonIcon  slot='end' icon={isLiked ? heartDislike : heartOutline}  />
-          Like {likes?.length}
-        </IonButton>
-
-   
-        <IonButton color='primary' fill='clear' onClick={handleCommentClick} isLoading={commentsLoading} isRound  >
-          <IonIcon slot='end' icon={ chatboxOutline }  />
-          Reply {comments?.length}
-        </IonButton>
+          <IonButton
+            fill="clear"
+            onClick={handleCommentClick}
+            isLoading={commentsLoading}
+            isRound
+            className={showComments ? 'active' : ''}
+          >
+            <IonIcon slot="start" icon={chatboxOutline} />
+            Reply
+          </IonButton>
+        </div>
+        <div className="action-counter">
+          <span>
+            <IonIcon slot="start" icon={isLiked ? LikeIcon : LikeIcon} /> {likes?.length}
+          </span>
+          <span>
+            <IonIcon icon={chatboxOutline} /> {comments?.length}
+          </span>
+        </div>
+      </div>
 
       {showComments && <CommentList post={post} />}
     </StyledActionPost>

@@ -14,9 +14,12 @@ import {
   where
 } from 'firebase/firestore';
 
-import { db } from '../firebase';
+import { db,storage } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData, useDocumentData } from 'react-firebase-hooks/firestore';
+import {  ref as storageRef, deleteObject as deleteStorageObject } from 'firebase/storage';
+
+
 
 export function useAddPost() {
   const [isLoading, setLoading] = useState(false);
@@ -28,18 +31,20 @@ export function useAddPost() {
     try {
       await setDoc(doc(db, 'posts', id), {
         ...post,
+        photo:'',
         id,
         date: Date.now(),
         likes: []
       });
       presentToast('The post was created successfully', true);
       setLoading(false);
+      return id;  // return the postId
     } catch (error) {
       presentToast('Failed to create post', false);
       console.error(error);
     }
   }
-  
+ 
   return { addPost, isLoading };
 }
 
@@ -71,6 +76,11 @@ export function useDeletePost(id) {
       const q = query(collection(db, 'comments'), where('postId', '==', id));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
+
+    // Delete images
+    const fileRef = storageRef(storage, `posts/${id}`);
+    await deleteStorageObject(fileRef);
+
       presentToast('The post was deleted successfully', true);
       setLoading(false);
     }
