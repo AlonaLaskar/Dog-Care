@@ -10,7 +10,6 @@ const config: CapacitorConfig = {
   bundledWebRuntime: false,
 
 
-
   plugins: {
     SplashScreen: {
       // Configuration options for the SplashScreen plugin.

@@ -4,7 +4,7 @@
             "outputFile": "com.dogCare.www.app-mergeReleaseResources-35:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\ce772e98be97cecaac6df8f92293b429\\transformed\\material-1.8.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\e8b9d0686b39bae36077f3b3ff645ceb\\transformed\\material-1.8.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
