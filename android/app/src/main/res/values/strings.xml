@@ -4,8 +4,8 @@
   <string name="title_activity_main">Dog-Care</string>
   <string name="package_name">com.example.app</string>
   <string name="custom_url_scheme">com.example.app</string>
-  <string name="ionic_app_id">605aaced</string>
-  <string name="ionic_channel_name">Production</string>
+  <string name="ionic_app_id">--app-id="605aaced"</string>
+  <string name="ionic_channel_name">--channel-name="Production"</string>
   <string name="ionic_update_method">background</string>
   <string name="ionic_max_versions">2</string>
   <string name="ionic_min_background_duration">30</string>

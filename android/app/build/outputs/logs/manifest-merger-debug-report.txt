@@ -25,7 +25,7 @@ MERGED from [:capacitor-keyboard] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react
 MERGED from [:capacitor-preferences] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-status-bar] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-android] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d8f1f2e596765efb80d7c6cc938aad3c\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\238254cb58bf065f16e0fe919eb99f98\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
@@ -104,6 +104,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LA
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:4:5-79
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-79
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
 	android:name
@@ -134,8 +136,8 @@ ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\A
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:10:19-63
 application
 ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-48:19
-MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-9:19
-MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-9:19
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\238254cb58bf065f16e0fe919eb99f98\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
