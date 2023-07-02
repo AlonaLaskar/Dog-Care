@@ -35,8 +35,8 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\ALONA LASKAR\Desktop\UplodeKeys-keystore" />
-    <option name="KEY_ALIAS" value="UplodeKeys-keystore" />
+    <option name="KEY_STORE_PATH" value="C:\Users\ALONA LASKAR\Desktop\apkKey" />
+    <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="HighlightingSettingsPerFile">

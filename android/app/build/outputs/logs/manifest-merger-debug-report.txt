@@ -11,10 +11,10 @@ INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\mai
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:42:13-62
 manifest
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
 MERGED from [:capacitor-app] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-camera] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:capacitor-filesystem] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -79,20 +79,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\tr
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92958871dc9111d04192125c2f5a62ca\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca0a7b2663231b509ed609f6cac5853d\transformed\framework-10.1.1\AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a4bae570ace9b390a984630221994df0\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:2:1-15:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:11-69
@@ -135,7 +135,7 @@ ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\A
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:10:19-63
 application
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-48:19
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-45:19
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
@@ -175,7 +175,7 @@ MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LA
 	android:roundIcon
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:15:9-54
 	android:icon
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:13:9-56
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
