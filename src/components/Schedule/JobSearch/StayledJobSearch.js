@@ -24,7 +24,7 @@ const StayledJobSearch = styled.div`
     background: rgb(255, 255, 255);
     border: 3px solid rgb(2, 76, 113);
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 350px;
     padding: 12px;
     margin-bottom: 10px;
   }
@@ -35,15 +35,14 @@ const StayledJobSearch = styled.div`
     background: rgb(255, 255, 255);
     border: 3px solid rgb(2, 76, 113);
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 350px;
     padding: 12px;
     margin-bottom: 10px;
   }
   .img {
     text-align:center;
     img {
-      max-width:262px;
-      margin-bottom:5px;
+      max-width:260px;
       border-radius:10px;
     }
   }
