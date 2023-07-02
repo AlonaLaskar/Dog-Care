@@ -35,10 +35,12 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\ALONA LASKAR\Desktop\Key11.jks" />
-    <option name="KEY_ALIAS" value="key0" />
+    <option name="KEY_STORE_PATH" value="C:\Users\ALONA LASKAR\Desktop\UplodeKeys-keystore" />
+    <option name="KEY_ALIAS" value="UplodeKeys-keystore" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/build.gradle" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,25 +51,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ApkExportedModule": "android.app",
-    "BundleExportedModule": "android.app",
-    "ExportApk.ApkPathForandroid.app": "C:\\Users\\ALONA LASKAR\\Desktop\\dog_sitter_react\\android\\app",
-    "ExportBundle.BundlePathForandroid.app": "C:\\Users\\ALONA LASKAR\\Desktop",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "last_opened_file_path": "C:/Users/ALONA LASKAR/Desktop/dog_sitter_react/android/dogCareKey.jks"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;android.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;android.app&quot;,
+    &quot;ExportApk.ApkPathForandroid.app&quot;: &quot;C:\\Users\\ALONA LASKAR\\Desktop\\dog_sitter_react\\android\\app&quot;,
+    &quot;ExportBundle.BundlePathForandroid.app&quot;: &quot;C:\\Users\\ALONA LASKAR\\Desktop&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALONA LASKAR/Desktop/dog_sitter_react/android/dogCareKey.jks&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="android.app.main" />
