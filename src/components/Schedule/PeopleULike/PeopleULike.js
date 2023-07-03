@@ -54,7 +54,7 @@ function PeopleULike({ swipesData }) {
   return (
     <StyledPeopleULike>
       <div className="title">
-        <span>People you like </span>
+        <span>Availability you like </span>
       </div>
 
       {userDetails.map((user, index) => (
