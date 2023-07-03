@@ -1,5 +1,6 @@
 {
   "name": "Dog-Care",
+
   "integrations": {
     "capacitor": {
       "plugins": {
