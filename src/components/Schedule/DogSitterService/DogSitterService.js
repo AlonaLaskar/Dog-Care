@@ -45,7 +45,7 @@ const DogSitterService = ({ selectedService }) => {
   const [locationFromGeolocation, setlocationFromGeolocation] = useState('');
   const [location, setLocation] = useState('');
   const [isGeolocationLocation, setIsGeolocationLocation] = useState(false); // Flag for geolocation location
-  const [ setIsLoading] = useState(false);
+  const [ isLoading ,setIsLoading] = useState(false);
 
 
     //!Get user's location from the icon location
