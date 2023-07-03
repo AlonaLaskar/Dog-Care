@@ -111,7 +111,7 @@ const ProfileCard = (props) => {
   }
 
   if (!availability) {
-    return ;
+    return <div>No availability </div>;
   }
   const dob = new Date(userData?.birthDate);
   const ageInMs = Date.now() - dob.getTime();

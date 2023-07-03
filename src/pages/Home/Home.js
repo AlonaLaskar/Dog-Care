@@ -105,12 +105,7 @@ const Home = () => {
       (!filterTimeStop || availability.stop >= filterTimeStop)
   );
 
-  console.log(
-    'filterDdateStart111 ' + filterDdateStart,
-    'filterDdateStop111 ' + filterDateStop,
-    'filterTimeStart11 ' + filterTimeStart,
-    'filterTimeStop111 ' + filterTimeStop
-  );
+  
 
   return (
     <StyledHome>

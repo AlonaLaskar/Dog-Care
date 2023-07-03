@@ -46,8 +46,8 @@
 24        </intent>
 25        <!-- Needs to be explicitly declared on Android R+ -->
 26        <package android:name="com.google.android.apps.maps" />
-26-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
-26-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
+26-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
+26-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
 27    </queries>
 28
 29    <uses-permission android:name="android.permission.VIBRATE" />
@@ -55,34 +55,34 @@
 29-->[:capacitor-haptics] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
 30
 31    <uses-feature
-31-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
+31-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
 32        android:glEsVersion="0x00020000"
-32-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
+32-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
 33        android:required="true" />
-33-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
+33-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
 34
 35    <permission
-35-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+35-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
 36        android:name="com.dogCare.www.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-36-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+36-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
 37        android:protectionLevel="signature" />
-37-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+37-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
 38
 39    <uses-permission android:name="com.dogCare.www.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-39-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
-39-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+39-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+39-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
 40
 41    <application
-41-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-45:19
+41-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-52:19
 42        android:allowBackup="true"
 42-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:12:9-35
 43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-43-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+43-->[androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
 44        android:debuggable="true"
 45        android:icon="@mipmap/ic_launcher"
 45-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:13:9-43
-46        android:label="@string/app_name"
-46-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:14:9-41
+46        android:label="@string/DogCare"
+46-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:14:9-40
 47        android:roundIcon="@mipmap/ic_launcher_round"
 47-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:15:9-54
 48        android:supportsRtl="true"
@@ -92,154 +92,161 @@
 50-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:17:9-40
 51        android:usesCleartextTraffic="true" >
 51-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:18:9-44
-52        <activity
-52-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:19:9-36:20
-53            android:name="com.dogCare.www.MainActivity"
-53-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:24:13-41
-54            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-54-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:20:13-129
-55            android:exported="true"
-55-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:21:13-36
-56            android:label="@string/title_activity_main"
-56-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:22:13-56
-57            android:launchMode="singleTask"
-57-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:23:13-44
-58            android:theme="@style/AppTheme.NoActionBarLaunch" >
-58-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:25:13-62
-59            <intent-filter>
-59-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:26:13-29:29
-60                <action android:name="android.intent.action.MAIN" />
-60-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:27:17-69
-60-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:27:25-66
-61
-62                <category android:name="android.intent.category.LAUNCHER" />
-62-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:28:17-77
-62-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:28:27-74
-63            </intent-filter>
-64            <intent-filter>
-64-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:30:13-35:29
-65                <action android:name="android.intent.action.VIEW" />
-65-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:17-69
-65-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:25-66
-66
-67                <category android:name="android.intent.category.DEFAULT" />
-67-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:17-76
-67-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:27-73
-68                <category android:name="android.intent.category.BROWSABLE" />
-68-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:17-78
-68-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:27-75
-69
-70                <data android:scheme="@string/custom_url_scheme" />
-70-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:17-68
-70-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:23-65
-71            </intent-filter>
-72        </activity>
+52        <meta-data
+52-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:20:9-22:71
+53            android:name="com.google.android.geo.API_KEY"
+53-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:21:13-58
+54            android:value="AIzaSyBUmnqW0aOoCES_SDi6rHMmY-zC-iEv894" />
+54-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:22:13-68
+55
+56        <activity
+56-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:25:9-42:20
+57            android:name="com.dogCare.www.MainActivity"
+57-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:30:13-41
+58            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+58-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:26:13-129
+59            android:exported="true"
+59-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:27:13-36
+60            android:label="@string/title_activity_main"
+60-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:28:13-56
+61            android:launchMode="singleTask"
+61-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:29:13-44
+62            android:theme="@style/AppTheme.NoActionBarLaunch" >
+62-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:13-62
+63            <intent-filter>
+63-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:13-35:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:17-69
+64-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:17-77
+66-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:27-74
+67            </intent-filter>
+68            <intent-filter>
+68-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:36:13-41:29
+69                <action android:name="android.intent.action.VIEW" />
+69-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:17-69
+69-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:25-66
+70
+71                <category android:name="android.intent.category.DEFAULT" />
+71-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:17-76
+71-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:27-73
+72                <category android:name="android.intent.category.BROWSABLE" />
+72-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:39:17-78
+72-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:39:27-75
 73
-74        <provider
-75            android:name="androidx.core.content.FileProvider"
-75-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:42:13-62
-76            android:authorities="com.dogCare.www.fileprovider"
-76-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:39:13-64
-77            android:exported="false"
-77-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:40:13-37
-78            android:grantUriPermissions="true" >
-78-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:41:13-47
-79            <meta-data
-79-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:43:13-112
-80                android:name="android.support.FILE_PROVIDER_PATHS"
-80-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:43:24-74
-81                android:resource="@xml/file_paths" />
-81-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:43:75-109
-82        </provider>
-83        <!-- Needs to be explicitly declared on P+ -->
-84        <uses-library
-84-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
-85            android:name="org.apache.http.legacy"
-85-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
-86            android:required="false" />
-86-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
-87
-88        <activity
-88-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-89            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-89-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
-90            android:exported="false"
-90-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-91            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-91-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
-92
-93        <meta-data
-93-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f0f5a4e716dd1fc5a54e6cece4307efa\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-94            android:name="com.google.android.gms.version"
-94-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f0f5a4e716dd1fc5a54e6cece4307efa\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-95            android:value="@integer/google_play_services_version" />
-95-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f0f5a4e716dd1fc5a54e6cece4307efa\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+74                <data android:scheme="@string/custom_url_scheme" />
+74-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:40:17-68
+74-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:40:23-65
+75            </intent-filter>
+76        </activity>
+77
+78        <provider
+79            android:name="androidx.core.content.FileProvider"
+79-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:47:13-62
+80            android:authorities="com.dogCare.www.fileprovider"
+80-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:44:13-64
+81            android:exported="false"
+81-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:45:13-37
+82            android:grantUriPermissions="true" >
+82-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:46:13-47
+83            <meta-data
+83-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:48:13-50:54
+84                android:name="android.support.FILE_PROVIDER_PATHS"
+84-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:49:17-67
+85                android:resource="@xml/file_paths" />
+85-->C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:50:17-51
+86        </provider>
+87        <!-- Needs to be explicitly declared on P+ -->
+88        <uses-library
+88-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+89            android:name="org.apache.http.legacy"
+89-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+90            android:required="false" />
+90-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+91
+92        <activity
+92-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+93-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+95-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
 96
-97        <provider
-97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-98            android:name="androidx.startup.InitializationProvider"
-98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-99            android:authorities="com.dogCare.www.androidx-startup"
-99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-100            android:exported="false" >
-100-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-101            <meta-data
-101-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-102                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-103                android:value="androidx.startup" />
-103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-104            <meta-data
-104-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8046a930e7bcf74ded2d9dc87a9247f7\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-105-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8046a930e7bcf74ded2d9dc87a9247f7\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-106                android:value="androidx.startup" />
-106-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8046a930e7bcf74ded2d9dc87a9247f7\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
-107            <meta-data
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-109                android:value="androidx.startup" />
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-110        </provider>
-111
-112        <receiver
-112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-114            android:directBootAware="false"
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-115            android:enabled="true"
-115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-116            android:exported="true"
-116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-117            android:permission="android.permission.DUMP" >
-117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-118            <intent-filter>
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-120            </intent-filter>
-121            <intent-filter>
-121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-123            </intent-filter>
-124            <intent-filter>
-124-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-126            </intent-filter>
-127            <intent-filter>
-127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-129            </intent-filter>
-130        </receiver>
-131    </application>
-132
-133</manifest>
+97        <meta-data
+97-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+98            android:name="com.google.android.gms.version"
+98-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+99            android:value="@integer/google_play_services_version" />
+99-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+100
+101        <provider
+101-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+102            android:name="androidx.startup.InitializationProvider"
+102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+103            android:authorities="com.dogCare.www.androidx-startup"
+103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+104            android:exported="false" >
+104-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+105            <meta-data
+105-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+106                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+106-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+107                android:value="androidx.startup" />
+107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+108            <meta-data
+108-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+109                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+109-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+110                android:value="androidx.startup" />
+110-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+111            <meta-data
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+112                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+113                android:value="androidx.startup" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+114        </provider>
+115
+116        <receiver
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+117            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+118            android:directBootAware="false"
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+119            android:enabled="true"
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+120            android:exported="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+121            android:permission="android.permission.DUMP" >
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+123                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+126                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+127            </intent-filter>
+128            <intent-filter>
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+129                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+130            </intent-filter>
+131            <intent-filter>
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+132                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+133            </intent-filter>
+134        </receiver>
+135    </application>
+136
+137</manifest>
