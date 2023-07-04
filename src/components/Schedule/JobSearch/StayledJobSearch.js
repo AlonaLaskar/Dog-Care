@@ -42,7 +42,7 @@ const StayledJobSearch = styled.div`
   .img {
     text-align:center;
     img {
-      max-width:260px;
+      max-width: 230px;
       border-radius:10px;
     }
   }

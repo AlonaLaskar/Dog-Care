@@ -1,11 +1,10 @@
 import React from 'react';
 import { camera } from 'ionicons/icons';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
-import {usePhotoGallery} from '../../src/hook/usePhotoGallery';
+import { usePhotos } from '../../src/hook/usePhotoGallery';
 
 const Photo = () => {
-    const { photos, takePhoto,deletePhoto } = usePhotoGallery();
-
+  const { photos, takePhoto, deletePhoto } = usePhotos();
 
   return (
     <IonPage
@@ -19,7 +18,7 @@ const Photo = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonFab vertical='button' horizontal='end' slot='fixed'>
+        <IonFab vertical="button" horizontal="end" slot="fixed">
           <IonFabButton onClick={takePhoto}>
             <IonIcon icon={camera} />
           </IonFabButton>

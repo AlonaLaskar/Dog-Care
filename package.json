@@ -79,6 +79,7 @@
   "scripts": {
     "ionic": "ionic serve",
     "start": " react-scripts start",
+    "start:android": "ionic capacitor run android -l --external",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

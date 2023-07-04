@@ -24,18 +24,22 @@ import {  ref as storageRef, deleteObject as deleteStorageObject } from 'firebas
 export function useAddPost() {
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
-
   async function addPost(post) {
     setLoading(true);
     const id = uuidv4();
     try {
-      await setDoc(doc(db, 'posts', id), {
+      const postDoc = {
         ...post,
-        photo:'',
         id,
         date: Date.now(),
         likes: []
-      });
+      };
+  
+      if (post.photo) {
+        postDoc.photo = post.photo;
+      }
+  
+      await setDoc(doc(db, 'posts', id), postDoc);
       presentToast('The post was created successfully', true);
       setLoading(false);
       return id;  // return the postId
@@ -44,6 +48,7 @@ export function useAddPost() {
       console.error(error);
     }
   }
+  
  
   return { addPost, isLoading };
 }
@@ -70,21 +75,36 @@ export function useDeletePost(id) {
     const res = window.confirm('Are you sure you want to delete this post?');
     if (res) {
       setLoading(true);
-      //delete post
-      await deleteDoc(doc(db, 'posts', id));
-      //delete comments
-      const q = query(collection(db, 'comments'), where('postId', '==', id));
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
-
+      try {
+        // Delete post from the database
+        await deleteDoc(doc(db, 'posts', id));
+  
+        // Delete comments
+        const q = query(collection(db, 'comments'), where('postId', '==', id));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
+  
+        // Delete images
+      
     // Delete images
-    const fileRef = storageRef(storage, `posts/${id}`);
-    await deleteStorageObject(fileRef);
 
-      presentToast('The post was deleted successfully', true);
-      setLoading(false);
+        const fileRef = storageRef(storage, `posts/${id}`);
+        deleteStorageObject(fileRef).then(() => {
+          presentToast('The post was deleted successfully', true);
+        }).catch((error) => {
+          console.error('Error deleting post images:', error);
+        });
+        
+            
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        presentToast('An error occurred while deleting the post', false);
+      } finally {
+        setLoading(false);
+      }
     }
   }
+  
   return { deletePost, isLoading };
 }
 

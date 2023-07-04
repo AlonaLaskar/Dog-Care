@@ -8,6 +8,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { isPlatform } from '@ionic/core';
 //!Hook
+
 import useToast from '../hook/useToast';
 //!Context
 
@@ -17,9 +18,11 @@ export const usePhotoGallery = () => {
   const presentToast = useToast();
 
   const [selectedImage, setSelectedImage] = useState(null);
+
+
   const uploadPhoto = async (identifier, storageFolder, collectionChain = [], fieldToUpdate) => {
     if (!selectedImage || !identifier) {
-      presentToast('No image selected or identifier missing', false);
+      // presentToast('No image selected or post without image', false);
       return;
     }
     const response = await fetch(selectedImage);
@@ -49,6 +52,8 @@ export const usePhotoGallery = () => {
     setSelectedImage(webPath);
   };
 
+
+
   const takePhoto = async () => {
     try {
       const file = await Camera.getPhoto({
@@ -71,8 +76,9 @@ export const usePhotoGallery = () => {
     }
   };
 
+
   const chooseFromGallery = async () => {
-    console.log('Choosing from gallery...');
+
     if (isPlatform('hybrid')) {
       const image = await Camera.getPhoto({
         quality: 90,
