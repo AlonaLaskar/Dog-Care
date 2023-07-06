@@ -2,8 +2,8 @@
 <resources>
   <string name="app_name">Dog-Care</string>
   <string name="title_activity_main">Dog-Care</string>
-  <string name="package_name">com.example.app</string>
-  <string name="custom_url_scheme">com.example.app</string>
+  <string name="package_name">com.dogCare.www</string>
+  <string name="custom_url_scheme">com.dogCare.www</string>
   <string name="ionic_app_id">--app-id="605aaced"</string>
   <string name="ionic_channel_name">--channel-name="Production"</string>
   <string name="ionic_update_method">background</string>

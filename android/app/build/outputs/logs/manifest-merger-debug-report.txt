@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:43:9-51:20
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:41:9-49:20
 	android:grantUriPermissions
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:46:13-47
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:44:13-47
 	android:authorities
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:44:13-64
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:42:13-64
 	android:exported
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:45:13-37
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:47:13-62
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:45:13-62
 manifest
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [:capacitor-app] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-camera] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:capacitor-filesystem] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -26,88 +26,88 @@ MERGED from [:capacitor-preferences] C:\Users\ALONA LASKAR\Desktop\dog_sitter_re
 MERGED from [:capacitor-status-bar] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-android] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\57f5741042c3b907a942a7f79bc43163\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ce40568dd5b845ac4e657b717f29542e\transformed\material-1.8.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3bb1ecd876526acbcd9454bf8bdb94aa\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\015375207ef1389bbc8c0cd4e71443db\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\669c745342cc57654d1f709cd55f4d85\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ccee5120cbb28f80d040b2bc2650c16b\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c09bda8bde7fae772e94e5d2b4b0ef1a\transformed\maps-ktx-3.4.0\AndroidManifest.xml:18:1-25:12
-MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2aeb8a2567c635abe2d96c9d597de2b0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:17:1-44:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c22b04d8a43852a44a9244a8f0dde006\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b8b43a2f8fd45b7a8eed9f0a3ebc7084\transformed\play-services-location-21.0.1\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd8b3d0b8b3e475a951f2f2110d1c64b\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
-MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7272a75ad6e37a72a8a9a5f644397d22\transformed\fragment-1.5.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\650bbb27856a4044093254ab2d5f2f88\transformed\activity-1.7.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6927d3dccc2f9b5913084b84fb0030a4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fe3cd95d72ee1d217f9f3ff6ff8b809c\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0f20505014f06a871d0347ce050c30a8\transformed\webkit-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c15963193cb8bc885a402fe0963cb4a8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4c4dc4ad938f110846bfbf723f2857fb\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1e300e037e648427b5df2211746ba8ed\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\54e212afd710cb940bdaa51f2a55445f\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e6cd99e4eaad8f859f6974b48c2982fb\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\930e5e3e87d1bce05771b890bd4bbe86\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3046e5e9e706d188b35df9f9da1c8744\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\599649e1e40bc1b88d109958ecdbb3ca\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1fba537abb3914d9c8d67a7b352bcaa2\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bb4d0604adc6d84bd19b45475cb12fc1\transformed\core-ktx-1.10.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e51a0e08f2ed67fa8abc11ab7c6343b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c8241e63196355d873eec890a97f02c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92a93d17f63b950406789deb10b905a8\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6fdcf5676ee621ad40c106a54e580a73\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\52d0db1327231afe46c5b14c5327534d\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d890b08ac54eff7cd172e9b085bf3b8f\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\74668d4c142365948f2cbfa1299aecea\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\31fdd81462d9bb3afb5b58034f55e43d\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cfaf053e6756139aced053ce9340df8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5e7073d44164295cc0f87d81def851a3\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc28a118ca51e939c557a82f2a4317d0\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\86fdbe2e40102f9ae3b9e861eabb3a85\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2737ab6b6b2f696541f89fcb16839d9f\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e3adcc6c2eea28cd9df013530fd408df\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\38181f1b5167a8ba8a69f8efb548d604\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4e2af4e86e7bfec48225642ec0d69e69\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\212c906bb3934884108a1c248684e44b\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
-MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\077919058d9b143372772d13a22322cb\transformed\framework-10.1.1\AndroidManifest.xml:20:1-27:12
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:2:1-15:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5f61d52df934f44d0e7270ad07188231\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b450ec9f42de1561023534cf0fe5010c\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6b78485f272956952f5a5e3de1cfa933\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6100ff487ae8ff4758c5f687b407712f\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cc84c4b751fb8912d3a696110f791db9\transformed\maps-ktx-3.4.0\AndroidManifest.xml:18:1-25:12
+MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\687e2700f7f019fa499d0fd8e37522a0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:17:1-44:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92bd374b2916af443abd3a3401d26061\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8b9e23834e25840f277a35b140352d5d\transformed\fragment-1.5.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\941514b0c1c37e749ec4ffd3062d050c\transformed\activity-1.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ebc6387e10ad1c242e75648286f7bff0\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\851e7f517cbefb3c43308f66d3fa92ee\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\27a56b10a65fbcaabcf668982395fb94\transformed\webkit-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0a951fb9c170d42b226a49ce3ede71fa\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d7f689ba768945f843d84ac324187d1b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1c777a0538083a5e5de36eda2bc833a8\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\96999d90332cd2049c20310285a8652d\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\701033bbbb6168935dc17d0de1a0a450\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87411fb4582bb6ad1d8a697582463407\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4d581f5b44a2978445c0e1ce7b7e321f\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d046059ddb1be90d7ed69057dea02a87\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3a0757ae68f4d2657289cca545648c3c\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\60be69cc6e4eb6a7618bafdca103f668\transformed\core-ktx-1.10.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\26f8a2181a9127c2e016a3244a9cb4c9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7bb651a5e40034708e5ed5729b98218d\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ee42baf95b6de8d323dd6020e70e86a6\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b2e362342853b4e16dfc91947e4b70f9\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9fd0593c58561bebbfc770e2281f6ed6\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6673652b6bc6e3d982cee403d0084c22\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\51b549f8f5bb56c74c3a162974cd54b4\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\461920188a4e9d369962c3b3411648b3\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6349c6384143322cf1061c7c4b8f9b7d\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0d9ec09d9abdb5c45784fa99ce53ba89\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\240b11790c7e481a267b612de14cbf7b\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\031979dce1a808eeb95ff6f8c9c77238\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc9f33935432b590cfb32e326dd25b58\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0e15ec4f9315e514d80309ef3166b341\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d45de46cb9846deccff09d27a212e11e\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\15f25decc0357ff2ad523b6c3a7e88e2\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3371084a6a43b5297ebe1b1f64344427\transformed\framework-10.1.1\AndroidManifest.xml:20:1-27:12
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:2:1-15:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
 	package
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-53:12
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:1-52:12
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:3:5-67
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:4:5-79
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-79
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:4:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
@@ -135,43 +135,43 @@ ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\A
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:10:19-63
 application
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-52:19
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:11:5-50:19
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
-MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ce40568dd5b845ac4e657b717f29542e\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ce40568dd5b845ac4e657b717f29542e\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3bb1ecd876526acbcd9454bf8bdb94aa\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3bb1ecd876526acbcd9454bf8bdb94aa\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b8b43a2f8fd45b7a8eed9f0a3ebc7084\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b8b43a2f8fd45b7a8eed9f0a3ebc7084\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd8b3d0b8b3e475a951f2f2110d1c64b\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd8b3d0b8b3e475a951f2f2110d1c64b\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cfaf053e6756139aced053ce9340df8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cfaf053e6756139aced053ce9340df8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:9:5-13:19
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:9:5-13:19
+MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:9:5-13:19
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:9:5-13:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:15:9-54
 	android:icon
@@ -189,47 +189,51 @@ ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\A
 	android:name
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:21:13-58
 activity#com.dogCare.www.MainActivity
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:25:9-42:20
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:23:9-40:20
 	android:label
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:26:13-56
 	android:launchMode
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:29:13-44
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:27:13-44
 	android:exported
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:27:13-36
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:25:13-36
 	android:configChanges
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:26:13-129
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:24:13-129
 	android:theme
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:13-62
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:29:13-62
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:30:13-41
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:28:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:32:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:36:13-41:29
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:34:13-39:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:17-69
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:17-76
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:36:17-76
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:27-73
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:36:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:39:17-78
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:17-78
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:39:27-75
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:37:27-75
 data
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:40:17-68
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:17-68
 	android:scheme
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:40:23-65
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:38:23-65
+uses-permission#android.Manifest.permission.RECORD_AUDIO
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:51:5-79
+	android:name
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:51:22-77
 uses-sdk
 INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
@@ -256,112 +260,112 @@ MERGED from [:capacitor-android] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\
 MERGED from [:capacitor-android] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-44
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\57f5741042c3b907a942a7f79bc43163\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\57f5741042c3b907a942a7f79bc43163\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ce40568dd5b845ac4e657b717f29542e\transformed\material-1.8.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ce40568dd5b845ac4e657b717f29542e\transformed\material-1.8.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3bb1ecd876526acbcd9454bf8bdb94aa\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3bb1ecd876526acbcd9454bf8bdb94aa\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\015375207ef1389bbc8c0cd4e71443db\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\015375207ef1389bbc8c0cd4e71443db\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\669c745342cc57654d1f709cd55f4d85\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\669c745342cc57654d1f709cd55f4d85\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ccee5120cbb28f80d040b2bc2650c16b\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ccee5120cbb28f80d040b2bc2650c16b\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c09bda8bde7fae772e94e5d2b4b0ef1a\transformed\maps-ktx-3.4.0\AndroidManifest.xml:21:5-23:41
-MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c09bda8bde7fae772e94e5d2b4b0ef1a\transformed\maps-ktx-3.4.0\AndroidManifest.xml:21:5-23:41
-MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2aeb8a2567c635abe2d96c9d597de2b0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2aeb8a2567c635abe2d96c9d597de2b0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c22b04d8a43852a44a9244a8f0dde006\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c22b04d8a43852a44a9244a8f0dde006\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b8b43a2f8fd45b7a8eed9f0a3ebc7084\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b8b43a2f8fd45b7a8eed9f0a3ebc7084\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd8b3d0b8b3e475a951f2f2110d1c64b\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd8b3d0b8b3e475a951f2f2110d1c64b\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7272a75ad6e37a72a8a9a5f644397d22\transformed\fragment-1.5.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7272a75ad6e37a72a8a9a5f644397d22\transformed\fragment-1.5.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\650bbb27856a4044093254ab2d5f2f88\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\650bbb27856a4044093254ab2d5f2f88\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6927d3dccc2f9b5913084b84fb0030a4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6927d3dccc2f9b5913084b84fb0030a4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fe3cd95d72ee1d217f9f3ff6ff8b809c\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fe3cd95d72ee1d217f9f3ff6ff8b809c\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0f20505014f06a871d0347ce050c30a8\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0f20505014f06a871d0347ce050c30a8\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c15963193cb8bc885a402fe0963cb4a8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c15963193cb8bc885a402fe0963cb4a8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4c4dc4ad938f110846bfbf723f2857fb\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4c4dc4ad938f110846bfbf723f2857fb\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1e300e037e648427b5df2211746ba8ed\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1e300e037e648427b5df2211746ba8ed\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\54e212afd710cb940bdaa51f2a55445f\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\54e212afd710cb940bdaa51f2a55445f\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e6cd99e4eaad8f859f6974b48c2982fb\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e6cd99e4eaad8f859f6974b48c2982fb\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\930e5e3e87d1bce05771b890bd4bbe86\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\930e5e3e87d1bce05771b890bd4bbe86\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3046e5e9e706d188b35df9f9da1c8744\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3046e5e9e706d188b35df9f9da1c8744\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\599649e1e40bc1b88d109958ecdbb3ca\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\599649e1e40bc1b88d109958ecdbb3ca\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1fba537abb3914d9c8d67a7b352bcaa2\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1fba537abb3914d9c8d67a7b352bcaa2\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bb4d0604adc6d84bd19b45475cb12fc1\transformed\core-ktx-1.10.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bb4d0604adc6d84bd19b45475cb12fc1\transformed\core-ktx-1.10.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e51a0e08f2ed67fa8abc11ab7c6343b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e51a0e08f2ed67fa8abc11ab7c6343b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c8241e63196355d873eec890a97f02c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c8241e63196355d873eec890a97f02c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92a93d17f63b950406789deb10b905a8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92a93d17f63b950406789deb10b905a8\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6fdcf5676ee621ad40c106a54e580a73\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6fdcf5676ee621ad40c106a54e580a73\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\52d0db1327231afe46c5b14c5327534d\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\52d0db1327231afe46c5b14c5327534d\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d890b08ac54eff7cd172e9b085bf3b8f\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d890b08ac54eff7cd172e9b085bf3b8f\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\74668d4c142365948f2cbfa1299aecea\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\74668d4c142365948f2cbfa1299aecea\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\31fdd81462d9bb3afb5b58034f55e43d\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\31fdd81462d9bb3afb5b58034f55e43d\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cfaf053e6756139aced053ce9340df8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cfaf053e6756139aced053ce9340df8c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5e7073d44164295cc0f87d81def851a3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5e7073d44164295cc0f87d81def851a3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc28a118ca51e939c557a82f2a4317d0\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc28a118ca51e939c557a82f2a4317d0\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\86fdbe2e40102f9ae3b9e861eabb3a85\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\86fdbe2e40102f9ae3b9e861eabb3a85\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2737ab6b6b2f696541f89fcb16839d9f\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2737ab6b6b2f696541f89fcb16839d9f\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e3adcc6c2eea28cd9df013530fd408df\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e3adcc6c2eea28cd9df013530fd408df\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\38181f1b5167a8ba8a69f8efb548d604\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\38181f1b5167a8ba8a69f8efb548d604\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4e2af4e86e7bfec48225642ec0d69e69\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4e2af4e86e7bfec48225642ec0d69e69\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\212c906bb3934884108a1c248684e44b\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\212c906bb3934884108a1c248684e44b\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
-MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\077919058d9b143372772d13a22322cb\transformed\framework-10.1.1\AndroidManifest.xml:25:5-44
-MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\077919058d9b143372772d13a22322cb\transformed\framework-10.1.1\AndroidManifest.xml:25:5-44
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5f61d52df934f44d0e7270ad07188231\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5f61d52df934f44d0e7270ad07188231\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.8.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b450ec9f42de1561023534cf0fe5010c\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b450ec9f42de1561023534cf0fe5010c\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6b78485f272956952f5a5e3de1cfa933\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6b78485f272956952f5a5e3de1cfa933\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6100ff487ae8ff4758c5f687b407712f\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6100ff487ae8ff4758c5f687b407712f\transformed\core-splashscreen-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cc84c4b751fb8912d3a696110f791db9\transformed\maps-ktx-3.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.maps.android:maps-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cc84c4b751fb8912d3a696110f791db9\transformed\maps-ktx-3.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\687e2700f7f019fa499d0fd8e37522a0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.maps.android:maps-utils-ktx:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\687e2700f7f019fa499d0fd8e37522a0\transformed\maps-utils-ktx-3.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92bd374b2916af443abd3a3401d26061\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92bd374b2916af443abd3a3401d26061\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8b9e23834e25840f277a35b140352d5d\transformed\fragment-1.5.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8b9e23834e25840f277a35b140352d5d\transformed\fragment-1.5.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\941514b0c1c37e749ec4ffd3062d050c\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\941514b0c1c37e749ec4ffd3062d050c\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ebc6387e10ad1c242e75648286f7bff0\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ebc6387e10ad1c242e75648286f7bff0\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\851e7f517cbefb3c43308f66d3fa92ee\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\851e7f517cbefb3c43308f66d3fa92ee\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\27a56b10a65fbcaabcf668982395fb94\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\27a56b10a65fbcaabcf668982395fb94\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0a951fb9c170d42b226a49ce3ede71fa\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0a951fb9c170d42b226a49ce3ede71fa\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d7f689ba768945f843d84ac324187d1b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d7f689ba768945f843d84ac324187d1b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1c777a0538083a5e5de36eda2bc833a8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1c777a0538083a5e5de36eda2bc833a8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\96999d90332cd2049c20310285a8652d\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\96999d90332cd2049c20310285a8652d\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\701033bbbb6168935dc17d0de1a0a450\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\701033bbbb6168935dc17d0de1a0a450\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87411fb4582bb6ad1d8a697582463407\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87411fb4582bb6ad1d8a697582463407\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4d581f5b44a2978445c0e1ce7b7e321f\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4d581f5b44a2978445c0e1ce7b7e321f\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d046059ddb1be90d7ed69057dea02a87\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d046059ddb1be90d7ed69057dea02a87\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3a0757ae68f4d2657289cca545648c3c\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3a0757ae68f4d2657289cca545648c3c\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\60be69cc6e4eb6a7618bafdca103f668\transformed\core-ktx-1.10.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\60be69cc6e4eb6a7618bafdca103f668\transformed\core-ktx-1.10.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\26f8a2181a9127c2e016a3244a9cb4c9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\26f8a2181a9127c2e016a3244a9cb4c9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7bb651a5e40034708e5ed5729b98218d\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7bb651a5e40034708e5ed5729b98218d\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ee42baf95b6de8d323dd6020e70e86a6\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ee42baf95b6de8d323dd6020e70e86a6\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b2e362342853b4e16dfc91947e4b70f9\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b2e362342853b4e16dfc91947e4b70f9\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9fd0593c58561bebbfc770e2281f6ed6\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9fd0593c58561bebbfc770e2281f6ed6\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6673652b6bc6e3d982cee403d0084c22\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6673652b6bc6e3d982cee403d0084c22\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\51b549f8f5bb56c74c3a162974cd54b4\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\51b549f8f5bb56c74c3a162974cd54b4\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\461920188a4e9d369962c3b3411648b3\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\461920188a4e9d369962c3b3411648b3\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6349c6384143322cf1061c7c4b8f9b7d\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6349c6384143322cf1061c7c4b8f9b7d\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0d9ec09d9abdb5c45784fa99ce53ba89\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0d9ec09d9abdb5c45784fa99ce53ba89\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\240b11790c7e481a267b612de14cbf7b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\240b11790c7e481a267b612de14cbf7b\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\031979dce1a808eeb95ff6f8c9c77238\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\031979dce1a808eeb95ff6f8c9c77238\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc9f33935432b590cfb32e326dd25b58\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc9f33935432b590cfb32e326dd25b58\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0e15ec4f9315e514d80309ef3166b341\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0e15ec4f9315e514d80309ef3166b341\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d45de46cb9846deccff09d27a212e11e\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d45de46cb9846deccff09d27a212e11e\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\15f25decc0357ff2ad523b6c3a7e88e2\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\15f25decc0357ff2ad523b6c3a7e88e2\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3371084a6a43b5297ebe1b1f64344427\transformed\framework-10.1.1\AndroidManifest.xml:25:5-44
+MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3371084a6a43b5297ebe1b1f64344427\transformed\framework-10.1.1\AndroidManifest.xml:25:5-44
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:5:5-7:41
 INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -373,15 +377,15 @@ INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\mai
 		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:48:13-50:54
+ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:46:13-48:54
 	android:resource
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:50:17-51
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:48:17-51
 	android:name
-		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:49:17-67
+		ADDED from C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\app\src\main\AndroidManifest.xml:47:17-67
 queries
 ADDED from [:capacitor-camera] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-11:15
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
 ADDED from [:capacitor-camera] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-10:18
 action#android.media.action.IMAGE_CAPTURE
@@ -393,124 +397,124 @@ ADDED from [:capacitor-haptics] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\n
 	android:name
 		ADDED from [:capacitor-haptics] C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
 package#com.google.android.apps.maps
-ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
 uses-library#org.apache.http.legacy
-ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\40d82813d3ddf37116a418891bd6da11\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b83963538dc989d046d5ec44f112830d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:10:9-12:69
-MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\12027adb317cc75a56e8252b11fed7cb\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:10:9-12:69
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:10:9-12:69
+MERGED from [com.google.maps.android:android-maps-utils:3.4.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\AndroidManifest.xml:10:9-12:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6e4ad859a5500ba5cf7ea290d6ead5bb\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
 provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1d26f85bc8acdc288044829ba01a125\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
 	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:28:13-31
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:28:13-31
 	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
 	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
 meta-data#androidx.emoji2.text.EmojiCompatInitializer
-ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d9fa6e2891ac53e0a8a3c7e252c0e9a9\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\47ffbc9514118d64d5f752c6c184d08d\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
 permission#com.dogCare.www.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
 uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
 uses-permission#com.dogCare.www.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87707bd48d8483e3d8420151aea25e05\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.10.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
 receiver#androidx.profileinstaller.ProfileInstallReceiver
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
 	android:enabled
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
 	android:exported
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
 	android:permission
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 	android:directBootAware
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
 intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
 action#androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
 action#androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
 action#androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
 action#androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8c2578ad623a688b2aa568179d3cb242\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92

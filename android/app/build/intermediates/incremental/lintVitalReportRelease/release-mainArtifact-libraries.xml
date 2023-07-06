@@ -1,9 +1,9 @@
 <libraries>
   <library
       name="androidx.appcompat:appcompat:1.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1e2523ab15a8878f14744fe6d1b314f4\transformed\appcompat-1.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b450ec9f42de1561023534cf0fe5010c\transformed\appcompat-1.6.1\jars\classes.jar"
       resolved="androidx.appcompat:appcompat:1.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1e2523ab15a8878f14744fe6d1b314f4\transformed\appcompat-1.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b450ec9f42de1561023534cf0fe5010c\transformed\appcompat-1.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -14,9 +14,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.coordinatorlayout:coordinatorlayout:1.2.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8584e4a615170543b4fb20111d10ed90\transformed\coordinatorlayout-1.2.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6b78485f272956952f5a5e3de1cfa933\transformed\coordinatorlayout-1.2.0\jars\classes.jar"
       resolved="androidx.coordinatorlayout:coordinatorlayout:1.2.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8584e4a615170543b4fb20111d10ed90\transformed\coordinatorlayout-1.2.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6b78485f272956952f5a5e3de1cfa933\transformed\coordinatorlayout-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -27,9 +27,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core-splashscreen:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5b510cf19f1574a74c35f958b17f0fb1\transformed\core-splashscreen-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6100ff487ae8ff4758c5f687b407712f\transformed\core-splashscreen-1.0.0\jars\classes.jar"
       resolved="androidx.core:core-splashscreen:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5b510cf19f1574a74c35f958b17f0fb1\transformed\core-splashscreen-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6100ff487ae8ff4758c5f687b407712f\transformed\core-splashscreen-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -40,9 +40,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-android::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\1381b17fa246ad20ae94cccd28e58c0e\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\1381b17fa246ad20ae94cccd28e58c0e\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\d462d4006c100c4e77532fe05d307458\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\d462d4006c100c4e77532fe05d307458\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-android:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\1381b17fa246ad20ae94cccd28e58c0e\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\android\capacitor\build\.transforms\d462d4006c100c4e77532fe05d307458\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -53,9 +53,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-cordova-android-plugins::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\da015c45dae3126c15267a679e0199c0\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\da015c45dae3126c15267a679e0199c0\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\c64ab08efb8f220080ba435549ef9d89\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\c64ab08efb8f220080ba435549ef9d89\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-cordova-android-plugins:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\da015c45dae3126c15267a679e0199c0\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android\capacitor-cordova-android-plugins\build\.transforms\c64ab08efb8f220080ba435549ef9d89\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -66,9 +66,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-app::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\f07126376a5305db2223c79e753479d5\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\f07126376a5305db2223c79e753479d5\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\db2672a007a6479bd6102d0d9efe4828\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\db2672a007a6479bd6102d0d9efe4828\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-app:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\f07126376a5305db2223c79e753479d5\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\app\android\build\.transforms\db2672a007a6479bd6102d0d9efe4828\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -79,9 +79,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-camera::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\82aa3620ce5df6c113c9497cf0de127f\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\82aa3620ce5df6c113c9497cf0de127f\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\49dab17fb07417de911df57fb51d1522\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\49dab17fb07417de911df57fb51d1522\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-camera:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\82aa3620ce5df6c113c9497cf0de127f\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\camera\android\build\.transforms\49dab17fb07417de911df57fb51d1522\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -92,9 +92,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-filesystem::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\4a89d09087d4e8ca53cea912b58b253e\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\4a89d09087d4e8ca53cea912b58b253e\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\483d3f4f8e41d90df0924323ab4122e6\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\483d3f4f8e41d90df0924323ab4122e6\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-filesystem:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\4a89d09087d4e8ca53cea912b58b253e\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\filesystem\android\build\.transforms\483d3f4f8e41d90df0924323ab4122e6\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -105,9 +105,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-geolocation::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\dcf411a89c087e047bf0417e3c81f8f8\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\dcf411a89c087e047bf0417e3c81f8f8\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\6a7e4274e6ee75b7c5e607f7604dd530\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\6a7e4274e6ee75b7c5e607f7604dd530\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-geolocation:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\dcf411a89c087e047bf0417e3c81f8f8\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\geolocation\android\build\.transforms\6a7e4274e6ee75b7c5e607f7604dd530\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -118,9 +118,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-google-maps::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\afdab3b422b95b66e4ad22140fa568ec\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\afdab3b422b95b66e4ad22140fa568ec\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\f49742b83834b72fdf68140a3148ed16\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\f49742b83834b72fdf68140a3148ed16\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-google-maps:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\afdab3b422b95b66e4ad22140fa568ec\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\google-maps\android\build\.transforms\f49742b83834b72fdf68140a3148ed16\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -131,9 +131,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-haptics::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\fe5072451164de8d52b9a5ba9d0d6bdb\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\fe5072451164de8d52b9a5ba9d0d6bdb\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\32ef256ccf56a133f1e53346d52fba22\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\32ef256ccf56a133f1e53346d52fba22\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-haptics:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\fe5072451164de8d52b9a5ba9d0d6bdb\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\haptics\android\build\.transforms\32ef256ccf56a133f1e53346d52fba22\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -144,9 +144,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-keyboard::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\665d0a0de2ecc2686fefc7ab62589177\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\665d0a0de2ecc2686fefc7ab62589177\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\151b27fbd9bc0a79d85dcb0b2a9295c2\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\151b27fbd9bc0a79d85dcb0b2a9295c2\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-keyboard:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\665d0a0de2ecc2686fefc7ab62589177\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\keyboard\android\build\.transforms\151b27fbd9bc0a79d85dcb0b2a9295c2\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -157,9 +157,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-preferences::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\16f5b0bfb777bed46c689bb0cdb099ef\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\16f5b0bfb777bed46c689bb0cdb099ef\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\753c4f6cfb0faba98e50e9d32163060e\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\753c4f6cfb0faba98e50e9d32163060e\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-preferences:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\16f5b0bfb777bed46c689bb0cdb099ef\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\preferences\android\build\.transforms\753c4f6cfb0faba98e50e9d32163060e\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -170,9 +170,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\android@@:capacitor-status-bar::release"
-      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\4e0c747b3e544d86d899763fb04463a5\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\4e0c747b3e544d86d899763fb04463a5\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\d4acb5eb0dba46eaa99346349878d695\transformed\out\jars\classes.jar;C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\d4acb5eb0dba46eaa99346349878d695\transformed\out\jars\libs\R.jar"
       resolved="android:capacitor-status-bar:unspecified"
-      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\4e0c747b3e544d86d899763fb04463a5\transformed\out"
+      folder="C:\Users\ALONA LASKAR\Desktop\dog_sitter_react\node_modules\@capacitor\status-bar\android\build\.transforms\d4acb5eb0dba46eaa99346349878d695\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -187,9 +187,9 @@
       resolved="commons-io:commons-io:2.4"/>
   <library
       name="androidx.fragment:fragment:1.5.6@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca9bc656b8152236e6c41b4fe27178c2\transformed\fragment-1.5.6\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8b9e23834e25840f277a35b140352d5d\transformed\fragment-1.5.6\jars\classes.jar"
       resolved="androidx.fragment:fragment:1.5.6"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca9bc656b8152236e6c41b4fe27178c2\transformed\fragment-1.5.6"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8b9e23834e25840f277a35b140352d5d\transformed\fragment-1.5.6"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -200,9 +200,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.activity:activity:1.7.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fb64ddcae10d2d8f216aeeb51de9d795\transformed\activity-1.7.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\941514b0c1c37e749ec4ffd3062d050c\transformed\activity-1.7.0\jars\classes.jar"
       resolved="androidx.activity:activity:1.7.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fb64ddcae10d2d8f216aeeb51de9d795\transformed\activity-1.7.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\941514b0c1c37e749ec4ffd3062d050c\transformed\activity-1.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -213,9 +213,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.appcompat:appcompat-resources:1.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d8f1f2e596765efb80d7c6cc938aad3c\transformed\appcompat-resources-1.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5f61d52df934f44d0e7270ad07188231\transformed\appcompat-resources-1.6.1\jars\classes.jar"
       resolved="androidx.appcompat:appcompat-resources:1.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d8f1f2e596765efb80d7c6cc938aad3c\transformed\appcompat-resources-1.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\5f61d52df934f44d0e7270ad07188231\transformed\appcompat-resources-1.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -226,9 +226,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.drawerlayout:drawerlayout:1.1.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d5e686952c3e6a7162b000a040873d59\transformed\drawerlayout-1.1.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b2e362342853b4e16dfc91947e4b70f9\transformed\drawerlayout-1.1.1\jars\classes.jar"
       resolved="androidx.drawerlayout:drawerlayout:1.1.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d5e686952c3e6a7162b000a040873d59\transformed\drawerlayout-1.1.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b2e362342853b4e16dfc91947e4b70f9\transformed\drawerlayout-1.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -239,9 +239,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.viewpager:viewpager:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\71c838747f68a9272a1bc3f24238b1a0\transformed\viewpager-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ee42baf95b6de8d323dd6020e70e86a6\transformed\viewpager-1.0.0\jars\classes.jar"
       resolved="androidx.viewpager:viewpager:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\71c838747f68a9272a1bc3f24238b1a0\transformed\viewpager-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ee42baf95b6de8d323dd6020e70e86a6\transformed\viewpager-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -252,9 +252,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.customview:customview:1.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4df25f2ef6f60bcd808bfba4d6b337f4\transformed\customview-1.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\51b549f8f5bb56c74c3a162974cd54b4\transformed\customview-1.1.0\jars\classes.jar"
       resolved="androidx.customview:customview:1.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4df25f2ef6f60bcd808bfba4d6b337f4\transformed\customview-1.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\51b549f8f5bb56c74c3a162974cd54b4\transformed\customview-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -265,9 +265,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.vectordrawable:vectordrawable-animated:1.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd15e18d87af0db13eedcee5526d795c\transformed\vectordrawable-animated-1.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\26f8a2181a9127c2e016a3244a9cb4c9\transformed\vectordrawable-animated-1.1.0\jars\classes.jar"
       resolved="androidx.vectordrawable:vectordrawable-animated:1.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bd15e18d87af0db13eedcee5526d795c\transformed\vectordrawable-animated-1.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\26f8a2181a9127c2e016a3244a9cb4c9\transformed\vectordrawable-animated-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -278,9 +278,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.vectordrawable:vectordrawable:1.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\23bf96032e119177df768d9d98996930\transformed\vectordrawable-1.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7bb651a5e40034708e5ed5729b98218d\transformed\vectordrawable-1.1.0\jars\classes.jar"
       resolved="androidx.vectordrawable:vectordrawable:1.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\23bf96032e119177df768d9d98996930\transformed\vectordrawable-1.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7bb651a5e40034708e5ed5729b98218d\transformed\vectordrawable-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -291,9 +291,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.loader:loader:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2d1028d93dfc695c5dc4180bd90dfe06\transformed\loader-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1c777a0538083a5e5de36eda2bc833a8\transformed\loader-1.0.0\jars\classes.jar"
       resolved="androidx.loader:loader:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\2d1028d93dfc695c5dc4180bd90dfe06\transformed\loader-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1c777a0538083a5e5de36eda2bc833a8\transformed\loader-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -304,9 +304,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-livedata:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\56fea591d9e1684c727d0fd17da910de\transformed\lifecycle-livedata-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\701033bbbb6168935dc17d0de1a0a450\transformed\lifecycle-livedata-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-livedata:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\56fea591d9e1684c727d0fd17da910de\transformed\lifecycle-livedata-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\701033bbbb6168935dc17d0de1a0a450\transformed\lifecycle-livedata-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -321,9 +321,9 @@
       resolved="androidx.lifecycle:lifecycle-common:2.6.1"/>
   <library
       name="androidx.lifecycle:lifecycle-livedata-core:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8e9df60a6abf54ba8dff1c306dae1dbb\transformed\lifecycle-livedata-core-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87411fb4582bb6ad1d8a697582463407\transformed\lifecycle-livedata-core-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-livedata-core:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8e9df60a6abf54ba8dff1c306dae1dbb\transformed\lifecycle-livedata-core-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\87411fb4582bb6ad1d8a697582463407\transformed\lifecycle-livedata-core-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -334,9 +334,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-viewmodel:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\99c378723d0cae3524b9aa4d1885a867\transformed\lifecycle-viewmodel-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4d581f5b44a2978445c0e1ce7b7e321f\transformed\lifecycle-viewmodel-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\99c378723d0cae3524b9aa4d1885a867\transformed\lifecycle-viewmodel-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\4d581f5b44a2978445c0e1ce7b7e321f\transformed\lifecycle-viewmodel-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -347,9 +347,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-runtime:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3465dc2c430b2834aa309d04f7086c77\transformed\lifecycle-runtime-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d046059ddb1be90d7ed69057dea02a87\transformed\lifecycle-runtime-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-runtime:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3465dc2c430b2834aa309d04f7086c77\transformed\lifecycle-runtime-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d046059ddb1be90d7ed69057dea02a87\transformed\lifecycle-runtime-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -360,9 +360,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3d14c714b28f9345633173d9905f794f\transformed\lifecycle-viewmodel-savedstate-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3a0757ae68f4d2657289cca545648c3c\transformed\lifecycle-viewmodel-savedstate-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3d14c714b28f9345633173d9905f794f\transformed\lifecycle-viewmodel-savedstate-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3a0757ae68f4d2657289cca545648c3c\transformed\lifecycle-viewmodel-savedstate-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -373,9 +373,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core-ktx:1.10.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\458f1266206aed87b42f813da1f856e9\transformed\core-ktx-1.10.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\60be69cc6e4eb6a7618bafdca103f668\transformed\core-ktx-1.10.0\jars\classes.jar"
       resolved="androidx.core:core-ktx:1.10.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\458f1266206aed87b42f813da1f856e9\transformed\core-ktx-1.10.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\60be69cc6e4eb6a7618bafdca103f668\transformed\core-ktx-1.10.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -386,9 +386,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.core:core:1.10.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0\jars\classes.jar"
       resolved="androidx.core:core:1.10.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\196e28c350f5395d818454e08ead34a4\transformed\core-1.10.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\499e7a233e8eab71a7d36d5699eec05f\transformed\core-1.10.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -399,9 +399,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca90b787c5d2e5621178def3aac4a79c\transformed\cursoradapter-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ebc6387e10ad1c242e75648286f7bff0\transformed\cursoradapter-1.0.0\jars\classes.jar"
       resolved="androidx.cursoradapter:cursoradapter:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca90b787c5d2e5621178def3aac4a79c\transformed\cursoradapter-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ebc6387e10ad1c242e75648286f7bff0\transformed\cursoradapter-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -412,9 +412,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.savedstate:savedstate:1.2.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3459df94fa986a655bc608683a2d7c36\transformed\savedstate-1.2.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\96999d90332cd2049c20310285a8652d\transformed\savedstate-1.2.1\jars\classes.jar"
       resolved="androidx.savedstate:savedstate:1.2.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3459df94fa986a655bc608683a2d7c36\transformed\savedstate-1.2.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\96999d90332cd2049c20310285a8652d\transformed\savedstate-1.2.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -425,9 +425,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\eee0f2c08e7c4edd9d4b6435832caa5b\transformed\versionedparcelable-1.1.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1\jars\classes.jar"
       resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\eee0f2c08e7c4edd9d4b6435832caa5b\transformed\versionedparcelable-1.1.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca1a79c756ffdaeb87a4f0bf67c9c97c\transformed\versionedparcelable-1.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -442,9 +442,9 @@
       resolved="androidx.collection:collection:1.1.0"/>
   <library
       name="androidx.arch.core:core-runtime:2.2.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\20428ee7b5f467dc1d0a349a4352dd09\transformed\core-runtime-2.2.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\031979dce1a808eeb95ff6f8c9c77238\transformed\core-runtime-2.2.0\jars\classes.jar"
       resolved="androidx.arch.core:core-runtime:2.2.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\20428ee7b5f467dc1d0a349a4352dd09\transformed\core-runtime-2.2.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\031979dce1a808eeb95ff6f8c9c77238\transformed\core-runtime-2.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -459,9 +459,9 @@
       resolved="androidx.arch.core:core-common:2.2.0"/>
   <library
       name="androidx.interpolator:interpolator:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\66c10452c975ceeceefec19ecbdbf8a2\transformed\interpolator-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6349c6384143322cf1061c7c4b8f9b7d\transformed\interpolator-1.0.0\jars\classes.jar"
       resolved="androidx.interpolator:interpolator:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\66c10452c975ceeceefec19ecbdbf8a2\transformed\interpolator-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6349c6384143322cf1061c7c4b8f9b7d\transformed\interpolator-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -476,9 +476,9 @@
       resolved="androidx.annotation:annotation-jvm:1.6.0"/>
   <library
       name="androidx.annotation:annotation-experimental:1.3.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92958871dc9111d04192125c2f5a62ca\transformed\annotation-experimental-1.3.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\15f25decc0357ff2ad523b6c3a7e88e2\transformed\annotation-experimental-1.3.0\jars\classes.jar"
       resolved="androidx.annotation:annotation-experimental:1.3.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92958871dc9111d04192125c2f5a62ca\transformed\annotation-experimental-1.3.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\15f25decc0357ff2ad523b6c3a7e88e2\transformed\annotation-experimental-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -517,9 +517,9 @@
       resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="com.google.android.material:material:1.8.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0\jars\classes.jar"
       resolved="com.google.android.material:material:1.8.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e8b9d0686b39bae36077f3b3ff645ceb\transformed\material-1.8.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\280e6e50f75f7d39289504200604f09d\transformed\material-1.8.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -530,9 +530,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.constraintlayout:constraintlayout:2.0.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\238254cb58bf065f16e0fe919eb99f98\transformed\constraintlayout-2.0.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1\jars\classes.jar"
       resolved="androidx.constraintlayout:constraintlayout:2.0.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\238254cb58bf065f16e0fe919eb99f98\transformed\constraintlayout-2.0.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\af15252429e760d15fa80bf6fd9a09a6\transformed\constraintlayout-2.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -543,9 +543,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.maps.android:maps-ktx:3.4.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1df9c120594ef63005975edc1d3cecc\transformed\maps-ktx-3.4.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cc84c4b751fb8912d3a696110f791db9\transformed\maps-ktx-3.4.0\jars\classes.jar"
       resolved="com.google.maps.android:maps-ktx:3.4.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f1df9c120594ef63005975edc1d3cecc\transformed\maps-ktx-3.4.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\cc84c4b751fb8912d3a696110f791db9\transformed\maps-ktx-3.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -556,9 +556,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.maps.android:maps-utils-ktx:3.4.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fe2f35641af0d87b20a3f21b3fdead03\transformed\maps-utils-ktx-3.4.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\687e2700f7f019fa499d0fd8e37522a0\transformed\maps-utils-ktx-3.4.0\jars\classes.jar"
       resolved="com.google.maps.android:maps-utils-ktx:3.4.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\fe2f35641af0d87b20a3f21b3fdead03\transformed\maps-utils-ktx-3.4.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\687e2700f7f019fa499d0fd8e37522a0\transformed\maps-utils-ktx-3.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -569,9 +569,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-maps:18.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-maps:18.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\1a498d2dbc62ecf2ef0f2ceb3dace767\transformed\play-services-maps-18.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\e93b2052a3cf0376d0bc68a1c1c4cfc5\transformed\play-services-maps-18.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -582,9 +582,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.viewpager2:viewpager2:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9e8f700154c8739c5b3a91c2da95b6a7\transformed\viewpager2-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92bd374b2916af443abd3a3401d26061\transformed\viewpager2-1.0.0\jars\classes.jar"
       resolved="androidx.viewpager2:viewpager2:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9e8f700154c8739c5b3a91c2da95b6a7\transformed\viewpager2-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\92bd374b2916af443abd3a3401d26061\transformed\viewpager2-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -595,9 +595,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-location:21.0.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0ece6d2a18b931ca04669b59c36cc555\transformed\play-services-location-21.0.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1\jars\classes.jar"
       resolved="com.google.android.gms:play-services-location:21.0.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0ece6d2a18b931ca04669b59c36cc555\transformed\play-services-location-21.0.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0fda196854fd993400c1244809e62ed4\transformed\play-services-location-21.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -608,9 +608,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-base:18.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-base:18.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0558ceb0229f714bafd686fd14f42ef8\transformed\play-services-base-18.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\65ea40e8e10cb0aea544a6c05091798d\transformed\play-services-base-18.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -621,9 +621,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-tasks:18.0.2@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\38fed5036ef4548d8ce17febcf03d418\transformed\play-services-tasks-18.0.2\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2\jars\classes.jar"
       resolved="com.google.android.gms:play-services-tasks:18.0.2"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\38fed5036ef4548d8ce17febcf03d418\transformed\play-services-tasks-18.0.2"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\402d62e6d041ac88595a4025ef771041\transformed\play-services-tasks-18.0.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -634,9 +634,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.android.gms:play-services-basement:18.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f0f5a4e716dd1fc5a54e6cece4307efa\transformed\play-services-basement-18.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-basement:18.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\f0f5a4e716dd1fc5a54e6cece4307efa\transformed\play-services-basement-18.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df35b2152390ee5e961981855b9e3ce4\transformed\play-services-basement-18.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -647,9 +647,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.emoji2:emoji2-views-helper:1.2.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0548ab7223f8ac6921553e7185d7e2ed\transformed\emoji2-views-helper-1.2.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\851e7f517cbefb3c43308f66d3fa92ee\transformed\emoji2-views-helper-1.2.0\jars\classes.jar"
       resolved="androidx.emoji2:emoji2-views-helper:1.2.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0548ab7223f8ac6921553e7185d7e2ed\transformed\emoji2-views-helper-1.2.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\851e7f517cbefb3c43308f66d3fa92ee\transformed\emoji2-views-helper-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -660,9 +660,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.emoji2:emoji2:1.2.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\jars\classes.jar;C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0\jars\libs\repackaged.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\jars\classes.jar;C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0\jars\libs\repackaged.jar"
       resolved="androidx.emoji2:emoji2:1.2.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9a6caf63edd53ca5c10d50511deb162c\transformed\emoji2-1.2.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6bf00fa0de6d83981979a788a7cb543f\transformed\emoji2-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -677,9 +677,9 @@
       resolved="androidx.resourceinspection:resourceinspection-annotation:1.0.1"/>
   <library
       name="androidx.webkit:webkit:1.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d27a2e6e499b8bd2fb324ae9ad1460d0\transformed\webkit-1.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\27a56b10a65fbcaabcf668982395fb94\transformed\webkit-1.6.1\jars\classes.jar"
       resolved="androidx.webkit:webkit:1.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d27a2e6e499b8bd2fb324ae9ad1460d0\transformed\webkit-1.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\27a56b10a65fbcaabcf668982395fb94\transformed\webkit-1.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -690,9 +690,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.dynamicanimation:dynamicanimation:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7e3eb69bbe9b209391d5cbd1ed6db78c\transformed\dynamicanimation-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0a951fb9c170d42b226a49ce3ede71fa\transformed\dynamicanimation-1.0.0\jars\classes.jar"
       resolved="androidx.dynamicanimation:dynamicanimation:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7e3eb69bbe9b209391d5cbd1ed6db78c\transformed\dynamicanimation-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0a951fb9c170d42b226a49ce3ede71fa\transformed\dynamicanimation-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -703,9 +703,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7c2827c2e6407287faf2f2a225ed11a3\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d7f689ba768945f843d84ac324187d1b\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar"
       resolved="androidx.legacy:legacy-support-core-utils:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\7c2827c2e6407287faf2f2a225ed11a3\transformed\legacy-support-core-utils-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d7f689ba768945f843d84ac324187d1b\transformed\legacy-support-core-utils-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -716,9 +716,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.lifecycle:lifecycle-process:2.6.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8046a930e7bcf74ded2d9dc87a9247f7\transformed\lifecycle-process-2.6.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-process:2.6.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8046a930e7bcf74ded2d9dc87a9247f7\transformed\lifecycle-process-2.6.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\85f5ac0bf7a8d27dd9147c8c57a87256\transformed\lifecycle-process-2.6.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -729,9 +729,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.transition:transition:1.2.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\eab8e16052e04202f2f0e214af43eb90\transformed\transition-1.2.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9fd0593c58561bebbfc770e2281f6ed6\transformed\transition-1.2.0\jars\classes.jar"
       resolved="androidx.transition:transition:1.2.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\eab8e16052e04202f2f0e214af43eb90\transformed\transition-1.2.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\9fd0593c58561bebbfc770e2281f6ed6\transformed\transition-1.2.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -742,9 +742,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.recyclerview:recyclerview:1.1.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df2c9fc2decdb758c3e19977247a720a\transformed\recyclerview-1.1.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6673652b6bc6e3d982cee403d0084c22\transformed\recyclerview-1.1.0\jars\classes.jar"
       resolved="androidx.recyclerview:recyclerview:1.1.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\df2c9fc2decdb758c3e19977247a720a\transformed\recyclerview-1.1.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\6673652b6bc6e3d982cee403d0084c22\transformed\recyclerview-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -755,9 +755,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.exifinterface:exifinterface:1.3.6@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\418cd2863d3754e0d98cb1c451d443d8\transformed\exifinterface-1.3.6\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\461920188a4e9d369962c3b3411648b3\transformed\exifinterface-1.3.6\jars\classes.jar"
       resolved="androidx.exifinterface:exifinterface:1.3.6"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\418cd2863d3754e0d98cb1c451d443d8\transformed\exifinterface-1.3.6"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\461920188a4e9d369962c3b3411648b3\transformed\exifinterface-1.3.6"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -768,9 +768,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.profileinstaller:profileinstaller:1.3.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0\jars\classes.jar"
       resolved="androidx.profileinstaller:profileinstaller:1.3.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\457f7d1f4ddc8c0a2b89cd8c216033e1\transformed\profileinstaller-1.3.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\72a76b84c2cba8afb8b888f237d0bca1\transformed\profileinstaller-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -781,9 +781,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.startup:startup-runtime:1.1.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ed1586b342fc48028e6910270980b690\transformed\startup-runtime-1.1.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1\jars\classes.jar"
       resolved="androidx.startup:startup-runtime:1.1.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ed1586b342fc48028e6910270980b690\transformed\startup-runtime-1.1.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a3e7292ef9f4570d07bc4147c6d43f10\transformed\startup-runtime-1.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -794,9 +794,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.tracing:tracing:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\19480c29924fb44d5fa1e76c81ce881c\transformed\tracing-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0d9ec09d9abdb5c45784fa99ce53ba89\transformed\tracing-1.0.0\jars\classes.jar"
       resolved="androidx.tracing:tracing:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\19480c29924fb44d5fa1e76c81ce881c\transformed\tracing-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0d9ec09d9abdb5c45784fa99ce53ba89\transformed\tracing-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -807,9 +807,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.cardview:cardview:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b1d608cce05dce8a2a4b6a1cc2949f22\transformed\cardview-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\240b11790c7e481a267b612de14cbf7b\transformed\cardview-1.0.0\jars\classes.jar"
       resolved="androidx.cardview:cardview:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b1d608cce05dce8a2a4b6a1cc2949f22\transformed\cardview-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\240b11790c7e481a267b612de14cbf7b\transformed\cardview-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -824,9 +824,9 @@
       resolved="androidx.concurrent:concurrent-futures:1.1.0"/>
   <library
       name="androidx.documentfile:documentfile:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c9b6a375f8081aabdc38d260a639d35e\transformed\documentfile-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc9f33935432b590cfb32e326dd25b58\transformed\documentfile-1.0.0\jars\classes.jar"
       resolved="androidx.documentfile:documentfile:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c9b6a375f8081aabdc38d260a639d35e\transformed\documentfile-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\bc9f33935432b590cfb32e326dd25b58\transformed\documentfile-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -837,9 +837,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\225d24ccd6272e9cf30cf7530fc46263\transformed\localbroadcastmanager-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0e15ec4f9315e514d80309ef3166b341\transformed\localbroadcastmanager-1.0.0\jars\classes.jar"
       resolved="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\225d24ccd6272e9cf30cf7530fc46263\transformed\localbroadcastmanager-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\0e15ec4f9315e514d80309ef3166b341\transformed\localbroadcastmanager-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -850,9 +850,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="androidx.print:print:1.0.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b39e33ba8d0ad482e9e94a572041356c\transformed\print-1.0.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d45de46cb9846deccff09d27a212e11e\transformed\print-1.0.0\jars\classes.jar"
       resolved="androidx.print:print:1.0.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\b39e33ba8d0ad482e9e94a572041356c\transformed\print-1.0.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\d45de46cb9846deccff09d27a212e11e\transformed\print-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -863,9 +863,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="org.apache.cordova:framework:10.1.1@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca0a7b2663231b509ed609f6cac5853d\transformed\framework-10.1.1\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3371084a6a43b5297ebe1b1f64344427\transformed\framework-10.1.1\jars\classes.jar"
       resolved="org.apache.cordova:framework:10.1.1"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\ca0a7b2663231b509ed609f6cac5853d\transformed\framework-10.1.1"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\3371084a6a43b5297ebe1b1f64344427\transformed\framework-10.1.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -876,9 +876,9 @@
       proguardRules="proguard.txt"/>
   <library
       name="com.google.maps.android:android-maps-utils:3.4.0@aar"
-      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a4bae570ace9b390a984630221994df0\transformed\android-maps-utils-3.4.0\jars\classes.jar"
+      jars="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0\jars\classes.jar"
       resolved="com.google.maps.android:android-maps-utils:3.4.0"
-      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\a4bae570ace9b390a984630221994df0\transformed\android-maps-utils-3.4.0"
+      folder="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c95fc6a7f0448c7563c0acc216d906b3\transformed\android-maps-utils-3.4.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8309c23f.css",
-    "main.js": "/static/js/main.aa2fc6f0.js",
+    "main.js": "/static/js/main.0923a4c8.js",
     "stencil-polyfills-css-shim.js": "/static/js/stencil-polyfills-css-shim.0231fa39.chunk.js",
     "stencil-polyfills-dom.js": "/static/js/stencil-polyfills-dom.b25972a9.chunk.js",
     "static/js/4826.c8c8973b.chunk.js": "/static/js/4826.c8c8973b.chunk.js",
@@ -103,7 +103,7 @@
     "static/media/like.svg": "/static/media/like.591e75327e06179431e5b1ed77137e15.svg",
     "index.html": "/index.html",
     "main.8309c23f.css.map": "/static/css/main.8309c23f.css.map",
-    "main.aa2fc6f0.js.map": "/static/js/main.aa2fc6f0.js.map",
+    "main.0923a4c8.js.map": "/static/js/main.0923a4c8.js.map",
     "stencil-polyfills-css-shim.0231fa39.chunk.js.map": "/static/js/stencil-polyfills-css-shim.0231fa39.chunk.js.map",
     "stencil-polyfills-dom.b25972a9.chunk.js.map": "/static/js/stencil-polyfills-dom.b25972a9.chunk.js.map",
     "4826.c8c8973b.chunk.js.map": "/static/js/4826.c8c8973b.chunk.js.map",
@@ -198,6 +198,6 @@
   },
   "entrypoints": [
     "static/css/main.8309c23f.css",
-    "static/js/main.aa2fc6f0.js"
+    "static/js/main.0923a4c8.js"
   ]
 }

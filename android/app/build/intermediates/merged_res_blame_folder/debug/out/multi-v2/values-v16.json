@@ -4,7 +4,7 @@
             "outputFile": "com.dogCare.www.app-mergeDebugResources-36:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\87707bd48d8483e3d8420151aea25e05\\transformed\\core-1.10.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\499e7a233e8eab71a7d36d5699eec05f\\transformed\\core-1.10.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\015375207ef1389bbc8c0cd4e71443db\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\b450ec9f42de1561023534cf0fe5010c\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
