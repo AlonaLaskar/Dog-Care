@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext} from 'react';
 import { db } from '../../../firebase';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { IonCheckbox, IonIcon, IonList, IonText,IonButton } from '@ionic/react';
@@ -66,17 +66,15 @@ const JobItem = ({ title, items }) => (
 
 const AwaitingConfirmation = () => {
   const { userId } = useContext(AuthContext);
-  const [availableJob, setAvailableJob] = useState([]);
 
   useEffect(() => {
     const getAvailableJobList = async () => {
       try {
         const querySnapshot = await getDocs(query(collection(db, 'availability'), where('userId', '==', userId)));
-        const data = querySnapshot.docs.map((doc) => ({
+        querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data()
         }));
-        setAvailableJob(data);
       } catch (err) {
         console.error(err);
       }
