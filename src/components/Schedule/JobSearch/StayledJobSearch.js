@@ -24,7 +24,7 @@ const StayledJobSearch = styled.div`
     background: rgb(255, 255, 255);
     border: 3px solid rgb(2, 76, 113);
     border-radius: 10px;
-    max-width: 350px;
+    max-width: 400px;
     padding: 12px;
     margin-bottom: 10px;
   }
@@ -35,14 +35,15 @@ const StayledJobSearch = styled.div`
     background: rgb(255, 255, 255);
     border: 3px solid rgb(2, 76, 113);
     border-radius: 10px;
-    max-width: 350px;
+    max-width: 400px;
     padding: 12px;
     margin-bottom: 10px;
   }
   .img {
     text-align:center;
     img {
-      max-width: 230px;
+      max-width:200px;
+      margin-bottom:5px;
       border-radius:10px;
     }
   }
@@ -63,7 +64,7 @@ const StayledJobSearch = styled.div`
     margin-top: -3px;
   }
   .selected {
-    border: 3px solid green;
+    border: 4px solid green;
   }
   ion-button {
  

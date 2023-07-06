@@ -64,10 +64,6 @@ function JobSearch() {
           Next
         </IonButton>
       </div>
-   
-    
-     
-       
     </StayledJobSearch>
   );
 }
