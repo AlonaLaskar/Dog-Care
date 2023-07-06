@@ -23,7 +23,6 @@ const UserProfile = () => {
   const history = useHistory();
   const { userId } = useContext(AuthContext);
   const { user } = useUser(userId) || {};
-  console.log('userId', userId);
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -56,7 +55,6 @@ const UserProfile = () => {
       await deleteUserCollections('comments', 'uid');
       await deleteUserCollections('availability', 'userId');
       await userAuth.delete();
-      console.log('User deleted.');
       history.push('/login');
     } catch (error) {
       console.log('Error while deleting user or documents:', error);
@@ -66,7 +64,6 @@ const UserProfile = () => {
   const dob = new Date(user?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
   const ageInYears = new Date(ageInMs).getFullYear() - 1970;
-  console.log('ageInYears', ageInYears);
 
   return (
     <StyledUserProfile>
@@ -114,11 +111,11 @@ const UserProfile = () => {
         </IonText>
         <IonText>
           <IonLabel className="bio">Phone number:</IonLabel>
-          <div>212-4567892</div>
+          <div>{user?.tel}</div>
         </IonText>
         <IonText>
           <IonLabel className="bio">Email:</IonLabel>
-          <div>Email@email.com</div>
+          <div>{user?.email}</div>
         </IonText>
         <div className="ion-text-right">
         <IonButton className="removeUser" color="danger" onClick={handleDeleteButtonClick}>

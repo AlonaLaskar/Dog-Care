@@ -1,5 +1,5 @@
 //!Ionic
-import { IonCard, IonText, IonButton, IonGrid, IonIcon, IonRow, IonCol, IonLabel, IonTextarea } from '@ionic/react';
+import { IonCard, IonText, IonButton, IonGrid, IonIcon, IonRow, IonCol, IonLabel, IonTextarea, IonLoading } from '@ionic/react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -45,7 +45,7 @@ const DogSitterService = ({ selectedService }) => {
   const [locationFromGeolocation, setlocationFromGeolocation] = useState('');
   const [location, setLocation] = useState('');
   const [isGeolocationLocation, setIsGeolocationLocation] = useState(false); // Flag for geolocation location
-  const [ setIsLoading] = useState(false);
+  const [ isLoading ,setIsLoading] = useState(false);
 
 
     //!Get user's location from the icon location
@@ -152,8 +152,11 @@ const DogSitterService = ({ selectedService }) => {
 
     reset();
     setIsLoading(false);
-
   }
+  if (isLoading) {
+    return <IonLoading  isOpen={isLoading} />;
+  }
+
   return (
     <StyledDogSitterService>
       <IonCard>

@@ -20,6 +20,10 @@ import StylesProfileCard from './StylesProfileCard';
 const ProfileCard = (props) => {
   const { userId } = useContext(AuthContext) || {};
 
+  if(props.distance === undefined){
+    return;
+  }
+
   const [swipeDirection, setSwipeDirection] = useState(null);
 
   const ref = React.useRef(null);
@@ -107,11 +111,11 @@ const ProfileCard = (props) => {
   const [availability, isLoadingAvailability] = useDocumentData(q);
 
   if (isLoadingAvailability) {
-    return <div>Loading...</div>;
+    return ;
   }
 
   if (!availability) {
-    return ;
+    return;
   }
   const dob = new Date(userData?.birthDate);
   const ageInMs = Date.now() - dob.getTime();
@@ -121,7 +125,7 @@ const ProfileCard = (props) => {
   return (
     <StylesProfileCard>
       <div key={props.availability.id}>
-        {availability.role === 'Dog-Sitter' ? <h3> I’m a dog sitter</h3> : <h3> I’m a dog walker </h3>}
+        {availability?.role === 'Dog-Sitter' ? <h3> I’m a dog sitter</h3> : <h3> I’m a dog walker </h3>}
         <IonCard ref={ref}>
           <IonCardContent>
             <div className="image-container">
@@ -134,7 +138,7 @@ const ProfileCard = (props) => {
               </IonText>
               <IonText className="address">
                 <IonIcon icon={locationOutline} />
-                {props.distance} km from your location
+                {props?.distance} km from your location
               </IonText>
               <IonText className="bio">
                 <p>{availability?.aboutMe}</p>
@@ -193,5 +197,5 @@ export default ProfileCard;
 
 ProfileCard.propTypes = {
   availability: PropTypes.object.isRequired,
-  distance: PropTypes.string.isRequired
+  distance: PropTypes.string
 };

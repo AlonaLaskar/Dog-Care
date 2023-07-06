@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dogCare.www.app-mergeDebugResources-35:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.dogCare.www.app-mergeDebugResources-36:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\1e2523ab15a8878f14744fe6d1b314f4\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\b450ec9f42de1561023534cf0fe5010c\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

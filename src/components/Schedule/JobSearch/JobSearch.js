@@ -24,7 +24,6 @@ function JobSearch() {
     }
   }
   if (nextClicked) {
-    // history.push(`/my/DogSitterService:${selectedService}`);
 
     return <DogSitterService selectedService={selectedService} />
   }
@@ -65,10 +64,6 @@ function JobSearch() {
           Next
         </IonButton>
       </div>
-   
-    
-     
-       
     </StayledJobSearch>
   );
 }

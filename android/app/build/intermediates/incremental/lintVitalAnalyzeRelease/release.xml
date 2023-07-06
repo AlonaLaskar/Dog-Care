@@ -4,17 +4,22 @@
     minSdkVersion="22"
     targetSdkVersion="33"
     mergedManifest="build\intermediates\merged_manifest\release\AndroidManifest.xml"
-    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-8.0.2;proguard-rules.pro"
+    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-7.4.2;proguard-rules.pro"
     partialResultsDir="build\intermediates\lint_vital_partial_results\release\out"
-    desugaredMethodsFiles="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8362dde8a7fe118f2031ed0371d0e448\transformed\D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\c0064ea2dc6966622f462c54dcfd05ac\transformed\D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
     <sourceProvider
-        manifests="src\main\AndroidManifest.xml"
-        javaDirectories="src\main\java;src\release\java;src\main\kotlin;src\release\kotlin"
-        resDirectories="src\main\res;src\release\res"
-        assetsDirectories="src\main\assets;src\release\assets"/>
+        manifest="src\main\AndroidManifest.xml"
+        javaDirectories="src\main\java;src\main\kotlin"
+        resDirectories="src\main\res"
+        assetsDirectories="src\main\assets"/>
+    <sourceProvider
+        manifest="src\release\AndroidManifest.xml"
+        javaDirectories="src\release\java;src\release\kotlin"
+        resDirectories="src\release\res"
+        assetsDirectories="src\release\assets"/>
   </sourceProviders>
   <testSourceProviders>
   </testSourceProviders>
@@ -23,8 +28,7 @@
   <mainArtifact
       classOutputs="build\intermediates\javac\release\classes;build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
       applicationId="com.dogCare.www"
-      generatedSourceFolders="build\generated\ap_generated_sources\release\out"
-      generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="C:\Users\ALONA LASKAR\.gradle\caches\transforms-3\8362dde8a7fe118f2031ed0371d0e448\transformed\D8BackportedDesugaredMethods.txt">
+      generatedSourceFolders="build\generated\ap_generated_sources\release\out;build\generated\aidl_source_output_dir\release\out;build\generated\source\buildConfig\release;build\generated\renderscript_source_output_dir\release\out"
+      generatedResourceFolders="build\generated\res\rs\release;build\generated\res\resValues\release">
   </mainArtifact>
 </variant>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dogCare.www.app-mergeDebugResources-35:/values-v29/values-v29.xml",
+            "outputFile": "com.dogCare.www.app-mergeDebugResources-36:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\5b510cf19f1574a74c35f958b17f0fb1\\transformed\\core-splashscreen-1.0.0\\res\\values-v29\\values-v29.xml",
+                    "source": "C:\\Users\\ALONA LASKAR\\.gradle\\caches\\transforms-3\\6100ff487ae8ff4758c5f687b407712f\\transformed\\core-splashscreen-1.0.0\\res\\values-v29\\values-v29.xml",
                     "from": {
                         "startLines": "2,7",
                         "startColumns": "4,4",

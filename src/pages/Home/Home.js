@@ -54,7 +54,10 @@ const Home = () => {
 
       const availabilityssWithDistance = await Promise.all(
         availabilityss.map(async (availability) => {
-          const address = availability.location;
+          const address = availability?.location;
+          if (!address) {
+            return availability; // Return the availability without distance calculation
+          }
           try {
             const availabilityLocation = await geocodeAddress(address);
             const distanceInMeters = haversineDistance(userLocation, availabilityLocation);
@@ -96,20 +99,13 @@ const Home = () => {
   const filteredAvailabilities = availabilityss.filter(
     (availability) =>
       availability.userId !== userId &&
-      (!filterHourlyRate || availability.payment >= filterHourlyRate) &&
-      (!filterDistance || availability.distanceInKilometers >= filterDistance) &&
+      (!filterHourlyRate || availability?.payment >= filterHourlyRate) &&
+      (!filterDistance || availability?.distanceInKilometers >= filterDistance) &&
       (!filterRole || availability.role === filterRole) &&
-      (!filterDdateStart || availability.dateStart >= filterDdateStart) &&
-      (!filterDateStop || availability.dateStop >= filterDateStop) &&
-      (!filterTimeStart || availability.start >= filterTimeStart) &&
-      (!filterTimeStop || availability.stop >= filterTimeStop)
-  );
-
-  console.log(
-    'filterDdateStart111 ' + filterDdateStart,
-    'filterDdateStop111 ' + filterDateStop,
-    'filterTimeStart11 ' + filterTimeStart,
-    'filterTimeStop111 ' + filterTimeStop
+      (!filterDdateStart || availability?.dateStart >= filterDdateStart) &&
+      (!filterDateStop || availability?.dateStop >= filterDateStop) &&
+      (!filterTimeStart || availability?.start >= filterTimeStart) &&
+      (!filterTimeStop || availability?.stop >= filterTimeStop)
   );
 
   return (
@@ -120,11 +116,11 @@ const Home = () => {
             <IonIcon icon={optionsOutline} color="light" size="large" />
           </IonButton>
           {filteredAvailabilities.length > 0 ? (
-            filteredAvailabilities.map((availability) => (
+            filteredAvailabilities.map((availability, index) => (
               <ProfileCard
-                availability={availability}
-                key={availability.availabilityId}
-                distance={availability.distanceInKilometers} // Pass distanceInKilometers as a prop
+              key={index} // Use the array index as the key
+              availability={availability}
+              distance={availability.distanceInKilometers}
               />
             ))
           ) : (

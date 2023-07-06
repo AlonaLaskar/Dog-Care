@@ -76,7 +76,6 @@ export async function useAvilabiltys() {
   const usersRef = collection(db, 'availability');
   const snapshot = await getDocs(usersRef);
   const avilabiltyList = snapshot.docs.map(doc => doc.data());
-  console.log('avilabiltyList in hoookkkkkkkkk', avilabiltyList);
   return avilabiltyList;
 }
 

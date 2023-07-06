@@ -26,7 +26,7 @@ import * as yup from 'yup';
 import { useUser } from 'hook/users';
 import useToast from 'hook/useToast';
 import { yupResolver } from '@hookform/resolvers/yup';
-import usePhotoGallery from 'hook/usePhotoGallery';
+import usePhotos from 'hook/usePhotoGallery';
 //!Style
 import StyledEditProfile from './StyledEditProfile';
 
@@ -45,7 +45,7 @@ const EditProfile = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { takePhoto, chooseFromGallery, uploadPhoto } = usePhotoGallery();
+  const { takePhoto, chooseFromGallery, uploadPhoto } = usePhotos();
 
   const {
     register,
@@ -131,10 +131,10 @@ const EditProfile = () => {
                 value={userProfile?.aboutMe}
               ></IonTextarea>
               {/* <Input id="aboutMe" type="string" title={userProfile?.aboutMe} label="Information about you" /> */}
-            <IonButton type="submit" expand="block" fill="clear" style={{ background: '#FB8500' }}>
-              <IonIcon slot="start" color="light" icon={createOutline} />
-              <span>Save changes</span>
-            </IonButton>
+              <IonButton type="submit" expand="block" fill="clear" style={{ background: '#FB8500' }}>
+                <IonIcon slot="start" color="light" icon={createOutline} />
+                <span>Save changes</span>
+              </IonButton>
             </IonCardContent>
           </form>
         </FormContext.Provider>
