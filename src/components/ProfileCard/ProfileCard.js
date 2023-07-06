@@ -107,7 +107,7 @@ const ProfileCard = (props) => {
   const [availability, isLoadingAvailability] = useDocumentData(q);
 
   if (isLoadingAvailability) {
-    return <div>Loading...</div>;
+    return ;
   }
 
   if (!availability) {
