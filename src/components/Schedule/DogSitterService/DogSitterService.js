@@ -102,7 +102,7 @@ const DogSitterService = ({ selectedService }) => {
       setIsLoading(false);
       return;
     }
-    
+    console.log(location);
 
     // Perform availability validation
     const selectedStartDate = new Date(data.dateStart);
@@ -196,23 +196,25 @@ const DogSitterService = ({ selectedService }) => {
               </IonRow>
               <IonRow>
               <IonCol size="12">
-                    <IonLabel>Location</IonLabel>
-                  <div className="location">
-                    <GooglePlacesAutocomplete
-                      className="Location"
-                      apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
-                      selectProps={{
-                        value: location,
-                        onChange: setLocation,
-                        placeholder: location ? location : 'Enter your location'
-                      }}
-                    />
-                    <IonIcon 
-                    icon={locationOutline} 
-                    onClick={getLocation}
-                    />
-                  </div>
-                </IonCol>
+              <IonLabel>Location</IonLabel>
+              <div className="location">
+                <GooglePlacesAutocomplete
+                  className="Location"
+                  apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+                  selectProps={{
+                    value: location,
+                    onChange: setLocation,
+                    placeholder: location ? location : 'Enter your location',
+                  }}
+                  {...register('location')}
+                />
+                <IonIcon
+                  icon={locationOutline}
+                  onClick={getLocation}
+                />
+              </div>
+            </IonCol>
+
               </IonRow>
               <IonRow>
                 <IonCol size="12">
@@ -227,6 +229,7 @@ const DogSitterService = ({ selectedService }) => {
                       rows={3}
                       id="aboutMe"
                       placeholder="Add details about the service "
+                      {...register('aboutMe')}
                     ></IonTextarea>
                 </IonCol>
                 

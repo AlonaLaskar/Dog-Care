@@ -98,7 +98,7 @@ const Home = () => {
   // Apply all filters
   const filteredAvailabilities = availabilityss.filter(
     (availability) =>
-      availability.userId !== userId &&
+      availability?.userId !== userId &&
       (!filterHourlyRate || availability?.payment >= filterHourlyRate) &&
       (!filterDistance || availability?.distanceInKilometers >= filterDistance) &&
       (!filterRole || availability.role === filterRole) &&

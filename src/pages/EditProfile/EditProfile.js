@@ -129,6 +129,7 @@ const EditProfile = () => {
                 id="aboutMe"
                 placeholder="Information about you"
                 value={userProfile?.aboutMe}
+                {...register('aboutMe')}
               ></IonTextarea>
               {/* <Input id="aboutMe" type="string" title={userProfile?.aboutMe} label="Information about you" /> */}
               <IonButton type="submit" expand="block" fill="clear" style={{ background: '#FB8500' }}>
