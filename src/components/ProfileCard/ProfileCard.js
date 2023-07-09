@@ -173,12 +173,12 @@ const ProfileCard = (props) => {
               {availability?.role === 'Dog-Walker' ? (
                 <IonText className="price">
                   <IonIcon icon={walletOutline} />
-                  {`${availability?.payment}₪ per hour to walk your dog `}
+                  {`${availability?.payment}₪  to walk your dog `}
                 </IonText>
               ) : (
                 <IonText className="price">
                   <IonIcon icon={walletOutline} />
-                  {`${availability?.payment}₪ per hour to keep your dog `}
+                  {`${availability?.payment}₪ to keep your dog `}
                 </IonText>
               )}
             </div>

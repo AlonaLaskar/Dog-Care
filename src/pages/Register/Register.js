@@ -1,7 +1,7 @@
 //! Packages
 import { useState, useContext, useEffect } from 'react';
 import { useHistory,Link,Redirect } from 'react-router-dom';
-import { IonCol, IonContent, IonGrid, IonLabel, IonRow, IonText, IonTextarea } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonLabel, IonRow, IonTextarea } from '@ionic/react';
 
 //! Firebase
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -12,7 +12,6 @@ import { auth, db } from 'firebase.js';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { format} from 'date-fns';
 
 //! Custom hooks
 import useToast from 'hook/useToast';
@@ -168,7 +167,7 @@ if (isGeolocationLocation) {
           email,
           username: email.split('@')[0],
           aboutMe: ' ',
-          birthDate: format(new Date(birthDate), 'dd/MM/yyyy'),
+          birthDate,
           location:selectedLocation, // Save the selected location or an empty string if not selected
           avatar:
             'https://firebasestorage.googleapis.com/v0/b/dogsitter-58dc1.appspot.com/o/pictures%2F5cb8543b-f398-4b1e-a127-dc04a01753ae.jfif?alt=media&token=745c7c51-4483-4ae4-85e0-7a9462b9ea7a',
@@ -218,13 +217,13 @@ if (isGeolocationLocation) {
                 <IonRow>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                      Email Address <IonText color="danger">*</IonText>
+                      Email Address 
                     </IonLabel>
                     <Input id="email" title="Email address " placeholder="Enter email address" />
                   </IonCol>
                   <IonCol size="6">
                     <IonLabel className="label-outer">
-                      Password <IonText color="danger">*</IonText>
+                      Password
                     </IonLabel>
                     <div className="password-wrapper">
                       <Input
@@ -243,7 +242,7 @@ if (isGeolocationLocation) {
                   </IonCol>
                   <IonCol size="6">
                     <IonLabel className="label-outer">
-                      Verify password <IonText color="danger">*</IonText>
+                      Verify password
                     </IonLabel>
                     <div className="password-wrapper">
                       <Input
@@ -262,25 +261,25 @@ if (isGeolocationLocation) {
                   </IonCol>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                      Full Name <IonText color="danger">*</IonText>
+                      Full Name 
                     </IonLabel>
                     <Input id="fullName" title="Full Name" placeholder="Enter fullName" type="string" />
                   </IonCol>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                    Phone Number <IonText color="danger">*</IonText>
+                    Phone Number 
                     </IonLabel>
                     <Input id="tel" title="Phone Number" type="tel" placeholder="Enter phone number" />
                   </IonCol>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                    Birthday <IonText color="danger">*</IonText>
+                    Birthday
                     </IonLabel>
                     <Input id="birthDate" title="Birthday" type="date" placeholder="Enter birthday" />
                   </IonCol>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                      About Me<IonText color="danger">*</IonText>
+                      About Me
                     </IonLabel>
                     <IonTextarea
                       counter={true}
@@ -288,11 +287,13 @@ if (isGeolocationLocation) {
                       rows={3}
                       id="aboutMe"
                       placeholder="Help us get to know you better.."
+                      {...register('aboutMe', { required: true })}
+
                     ></IonTextarea>
                   </IonCol>
                   <IonCol size="12">
                     <IonLabel className="label-outer">
-                      Location <IonText color="danger">*</IonText>
+                      Location
                     </IonLabel>
                     <div className="location">
                       <GooglePlacesAutocomplete

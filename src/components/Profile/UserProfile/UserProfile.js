@@ -103,7 +103,7 @@ const UserProfile = () => {
         </IonLabel>
         <IonLabel className="location">
           <IonIcon icon={locationOutline} />
-          {user?.location}, Israel
+          {user?.location}
         </IonLabel>
         <IonText>
           <IonLabel className="bio">About Me:</IonLabel>
