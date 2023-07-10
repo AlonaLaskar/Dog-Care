@@ -107,6 +107,7 @@ const ProfileCard = (props) => {
     </StylesProfileCard>
   );
 };
+
 ProfileCard.propTypes = {
   availability: PropTypes.object.isRequired,
   distance: PropTypes.string
