@@ -78,7 +78,7 @@ const Home = () => {
 
   //!Filtering
   const [filterHourlyRate, setFilterHourlyRate] = useState(0);
-  const [filterRole, setFilterRole] = useState('');
+  const [filterRole, setFilterRole] = useState('Dog-Sitter');
   const [filterDdateStart, setFilterDateStart] = useState('');
   const [filterTimeStart, setFilterTimeStart] = useState('');
   const [filterDateStop, setFilterDateStop] = useState('');
@@ -107,7 +107,8 @@ const Home = () => {
       (!filterTimeStart || availability?.start >= filterTimeStart) &&
       (!filterTimeStop || availability?.stop >= filterTimeStop)
   );
-
+  console.log('filteredAvailabilities', filteredAvailabilities);
+console.log('filterDistance', filterDistance, 'filterHourlyRate', filterHourlyRate, 'filterRole', filterRole, 'filterDdateStart', filterDdateStart, 'filterDateStop', filterDateStop, 'filterTimeStart', filterTimeStart, 'filterTimeStop', filterTimeStop);
   return (
     <StyledHome>
       <IonContent>
