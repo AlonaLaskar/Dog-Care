@@ -87,7 +87,6 @@ export const usePhotoGallery = () => {
         source: CameraSource.Photos
       });
 
-      console.log('Image from gallery:', image);
       if (image?.webPath) {
         selectImage(image.webPath);
         presentToast('The image has been selected successfully and will be uploaded after saving changes', true);

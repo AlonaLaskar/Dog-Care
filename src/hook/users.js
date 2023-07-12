@@ -39,3 +39,21 @@ export async function getUser(id) {
   }
 }
 
+export async function getUserData(availabilityId,userId1,setUserData) {
+  const availabilityRef = doc(db, 'availability', availabilityId);
+  const availabilitySnapshot = await getDoc(availabilityRef);
+  if (availabilitySnapshot.exists()) {
+    const userRef = doc(db, 'users', userId1);
+    const userSnapshot = await getDoc(userRef);
+    if (userSnapshot.exists()) {
+      const userData = userSnapshot.data();
+      setUserData(userData);
+    } else {
+      console.log('User document does not exist');
+    }
+  } else {
+    console.log('Availability document does not exist');
+  }
+}
+
+

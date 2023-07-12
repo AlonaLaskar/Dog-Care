@@ -78,7 +78,7 @@ const Home = () => {
 
   //!Filtering
   const [filterHourlyRate, setFilterHourlyRate] = useState(0);
-  const [filterRole, setFilterRole] = useState('');
+  const [filterRole, setFilterRole] = useState('Dog-Sitter');
   const [filterDdateStart, setFilterDateStart] = useState('');
   const [filterTimeStart, setFilterTimeStart] = useState('');
   const [filterDateStop, setFilterDateStop] = useState('');
@@ -98,7 +98,7 @@ const Home = () => {
   // Apply all filters
   const filteredAvailabilities = availabilityss.filter(
     (availability) =>
-      availability.userId !== userId &&
+      availability?.userId !== userId &&
       (!filterHourlyRate || availability?.payment >= filterHourlyRate) &&
       (!filterDistance || availability?.distanceInKilometers >= filterDistance) &&
       (!filterRole || availability.role === filterRole) &&
@@ -107,7 +107,6 @@ const Home = () => {
       (!filterTimeStart || availability?.start >= filterTimeStart) &&
       (!filterTimeStop || availability?.stop >= filterTimeStop)
   );
-
   return (
     <StyledHome>
       <IonContent>
