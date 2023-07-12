@@ -2,6 +2,9 @@
 	"appId": "com.dogCare.www",
 	"appName": "Dog-Care",
 	"webDir": "build",
+	"Server": {
+		"url": "http://localhost:"
+	},
 	"bundledWebRuntime": false,
 	"plugins": {
 		"SplashScreen": {
