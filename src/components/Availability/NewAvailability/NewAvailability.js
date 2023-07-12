@@ -59,12 +59,11 @@ export default function NewAvailability({ availability }) {
 
   const { deleteAvailability, isLoading: deleteLoading } = useDeleteAvailability(availability.availabilityId);
 
-  const handleApproval = (userId, isApproved) => {
-    // Handle the approval logic here
-    console.log(`User ID: ${userId}, Approved: ${isApproved}`);
-  };
+  // const handleApproval = (userId, isApproved) => {
+  //   // Handle the approval logic here
+  //   console.log(`User ID: ${userId}, Approved: ${isApproved}`);
+  // };
   const handleAcceptAvailability = () => {
-    console.log('accept');
     // On checkmark click, display delete confirmation alert
     setShowConfirmDeleteAlert(true);
   };
@@ -162,7 +161,7 @@ export default function NewAvailability({ availability }) {
       >
         {user.length} See Requests
       </IonButton>
-      <AvailabilityModal user={user} handleApproval={handleApproval} showModal={showModal} setShowModal={setShowModal} />
+      <AvailabilityModal user={user}  showModal={showModal} setShowModal={setShowModal} />
           </div>
         </div>
       </>

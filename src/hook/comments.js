@@ -4,6 +4,8 @@ import { collection, deleteDoc, doc, orderBy, query, setDoc, where } from 'fireb
 import { db } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { alertController } from '@ionic/core';
+
 
 export function useAddComment({ postID, uid }) {
   const [isLoading, setLoading] = useState(false);
@@ -31,18 +33,48 @@ export function useComments(postID) {
   return { comments, isLoading };
 }
 
+
 export function useDeleteComment(id) {
   const [isLoading, setLoading] = useState(false);
   const presentToast = useToast();
 
   async function deleteComment() {
-    const res = window.confirm('Would you like to delete this comment?');
+    const showAlert = async () => {
+      const alert = await alertController.create({
+        header: 'Confirm Deletion',
+        message: 'Are you sure you want to delete this comment?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+              // Do nothing if the user cancels
+            },
+          },
+          {
+            text: 'Delete',
+            handler: () => {
+              handleDelete();
+            },
+          },
+        ],
+      });
+      await alert.present();
+    };
 
-    if (res) {
-      setLoading(true);
+    showAlert();
+  }
+
+  async function handleDelete() {
+    setLoading(true);
+    try {
       const docRef = doc(db, 'comments', id);
       await deleteDoc(docRef);
-      presentToast('The comment was successfully deleted ', 'success');
+      presentToast('The comment was successfully deleted', 'success');
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      presentToast('An error occurred while deleting the comment', 'error');
+    } finally {
       setLoading(false);
     }
   }

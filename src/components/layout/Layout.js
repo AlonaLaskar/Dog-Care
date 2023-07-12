@@ -22,7 +22,6 @@ import { _useAuthInit } from 'auth';
 
 const Layout = () => {
   const [auth, setAuth] = useState({ loading: true });
-  // console.log(auth);
 
   useEffect(() => {
     _useAuthInit(setAuth);

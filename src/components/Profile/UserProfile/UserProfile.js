@@ -18,8 +18,12 @@ import {
   IonAlert,
   IonCardContent
 } from '@ionic/react';
+import useToast from 'hook/useToast';
+
 
 const UserProfile = () => {
+  const presentToast = useToast();
+
   const history = useHistory();
   const { userId } = useContext(AuthContext);
   const { user } = useUser(userId) || {};
@@ -39,12 +43,9 @@ const UserProfile = () => {
     var userAuth = user.currentUser;
     try {
       const deleteUserCollections = async (collectionName, userIdentifier) => {
-        console.log(`Trying to delete documents in ${collectionName}`);
         const q = query(collection(db, collectionName), where(userIdentifier, '==', userId));
         const querySnapshot = await getDocs(q);
-        console.log(`Found ${querySnapshot.size} documents to delete in ${collectionName}`);
         querySnapshot.forEach((doc) => {
-          console.log(`Deleting document ${doc.id} in ${collectionName}`);
           deleteDoc(doc.ref);
         });
       };
@@ -57,7 +58,7 @@ const UserProfile = () => {
       await userAuth.delete();
       history.push('/login');
     } catch (error) {
-      console.log('Error while deleting user or documents:', error);
+      presentToast('Error while deleting user or documents:', false);
     }
   };
 

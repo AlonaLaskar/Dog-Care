@@ -107,8 +107,6 @@ const Home = () => {
       (!filterTimeStart || availability?.start >= filterTimeStart) &&
       (!filterTimeStop || availability?.stop >= filterTimeStop)
   );
-  console.log('filteredAvailabilities', filteredAvailabilities);
-console.log('filterDistance', filterDistance, 'filterHourlyRate', filterHourlyRate, 'filterRole', filterRole, 'filterDdateStart', filterDdateStart, 'filterDateStop', filterDateStop, 'filterTimeStart', filterTimeStart, 'filterTimeStop', filterTimeStop);
   return (
     <StyledHome>
       <IonContent>

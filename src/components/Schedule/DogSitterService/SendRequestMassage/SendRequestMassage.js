@@ -16,7 +16,6 @@ const SendRequestMassage = () => {
   const q = doc(db, 'availability', id);
   const [availability] = useDocumentData(q);
 
-  console.log(availability);
 
   return (
     <SteledSendRequestMassage>

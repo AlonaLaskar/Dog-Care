@@ -12,8 +12,10 @@ import {
   IonImg,
   IonIcon,
   IonButton,
-  IonText
+  IonText,
 } from '@ionic/react';
+import { alertController } from '@ionic/core';
+
 import { locationOutline, bodyOutline, callOutline, logoWhatsapp } from 'ionicons/icons';
 import PropTypes from 'prop-types';
 import { isMobile } from 'react-device-detect';
@@ -38,12 +40,18 @@ const AvailabilityModal = ({ user, showModal, setShowModal }) => {
   }
 
   async function handleCall(userTel) {
-    console.log(`Initiating call with phone number: ${userTel}`);
-  
+    
     if (isMobile) {
-  console.log('Mobile device detected, using Call Number plugin');  
+      const telURL = `tel:${userTel}`;
+      window.open(telURL, '_system');
     } else {
-      alert(`The number is: ${userTel}`);
+      const alertOptions = {
+        header: 'Phone Number',
+        message: userTel,
+        buttons: ['OK']
+      };
+  
+      await alertController.create(alertOptions).then(alert => alert.present());
     }
   }
 

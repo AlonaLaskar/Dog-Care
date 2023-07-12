@@ -28,7 +28,6 @@ export const AppTabs = () => {
   //if user is not logged in redirect to login page
   const { loggedIn,userId } = useContext(AuthContext);
   if (!loggedIn) {
-    console.log('not logged in');
     return <Redirect to='/login' />;
   }
 
