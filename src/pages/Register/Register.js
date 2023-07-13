@@ -12,6 +12,7 @@ import { auth, db } from 'firebase.js';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { differenceInYears } from 'date-fns';
 
 //! Custom hooks
 import useToast from 'hook/useToast';
@@ -51,16 +52,54 @@ const schema = yup.object().shape({
     .string()
     .required()
     .matches(/^\d{10}$/, 'Invalid telephone number format.'),
-  birthDate: yup
+    aboutMe: yup.string().nullable(),
+    location: yup.string(),// Remove the "required" constraint
+    birthDate: yup
     .string()
     .matches(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format. Use DD/MM/YYYY format.')
-    .nullable(),
-  aboutMe: yup.string().nullable(),
-  location: yup.string() // Remove the "required" constraint
+    .nullable()
+    .test('minimum-age', 'You must be at least 17 years old to register', (value) => {
+      if (!value) {
+        // Handle case when birthDate is not provided
+        return false;
+      }
+
+      const currentDate = new Date();
+      const inputDate = new Date(value);
+      const ageDiff = currentDate.getFullYear() - inputDate.getFullYear();
+
+      if (ageDiff < 17) {
+        return false;
+      }
+
+      if (ageDiff === 17) {
+        const currentMonth = currentDate.getMonth();
+        const inputMonth = inputDate.getMonth();
+
+        if (inputMonth > currentMonth) {
+          return false;
+        }
+
+        if (inputMonth === currentMonth) {
+          const currentDay = currentDate.getDate();
+          const inputDay = inputDate.getDate();
+
+          if (inputDay > currentDay) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+    }),
 });
 
+
 export default function Register() {
-  
+
+  const currentDate = new Date();
+  const minBirthDate = new Date();
+  minBirthDate.setFullYear(currentDate.getFullYear() - 17);
   
   const history = useHistory();
   
@@ -114,16 +153,22 @@ export default function Register() {
     }
   };
 
-  
+
+
   //Init forms
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors }
   } = useForm({
     resolver: yupResolver(schema)
   });
-
+  
+  useEffect(() => {
+    // Set the minimum birthDate value in the form
+    setValue('birthDate', minBirthDate.toISOString().slice(0, 10));
+  }, [setValue]);
 
   //! Handle register with credentials and profile data
   const handleRegister = async ({ email, password, birthDate, ...rest }) => {
