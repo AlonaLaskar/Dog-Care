@@ -85,7 +85,7 @@ const DogSitterService = ({ selectedService }) => {
 
     setIsLoading(true);
     // Get location details from google places
-    const placeId = location?.valueOf?.place_id;
+    const placeId = location?.value?.place_id;
     let selectedLocation = '';
     
     if (isGeolocationLocation) {

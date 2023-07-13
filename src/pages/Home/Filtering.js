@@ -14,7 +14,7 @@ const Filtering = ({
   filterDateStop,
   setFilterDateStop,
   setFilterTimeStart,
-  setFilterTimeStop,
+  setFilterTimeStop
 }) => {
   const handleStartDateChange = (e) => {
     const datetime = new Date(e.detail.value);
@@ -31,7 +31,6 @@ const Filtering = ({
     setFilterDateStop(date); // assuming you have a setter for end date
     setFilterTimeStop(time); // assuming you have a setter for end time
   };
-
 
   return (
     <>
@@ -86,10 +85,20 @@ const Filtering = ({
       </IonRadioGroup>
 
       <IonLabel>Date Start</IonLabel>
-      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="startDate" value={filterDdateStart}></IonDatetimeButton>
+      <IonDatetimeButton
+        displayFormat="DD/MM/YYYY"
+        yearValues="2023"
+        datetime="startDate"
+        value={filterDdateStart}
+      ></IonDatetimeButton>
 
       <IonLabel>Date End</IonLabel>
-      <IonDatetimeButton displayFormat="DD/MM/YYYY" datetime="endDate" value={filterDateStop}></IonDatetimeButton>
+      <IonDatetimeButton
+        displayFormat="DD/MM/YYYY"
+        datetime="endDate"
+        min="2023"
+        value={filterDateStop}
+      ></IonDatetimeButton>
 
       <IonModal keepContentsMounted={true}>
         <IonDatetime id="startDate" onIonChange={handleStartDateChange}></IonDatetime>
@@ -116,5 +125,5 @@ Filtering.propTypes = {
   filterDateStop: PropTypes.string.isRequired,
   setFilterDateStop: PropTypes.func.isRequired,
   setFilterTimeStart: PropTypes.func.isRequired,
-  setFilterTimeStop: PropTypes.func.isRequired,
+  setFilterTimeStop: PropTypes.func.isRequired
 };
